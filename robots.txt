@@ -5,9 +5,6 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: GPTBot
-Allow: /
-
 User-agent: ChatGPT-User
 Allow: /
 
@@ -17,10 +14,20 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
+
+# Search visibility is allowed; model-training crawlers are separate.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
 
 Sitemap: https://founders-knowledge.vercel.app/sitemap.xml
