@@ -199,7 +199,7 @@
   const native = document.querySelector('[data-share-native]');
   const copy = document.querySelector('[data-copy-share]');
   const status = document.querySelector('.knowledge-share-status');
-  whatsapp.href = 'https://wa.me/?text=' + encodeURIComponent(message + '\\n' + url);
+  whatsapp.href = 'https://wa.me/?text=' + encodeURIComponent(message + String.fromCharCode(10) + url);
   linkedin.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
   if (navigator.share) {
     native.hidden = false;
