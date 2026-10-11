@@ -1,0 +1,5 @@
+[build]
+  publish = "."
+
+# This is a static HTML/CSS site. Netlify should publish the repository root
+# directly; no build command or framework runtime is required.
