@@ -162,3 +162,6 @@
 .library-collection .category-card{min-height:250px}
 .library-back{display:inline-flex;margin-top:30px;font-size:12px;font-weight:700;color:var(--purple-deep);text-decoration:underline;text-underline-offset:4px}
 @media(max-width:650px){.share-float{right:13px;bottom:calc(13px + env(safe-area-inset-bottom))}.share-float-trigger{padding:10px 13px;font-size:12px}.share-float-panel{bottom:calc(100% + 11px)}.library-hero h1{font-size:clamp(43px,12vw,62px)}.library-count{margin-top:16px}}
+
+/* Arrow-free interface: remove decorative directional indicators. */
+.card-arrow,.choice-arrow,.lesson-art-arrow,.next-arrow,.translation-arrow{display:none!important}
