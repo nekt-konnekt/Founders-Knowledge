@@ -11,6 +11,9 @@ Founders Knowledge publishes reusable guidance for people building products and 
 
 ## Published knowledge
 
+- [Pricing Is a Product Decision — Part 1 of 2](https://founders-knowledge.vercel.app/lessons/pricing-is-a-product-decision/): Why free access is a strategy, what charging early can validate, and how pricing shapes product design.
+- [Choosing a Pricing Model That Fits Your Product — Part 2 of 2](https://founders-knowledge.vercel.app/lessons/choosing-a-pricing-model/): Compare pricing models and distinguish pricing models from pricing strategies.
+
 - [Why Should Users Choose Your Product?](https://founders-knowledge.vercel.app/lessons/why-should-users-choose-your-product/): Differentiation, alternatives, and giving the right users a reason to choose.
 - [Your Product Is Invisible](https://founders-knowledge.vercel.app/lessons/product-is-invisible/): Diagnosing discoverability and distribution problems and choosing what to test next.
 - [Your App Doesn't Need an App Store to Earn](https://founders-knowledge.vercel.app/lessons/app-monetization/): Pricing, payment, delivery, and monetization options for web apps and PWAs.
