@@ -121,3 +121,14 @@
 @media(max-width:900px){.lesson-cover{grid-template-columns:1fr}.lesson-cover-art{min-height:250px;max-width:420px;width:100%;margin:0 auto}.lesson-layout{grid-template-columns:1fr;gap:0}.lesson-sidebar{display:none}.lesson-body{max-width:760px;margin:0 auto;width:100%}}
 @media(max-width:650px){.lesson-hero{padding:28px 18px 20px}.lesson-back{margin-bottom:17px}.lesson-cover{padding:27px 22px 21px;gap:10px;border-radius:17px;box-shadow:var(--shadow-small)}.lesson-cover h1{font-size:clamp(39px,11vw,56px)}.lesson-kicker{font-size:8px;margin-bottom:19px}.lesson-dek{font-size:14px;margin:19px 0}.lesson-cover-art{min-height:235px;max-width:360px}.art-current{width:76%;top:11%}.art-better{width:67%;bottom:5%}.lesson-art-stamp{right:1%;top:2%}.lesson-progress-caption{font-size:8px}.lesson-progress-caption span:last-child{text-align:right}.lesson-layout{padding:25px 22px 65px}.lesson-opening{grid-template-columns:26px 1fr;gap:10px;margin-bottom:40px}.opening-mark{font-size:48px}.lesson-opening p{font-size:15px}.lesson-body{font-size:14px;line-height:1.85}.lesson-section{margin-bottom:45px}.lesson-section h2,.lesson-exercise h2{font-size:31px}.lesson-two-up{grid-template-columns:1fr}.translation-list>div{grid-template-columns:minmax(80px,.7fr) 15px 1.4fr;gap:7px;padding:11px}.translation-list strong{font-size:12px}.lesson-equation{gap:6px}.lesson-equation span{font-size:8px;padding:7px}.lesson-next{grid-template-columns:1fr}.lesson-exercise{margin-top:48px;padding:23px 19px;box-shadow:var(--shadow-small)}.lesson-takeaway{margin-top:43px}.lesson-takeaway p{font-size:27px}}
 @media(prefers-reduced-motion:reduce){.lesson-next a{transition:none}}
+
+/* Knowledge-post sharing */
+.knowledge-share{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:18px 0 24px;margin:0 0 10px;border-bottom:1px solid var(--line)}
+.knowledge-share-label{width:100%;margin:0 0 2px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.knowledge-share a,.knowledge-share button{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 13px;border:1.5px solid var(--ink);border-radius:999px;background:var(--white);color:var(--ink);font:600 12px/1.2 var(--body);text-decoration:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.knowledge-share a:hover,.knowledge-share button:hover{transform:translateY(-2px);box-shadow:2px 2px 0 var(--ink)}
+.knowledge-share .share-whatsapp{background:#dcfce7}
+.knowledge-share .share-native{background:var(--lavender)}
+.knowledge-share-status{flex-basis:100%;min-height:16px;margin:0;color:var(--muted);font-size:12px}
+@media(max-width:480px){.knowledge-share{gap:8px}.knowledge-share a,.knowledge-share button{min-height:38px;padding:8px 11px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.knowledge-share a,.knowledge-share button{transition:none}}
