@@ -132,4 +132,5 @@
 .knowledge-share-status{flex-basis:100%;min-height:16px;margin:0;color:var(--muted);font-size:12px}
 @media(max-width:480px){.knowledge-share{gap:8px}.knowledge-share a,.knowledge-share button{min-height:38px;padding:8px 11px;font-size:11px}}
 @media(prefers-reduced-motion:reduce){.knowledge-share a,.knowledge-share button{transition:none}}
-\n.knowledge-share [hidden]{display:none}\n
+
+.knowledge-share [hidden]{display:none}
