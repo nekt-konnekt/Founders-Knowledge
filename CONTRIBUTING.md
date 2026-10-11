@@ -8,6 +8,8 @@ Founders Knowledge is a knowledge centre, not a chronological blog. Organize mat
 
 - `index.html` — library homepage and navigation
 - `assets/site.css` — shared visual system
+- `assets/analytics.js` — shared PostHog initialization and custom event tracking
+- `assets/share.js` — shared lesson-sharing behavior
 - `lessons/<slug>/index.html` — individual lesson pages
 - `content/lesson-template.md` — editorial template for drafting new lessons
 
@@ -15,11 +17,12 @@ Founders Knowledge is a knowledge centre, not a chronological blog. Organize mat
 
 1. Draft the content with `content/lesson-template.md`.
 2. Choose a short, readable slug such as `find-your-first-customers`.
-3. Create `lessons/<slug>/index.html`, using the existing lesson page as the visual and semantic pattern.
-4. Add a card linking to the new page in `index.html`.
-5. Check internal links, mobile layout, headings, page title, and description.
-6. Commit the change to the connected production branch.
-7. Confirm the Netlify deployment is ready and open the live page.
+3. Create `lessons/<slug>/index.html`, using an existing lesson page as the visual and semantic pattern.
+4. Include the shared stylesheet and analytics script; include the shared sharing script on lesson pages.
+5. Add a card linking to the new page in `index.html`.
+6. Check internal links, mobile layout, headings, page title, description, and social preview metadata.
+7. Commit the change to the `main` branch.
+8. Confirm the Vercel production deployment is ready and open the live page.
 
 ## Publishing workflow with ChatGPT
 

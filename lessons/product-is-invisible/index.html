@@ -29,68 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 
-<!-- Founders Knowledge analytics: PostHog -->
-<script>
-!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;void 0!==a?u=e[a]=[]:a="posthog";u.people=u.people||[];u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e};u.people.toString=function(){return u.toString(1)+".people (stub)"};o="init capture register register_once unregister identify alias people.set people.set_once people.unset people.increment people.append people.remove people.group reset get_distinct_id getGroups setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags group identify group identify".split(" ");for(n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-window.posthog.init('phc_uGYFs8Y9nHjriPiauSgcHJHDrUsGBvHs85mFKdKwTUyj', {
-  api_host: 'https://us.i.posthog.com',
-  autocapture: false,
-  capture_pageview: true,
-  capture_pageleave: true,
-  person_profiles: 'identified_only'
-});
-(function () {
-  function track(name, properties) {
-    if (window.posthog && typeof window.posthog.capture === 'function') {
-      window.posthog.capture(name, properties);
-    }
-  }
-  document.addEventListener('click', function (event) {
-    var target = event.target && event.target.closest ? event.target.closest('a, button') : null;
-    if (!target) return;
-
-    var channels = [
-      ['data-share-whatsapp', 'whatsapp'],
-      ['data-share-linkedin', 'linkedin'],
-      ['data-share-x', 'x'],
-      ['data-share-native', 'native']
-    ];
-    for (var i = 0; i < channels.length; i++) {
-      if (target.hasAttribute(channels[i][0])) {
-        track('knowledge_share_clicked', {
-          channel: channels[i][1],
-          page_path: window.location.pathname,
-          page_title: document.title
-        });
-        return;
-      }
-    }
-
-    if (target.hasAttribute('data-copy-share')) {
-      track('knowledge_link_copied', {
-        page_path: window.location.pathname,
-        page_title: document.title
-      });
-      return;
-    }
-
-    if (target.tagName === 'A' && target.href) {
-      try {
-        var destination = new URL(target.href, window.location.href);
-        if (destination.origin === window.location.origin &&
-            destination.pathname.indexOf('/lessons/') === 0 &&
-            destination.pathname !== window.location.pathname) {
-          track('lesson_navigation_clicked', {
-            source_path: window.location.pathname,
-            destination_path: destination.pathname,
-            link_text: (target.innerText || target.textContent || '').trim().slice(0, 80)
-          });
-        }
-      } catch (_) {}
-    }
-  });
-})();
-</script>
+<script src="/assets/analytics.js" defer></script>
 
 </head>
 <body class="lesson-page">
@@ -174,52 +113,5 @@ window.posthog.init('phc_uGYFs8Y9nHjriPiauSgcHJHDrUsGBvHs85mFKdKwTUyj', {
 </div>
 </main>
 <footer class="site-footer"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#lesson-content">Back to top </a></footer>
-
-<script>
-(() => {
-  const title = document.title.replace(' — Founders Knowledge', '').trim();
-  const description = document.querySelector('meta[name="description"]')?.content || '';
-  const url = window.location.href.split('#')[0];
-  const message = description ? title + ' — ' + description : title;
-  const whatsapp = document.querySelector('[data-share-whatsapp]');
-  const linkedin = document.querySelector('[data-share-linkedin]');
-  const xShare = document.querySelector('[data-share-x]');
-  const native = document.querySelector('[data-share-native]');
-  const copy = document.querySelector('[data-copy-share]');
-  const status = document.querySelector('.knowledge-share-status');
-  whatsapp.href = 'https://wa.me/?text=' + encodeURIComponent(message + String.fromCharCode(10) + url);
-  linkedin.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
-  xShare.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(message) + '&url=' + encodeURIComponent(url);
-  if (navigator.share) {
-    native.hidden = false;
-    native.addEventListener('click', async () => {
-      try { await navigator.share({ title, text: description, url }); }
-      catch (error) { if (error.name !== 'AbortError') status.textContent = 'Sharing is unavailable right now.'; }
-    });
-  }
-  copy.addEventListener('click', async () => {
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(url);
-      } else {
-        const field = document.createElement('textarea');
-        field.value = url;
-        field.setAttribute('readonly', '');
-        field.style.position = 'absolute';
-        field.style.left = '-9999px';
-        document.body.appendChild(field);
-        field.select();
-        const copied = document.execCommand('copy');
-        field.remove();
-        if (!copied) throw new Error('Copy failed');
-      }
-      status.textContent = 'Link copied. Share it wherever your people are.';
-      copy.textContent = 'Copied';
-      window.setTimeout(() => { copy.textContent = 'Copy link'; }, 1800);
-    } catch {
-      status.textContent = 'Could not copy automatically. Copy the page address from your browser.';
-    }
-  });
-})();
-</script>
+<script src="/assets/share.js" defer></script>
 </body></html>
