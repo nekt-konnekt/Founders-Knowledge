@@ -81,6 +81,7 @@
   <button class="share-native" type="button" data-share-native hidden>Share</button>
   <a class="share-whatsapp" data-share-whatsapp target="_blank" rel="noopener noreferrer">WhatsApp</a>
   <a data-share-linkedin target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a data-share-x target="_blank" rel="noopener noreferrer">X</a>
   <button type="button" data-copy-share>Copy link</button>
   <p class="knowledge-share-status" aria-live="polite"></p>
 </section>\n
@@ -196,11 +197,13 @@
   const message = description ? title + ' — ' + description : title;
   const whatsapp = document.querySelector('[data-share-whatsapp]');
   const linkedin = document.querySelector('[data-share-linkedin]');
+  const xShare = document.querySelector('[data-share-x]');
   const native = document.querySelector('[data-share-native]');
   const copy = document.querySelector('[data-copy-share]');
   const status = document.querySelector('.knowledge-share-status');
   whatsapp.href = 'https://wa.me/?text=' + encodeURIComponent(message + String.fromCharCode(10) + url);
   linkedin.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+  xShare.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(message) + '&url=' + encodeURIComponent(url);
   if (navigator.share) {
     native.hidden = false;
     native.addEventListener('click', async () => {
