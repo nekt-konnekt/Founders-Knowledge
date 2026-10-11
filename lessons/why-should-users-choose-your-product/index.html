@@ -191,7 +191,7 @@
 
 <script>
 (() => {
-  const title = document.title.replace(/\\s*[—|]\\s*Founders Knowledge\\s*$/i, '').trim();
+  const title = document.title.replace(' — Founders Knowledge', '').trim();
   const description = document.querySelector('meta[name="description"]')?.content || '';
   const url = window.location.href.split('#')[0];
   const message = description ? title + ' — ' + description : title;
