@@ -1,0 +1,6 @@
+# Netlify CLI local state
+.netlify/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
