@@ -39,7 +39,16 @@
 <div class="lesson-progress"><span style="width:50%"></span></div>
 <div class="lesson-progress-caption"><span>FIELD REPORT 01</span><span>Diagnose the bottleneck before adding more tactics</span></div>
 </section>
-<div class="lesson-layout">
+
+<section class="knowledge-share" aria-label="Share this knowledge post">
+  <p class="knowledge-share-label">Share this knowledge</p>
+  <button class="share-native" type="button" data-share-native hidden>Share</button>
+  <a class="share-whatsapp" data-share-whatsapp target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <a data-share-linkedin target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button type="button" data-copy-share>Copy link</button>
+  <p class="knowledge-share-status" aria-live="polite"></p>
+</section>
+\n<div class="lesson-layout">
 <aside class="lesson-sidebar" aria-label="On this page"><div class="lesson-sidebar-inner">
 <p class="sidebar-label">IN THIS REPORT</p>
 <a href="#snapshot">01 <span>One founder's snapshot</span></a><a href="#diagnose">02 <span>Diagnose the symptom</span></a><a href="#frameworks">03 <span>Three systems to test</span></a><a href="#plan">04 <span>Your next moves</span></a><a href="#caveats">05 <span>Read the evidence carefully</span></a>
@@ -81,4 +90,49 @@
 </div>
 </main>
 <footer class="site-footer"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#lesson-content">Back to top </a></footer>
-</body></html>
+
+<script>
+(() => {
+  const title = document.title.replace(/\\s*[—|]\\s*Founders Knowledge\\s*$/i, '').trim();
+  const description = document.querySelector('meta[name="description"]')?.content || '';
+  const url = window.location.href.split('#')[0];
+  const message = description ? title + ' — ' + description : title;
+  const whatsapp = document.querySelector('[data-share-whatsapp]');
+  const linkedin = document.querySelector('[data-share-linkedin]');
+  const native = document.querySelector('[data-share-native]');
+  const copy = document.querySelector('[data-copy-share]');
+  const status = document.querySelector('.knowledge-share-status');
+  whatsapp.href = 'https://wa.me/?text=' + encodeURIComponent(message + '\\n' + url);
+  linkedin.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+  if (navigator.share) {
+    native.hidden = false;
+    native.addEventListener('click', async () => {
+      try { await navigator.share({ title, text: description, url }); }
+      catch (error) { if (error.name !== 'AbortError') status.textContent = 'Sharing is unavailable right now.'; }
+    });
+  }
+  copy.addEventListener('click', async () => {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const field = document.createElement('textarea');
+        field.value = url;
+        field.setAttribute('readonly', '');
+        field.style.position = 'absolute';
+        field.style.left = '-9999px';
+        document.body.appendChild(field);
+        field.select();
+        const copied = document.execCommand('copy');
+        field.remove();
+        if (!copied) throw new Error('Copy failed');
+      }
+      status.textContent = 'Link copied. Share it wherever your people are.';
+      copy.textContent = 'Copied';
+      window.setTimeout(() => { copy.textContent = 'Copy link'; }, 1800);
+    } catch {
+      status.textContent = 'Could not copy automatically. Copy the page address from your browser.';
+    }
+  });
+})();
+</script>\n</body></html>
