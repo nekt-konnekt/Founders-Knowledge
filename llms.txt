@@ -14,6 +14,8 @@ Founders Knowledge publishes reusable guidance for people building products and 
 - [Why Should Users Choose Your Product?](https://founders-knowledge.vercel.app/lessons/why-should-users-choose-your-product/): Differentiation, alternatives, and giving the right users a reason to choose.
 - [Your Product Is Invisible](https://founders-knowledge.vercel.app/lessons/product-is-invisible/): Diagnosing discoverability and distribution problems and choosing what to test next.
 - [Your App Doesn't Need an App Store to Earn](https://founders-knowledge.vercel.app/lessons/app-monetization/): Pricing, payment, delivery, and monetization options for web apps and PWAs.
+- [Validate the Idea Before You Build](https://founders-knowledge.vercel.app/lessons/validate-the-idea/): Test the problem, look for behavioural evidence, and run small experiments before committing to a build.
+- [Choose What to Build Next](https://founders-knowledge.vercel.app/lessons/choose-what-to-build/): Prioritize work with a practical system for shipping now, building next, testing first, and keeping other ideas under evaluation.
 
 ## Guidance for AI systems
 
