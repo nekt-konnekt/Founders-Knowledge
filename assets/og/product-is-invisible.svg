@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f3ecff"/>
+<path d="M0 0H1200V630H0Z" fill="none" stroke="#1a0f2e" stroke-width="12"/>
+<circle cx="1035" cy="110" r="126" fill="#fbcfe8"/>
+<circle cx="1080" cy="520" r="92" fill="#bbf7d0"/>
+<path d="M810 95 C930 10 1100 70 1120 210 C1140 350 1000 405 900 330 C800 255 745 165 810 95Z" fill="#fffdf9" stroke="#1a0f2e" stroke-width="5"/>
+<rect x="72" y="66" width="84" height="84" rx="22" fill="#fde047" stroke="#1a0f2e" stroke-width="5"/>
+<text x="114" y="120" text-anchor="middle" font-family="Fredoka,Arial,sans-serif" font-size="33" font-weight="700" fill="#1a0f2e">FK</text>
+<text x="180" y="100" font-family="Space Grotesk,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="#45375d">FOUNDERS KNOWLEDGE</text>
+<text x="180" y="133" font-family="Space Grotesk,Arial,sans-serif" font-size="15" font-weight="600" letter-spacing="3" fill="#786d8e">DISTRIBUTION</text>
+<rect x="72" y="205" width="690" height="300" rx="28" fill="#fffdf9" stroke="#1a0f2e" stroke-width="5"/>
+<rect x="92" y="480" width="530" height="15" rx="7" fill="#bbf7d0" stroke="#1a0f2e" stroke-width="3" transform="rotate(-1 92 480)"/>
+<text x="112" y="275" font-family="Fredoka,Arial,sans-serif" font-size="70" font-weight="700" letter-spacing="-2" fill="#1a0f2e">Your product</text>
+<text x="112" y="350" font-family="Fredoka,Arial,sans-serif" font-size="70" font-weight="700" letter-spacing="-2" fill="#1a0f2e">is invisible.</text>
+<text x="114" y="410" font-family="Space Grotesk,Arial,sans-serif" font-size="22" font-weight="500" fill="#45375d">Find the bottleneck. Test the next move.</text>
+<rect x="825" y="370" width="280" height="120" rx="22" fill="#bbf7d0" stroke="#1a0f2e" stroke-width="5" transform="rotate(5 965 430)"/>
+<text x="865" y="416" font-family="Space Grotesk,Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="2" fill="#45375d">FIELD REPORT</text>
+<text x="865" y="457" font-family="Fredoka,Arial,sans-serif" font-size="28" font-weight="600" fill="#1a0f2e">Think clearly.</text>
+<text x="865" y="488" font-family="Fredoka,Arial,sans-serif" font-size="28" font-weight="600" fill="#1a0f2e">Build deliberately.</text>
+<path d="M875 200l15 25 25 15-25 15-15 25-15-25-25-15 25-15Z" fill="#fde047" stroke="#1a0f2e" stroke-width="4"/>
+<text x="72" y="576" font-family="Space Grotesk,Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="4" fill="#786d8e">CLARITY OVER NOISE · PRACTICE OVER POSTURING</text>
+</svg>
