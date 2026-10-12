@@ -186,3 +186,20 @@
 .library-pagination[hidden]{display:none}
 @media(max-width:760px){.library-tools{grid-template-columns:1fr 1fr}.library-search{grid-column:1/-1}.library-select{min-height:43px}.library-pagination{gap:6px}.page-number{min-width:38px;height:39px;padding:0 10px}.page-step{padding:0 10px}}
 @media(max-width:420px){.library-tools{grid-template-columns:1fr}.library-search{grid-column:auto}.library-select{width:100%}.page-number{min-width:35px;padding:0 8px;font-size:12px}.page-step{font-size:11px}}
+
+/* Curated reading paths */
+.reading-paths{padding:clamp(36px,5vw,62px) clamp(22px,7vw,100px);background:var(--paper);border-bottom:1.5px solid var(--line)}
+.reading-paths-inner{max-width:1240px;margin:0 auto}
+.reading-paths .section-heading{align-items:end}
+.reading-paths .section-heading>p{max-width:430px}
+.reading-path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.reading-path-card{display:flex;flex-direction:column;align-items:flex-start;min-height:255px;padding:23px;background:var(--lavender);border:2px solid var(--ink);border-radius:17px;box-shadow:var(--shadow-small);transition:transform .16s,box-shadow .16s}
+.reading-path-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.reading-path-card.path-launch{background:#fff5c2}
+.reading-path-card.path-money{background:#e4fbe9}
+.reading-path-number{display:inline-flex;padding:6px 9px;border:1.5px solid var(--ink);border-radius:999px;background:white;font-size:9px;font-weight:700;letter-spacing:.1em}
+.reading-path-card h3{margin:19px 0 9px;font:600 25px/1.12 var(--display);letter-spacing:-.025em}
+.reading-path-card p{margin:0 0 18px;color:var(--ink-soft);font-size:13px;line-height:1.65}
+.reading-path-sequence{margin-top:auto;padding-top:13px;border-top:1px solid rgba(26,15,46,.2);font-size:10px;font-weight:700;line-height:1.6;color:var(--ink-soft)}
+@media(max-width:850px){.reading-path-grid{grid-template-columns:1fr 1fr}.reading-path-card:last-child{grid-column:1/-1;min-height:220px}}
+@media(max-width:560px){.reading-path-grid{grid-template-columns:1fr}.reading-path-card:last-child{grid-column:auto}.reading-path-card{min-height:220px;padding:20px}.reading-path-card h3{font-size:23px}}
