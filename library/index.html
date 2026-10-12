@@ -218,6 +218,9 @@
   const q=search.value.trim().toLowerCase();
   let matches=cards.filter(card=>{const text=card.innerText.toLowerCase();return (!q||text.includes(q))&&(category.value==="all"||card.dataset.category===category.value);});
   matches.sort((a,b)=>Number(a.dataset.order)-Number(b.dataset.order));if(sort.value==="oldest")matches.reverse();
+  /* Reorder the actual cards as well as the filtered array: otherwise CSS visibility
+     leaves the original HTML order on screen and newest items appear mixed in. */
+  matches.forEach(card=>grid.appendChild(card));
   const pages=Math.max(1,Math.ceil(matches.length/perPage));page=Math.min(page,pages);
   cards.forEach(card=>{card.hidden=true;});
   matches.forEach((card,index)=>{card.hidden=!(index>=(page-1)*perPage&&index<page*perPage);});
