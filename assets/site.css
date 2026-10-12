@@ -165,3 +165,24 @@
 
 /* Arrow-free interface: remove decorative directional indicators. */
 .card-arrow,.choice-arrow,.lesson-art-arrow,.next-arrow,.translation-arrow{display:none!important}
+
+/* All Knowledge: search, category filters and modern pagination */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.library-tools{display:grid;grid-template-columns:minmax(220px,1fr) minmax(150px,210px) minmax(145px,180px);gap:12px;margin:26px 0 12px;padding:14px;background:var(--lavender);border:1.5px solid var(--ink);border-radius:16px;box-shadow:var(--shadow-small)}
+.library-search,.library-select{display:flex;align-items:center;gap:10px;min-width:0;min-height:46px;padding:0 13px;background:var(--white);border:1.5px solid var(--line);border-radius:10px;color:var(--muted)}
+.library-search>span:not(.sr-only){font-size:25px;line-height:1;color:var(--purple-deep)}
+.library-search input,.library-select select{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font:500 13px var(--body)}
+.library-select select{height:44px;cursor:pointer}
+.library-search:focus-within,.library-select:focus-within{border-color:var(--purple);box-shadow:0 0 0 3px rgba(139,92,246,.15)}
+.library-results{margin:0 0 20px;color:var(--muted);font-size:12px;font-weight:600}
+#knowledge-grid .category-card[hidden]{display:none!important}
+.library-pagination{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;margin:34px auto 8px}
+.page-number{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:42px;padding:0 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--white);color:var(--ink);font:600 13px var(--body);cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s}
+.page-number:hover:not(:disabled){transform:translateY(-2px);border-color:var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.page-number.is-current{background:var(--purple);border-color:var(--ink);color:white;box-shadow:2px 2px 0 var(--ink)}
+.page-number:disabled{opacity:.38;cursor:not-allowed}
+.page-step{padding:0 15px}
+.page-ellipsis{padding:0 3px;color:var(--muted)}
+.library-pagination[hidden]{display:none}
+@media(max-width:760px){.library-tools{grid-template-columns:1fr 1fr}.library-search{grid-column:1/-1}.library-select{min-height:43px}.library-pagination{gap:6px}.page-number{min-width:38px;height:39px;padding:0 10px}.page-step{padding:0 10px}}
+@media(max-width:420px){.library-tools{grid-template-columns:1fr}.library-search{grid-column:auto}.library-select{width:100%}.page-number{min-width:35px;padding:0 8px;font-size:12px}.page-step{font-size:11px}}
