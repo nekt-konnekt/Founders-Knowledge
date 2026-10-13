@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A practical Vercel deployment-retention audit: verify the October 23, 2026 policy, review storage usage, and protect the deployments you may need for rollback.">
+<meta name="theme-color" content="#f3ecff">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.svg">
+<title>Before Your Hosting Provider Deletes Old Deployments, Check This — Founders Knowledge</title>
+<link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/before-your-hosting-provider-deletes-old-deployments/">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Before Your Hosting Provider Deletes Old Deployments, Check This",
+  "description":"A practical Vercel deployment-retention audit: verify the October 23, 2026 policy, review storage usage, and protect the deployments you may need for rollback.",
+  "mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/before-your-hosting-provider-deletes-old-deployments/",
+  "datePublished":"2026-10-13",
+  "dateModified":"2026-10-13",
+  "publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},
+  "isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},
+  "inLanguage":"en"
+}
+</script>
+<meta property="og:site_name" content="Founders Knowledge">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Before Your Hosting Provider Deletes Old Deployments, Check This — Founders Knowledge">
+<meta property="og:description" content="A practical Vercel deployment-retention audit: verify the October 23, 2026 policy, review storage usage, and protect the deployments you may need for rollback.">
+<meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/before-your-hosting-provider-deletes-old-deployments/">
+<meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fbefore-your-hosting-provider-deletes-old-deployments.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261013">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Before Your Hosting Provider Deletes Old Deployments, Check This — Founders Knowledge social preview">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Before Your Hosting Provider Deletes Old Deployments, Check This — Founders Knowledge">
+<meta name="twitter:description" content="A practical Vercel deployment-retention audit: verify the October 23, 2026 policy, review storage usage, and protect the deployments you may need for rollback.">
+<meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fbefore-your-hosting-provider-deletes-old-deployments.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261013">
+<meta name="twitter:image:alt" content="Before Your Hosting Provider Deletes Old Deployments, Check This — Founders Knowledge social preview">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body class="lesson-page">
+<a class="skip-link" href="#lesson-content">Skip to lesson</a>
+<header class="site-header">
+<a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+<nav aria-label="Main navigation"><a href="/library/">Knowledge library</a><a href="/lessons/your-free-backend-isnt-always-available/">Infrastructure reliability</a></nav>
+<a class="nav-cta" href="/library/">All knowledge</a>
+</header>
+<main id="lesson-content">
+<section class="lesson-hero">
+<a class="lesson-back" href="/library/">← Back to the knowledge library</a>
+<div class="lesson-cover">
+<div class="lesson-cover-copy">
+<p class="lesson-kicker"><span class="lesson-kicker-dot"></span> INFRASTRUCTURE &amp; OPERATIONS <span class="lesson-separator">/</span> PRACTICAL AUDIT</p>
+<h1>Before old deployments disappear, <span>check your rollback plan.</span></h1>
+<p class="lesson-dek">Hosting changes are easier to handle when you know what is being stored, what it costs, and which release you would need if the latest one breaks.</p>
+<div class="lesson-meta"><span>◷ 7 minute read</span><span>✳ Operations checklist</span></div>
+</div>
+<div class="lesson-cover-art" aria-hidden="true">
+<div class="lesson-art-card art-current"><span class="art-label">DEPLOYMENT HISTORY</span><strong style="display:block;font:600 25px/1.1 var(--display)">Keep what<br>you may need.</strong><div class="art-lines"><i></i><i></i><i></i></div></div>
+<div class="lesson-art-card art-better"><span class="art-label">ROLLBACK PLAN</span><strong>Known good.<br>Recoverable.<br>Documented.</strong><span class="art-highlight"></span></div>
+</div>
+</div>
+<div class="lesson-progress"><span style="width:50%"></span></div>
+<div class="lesson-progress-caption"><span>PRACTICAL AUDIT</span><span>Protect recovery options before changing retention</span></div>
+</section>
+<div class="lesson-layout">
+<aside class="lesson-sidebar" aria-label="On this page"><div class="lesson-sidebar-inner">
+<p class="sidebar-label">IN THIS GUIDE</p>
+<a href="#announcement">01 <span>What Vercel announced</span></a><a href="#team">02 <span>Check your team settings</span></a><a href="#rollback">03 <span>Protect rollback options</span></a><a href="#cost">04 <span>Understand storage cost</span></a><a href="#checklist">05 <span>15-minute audit</span></a><a href="#sources">06 <span>Official sources</span></a>
+<div class="sidebar-note"><span>✳</span><p>A deployment rollback is not the same thing as a database rollback.</p></div>
+</div></aside>
+<article class="lesson-body">
+<div class="lesson-opening"><span class="opening-mark">“</span><p>A deployment is not just a historical entry. It can be a recovery point. Before old deployments are removed, decide which recovery options your product actually needs.</p></div>
+<section id="announcement" class="lesson-section">
+<p class="section-number">01 — WHAT VERCEL ANNOUNCED</p><h2>The date is real. Your team’s exact billing start still needs checking.</h2>
+<p>On 9 October 2026, Vercel announced that Deployment Storage and Functions Storage billing would begin for existing Pro teams at <strong>$0.10 per GB-month for each storage category</strong>. Vercel says to check the email sent to your team for its specific billing start date.</p>
+<p>The same announcement says the deployment retention window changes to 30 days, with deployments older than 30 days scheduled to begin deletion on <strong>23 October 2026</strong>, unless you opt out through retention settings before then. Settings already at 30 days or shorter are unchanged.</p>
+<p>This is the announced policy—not proof that your own account is on Pro, that billing has started for your team, or that a particular deployment will be deleted. Confirm those details in the Vercel team and project settings.</p>
+<div class="lesson-question-card"><strong>Important distinction</strong><p>Deleted deployments cannot be used for rollback. Do not assume that keeping your source code alone preserves every deployment-specific recovery option.</p></div>
+</section>
+<section id="team" class="lesson-section">
+<p class="section-number">02 — CHECK YOUR TEAM SETTINGS</p><h2>Verify the policy before changing anything.</h2>
+<p>Open the correct Vercel team, then inspect the project and team-level deployment retention settings. Do not rely on memory or on a setting from a different team.</p>
+<div class="lesson-two-up">
+<div><span class="mini-check">01</span><strong>Confirm the plan</strong><p>Check whether the relevant team is on Pro and read Vercel’s email for the billing start date that applies to that team.</p></div>
+<div><span class="mini-check">02</span><strong>Review each retention category</strong><p>Check Production, Pre-Production, Canceled, and Errored deployments. The retention policy may differ by category.</p></div>
+<div><span class="mini-check">03</span><strong>Check storage usage</strong><p>Open the Usage page and review Deployment Storage and Functions Storage per project. Record the current usage before optimizing.</p></div>
+</div>
+<p>If you need deployment history beyond 30 days, review the available retention options and opt-out process in your own settings before the deadline. A longer retention period can preserve more history, but it can also increase storage use and cost.</p>
+</section>
+<section id="rollback" class="lesson-section">
+<p class="section-number">03 — PROTECT ROLLBACK OPTIONS</p><h2>Identify the deployments you would actually want back.</h2>
+<p>Do not preserve every old deployment blindly. Start with the releases that would matter during an incident, then verify what recovery depends on.</p>
+<div class="lesson-question-card"><strong>Mark these before you make retention changes</strong><ul>
+<li>The current production deployment and the last known-good release.</li>
+<li>Any release tied to a high-risk change, such as authentication, payments, or a major routing change.</li>
+<li>Deployments you need for an active investigation, customer incident, or comparison.</li>
+<li>The commit SHA, branch, and release notes for each important deployment.</li>
+<li>Any environment-specific configuration or build detail needed to reproduce the release—without copying secrets into notes or public files.</li>
+</ul></div>
+<p>Confirm that the source repository and required build inputs are still available. Document environment-variable <em>names</em>, not secret values, and make sure secrets can be recovered from the proper secure store.</p>
+<p><strong>Remember:</strong> rolling back the frontend or server deployment does not automatically reverse a database migration, restore deleted customer data, or undo an external side effect. Database changes need their own tested recovery plan.</p>
+</section>
+<section id="cost" class="lesson-section">
+<p class="section-number">04 — UNDERSTAND STORAGE COST</p><h2>Measure your actual usage instead of guessing.</h2>
+<p>At the announced rate, a simple illustration is 20 GB of billable storage × $0.10 = $2 per month for that storage category. This is only an example, not an estimate of your bill: actual usage, billing timing, and the storage categories shown in your account determine the real amount.</p>
+<p>Deployment Storage and Functions Storage are separate categories in Vercel’s announcement. Check both in the Usage page rather than treating one number as the full cost.</p>
+<p>To reduce unnecessary storage, inspect large build outputs and files that do not need to be bundled into deployments. Move suitable large assets to object storage and reduce oversized Function bundles only when it is safe for your architecture. Do not delete recovery points just to make the usage graph smaller before you have checked what depends on them.</p>
+</section>
+<section id="checklist" class="lesson-section">
+<p class="section-number">05 — YOUR 15-MINUTE AUDIT</p><h2>Complete this before the retention change.</h2>
+<div class="lesson-question-card"><ul>
+<li>Confirm the team and plan associated with the project.</li>
+<li>Read the Vercel email and note the billing start date for that team.</li>
+<li>Check Deployment Storage and Functions Storage on the Usage page.</li>
+<li>Review retention periods for Production, Pre-Production, Canceled, and Errored deployments.</li>
+<li>Identify the current production release and last known-good deployment.</li>
+<li>Record the commit SHA and verify the source code and build inputs are recoverable.</li>
+<li>Check whether database migrations require a separate rollback or restore procedure.</li>
+<li>If you need longer deployment history, adjust retention or opt out using the controls available in your account before the deadline.</li>
+<li>Test the recovery process in a safe environment and record who owns it.</li>
+</ul></div>
+<p>Only after this check should you shorten retention or remove old deployments. A setting change is not a substitute for a tested recovery plan.</p>
+</section>
+<div class="lesson-exercise"><p class="section-number">YOUR NEXT STEP</p><h2>Pick one release you could safely recover to.</h2><p>Write down its deployment URL or identifier, source commit, required configuration, and any database or external changes that would affect a rollback. If you cannot explain how to recover, your next task is to document and test that path.</p><a class="button button-primary" href="/lessons/your-free-backend-isnt-always-available/">Next: understand backend availability risks</a></div>
+<section id="sources" class="lesson-section">
+<p class="section-number">SOURCES &amp; REALITY CHECK</p><h2>Use the current policy and your own account settings.</h2>
+<p>This guide summarizes Vercel’s public announcement. It does not verify your team’s plan, storage consumption, billing start date, retention settings, or list of deployments at risk. Those details must be checked in your authenticated Vercel account.</p>
+<ul>
+<li><a href="https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams" target="_blank" rel="noopener noreferrer"><u>Vercel: Deployment Storage billing begins for existing Pro teams (9 October 2026)</u></a></li>
+<li><a href="https://vercel.com/docs/deployment-retention" target="_blank" rel="noopener noreferrer"><u>Vercel Deployment Retention documentation</u></a></li>
+</ul>
+</section>
+</article>
+</div>
+</main>
+<footer class="site-footer"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#lesson-content">Back to top</a></footer>
+<script src="/assets/share.js" defer></script>
+</body></html>
