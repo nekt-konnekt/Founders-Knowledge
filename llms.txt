@@ -32,5 +32,9 @@ This file is a discovery aid, not a replacement for the full articles or the sit
 
 ## Payment resilience
 
+- Connect Payments to Paid Access: https://founders-knowledge.vercel.app/lessons/connect-payments-to-paid-access/
+  Practical guidance on verifying payment, granting entitlements once, handling webhooks, subscriptions, refunds, and recovery.
 - What Happens When Your Payment Provider Fails?: https://founders-knowledge.vercel.app/lessons/what-happens-when-your-payment-provider-fails/
   Practical guidance for payment failures, pending transactions, duplicate-charge prevention, verification, incident response, and reconciliation.
+
+- [Connect Payments to Paid Access](https://founders-knowledge.vercel.app/lessons/connect-payments-to-paid-access/): A practical guide to verifying payments, granting access exactly once, handling webhooks, and keeping paid access in sync with refunds and subscriptions.
