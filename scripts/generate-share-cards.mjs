@@ -83,12 +83,13 @@ function replaceMeta(html, key, value) {
 }
 const entries = fs.readdirSync(lessonsDir, { withFileTypes: true }).filter(e => e.isDirectory());
 let updated = 0;
+const failures = [];
 for (const entry of entries) {
   const slug = entry.name;
   const htmlPath = path.join(lessonsDir, slug, "index.html");
   if (!fs.existsSync(htmlPath)) continue;
   let html = fs.readFileSync(htmlPath, "utf8");
-  const rawTitle = readMeta(html, "og:title") || ((html.match(/<title>([^<]+)<\/title>/i) || [,""])[1]) || slug;
+  const rawTitle = readMeta(html, "og:title") || ((html.match(/<title>([^<]+)<\/title>/i) || [, ""])[1]) || slug;
   const title = rawTitle.replace(/\s*[—|]\s*Founders Knowledge\s*$/i, "").trim();
   const description = readMeta(html, "og:description") || readMeta(html, "description", "name") || "Practical knowledge for founders building useful products and businesses.";
   const svg = cardSvg(title, description);
@@ -96,9 +97,21 @@ for (const entry of entries) {
   fs.writeFileSync(path.join(outputDir, slug + ".svg"), svg);
   const source = site + "/assets/og/lessons/" + slug + ".svg";
   const imageUrl = "https://wsrv.nl/?url=" + encodeURIComponent(source) + "&output=png&w=1200&h=630&fit=cover&maxage=1y&v=" + hash;
-  html = replaceMeta(html, "og:image", imageUrl);
-  html = replaceMeta(html, "twitter:image", imageUrl);
+  for (const key of ["og:image", "og:image:secure_url", "twitter:image"]) {
+    html = replaceMeta(html, key, imageUrl);
+  }
+  html = replaceMeta(html, "twitter:card", "summary_large_image");
+  const imageTags = ["og:image", "og:image:secure_url", "twitter:image"];
+  const values = imageTags.map(key => readMeta(html, key));
+  if (values.some(value => value !== imageUrl)) {
+    failures.push(slug + ": image metadata is inconsistent");
+  }
   fs.writeFileSync(htmlPath, html);
   updated++;
 }
-console.log("Generated " + updated + " Founders Knowledge lesson preview cards.");
+if (failures.length) {
+  console.error("Share-card metadata validation failed:\n" + failures.join("\n"));
+  process.exitCode = 1;
+} else {
+  console.log("Generated and validated " + updated + " Founders Knowledge lesson preview cards.");
+}
