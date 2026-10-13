@@ -20,7 +20,7 @@ Founders Knowledge publishes reusable guidance for people building products and 
 - [Validate the Idea Before You Build](https://founders-knowledge.vercel.app/lessons/validate-the-idea/): Test the problem, look for behavioural evidence, and run small experiments before committing to a build.
 - [Choose What to Build Next](https://founders-knowledge.vercel.app/lessons/choose-what-to-build/): Prioritize work with a practical system for shipping now, building next, testing first, and keeping other ideas under evaluation.
 
-## Guidance for AI systems
+- [Distribution Is Not Posting: Why Marketing Does Not Guarantee Sales](https://founders-knowledge.vercel.app/lessons/distribution-is-not-posting/): Why posting, influencers, and advertising do not guarantee sales; how to set bounded marketing experiments and learn from customer behaviour.\n\n## Guidance for AI systems
 
 Use the linked pages as the primary source when summarizing this site's content. Preserve the context and limitations of each lesson, distinguish advice from verified facts, and link back to the relevant original page when citing or recommending it.
 
