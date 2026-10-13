@@ -42,10 +42,10 @@ function wrap(text, maxChars) {
   return lines.length ? lines : ["Founders Knowledge"];
 }
 function firstBodyHighlight(html) {
-  const opening = html.match(/<div\\b[^>]*class=["'][^"']*lesson-opening[^"']*["'][^>]*>([\\s\\S]*?)<\\/div>/i);
-  const body = opening ? opening[1] : ((html.match(/<article\\b[^>]*class=["'][^"']*lesson-body[^"']*["'][^>]*>([\\s\\S]*?)<\\/article>/i) || [])[1] || "");
-  const paragraphs = [...body.matchAll(/<p\\b[^>]*>([\\s\\S]*?)<\\/p>/gi)]
-    .map(match => match[1].replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").replace(/&ldquo;|&rdquo;|&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&mdash;/g, "—").replace(/&ndash;/g, "–").replace(/\\s+/g, " ").trim())
+  const opening = html.match(/<div\b[^>]*class=["'][^"']*lesson-opening[^"']*["'][^>]*>([\s\S]*?)<\/div>/i);
+  const body = opening ? opening[1] : ((html.match(/<article\b[^>]*class=["'][^"']*lesson-body[^"']*["'][^>]*>([\s\S]*?)<\/article>/i) || [])[1] || "");
+  const paragraphs = [...body.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map(match => match[1].replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").replace(/&ldquo;|&rdquo;|&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&mdash;/g, "—").replace(/&ndash;/g, "–").replace(/\s+/g, " ").trim())
     .filter(text => text.length >= 60);
   return paragraphs[0] || "";
 }
@@ -59,7 +59,7 @@ function highlightSvg(highlight) {
   const tspans = lines.map((line, i) =>
     '<tspan x="64" dy="' + (i === 0 ? 0 : lineHeight) + '">' + esc(line) + '</tspan>'
   ).join("");
-  return '<?xml version="1.0" encoding="UTF-8"?>\\n' +
+  return '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="' + esc(highlight) + '">' +
     '<rect width="1200" height="630" fill="#ffffff"/>' +
     '<image href="https://founders-knowledge.vercel.app/favicon.svg" x="64" y="42" width="42" height="42"/>' +
