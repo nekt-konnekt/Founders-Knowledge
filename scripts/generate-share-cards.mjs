@@ -102,7 +102,7 @@ for (const entry of entries) {
   }
   html = replaceMeta(html, "twitter:card", "summary_large_image");
   const imageTags = ["og:image", "og:image:secure_url", "twitter:image"];
-  const values = imageTags.map(key => readMeta(html, key));
+  const values = imageTags.map(key => readMeta(html, key, key === "twitter:image" ? "name" : "property"));
   if (values.some(value => value !== imageUrl)) {
     failures.push(slug + ": image metadata is inconsistent");
   }
