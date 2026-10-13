@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Before Your Hosting Provider Deletes Old Deployments, Check This">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <text x="64" y="76" fill="#202124" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">FK</text>
+  <text x="112" y="76" fill="#202124" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Founders Knowledge</text>
+  <text x="64" y="250" fill="#202124" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700">
+    <tspan x="64" dy="0">Before Your Hosting</tspan>
+    <tspan x="64" dy="78">Provider Deletes Old</tspan>
+    <tspan x="64" dy="78">Deployments, Check This</tspan>
+  </text>
+</svg>
