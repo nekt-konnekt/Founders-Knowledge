@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="How to Verify a Fintech or Investment Partner Before You Trust It">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <text x="64" y="76" fill="#202124" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">FK</text>
+  <text x="112" y="76" fill="#202124" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Founders Knowledge</text>
+  <text x="64" y="230" fill="#202124" font-family="Arial, Helvetica, sans-serif" font-size="59" font-weight="700">
+    <tspan x="64" dy="0">How to Verify a Fintech</tspan>
+    <tspan x="64" dy="76">or Investment Partner</tspan>
+    <tspan x="64" dy="76">Before You Trust It</tspan>
+  </text>
+</svg>
