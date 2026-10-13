@@ -40,3 +40,7 @@ This file is a discovery aid, not a replacement for the full articles or the sit
 ## Infrastructure and operations
 
 - [Before Your Hosting Provider Deletes Old Deployments, Check This](https://founders-knowledge.vercel.app/lessons/before-your-hosting-provider-deletes-old-deployments/): A practical audit of Vercel's October 2026 deployment-retention announcement, storage billing, and rollback preparation. The article distinguishes public policy from account-specific settings that must be verified in Vercel.
+
+## Founder operations and due diligence
+
+- [How to Verify a Fintech or Investment Partner Before You Trust It](https://founders-knowledge.vercel.app/lessons/how-to-verify-a-fintech-or-investment-partner-before-you-trust-it/): A practical Nigerian founder checklist for verifying a fintech or investment partner's legal entity, relevant regulator, authorised activity, current notices, and the partnership itself. Includes official SEC Nigeria and CBN sources.
