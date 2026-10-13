@@ -1,0 +1,37 @@
+[
+  {
+    "id": "techcrunch-startups",
+    "name": "TechCrunch · Startups",
+    "url": "https://techcrunch.com/category/startups/feed/",
+    "topics": ["funding", "product", "market", "operators"],
+    "weight": 1
+  },
+  {
+    "id": "techcrunch-venture",
+    "name": "TechCrunch · Venture",
+    "url": "https://techcrunch.com/category/venture/feed/",
+    "topics": ["funding", "market", "operators"],
+    "weight": 1
+  },
+  {
+    "id": "yc-blog",
+    "name": "Y Combinator Blog",
+    "url": "https://www.ycombinator.com/blog/rss.xml",
+    "topics": ["founders", "product", "growth", "operators"],
+    "weight": 2
+  },
+  {
+    "id": "sifted",
+    "name": "Sifted",
+    "url": "https://sifted.eu/feed",
+    "topics": ["funding", "market", "europe", "operators"],
+    "weight": 1
+  },
+  {
+    "id": "lenny",
+    "name": "Lenny's Newsletter",
+    "url": "https://www.lennysnewsletter.com/feed",
+    "topics": ["product", "growth", "operators"],
+    "weight": 1
+  }
+]

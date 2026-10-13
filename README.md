@@ -41,16 +41,26 @@ Browse the [live knowledge library](https://founders-knowledge.vercel.app/).
 
 - **HTML + CSS + JavaScript** — lightweight static pages
 - **GitHub** — source of truth and publishing workflow
+- **GitHub Actions** — weekday startup-news ingestion and review pull requests
 - **Vercel** — hosting and deployment
 - **PostHog** — planned measurement for page views and intentional knowledge actions
 
-No database or publishing dashboard unless a real need justifies one.
+No database or publishing dashboard unless a real need justifies one. The Founder Briefings pipeline stays static-first: it fetches configured RSS sources, creates candidate pages, and opens a review pull request. Nothing is published until that pull request is reviewed and merged.
 
 ## 📁 Project structure
 
 ```text
 .
 ├── index.html
+├── briefings/
+│   ├── index.html
+│   └── <approved-briefing>/index.html
+├── data/
+│   └── startup-news-sources.json
+├── scripts/
+│   └── fetch-founder-briefings.mjs
+├── .github/workflows/
+│   └── founder-briefings.yml
 ├── assets/
 │   ├── site.css
 │   ├── analytics.js
@@ -67,8 +77,9 @@ No database or publishing dashboard unless a real need justifies one.
 1. Capture a useful founder question or observation.
 2. Shape it into a lesson, guide, framework, or field note.
 3. Review the content for clarity and practical value.
-4. Commit approved changes to `main`.
-5. Vercel builds and publishes the site from GitHub.
+4. Review the automated briefing pull request and edit or delete candidates as needed.
+5. Commit approved changes to `main`.
+6. Vercel builds and publishes the site from GitHub.
 
 ## 📊 Analytics status
 
