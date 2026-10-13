@@ -8,11 +8,19 @@ const outputDir = path.join(root, "assets", "og", "lessons");
 const site = "https://founders-knowledge.vercel.app";
 fs.mkdirSync(outputDir, { recursive: true });
 
+function attributes(tag) {
+  const result = {};
+  for (const match of tag.matchAll(/([a-zA-Z:-]+)\s*=\s*(["'])(.*?)\2/g)) {
+    result[match[1].toLowerCase()] = match[3];
+  }
+  return result;
+}
 function readMeta(html, key, attr = "property") {
-  const escaped = key.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
-  const re = new RegExp("<meta\\\\s+" + attr + "=[\\"']" + escaped + "[\\"']\\\\s+content=[\\"']([^\\"']*)[\\"'][^>]*>", "i");
-  const alt = new RegExp("<meta\\\\s+content=[\\"']([^\\"']*)[\\"']\\\\s+" + attr + "=[\\"']" + escaped + "[\\"'][^>]*>", "i");
-  return (html.match(re) || html.match(alt) || [,""])[1];
+  for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
+    const a = attributes(match[0]);
+    if ((a[attr] || "").toLowerCase() === key.toLowerCase()) return a.content || "";
+  }
+  return "";
 }
 function esc(value) {
   return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
@@ -61,10 +69,17 @@ textLines(wrap(description, 20, 3), 27, 91, 36, 25, "#1a0f2e", 700, "Fredoka,Ari
 '<rect x="920" y="90" width="165" height="54" rx="27" fill="#fbcfe8" stroke="#1a0f2e" stroke-width="3" transform="rotate(8 1000 117)"/><text x="1002" y="112" text-anchor="middle" fill="#1a0f2e" font-family="Fredoka,Arial,sans-serif" font-size="14" font-weight="700" transform="rotate(8 1002 112)">BUILD WITH</text><text x="1002" y="130" text-anchor="middle" fill="#1a0f2e" font-family="Fredoka,Arial,sans-serif" font-size="14" font-weight="700" transform="rotate(8 1002 130)">MORE CLARITY</text></svg>';
 }
 function replaceMeta(html, key, value) {
-  const escaped = key.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
-  const re = new RegExp('(<meta\\\\s+(?:property|name)=["\\']' + escaped + '["\\']\\\\s+content=["\\'])[^"\\']*(["\\'][^>]*>)', "i");
-  if (re.test(html)) return html.replace(re, "$1" + value + "$2");
-  return html.replace(/<\\/head>/i, '  <meta property="' + key + '" content="' + value + '">\n</head>');
+  let replaced = false;
+  const output = html.replace(/<meta\b[^>]*>/gi, tag => {
+    const a = attributes(tag);
+    if (!replaced && ((a.property || "").toLowerCase() === key.toLowerCase() || (a.name || "").toLowerCase() === key.toLowerCase())) {
+      replaced = true;
+      return tag.replace(/content\s*=\s*(["']).*?\1/i, 'content="' + value + '"');
+    }
+    return tag;
+  });
+  if (replaced) return output;
+  return output.replace(/<\/head>/i, '  <meta property="' + key + '" content="' + value + '">\n</head>');
 }
 const entries = fs.readdirSync(lessonsDir, { withFileTypes: true }).filter(e => e.isDirectory());
 let updated = 0;
@@ -73,7 +88,8 @@ for (const entry of entries) {
   const htmlPath = path.join(lessonsDir, slug, "index.html");
   if (!fs.existsSync(htmlPath)) continue;
   let html = fs.readFileSync(htmlPath, "utf8");
-  const title = (readMeta(html, "og:title") || (html.match(/<title>([^<]+)<\\/title>/i) || [,""])[1] || slug).replace(/\\s*[—|]\\s*Founders Knowledge\\s*$/i, "").trim();
+  const rawTitle = readMeta(html, "og:title") || ((html.match(/<title>([^<]+)<\/title>/i) || [,""])[1]) || slug;
+  const title = rawTitle.replace(/\s*[—|]\s*Founders Knowledge\s*$/i, "").trim();
   const description = readMeta(html, "og:description") || readMeta(html, "description", "name") || "Practical knowledge for founders building useful products and businesses.";
   const svg = cardSvg(title, description);
   const hash = crypto.createHash("sha256").update(svg).digest("hex").slice(0, 10);
