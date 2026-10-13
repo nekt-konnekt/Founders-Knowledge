@@ -1,0 +1,54 @@
+name: Founder briefings review queue
+
+on:
+  schedule:
+    - cron: "17 7 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: founder-briefings
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch new briefing candidates
+        id: fetch
+        run: node scripts/fetch-founder-briefings.mjs
+
+      - name: Create review pull request
+        if: steps.fetch.outputs.created != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "founders-knowledge-news-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          branch="automation/founder-briefings-$(date -u +%Y%m%d-%H%M%S)"
+          git switch -c "$branch"
+          git add briefings data/startup-news-seen.json
+          git commit -m "Add founder briefing candidates"
+          git push --set-upstream origin "$branch"
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "Review: new founder briefing candidates" \
+            --body "## Review-first queue\n\nThis pull request was generated from the configured public RSS sources. Nothing is published until this PR is reviewed and merged.\n\nPlease verify each source link, correct the founder angle if needed, and delete any candidate that does not meet the Founders Knowledge standard."
+
+      - name: Report when no new candidates exist
+        if: steps.fetch.outputs.created == '0'
+        run: echo "No new briefing candidates were found."
