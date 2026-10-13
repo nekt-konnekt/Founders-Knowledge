@@ -1,0 +1,39 @@
+name: Generate lesson share cards
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "lessons/**"
+      - "scripts/generate-share-cards.mjs"
+      - ".github/workflows/share-cards.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate share cards from lesson metadata
+        run: node scripts/generate-share-cards.mjs
+      - name: Commit generated cards and metadata
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/og/lessons lessons
+            git commit -m "Generate branded lesson share cards"
+            git push
+          else
+            echo "Share cards are already up to date."
+          fi
