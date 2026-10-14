@@ -1,31 +1,195 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f3ecff">
-<meta name="robots" content="noindex,nofollow,noarchive"><meta name="description" content="A private, code-protected note from Founders Knowledge.">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<title>A private note — Founders Knowledge</title><link rel="canonical" href="https://founders-knowledge.vercel.app/community-note/">
-<style>
-:root{--ink:#211638;--purple:#6334a5;--dark:#29174b;--lilac:#f3ecff;--paper:#fffdf8;--yellow:#f4d65e;--muted:#6e657d;--line:#e4dced}*{box-sizing:border-box}html{min-height:100%;background:var(--lilac)}body{margin:0;min-height:100vh;color:var(--ink);font-family:"Space Grotesk",sans-serif;background:radial-gradient(ellipse at 12% 8%,#fff 0,transparent 38%),var(--lilac);display:flex;flex-direction:column}.topbar{width:min(100% - 36px,920px);margin:auto;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-.04em}.mark{width:36px;height:36px;border-radius:11px;background:var(--dark);color:var(--yellow);display:grid;place-items:center;font-family:Fredoka,sans-serif;font-size:16px;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--yellow)}.brand-name{font-size:15px}.brand-name b{color:var(--purple)}.private-tag{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.08em;text-transform:uppercase}main{width:min(100% - 32px,720px);margin:clamp(14px,4vh,40px) auto 36px;flex:1;display:flex;flex-direction:column}.intro{text-align:center;margin-bottom:22px}.eyebrow{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--purple);text-transform:uppercase;margin:0 0 10px}.intro h1{font-family:Fredoka,sans-serif;font-size:clamp(29px,5vw,42px);line-height:1.08;letter-spacing:-.04em;margin:0 0 10px}.intro p{margin:0 auto;color:var(--muted);font-size:14px;line-height:1.65;max-width:470px}.panel{background:var(--paper);border:2px solid var(--ink);border-radius:24px;box-shadow:8px 8px 0 var(--dark);overflow:hidden}.gate{padding:clamp(28px,7vw,54px);text-align:center}.lock-icon{width:54px;height:54px;margin:0 auto 18px;border-radius:17px;background:#fff1ae;display:grid;place-items:center;font-size:25px;border:1.5px solid var(--ink)}.gate h2,.gone h2{font-family:Fredoka,sans-serif;font-size:clamp(28px,6vw,38px);line-height:1.08;letter-spacing:-.03em;margin:0 0 12px}.gate p,.gone p{color:var(--muted);font-size:14px;line-height:1.7;margin:0 auto 22px;max-width:400px}.code-form{display:flex;gap:10px;max-width:440px;margin:auto;flex-direction:column}.code-input{width:100%;height:50px;padding:0 15px;border:1.5px solid #b9abc9;border-radius:12px;background:white;font:600 15px "Space Grotesk",sans-serif;color:var(--ink);text-align:center;letter-spacing:.04em}.code-input:focus{outline:3px solid #d6c3fa;outline-offset:2px}.btn{min-height:46px;border:1.5px solid var(--ink);border-radius:12px;padding:0 18px;font:700 14px "Space Grotesk",sans-serif;cursor:pointer}.primary{background:var(--dark);color:#fff;box-shadow:3px 3px 0 var(--yellow)}.btn:focus-visible,.dot:focus-visible{outline:3px solid #a98bea;outline-offset:3px}.error{color:#a1283c!important;min-height:20px;margin:12px 0 0!important;font-size:12px!important}.privacy-note{margin:20px auto 0;color:#8b8198;font-size:11px;line-height:1.6;max-width:420px}.message{display:none}.message.unlocked{display:block}.progress-wrap{padding:19px 22px 0;display:flex;align-items:center;gap:12px}.progress-track{height:6px;background:#eee7f5;border-radius:99px;overflow:hidden;flex:1}.progress-fill{height:100%;width:25%;background:var(--purple);border-radius:99px;transition:width .2s}.count{font-size:12px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}.slides{position:relative;min-height:355px;touch-action:pan-y}.slide{display:none;padding:clamp(28px,7vw,54px) clamp(24px,7vw,58px) 34px;min-height:355px;flex-direction:column;justify-content:center;animation:arrive .2s ease}.slide.active{display:flex}.kicker{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--purple);margin:0 0 20px}.kicker:before{content:"";width:22px;height:3px;background:var(--yellow);border-radius:4px}.slide h2{font-family:Fredoka,sans-serif;font-size:clamp(34px,7vw,56px);line-height:1.02;letter-spacing:-.045em;margin:0 0 20px;max-width:550px}.highlight{position:relative;z-index:0}.highlight:after{content:"";position:absolute;z-index:-1;left:-2px;right:-2px;bottom:3px;height:12px;background:var(--yellow);transform:rotate(-1deg)}.slide p{font-size:clamp(15px,2.4vw,17px);line-height:1.75;color:#514660;margin:0;max-width:530px}.slide-number{margin-top:27px;color:#9b90a9;font-size:11px;letter-spacing:.13em;font-weight:700}.final-line{display:inline-block;align-self:flex-start;margin-top:22px;padding:10px 13px;border:1.5px solid var(--ink);background:#fff3b7;border-radius:9px;font-weight:700;font-size:13px;transform:rotate(-1deg)}.controls{border-top:1px solid var(--line);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fffaf0}.hint{font-size:12px;color:var(--muted);line-height:1.5}.actions{display:flex;gap:9px}.control{min-height:42px;border:1.5px solid var(--ink);border-radius:12px;padding:0 15px;font-size:13px;font-weight:700}.prev{background:#fff;color:var(--ink)}.next{background:var(--dark);color:#fff;box-shadow:3px 3px 0 var(--yellow)}.control:disabled{opacity:.4;cursor:not-allowed}.dot-nav{display:flex;justify-content:center;gap:8px;margin:22px 0 0}.dot{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#cfc2df;cursor:pointer}.dot[aria-current="step"]{width:25px;border-radius:8px;background:var(--purple)}.timer{display:none;margin:15px auto 0;text-align:center;font-size:12px;font-weight:700;color:var(--purple);font-variant-numeric:tabular-nums}.timer.visible{display:block}.below{text-align:center;color:var(--muted);font-size:12px;line-height:1.7;margin:22px auto 0;max-width:500px}.gone{display:none;text-align:center;padding:clamp(38px,8vw,70px) 25px}.gone.visible{display:block}.gone-mark{font-size:35px;margin-bottom:16px}footer{padding:20px;text-align:center;font-size:12px;color:#81768e}@keyframes arrive{from{opacity:.55;transform:translateX(7px)}to{opacity:1;transform:translateX(0)}}@media(max-width:480px){.topbar{padding:16px 0}.private-tag{font-size:10px}.brand-name{font-size:14px}.panel{border-radius:20px;box-shadow:5px 5px 0 var(--dark)}.slides,.slide{min-height:370px}.progress-wrap{padding:17px 17px 0}.controls{padding:13px}.hint{max-width:110px}.control{padding:0 12px}.slide{padding-top:35px;padding-bottom:28px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-</style></head>
-<body><header class="topbar"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><span class="private-tag">Private note</span></header>
-<main><div class="intro"><p class="eyebrow">Prepared for Samuel Linus</p><h1>A small note of appreciation.</h1><p>A private message about our contributions so far, and a request to make them more intentional.</p></div>
-<section class="panel" id="panel" aria-label="Private message"><div class="gate" id="gate"><div class="lock-icon" aria-hidden="true">⌑</div><h2>This note is just for you.</h2><p>Enter the access code shared with you to open the message.</p><form class="code-form" id="codeForm"><input class="code-input" id="accessCode" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Enter access code" aria-label="Access code" required><button class="btn primary" type="submit">Unlock the note</button><p class="error" id="error" role="status" aria-live="polite"></p></form><p class="privacy-note">The message is encrypted until the correct code is entered. Once the final card opens, the ten-minute viewing window begins.</p></div>
-<div class="message" id="message"><div class="progress-wrap"><div class="progress-track" id="progressTrack" role="progressbar" aria-label="Message progress" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1"><div class="progress-fill" id="progressFill"></div></div><span class="count" id="count" aria-live="polite">01 / 04</span></div><div class="slides" id="slides"></div><div class="controls"><span class="hint" id="hint">Swipe to move between cards</span><div class="actions"><button class="btn control prev" id="prev" type="button" disabled>Back</button><button class="btn control next" id="next" type="button">Continue</button></div></div></div>
-<div class="gone" id="gone"><div class="gone-mark" aria-hidden="true">✦</div><h2>This note has disappeared.</h2><p>The private viewing window has ended. Thank you for taking the time to read it.</p></div></section><div class="timer" id="timer" aria-live="polite"></div><p class="below">A personal note from Founders Knowledge.</p></main><footer>Founders Knowledge · Built by founders, for founders.</footer>
-<script>
-(() => {
-const encrypted={salt:"g2UgkfCEwn0SRSP8tjwWsQ==",iv:"7EOcrMBaXSGsLY3X",ciphertext:"66BMrda+bAL46WJ/K8gfQf8JW+GaD0IXgXUgVNJjDjbWwxZus7ijAnlNfFtgjsqMCmaK9gm3qaIL33D2yXPFHRqPdSJVjM4lVzurycIHBZaOOzLVV3XicKra0g7XHGScgTvHl4SZnKXIrLeVnjHJK4h0uRwKVIe0CjReIL1mAdqjEFD/BkmOUi+ZkgrNyjaZ9B4wXHNRSmgJUznznPE36Zj5FFxXYlxV4hkTEFi9jhwur/9UzTu1b9DnZpDc0MrhIgGajjJSjX7OYfwdlUVCNyAHrmHFY5fb+kAciAX6VAdpm7+pmgmZjItrzsMSLEfhbcudlGdFO/+YNI74jupCnrhDrN46m98eJzmHjaSXQsj8X8GBPrqPwdTTEw84NQVUBXBLo/mq32YLFdq2dEO3GQmYxDxxfBhzquxfboDmD1iLN6LYItc64vVRXoD5gJwXYcUFSPuGutsKs5AymxBLHOup+jA7YBrf/Rmt/nq4hmdIitTKFcy/WqkvKOdDkMuCfKRrYpEttap+NIYYfW1KiHm1PmDB/ee4PWhS4G4DfFsS/SXOjQXBHKbeGhWHl7cBoBTniHQNtso5+Hz/vlNRsid0ZDjHxXOFExCIkpCanDpRz53YA4b19A+Ei9eb9YcFRFKxH4hwgiVN5ebxfqXDgnKCN1EfhPrg+6FWYbgnSv4uKYyzzGxbmbxRksixGHi5Uyj6NqAvV7H1xOt4N6QzvfC+Lizb4m1U3vlK8FNz2MkiVwYrRunzrLWA6UW6vfWZx8dqzJdpHnHpeOc0sP2tnLNV4bBzOfJSGnrljoGwh1bRVyCXJFb6lLLh6/SscrphXsOnqfxt6h+1aI9lnfzBnR8VF7OBIbClYOWeVc8XvZNHWYOJInXd6n+NeDUC+MYywxzdDFEkxNi0KfZ1/RbPavz6P2Fpu6uFnZ8sN6QePDtlHk34hkCeTGtT7jHIVTLVHPDk9Xb89DzzvmZ/SdvGuOkCgb4e1oVdUBFjQatqpLyJEa6tyicVmtaPNPyJiIYy68DTh+DMF3ONmdhQbDWofLIUlrcNDwY="};
-const $=id=>document.getElementById(id);let cards=[],current=0,tick=null;
-const decode=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
-function vanish(){if(tick)clearInterval(tick);localStorage.setItem("fk-note-expired","1");$("message").classList.remove("unlocked");$("gate").style.display="none";$("slides").replaceChildren();cards=[];$("timer").classList.remove("visible");$("gone").classList.add("visible");}
-function startTimer(){let deadline=Number(localStorage.getItem("fk-note-deadline")||0);if(!deadline){deadline=Date.now()+600000;localStorage.setItem("fk-note-deadline",String(deadline));} $("timer").classList.add("visible");const update=()=>{const left=deadline-Date.now();if(left<=0){vanish();return;}const mins=Math.floor(left/60000),secs=Math.floor(left%60000/1000);$("timer").textContent="This note disappears in "+String(mins).padStart(2,"0")+":"+String(secs).padStart(2,"0");};update();tick=setInterval(update,1000);}
-function render(index){current=Math.max(0,Math.min(cards.length-1,index));const slides=Array.from(document.querySelectorAll(".slide"));slides.forEach((s,i)=>{s.classList.toggle("active",i===current);s.setAttribute("aria-hidden",String(i!==current));});$("count").textContent=String(current+1).padStart(2,"0")+" / "+String(cards.length).padStart(2,"0");$("progressFill").style.width=((current+1)/cards.length*100)+"%";$("progressTrack").setAttribute("aria-valuenow",String(current+1));$("prev").disabled=current===0;$("next").textContent=current===cards.length-1?"Read again":"Continue";$("hint").textContent=current===cards.length-1?"The ten-minute viewing window has started.":"Swipe to move between cards";if(current===cards.length-1)startTimer();}
-function paint(){const root=$("slides");root.replaceChildren();cards.forEach((c,i)=>{const article=document.createElement("article");article.className="slide"+(i===0?" active":"");article.setAttribute("aria-hidden",String(i!==0));article.innerHTML='<div class="kicker"></div><h2></h2><p></p>'+(c.final?'<span class="final-line"></span>':'')+'<span class="slide-number"></span>';article.querySelector(".kicker").textContent=c.kicker;article.querySelector("h2").innerHTML=c.title;article.querySelector("p").textContent=c.body;if(c.final)article.querySelector(".final-line").textContent=c.final;article.querySelector(".slide-number").textContent=c.foot;root.appendChild(article);});$("gate").style.display="none";$("message").classList.add("unlocked");render(0);}
-$("codeForm").addEventListener("submit",async e=>{e.preventDefault();if(localStorage.getItem("fk-note-expired")==="1"){vanish();return;}const code=$("accessCode").value;$("error").textContent="";const button=$("codeForm").querySelector("button");button.disabled=true;button.textContent="Unlocking…";try{const material=await crypto.subtle.importKey("raw",new TextEncoder().encode(code),"PBKDF2",false,["deriveKey"]);const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:decode(encrypted.salt),iterations:310000,hash:"SHA-256"},material,{name:"AES-GCM",length:256},false,["decrypt"]);const clear=await crypto.subtle.decrypt({name:"AES-GCM",iv:decode(encrypted.iv),additionalData:new TextEncoder().encode("FK-community-note-v1")},key,decode(encrypted.ciphertext));const stream=new Blob([clear]).stream().pipeThrough(new DecompressionStream("deflate"));cards=JSON.parse(await new Response(stream).text());paint();}catch(err){$("error").textContent="That code didn’t unlock the note. Please check it and try again.";}finally{button.disabled=false;button.textContent="Unlock the note";}});
-$("prev").addEventListener("click",()=>render(current-1));$("next").addEventListener("click",()=>{if(current===cards.length-1){render(0);}else render(current+1);});
-let startX=null;$("slides").addEventListener("touchstart",e=>{startX=e.changedTouches[0].clientX;},{passive:true});$("slides").addEventListener("touchend",e=>{if(startX===null)return;const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>45)render(current+(dx<0?1:-1));startX=null;},{passive:true});document.addEventListener("keydown",e=>{if(!$("message").classList.contains("unlocked"))return;if(e.key==="ArrowRight")render(current+1);if(e.key==="ArrowLeft")render(current-1);});
-if(localStorage.getItem("fk-note-expired")==="1")vanish();else if(localStorage.getItem("fk-note-deadline")&&Number(localStorage.getItem("fk-note-deadline"))<=Date.now())vanish();
-})();
-</script></body></html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3ecff">
+  <meta name="robots" content="noindex,follow">
+  <meta name="description" content="A personal note from Founders Knowledge: appreciation, permission to contribute, and an invitation to collaborate with a founder community.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>A personal note — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/community-note/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:title" content="A personal note — Founders Knowledge">
+  <meta property="og:description" content="A thank-you, a formal request, and an invitation to explore how we can serve founders together.">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/community-note/">
+  <meta property="og:image" content="https://founders-knowledge.vercel.app/assets/og/founders-knowledge.svg">
+  <style>
+    :root{--ink:#211638;--purple:#6334a5;--purple-dark:#29174b;--lilac:#f3ecff;--paper:#fffdf8;--yellow:#f4d65e;--muted:#6e657d;--line:#e4dced;--green:#d9f2df}
+    *{box-sizing:border-box}
+    html{min-height:100%;background:var(--lilac)}
+    body{margin:0;min-height:100vh;color:var(--ink);font-family:"Space Grotesk",sans-serif;background:radial-gradient(ellipse at 12% 8%,#fff 0,transparent 38%),var(--lilac);display:flex;flex-direction:column}
+    a{color:inherit}
+    .topbar{width:min(100% - 36px,920px);margin:0 auto;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-.04em}
+    .brand-mark{width:36px;height:36px;border-radius:11px;background:var(--purple-dark);color:var(--yellow);display:grid;place-items:center;font-family:Fredoka,sans-serif;font-size:16px;letter-spacing:-.08em;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--yellow)}
+    .brand-name{font-size:15px}.brand-name b{color:var(--purple)}
+    .top-note{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+    main{width:min(100% - 32px,720px);margin:clamp(16px,4vh,42px) auto 40px;flex:1;display:flex;flex-direction:column}
+    .intro{text-align:center;margin-bottom:22px}
+    .eyebrow{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--purple);text-transform:uppercase;margin:0 0 10px}
+    .intro h1{font-family:Fredoka,sans-serif;font-size:clamp(28px,5vw,42px);line-height:1.08;letter-spacing:-.04em;margin:0 0 10px}
+    .intro p{margin:0 auto;color:var(--muted);font-size:14px;line-height:1.65;max-width:470px}
+    .experience{background:var(--paper);border:2px solid var(--ink);border-radius:26px;box-shadow:8px 8px 0 var(--purple-dark);overflow:hidden;position:relative}
+    .progress-wrap{padding:20px 22px 0;display:flex;align-items:center;gap:12px}
+    .progress-track{height:6px;background:#eee7f5;border-radius:99px;overflow:hidden;flex:1}
+    .progress-fill{height:100%;width:25%;background:var(--purple);border-radius:99px;transition:width .25s ease}
+    .count{font-size:12px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+    .slides{position:relative;min-height:355px;touch-action:pan-y}
+    .slide{display:none;padding:clamp(28px,7vw,54px) clamp(24px,7vw,58px) 34px;min-height:355px;flex-direction:column;justify-content:center;animation:arrive .22s ease}
+    .slide.active{display:flex}
+    .slide-kicker{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--purple);margin:0 0 20px}
+    .slide-kicker:before{content:"";width:22px;height:3px;background:var(--yellow);border-radius:4px}
+    .slide h2{font-family:Fredoka,sans-serif;font-size:clamp(34px,7vw,56px);line-height:1.02;letter-spacing:-.045em;margin:0 0 20px;max-width:550px}
+    .slide h2 .highlight{position:relative;z-index:0;white-space:normal}
+    .slide h2 .highlight:after{content:"";position:absolute;z-index:-1;left:-2px;right:-2px;bottom:3px;height:12px;background:var(--yellow);transform:rotate(-1deg)}
+    .slide p{font-size:clamp(15px,2.4vw,17px);line-height:1.75;color:#514660;margin:0;max-width:530px}
+    .slide-number{margin-top:27px;color:#9b90a9;font-size:11px;letter-spacing:.13em;font-weight:700}
+    .final-line{display:inline-block;align-self:flex-start;margin-top:22px;padding:10px 13px;border:1.5px solid var(--ink);background:#fff3b7;border-radius:9px;font-weight:700;font-size:13px;transform:rotate(-1deg)}
+    .controls{border-top:1px solid var(--line);padding:17px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fffaf0}
+    .hint{font-size:12px;color:var(--muted)}
+    .actions{display:flex;gap:9px}
+    button{font:inherit;cursor:pointer}
+    .control{min-height:42px;border:1.5px solid var(--ink);border-radius:12px;padding:0 15px;font-size:13px;font-weight:700;transition:transform .15s,box-shadow .15s}
+    .control:active{transform:translateY(1px)}
+    .control:focus-visible,.dot:focus-visible{outline:3px solid #a98bea;outline-offset:3px}
+    .prev{background:#fff;color:var(--ink)}
+    .next{background:var(--purple-dark);color:#fff;box-shadow:3px 3px 0 var(--yellow)}
+    .next:hover{transform:translate(-1px,-1px)}
+    .dot-nav{display:flex;justify-content:center;gap:8px;margin:22px 0 0}
+    .dot{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#cfc2df}
+    .dot[aria-current="step"]{width:25px;border-radius:8px;background:var(--purple)}
+    .below{text-align:center;color:var(--muted);font-size:12px;line-height:1.7;margin:22px auto 0;max-width:500px}
+    .below a{color:var(--purple);font-weight:700;text-decoration-thickness:1px;text-underline-offset:3px}
+    footer{padding:20px;text-align:center;font-size:12px;color:#81768e}
+    @keyframes arrive{from{opacity:.55;transform:translateX(8px)}to{opacity:1;transform:translateX(0)}}
+    @media(max-width:480px){.topbar{padding:17px 0}.top-note{font-size:10px}.brand-name{font-size:14px}.experience{border-radius:20px;box-shadow:5px 5px 0 var(--purple-dark)}.slides,.slide{min-height:370px}.progress-wrap{padding:17px 17px 0}.controls{padding:14px}.hint{max-width:95px;line-height:1.4}.control{padding:0 12px}.slide{padding-top:35px;padding-bottom:28px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Founders Knowledge home">
+      <span class="brand-mark" aria-hidden="true">FK</span>
+      <span class="brand-name">Founders <b>Knowledge</b></span>
+    </a>
+    <span class="top-note">A personal note</span>
+  </header>
+
+  <main>
+    <div class="intro">
+      <p class="eyebrow">A note of appreciation</p>
+      <h1>Better knowledge. Stronger founder communities.</h1>
+      <p>A short note about our contributions so far, and a request to make them more intentional.</p>
+    </div>
+
+    <section class="experience" aria-label="Four-card message">
+      <div class="progress-wrap">
+        <div class="progress-track" role="progressbar" aria-label="Message progress" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" id="progressTrack"><div class="progress-fill" id="progressFill"></div></div>
+        <span class="count" id="count" aria-live="polite">01 / 04</span>
+      </div>
+
+      <div class="slides" id="slides">
+        <article class="slide active" aria-hidden="false">
+          <div class="slide-kicker">First, thank you</div>
+          <h2>We don't take <span class="highlight">the space</span> for granted.</h2>
+          <p>Thank you for allowing our Founders Knowledge lessons to remain in the community. We appreciate the opportunity to contribute, and the room you've given us to share useful resources with fellow founders.</p>
+          <span class="slide-number">A LITTLE APPRECIATION GOES A LONG WAY</span>
+        </article>
+
+        <article class="slide" aria-hidden="true">
+          <div class="slide-kicker">What we're building</div>
+          <h2>Knowledge founders can <span class="highlight">actually use.</span></h2>
+          <p>Founders Knowledge is a practical knowledge library built around researched lessons on the real challenges of building and running a business — from product decisions and pricing to distribution and operations.</p>
+          <span class="slide-number">LESSONS · FRAMEWORKS · PRACTICAL GUIDES</span>
+        </article>
+
+        <article class="slide" aria-hidden="true">
+          <div class="slide-kicker">A formal request</div>
+          <h2>May we <span class="highlight">continue contributing?</span></h2>
+          <p>We'd like to ask for your permission to keep sharing relevant lessons with the community, always respecting your rules, preferences, and what you believe is useful for members.</p>
+          <span class="slide-number">YOUR COMMUNITY, YOUR GUIDELINES</span>
+        </article>
+
+        <article class="slide" aria-hidden="true">
+          <div class="slide-kicker">An open invitation</div>
+          <h2>How can we make this valuable <span class="highlight">to you?</span></h2>
+          <p>If you're open to it, we'd love to hear your thoughts on how Founders Knowledge could better serve your members and whether a more intentional collaboration makes sense.</p>
+          <span class="final-line">We're happy to hear your expectations.</span>
+          <span class="slide-number">THANK YOU FOR CONSIDERING IT</span>
+        </article>
+      </div>
+
+      <div class="controls">
+        <span class="hint" id="hint">Swipe or use the buttons</span>
+        <div class="actions">
+          <button class="control prev" type="button" id="prev" disabled>Back</button>
+          <button class="control next" type="button" id="next">Next card</button>
+        </div>
+      </div>
+    </section>
+
+    <nav class="dot-nav" aria-label="Choose a card" id="dotNav">
+      <button class="dot" type="button" aria-label="Go to card 1" aria-current="step" data-index="0"></button>
+      <button class="dot" type="button" aria-label="Go to card 2" data-index="1"></button>
+      <button class="dot" type="button" aria-label="Go to card 3" data-index="2"></button>
+      <button class="dot" type="button" aria-label="Go to card 4" data-index="3"></button>
+    </nav>
+
+    <p class="below">This is a personal note from Founders Knowledge. <a href="/">Explore the knowledge library</a></p>
+  </main>
+
+  <footer>Founders Knowledge · Built by founders, for founders.</footer>
+
+  <script>
+    (() => {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const dots = Array.from(document.querySelectorAll('.dot'));
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+      const count = document.getElementById('count');
+      const fill = document.getElementById('progressFill');
+      const track = document.getElementById('progressTrack');
+      const hint = document.getElementById('hint');
+      const surface = document.getElementById('slides');
+      let current = 0;
+      let startX = null;
+      const render = (index) => {
+        current = Math.max(0, Math.min(slides.length - 1, index));
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === current);
+          slide.setAttribute('aria-hidden', String(i !== current));
+        });
+        dots.forEach((dot, i) => {
+          if (i === current) dot.setAttribute('aria-current', 'step');
+          else dot.removeAttribute('aria-current');
+        });
+        count.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+        fill.style.width = ((current + 1) / slides.length * 100) + '%';
+        track.setAttribute('aria-valuenow', String(current + 1));
+        prev.disabled = current === 0;
+        next.textContent = current === slides.length - 1 ? 'Start again' : 'Next card';
+        hint.textContent = current === slides.length - 1 ? 'That’s the note. Thank you.' : 'Swipe or use the arrows';
+      };
+      prev.addEventListener('click', () => render(current - 1));
+      next.addEventListener('click', () => render(current === slides.length - 1 ? 0 : current + 1));
+      dots.forEach(dot => dot.addEventListener('click', () => render(Number(dot.dataset.index))));
+      surface.addEventListener('touchstart', event => { startX = event.changedTouches[0].clientX; }, {passive:true});
+      surface.addEventListener('touchend', event => {
+        if (startX === null) return;
+        const delta = event.changedTouches[0].clientX - startX;
+        if (Math.abs(delta) > 45) render(current + (delta < 0 ? 1 : -1));
+        startX = null;
+      }, {passive:true});
+      document.addEventListener('keydown', event => {
+        if (event.key === 'ArrowRight') render(current + 1);
+        if (event.key === 'ArrowLeft') render(current - 1);
+      });
+    })();
+  </script>
+</body>
+</html>
