@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3ecff">
+  <meta name="robots" content="noindex,follow">
+  <meta name="description" content="A personal note from Founders Knowledge: appreciation, permission to contribute, and an invitation to collaborate with a founder community.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>A personal note — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/community-note/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:title" content="A personal note — Founders Knowledge">
+  <meta property="og:description" content="A thank-you, a formal request, and an invitation to explore how we can serve founders together.">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/community-note/">
+  <meta property="og:image" content="https://founders-knowledge.vercel.app/assets/og/founders-knowledge.svg">
+  <style>
+    :root{--ink:#211638;--purple:#6334a5;--purple-dark:#29174b;--lilac:#f3ecff;--paper:#fffdf8;--yellow:#f4d65e;--muted:#6e657d;--line:#e4dced;--green:#d9f2df}
+    *{box-sizing:border-box}
+    html{min-height:100%;background:var(--lilac)}
+    body{margin:0;min-height:100vh;color:var(--ink);font-family:"Space Grotesk",sans-serif;background:radial-gradient(ellipse at 12% 8%,#fff 0,transparent 38%),var(--lilac);display:flex;flex-direction:column}
+    a{color:inherit}
+    .topbar{width:min(100% - 36px,920px);margin:0 auto;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-.04em}
+    .brand-mark{width:36px;height:36px;border-radius:11px;background:var(--purple-dark);color:var(--yellow);display:grid;place-items:center;font-family:Fredoka,sans-serif;font-size:16px;letter-spacing:-.08em;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--yellow)}
+    .brand-name{font-size:15px}.brand-name b{color:var(--purple)}
+    .top-note{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+    main{width:min(100% - 32px,720px);margin:clamp(16px,4vh,42px) auto 40px;flex:1;display:flex;flex-direction:column}
+    .intro{text-align:center;margin-bottom:22px}
+    .eyebrow{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--purple);text-transform:uppercase;margin:0 0 10px}
+    .intro h1{font-family:Fredoka,sans-serif;font-size:clamp(28px,5vw,42px);line-height:1.08;letter-spacing:-.04em;margin:0 0 10px}
+    .intro p{margin:0 auto;color:var(--muted);font-size:14px;line-height:1.65;max-width:470px}
+    .experience{background:var(--paper);border:2px solid var(--ink);border-radius:26px;box-shadow:8px 8px 0 var(--purple-dark);overflow:hidden;position:relative}
+    .progress-wrap{padding:20px 22px 0;display:flex;align-items:center;gap:12px}
+    .progress-track{height:6px;background:#eee7f5;border-radius:99px;overflow:hidden;flex:1}
+    .progress-fill{height:100%;width:25%;background:var(--purple);border-radius:99px;transition:width .25s ease}
+    .count{font-size:12px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+    .slides{position:relative;min-height:355px;touch-action:pan-y}
+    .slide{display:none;padding:clamp(28px,7vw,54px) clamp(24px,7vw,58px) 34px;min-height:355px;flex-direction:column;justify-content:center;animation:arrive .22s ease}
+    .slide.active{display:flex}
+    .slide-kicker{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--purple);margin:0 0 20px}
+    .slide-kicker:before{content:"";width:22px;height:3px;background:var(--yellow);border-radius:4px}
+    .slide h2{font-family:Fredoka,sans-serif;font-size:clamp(34px,7vw,56px);line-height:1.02;letter-spacing:-.045em;margin:0 0 20px;max-width:550px}
+    .slide h2 .highlight{position:relative;z-index:0;white-space:normal}
+    .slide h2 .highlight:after{content:"";position:absolute;z-index:-1;left:-2px;right:-2px;bottom:3px;height:12px;background:var(--yellow);transform:rotate(-1deg)}
+    .slide p{font-size:clamp(15px,2.4vw,17px);line-height:1.75;color:#514660;margin:0;max-width:530px}
+    .slide-number{margin-top:27px;color:#9b90a9;font-size:11px;letter-spacing:.13em;font-weight:700}
+    .final-line{display:inline-block;align-self:flex-start;margin-top:22px;padding:10px 13px;border:1.5px solid var(--ink);background:#fff3b7;border-radius:9px;font-weight:700;font-size:13px;transform:rotate(-1deg)}
+    .controls{border-top:1px solid var(--line);padding:17px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fffaf0}
+    .hint{font-size:12px;color:var(--muted)}
+    .actions{display:flex;gap:9px}
+    button{font:inherit;cursor:pointer}
+    .control{min-height:42px;border:1.5px solid var(--ink);border-radius:12px;padding:0 15px;font-size:13px;font-weight:700;transition:transform .15s,box-shadow .15s}
+    .control:active{transform:translateY(1px)}
+    .control:focus-visible,.dot:focus-visible{outline:3px solid #a98bea;outline-offset:3px}
+    .prev{background:#fff;color:var(--ink)}
+    .next{background:var(--purple-dark);color:#fff;box-shadow:3px 3px 0 var(--yellow)}
+    .next:hover{transform:translate(-1px,-1px)}
+    .dot-nav{display:flex;justify-content:center;gap:8px;margin:22px 0 0}
+    .dot{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#cfc2df}
+    .dot[aria-current="step"]{width:25px;border-radius:8px;background:var(--purple)}
+    .below{text-align:center;color:var(--muted);font-size:12px;line-height:1.7;margin:22px auto 0;max-width:500px}
+    .below a{color:var(--purple);font-weight:700;text-decoration-thickness:1px;text-underline-offset:3px}
+    footer{padding:20px;text-align:center;font-size:12px;color:#81768e}
+    @keyframes arrive{from{opacity:.55;transform:translateX(8px)}to{opacity:1;transform:translateX(0)}}
+    @media(max-width:480px){.topbar{padding:17px 0}.top-note{font-size:10px}.brand-name{font-size:14px}.experience{border-radius:20px;box-shadow:5px 5px 0 var(--purple-dark)}.slides,.slide{min-height:370px}.progress-wrap{padding:17px 17px 0}.controls{padding:14px}.hint{max-width:95px;line-height:1.4}.control{padding:0 12px}.slide{padding-top:35px;padding-bottom:28px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Founders Knowledge home">
+      <span class="brand-mark" aria-hidden="true">FK</span>
+      <span class="brand-name">Founders <b>Knowledge</b></span>
+    </a>
+    <span class="top-note">A personal note</span>
+  </header>
+
+  <main>
+    <div class="intro">
+      <p class="eyebrow">A note of appreciation</p>
+      <h1>Better knowledge. Stronger founder communities.</h1>
+      <p>A short note about our contributions so far, and a request to make them more intentional.</p>
+    </div>
+
+    <section class="experience" aria-label="Four-card message">
+      <div class="progress-wrap">
+        <div class="progress-track" role="progressbar" aria-label="Message progress" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" id="progressTrack"><div class="progress-fill" id="progressFill"></div></div>
+        <span class="count" id="count" aria-live="polite">01 / 04</span>
+      </div>
+
+      <div class="slides" id="slides">
+        <article class="slide active" aria-hidden="false">
+          <div class="slide-kicker">First, thank you</div>
+          <h2>We don't take <span class="highlight">the space</span> for granted.</h2>
+          <p>Thank you for allowing our Founders Knowledge lessons to remain in the community. We appreciate the opportunity to contribute, and the room you've given us to share useful resources with fellow founders.</p>
+          <span class="slide-number">A LITTLE APPRECIATION GOES A LONG WAY</span>
+        </article>
+
+        <article class="slide" aria-hidden="true">
+          <div class="slide-kicker">What we're building</div>
+          <h2>Knowledge founders can <span class="highlight">actually use.</span></h2>
+          <p>Founders Knowledge is a practical knowledge library built around researched lessons on the real challenges of building and running a business — from product decisions and pricing to distribution and operations.</p>
+          <span class="slide-number">LESSONS · FRAMEWORKS · PRACTICAL GUIDES</span>
+        </article>
+
+        <article class="slide" aria-hidden="true">
+          <div class="slide-kicker">A formal request</div>
+          <h2>May we <span class="highlight">continue contributing?</span></h2>
+          <p>We'd like to ask for your permission to keep sharing relevant lessons with the community, always respecting your rules, preferences, and what you believe is useful for members.</p>
+          <span class="slide-number">YOUR COMMUNITY, YOUR GUIDELINES</span>
+        </article>
+
+        <article class="slide" aria-hidden="true">
+          <div class="slide-kicker">An open invitation</div>
+          <h2>How can we make this valuable <span class="highlight">to you?</span></h2>
+          <p>If you're open to it, we'd love to hear your thoughts on how Founders Knowledge could better serve your members and whether a more intentional collaboration makes sense.</p>
+          <span class="final-line">We're happy to hear your expectations.</span>
+          <span class="slide-number">THANK YOU FOR CONSIDERING IT</span>
+        </article>
+      </div>
+
+      <div class="controls">
+        <span class="hint" id="hint">Swipe or use the arrows</span>
+        <div class="actions">
+          <button class="control prev" type="button" id="prev" disabled>Back</button>
+          <button class="control next" type="button" id="next">Next card →</button>
+        </div>
+      </div>
+    </section>
+
+    <nav class="dot-nav" aria-label="Choose a card" id="dotNav">
+      <button class="dot" type="button" aria-label="Go to card 1" aria-current="step" data-index="0"></button>
+      <button class="dot" type="button" aria-label="Go to card 2" data-index="1"></button>
+      <button class="dot" type="button" aria-label="Go to card 3" data-index="2"></button>
+      <button class="dot" type="button" aria-label="Go to card 4" data-index="3"></button>
+    </nav>
+
+    <p class="below">This is a personal note from Founders Knowledge. <a href="/">Explore the knowledge library ↗</a></p>
+  </main>
+
+  <footer>Founders Knowledge · Built by founders, for founders.</footer>
+
+  <script>
+    (() => {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const dots = Array.from(document.querySelectorAll('.dot'));
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+      const count = document.getElementById('count');
+      const fill = document.getElementById('progressFill');
+      const track = document.getElementById('progressTrack');
+      const hint = document.getElementById('hint');
+      const surface = document.getElementById('slides');
+      let current = 0;
+      let startX = null;
+      const render = (index) => {
+        current = Math.max(0, Math.min(slides.length - 1, index));
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === current);
+          slide.setAttribute('aria-hidden', String(i !== current));
+        });
+        dots.forEach((dot, i) => {
+          if (i === current) dot.setAttribute('aria-current', 'step');
+          else dot.removeAttribute('aria-current');
+        });
+        count.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+        fill.style.width = ((current + 1) / slides.length * 100) + '%';
+        track.setAttribute('aria-valuenow', String(current + 1));
+        prev.disabled = current === 0;
+        next.textContent = current === slides.length - 1 ? 'Start again ↺' : 'Next card →';
+        hint.textContent = current === slides.length - 1 ? 'That’s the note. Thank you.' : 'Swipe or use the arrows';
+      };
+      prev.addEventListener('click', () => render(current - 1));
+      next.addEventListener('click', () => render(current === slides.length - 1 ? 0 : current + 1));
+      dots.forEach(dot => dot.addEventListener('click', () => render(Number(dot.dataset.index))));
+      surface.addEventListener('touchstart', event => { startX = event.changedTouches[0].clientX; }, {passive:true});
+      surface.addEventListener('touchend', event => {
+        if (startX === null) return;
+        const delta = event.changedTouches[0].clientX - startX;
+        if (Math.abs(delta) > 45) render(current + (delta < 0 ? 1 : -1));
+        startX = null;
+      }, {passive:true});
+      document.addEventListener('keydown', event => {
+        if (event.key === 'ArrowRight') render(current + 1);
+        if (event.key === 'ArrowLeft') render(current - 1);
+      });
+    })();
+  </script>
+</body>
+</html>
