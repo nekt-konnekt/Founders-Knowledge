@@ -122,8 +122,8 @@ for (const entry of entries) {
 
   let html = fs.readFileSync(htmlPath, "utf8");
   const rawTitle = readVisibleHeading(html) || readMeta(html, "og:title") ||
-    ((html.match(/<title>([^<]+)<\\/title>/i) || [, ""])[1]) || slug;
-  const title = rawTitle.replace(/\\s*[—|]\\s*Founders Knowledge\\s*$/i, "").trim();
+    ((html.match(/<title>([^<]+)<\/title>/i) || [, ""])[1]) || slug;
+  const title = rawTitle.replace(/\s*[—|]\s*Founders Knowledge\s*$/i, "").trim();
   const svg = titleSvg(title);
   const hash = crypto.createHash("sha256").update(svg).digest("hex").slice(0, 10);
   fs.writeFileSync(path.join(outputDir, slug + ".svg"), svg);
