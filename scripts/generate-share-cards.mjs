@@ -26,7 +26,7 @@ function readMeta(html, key, attr = "property") {
 
 
 function readVisibleHeading(html) {
-  const match = html.match(/<h1\\b[^>]*>([\\s\\S]*?)<\\/h1>/i);
+  const match = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
   if (!match) return "";
   return match[1]
     .replace(/<[^>]+>/g, " ")
@@ -36,10 +36,9 @@ function readVisibleHeading(html) {
     .replace(/&#39;|&apos;/g, "'")
     .replace(/&mdash;/g, "—")
     .replace(/&ndash;/g, "–")
-    .replace(/\\s+/g, " ")
+    .replace(/\s+/g, " ")
     .trim();
 }
-
 function esc(value) {
   return String(value || "")
     .replace(/&/g, "&amp;")
