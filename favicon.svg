@@ -1,6 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="15" fill="#f3ecff"/>
-  <rect x="7" y="7" width="50" height="50" rx="12" fill="#1a0f2e"/>
-  <path d="M17 17h19v7H25v6h10v7H25v11h-8V17z" fill="#fde047"/>
-  <path d="M38 17h8v12l9-12h9L52 32l12 16H54L46 36v12h-8V17z" fill="#fde047" transform="translate(-1 0)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Founders Knowledge FK logo">
+  <rect x="3" y="3" width="58" height="58" rx="13" fill="#fde047" stroke="#1a0f2e" stroke-width="3"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Fredoka, 'Trebuchet MS', Arial, sans-serif" font-size="27" font-weight="700" letter-spacing="-2" fill="#1a0f2e">FK</text>
 </svg>
