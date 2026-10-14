@@ -44,3 +44,5 @@ This file is a discovery aid, not a replacement for the full articles or the sit
 ## Founder operations and due diligence
 
 - [How to Verify a Fintech or Investment Partner Before You Trust It](https://founders-knowledge.vercel.app/lessons/how-to-verify-a-fintech-or-investment-partner-before-you-trust-it/): A practical Nigerian founder checklist for verifying a fintech or investment partner's legal entity, relevant regulator, authorised activity, current notices, and the partnership itself. Includes official SEC Nigeria and CBN sources.
+
+- [Should Nigerian Founders Incorporate in Delaware Before Raising?](https://founders-knowledge.vercel.app/lessons/should-nigerian-founders-incorporate-in-delaware-before-raising/): A guide prompted by a Dear Founders community discussion, separating business readiness, due-diligence readiness, and investor-specific corporate structure requirements. Explains why Delaware may suit some US venture investors, ongoing obligations to verify, and questions Nigerian founders should ask before restructuring.
