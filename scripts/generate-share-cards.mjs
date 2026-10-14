@@ -66,16 +66,16 @@ function wrap(text, maxChars) {
 }
 
 function titleSvg(title) {
-  // Keep the title legible and constrain the card to five lines maximum.
-  let maxChars = 34;
+  // Oversized Reddit-inspired typography: keep the headline at 100px and fit within four lines.
+  let maxChars = 21;
   let lines = wrap(title, maxChars);
-  while (lines.length > 5 && maxChars < 52) {
+  while (lines.length > 4 && maxChars < 40) {
     maxChars += 2;
     lines = wrap(title, maxChars);
   }
 
-  const size = lines.length <= 2 ? 72 : lines.length <= 3 ? 64 : lines.length <= 4 ? 56 : 48;
-  const lineHeight = Math.round(size * 1.08);
+  const size = 100;
+  const lineHeight = 104;
   const totalHeight = size + (lines.length - 1) * lineHeight;
   const firstY = Math.max(210, Math.round(370 - totalHeight / 2 + size * 0.78));
   const titleLines = lines.map((line, index) =>
@@ -86,8 +86,8 @@ function titleSvg(title) {
     '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="' + esc(title) + '">' +
     '<rect width="1200" height="630" fill="#ffffff"/>' +
     '<rect x="64" y="38" width="56" height="56" rx="11" fill="#6d3be8"/>' +
-    '<text x="92" y="75" text-anchor="middle" fill="#ffffff" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="24" font-weight="700">FK</text>' +
-    '<text x="136" y="78" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="32" font-weight="700">Founders Knowledge</text>' +
+    '<text x="92" y="75" text-anchor="middle" fill="#ffffff" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="44" font-weight="700">FK</text>' +
+    '<text x="136" y="80" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="52" font-weight="700">Founders Knowledge</text>' +
     '<text x="64" y="' + firstY + '" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="' + size + '" font-weight="700" letter-spacing="-1.4">' + titleLines + '</text>' +
     '</svg>';
 }
