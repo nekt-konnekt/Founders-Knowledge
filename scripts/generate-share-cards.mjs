@@ -24,6 +24,22 @@ function readMeta(html, key, attr = "property") {
   return "";
 }
 
+
+function readVisibleHeading(html) {
+  const match = html.match(/<h1\\b[^>]*>([\\s\\S]*?)<\\/h1>/i);
+  if (!match) return "";
+  return match[1]
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&ldquo;|&rdquo;|&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&mdash;/g, "—")
+    .replace(/&ndash;/g, "–")
+    .replace(/\\s+/g, " ")
+    .trim();
+}
+
 function esc(value) {
   return String(value || "")
     .replace(/&/g, "&amp;")
@@ -106,9 +122,9 @@ for (const entry of entries) {
   if (!fs.existsSync(htmlPath)) continue;
 
   let html = fs.readFileSync(htmlPath, "utf8");
-  const rawTitle = readMeta(html, "og:title") ||
-    ((html.match(/<title>([^<]+)<\/title>/i) || [, ""])[1]) || slug;
-  const title = rawTitle.replace(/\s*[—|]\s*Founders Knowledge\s*$/i, "").trim();
+  const rawTitle = readVisibleHeading(html) || readMeta(html, "og:title") ||
+    ((html.match(/<title>([^<]+)<\\/title>/i) || [, ""])[1]) || slug;
+  const title = rawTitle.replace(/\\s*[—|]\\s*Founders Knowledge\\s*$/i, "").trim();
   const svg = titleSvg(title);
   const hash = crypto.createHash("sha256").update(svg).digest("hex").slice(0, 10);
   fs.writeFileSync(path.join(outputDir, slug + ".svg"), svg);
