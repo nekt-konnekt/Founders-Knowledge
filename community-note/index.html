@@ -125,7 +125,7 @@
       </div>
 
       <div class="controls">
-        <span class="hint" id="hint">Swipe or use the arrows</span>
+        <span class="hint" id="hint">Swipe or use the buttons</span>
         <div class="actions">
           <button class="control prev" type="button" id="prev" disabled>Back</button>
           <button class="control next" type="button" id="next">Next card →</button>
@@ -140,7 +140,7 @@
       <button class="dot" type="button" aria-label="Go to card 4" data-index="3"></button>
     </nav>
 
-    <p class="below">This is a personal note from Founders Knowledge. <a href="/">Explore the knowledge library ↗</a></p>
+    <p class="below">This is a personal note from Founders Knowledge. <a href="/">Explore the knowledge library</a></p>
   </main>
 
   <footer>Founders Knowledge · Built by founders, for founders.</footer>
@@ -172,7 +172,7 @@
         fill.style.width = ((current + 1) / slides.length * 100) + '%';
         track.setAttribute('aria-valuenow', String(current + 1));
         prev.disabled = current === 0;
-        next.textContent = current === slides.length - 1 ? 'Start again ↺' : 'Next card →';
+        next.textContent = current === slides.length - 1 ? 'Start again' : 'Next card';
         hint.textContent = current === slides.length - 1 ? 'That’s the note. Thank you.' : 'Swipe or use the arrows';
       };
       prev.addEventListener('click', () => render(current - 1));
