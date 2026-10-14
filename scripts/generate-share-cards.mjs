@@ -74,8 +74,8 @@ function titleSvg(title) {
     lines = wrap(title, maxChars);
   }
 
-  const size = lines.length <= 2 ? 62 : lines.length <= 3 ? 54 : lines.length <= 4 ? 46 : 40;
-  const lineHeight = Math.round(size * 1.18);
+  const size = lines.length <= 2 ? 72 : lines.length <= 3 ? 64 : lines.length <= 4 ? 56 : 48;
+  const lineHeight = Math.round(size * 1.08);
   const totalHeight = size + (lines.length - 1) * lineHeight;
   const firstY = Math.max(210, Math.round(370 - totalHeight / 2 + size * 0.78));
   const titleLines = lines.map((line, index) =>
