@@ -41,6 +41,7 @@ jobs:
           HEAD_SHA: ${{ github.sha }}
           ARTICLE_SLUG: ${{ inputs.slug }}
           SITE_URL: https://founders-knowledge.vercel.app
+          X_API_USER_ACCESS_TOKEN: ${{ secrets.X_API_USER_ACCESS_TOKEN }}
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
           LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION }}

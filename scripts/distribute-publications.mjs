@@ -79,6 +79,33 @@ async function waitForLiveArticle(url) {
   throw new Error("The published article was not verified live after retries (" + lastStatus + "): " + url);
 }
 
+function makeXPost(title, description, url) {
+  const maxText = 280;
+  const suffix = "\n\n" + url;
+  const prefix = title + "\n\n";
+  const room = Math.max(40, maxText - prefix.length - suffix.length - 3);
+  const summary = description.length > room ? description.slice(0, room - 1).trimEnd() + "…" : description;
+  return prefix + summary + suffix;
+}
+
+async function sendXPost(text) {
+  const token = process.env.X_API_USER_ACCESS_TOKEN;
+  if (!token) return { configured: false };
+  const response = await fetch("https://api.x.com/2/tweets", {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + token,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ text })
+  });
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok || !body.data?.id) {
+    throw new Error("X delivery failed (" + response.status + "): " + JSON.stringify(body).slice(0, 500));
+  }
+  return { configured: true, postId: body.data.id };
+}
+
 async function sendTelegram(text, url) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -166,7 +193,8 @@ async function main() {
     };
     fs.writeFileSync(path.join(outboxDir, item.slug + ".json"), JSON.stringify(post, null, 2) + "\n");
 
-    const enabled = Boolean(process.env.LINKEDIN_ACCESS_TOKEN && process.env.LINKEDIN_AUTHOR_URN) ||
+    const enabled = Boolean(process.env.X_API_USER_ACCESS_TOKEN) ||
+      Boolean(process.env.LINKEDIN_ACCESS_TOKEN && process.env.LINKEDIN_AUTHOR_URN) ||
       Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
     if (!enabled) {
       console.log("No distribution credentials configured. Draft pack written for " + item.slug + ".");
@@ -175,6 +203,18 @@ async function main() {
     }
 
     await waitForLiveArticle(url);
+
+    if (!channels.x && process.env.X_API_USER_ACCESS_TOKEN) {
+      try {
+        const result = await sendXPost(post.x);
+        channels.x = true;
+        post.delivery.x = "sent";
+        console.log("X post sent: " + item.slug + " (" + result.postId + ")");
+      } catch (error) {
+        post.delivery.x = "failed";
+        console.error(error.message);
+      }
+    } else if (channels.x) post.delivery.x = "already-sent";
 
     if (!channels.telegram && process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) {
       try {
