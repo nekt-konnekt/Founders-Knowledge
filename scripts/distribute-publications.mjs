@@ -81,8 +81,8 @@ async function waitForLiveArticle(url) {
 
 function makeXPost(title, description, url) {
   const maxText = 280;
-  const suffix = "\\n\\n" + url;
-  const prefix = title + "\\n\\n";
+  const suffix = "\n\n" + url;
+  const prefix = title + "\n\n";
   const room = Math.max(40, maxText - prefix.length - suffix.length - 3);
   const summary = description.length > room ? description.slice(0, room - 1).trimEnd() + "…" : description;
   return prefix + summary + suffix;
