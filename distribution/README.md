@@ -12,6 +12,20 @@ This workflow watches for a new lesson page merged into `main`, waits until the 
 - Generates a JSON distribution pack as a GitHub Actions artifact even when credentials are not configured.
 - Does not generate or publish an AI summary. The copy is derived from the reviewed article metadata.
 
+## Enable X distribution (recommended first channel)
+
+Create an X developer project/app with permission to publish Posts on behalf of your own account. Complete the required user authorization flow and store the resulting user-context access token as the repository Actions secret:
+
+- `X_API_USER_ACCESS_TOKEN`
+
+The token must be authorized for writing Posts (for example, OAuth 2.0 user context with `tweet.write`; request `tweet.read`, `users.read`, and `offline.access` as appropriate for your auth flow). An app-only bearer token is not sufficient to post as your account. X controls API access, plan eligibility, and rate limits. Official reference: https://docs.x.com/x-api/posts/manage-tweets/quickstart
+
+The workflow posts one concise X post with the article title, description excerpt, and link. Successful post IDs are recorded to prevent duplicate posts on retries.
+
+## WhatsApp and founder community (manual share packs)
+
+Every run prepares `whatsapp` and `community` copy in the generated JSON pack. These are deliberately not auto-sent to your personal WhatsApp contacts or founder community. Use the copy only with people who want it and where community rules allow promotional/editorial sharing. WhatsApp's business messaging APIs require a properly configured business account and recipient opt-in; they are not a way to automate a personal account's contact list. Official overview: https://developers.facebook.com/docs/whatsapp/cloud-api/overview
+
 ## Enable Telegram distribution
 
 Create a Telegram bot using BotFather, add it to the destination channel as an administrator with permission to post, and add these repository Actions secrets:
@@ -41,4 +55,6 @@ Open **GitHub → Actions → Distribute new Founders Knowledge publications →
 - A missing channel credential means that channel is skipped; it is not reported as sent.
 - A failed channel is logged and can be retried without resending to channels that already succeeded.
 - Updating an article does not automatically repost it. Reposts should be a deliberate choice.
-- This first version supports LinkedIn and Telegram. WhatsApp broadcast and reader email distribution require a properly configured opt-in audience and an approved provider; they are intentionally not faked by this workflow.
+- X can be enabled once an authorized user-context token is configured.
+- LinkedIn and Telegram remain optional future channels.
+- WhatsApp and founder-community text is generated for deliberate manual sharing, not automated sending.
