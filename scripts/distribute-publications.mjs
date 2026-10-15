@@ -88,9 +88,38 @@ function makeXPost(title, description, url) {
   return prefix + summary + suffix;
 }
 
-async function sendXPost(text) {
-  const token = process.env.X_API_USER_ACCESS_TOKEN;
-  if (!token) return { configured: false };
+async function getXAccessToken() {
+  const clientId = process.env.X_API_CLIENT_ID;
+  const clientSecret = process.env.X_API_CLIENT_SECRET;
+  const refreshToken = process.env.X_API_REFRESH_TOKEN;
+  if (!clientId || !clientSecret || !refreshToken) {
+    throw new Error("X publishing requires X_API_CLIENT_ID, X_API_CLIENT_SECRET, and X_API_REFRESH_TOKEN.");
+  }
+
+  const response = await fetch("https://api.x.com/2/oauth2/token", {
+    method: "POST",
+    headers: {
+      Authorization: "Basic " + Buffer.from(clientId + ":" + clientSecret).toString("base64"),
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: new URLSearchParams({
+      grant_type: "refresh_token",
+      refresh_token: refreshToken,
+      client_id: clientId
+    })
+  });
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok || !body.access_token) {
+    throw new Error("X token refresh failed (" + response.status + "): " + JSON.stringify(body).slice(0, 400));
+  }
+  if (body.refresh_token && body.refresh_token !== refreshToken) {
+    throw new Error("X returned a rotated refresh token. For safety, publishing stopped; update the X_API_REFRESH_TOKEN repository secret before retrying.");
+  }
+  console.log("X OAuth 2.0 access token refreshed successfully.");
+  return body.access_token;
+}
+
+async function sendXPost(text, token) {
   const response = await fetch("https://api.x.com/2/tweets", {
     method: "POST",
     headers: {
@@ -105,7 +134,6 @@ async function sendXPost(text) {
   }
   return { configured: true, postId: body.data.id };
 }
-
 async function sendTelegram(text, url) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -194,7 +222,7 @@ async function main() {
     };
     fs.writeFileSync(path.join(outboxDir, item.slug + ".json"), JSON.stringify(post, null, 2) + "\n");
 
-    const enabled = Boolean(process.env.X_API_USER_ACCESS_TOKEN) ||
+    const enabled = Boolean(process.env.X_API_REFRESH_TOKEN && process.env.X_API_CLIENT_ID && process.env.X_API_CLIENT_SECRET) ||
       Boolean(process.env.LINKEDIN_ACCESS_TOKEN && process.env.LINKEDIN_AUTHOR_URN) ||
       Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
     if (!enabled) {
@@ -205,9 +233,10 @@ async function main() {
 
     await waitForLiveArticle(url);
 
-    if (!channels.x && process.env.X_API_USER_ACCESS_TOKEN) {
+    if (!channels.x && process.env.X_API_REFRESH_TOKEN && process.env.X_API_CLIENT_ID && process.env.X_API_CLIENT_SECRET) {
       try {
-        const result = await sendXPost(post.x);
+        const accessToken = await getXAccessToken();
+        const result = await sendXPost(post.x, accessToken);
         channels.x = true;
         post.delivery.x = "sent";
         console.log("X post sent: " + item.slug + " (" + result.postId + ")");
