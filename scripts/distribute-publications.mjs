@@ -20,7 +20,7 @@ function attr(tag, key) {
 }
 
 function meta(html, key, attribute = "property") {
-  for (const match of html.matchAll(/<meta\\b[^>]*>/gi)) {
+  for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
     if (attr(match[0], attribute).toLowerCase() === key.toLowerCase()) return attr(match[0], "content");
   }
   return "";
@@ -29,7 +29,7 @@ function meta(html, key, attribute = "property") {
 function clean(value) {
   return String(value || "").replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&")
     .replace(/&nbsp;/g, " ").replace(/&ldquo;|&rdquo;|&quot;/g, '"')
-    .replace(/&#39;|&apos;/g, "'").replace(/\\s+/g, " ").trim();
+    .replace(/&#39;|&apos;/g, "'").replace(/\s+/g, " ").trim();
 }
 
 function getChangedLessons() {
@@ -53,9 +53,9 @@ function getChangedLessons() {
   }
 
   const results = [];
-  for (const line of diff.split("\\n")) {
-    const [status, file] = line.trim().split(/\\s+/);
-    const match = file && file.match(/^lessons\\/([a-z0-9-]+)\\/index\\.html$/);
+  for (const line of diff.split("\n")) {
+    const [status, file] = line.trim().split(/\s+/);
+    const match = file && file.match(/^lessons\/([a-z0-9-]+)\/index\.html$/);
     if (match && ["A", "M"].includes(status)) results.push({ slug: match[1], status });
   }
   return [...new Map(results.map(item => [item.slug, item])).values()];
@@ -83,7 +83,7 @@ async function sendTelegram(text, url) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
   if (!token || !chatId) return { configured: false };
-  const message = text + "\\n\\n" + url;
+  const message = text + "\n\n" + url;
   const response = await fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
     method: "POST",
     headers: { "content-type": "application/json" },
@@ -98,7 +98,8 @@ async function sendLinkedIn(article, postText) {
   const token = process.env.LINKEDIN_ACCESS_TOKEN;
   const author = process.env.LINKEDIN_AUTHOR_URN;
   if (!token || !author) return { configured: false };
-  const version = process.env.LINKEDIN_VERSION || "202610";
+  const version = process.env.LINKEDIN_VERSION;
+  if (!version) throw new Error("Set the LINKEDIN_VERSION repository variable to a currently supported LinkedIn API version.");
   const response = await fetch("https://api.linkedin.com/rest/posts", {
     method: "POST",
     headers: {
@@ -141,28 +142,29 @@ async function main() {
     }
 
     const html = fs.readFileSync(htmlPath, "utf8");
-    const title = clean(meta(html, "og:title") || (html.match(/<title>([\\s\\S]*?)<\\/title>/i) || [, item.slug])[1])
-      .replace(/\\s*[—|]\\s*Founders Knowledge\\s*$/i, "").trim();
+    const title = clean(meta(html, "og:title") || (html.match(/<title>([\s\S]*?)<\/title>/i) || [, item.slug])[1])
+      .replace(/\s*[—|]\s*Founders Knowledge\s*$/i, "").trim();
     const description = clean(meta(html, "og:description") || meta(html, "description", "name"));
-    const canonical = meta(html, "og:url") || (html.match(/<link\\b[^>]*rel=["']canonical["'][^>]*>/i) || [""])[0].match(/href=["']([^"']+)/i)?.[1] || site + "/lessons/" + item.slug + "/";
+    const canonicalTag = (html.match(/<link\b[^>]*rel=["']canonical["'][^>]*>/i) || [""])[0];
+    const canonical = meta(html, "og:url") || attr(canonicalTag, "href") || site + "/lessons/" + item.slug + "/";
     const url = new URL(canonical, site).href;
     if (new URL(url).hostname !== new URL(site).hostname) throw new Error("Refusing to distribute an off-site canonical URL: " + url);
     const image = meta(html, "og:image");
     if (!title || !description) throw new Error("Missing title or description metadata for " + item.slug);
 
-    const fingerprint = crypto.createHash("sha256").update([url, title, description].join("\\n")).digest("hex");
+    const fingerprint = crypto.createHash("sha256").update([url, title, description].join("\n")).digest("hex");
     const previous = state.articles[item.slug] || { fingerprint: "", channels: {} };
-    const channels = previous.fingerprint === fingerprint ? (previous.channels || {}) : {};
-    const postText = title + "\\n\\n" + description + "\\n\\nWhat should founders take away from this? Read the full analysis from Founders Knowledge.";
+    const channels = previous.fingerprint === fingerprint ? { ...(previous.channels || {}) } : {};
+    const postText = title + "\n\n" + description + "\n\nWhat should founders take away from this? Read the full analysis from Founders Knowledge.";
     const post = {
       brand: "Founders Knowledge",
       title, description, url, image,
-      linkedin: postText + "\\n\\n#FoundersKnowledge #AfricanTech #Startups",
+      linkedin: postText + "\n\n#FoundersKnowledge #AfricanTech #Startups",
       telegram: postText,
       createdAt: new Date().toISOString(),
       delivery: { linkedin: "pending", telegram: "pending" }
     };
-    fs.writeFileSync(path.join(outboxDir, item.slug + ".json"), JSON.stringify(post, null, 2) + "\\n");
+    fs.writeFileSync(path.join(outboxDir, item.slug + ".json"), JSON.stringify(post, null, 2) + "\n");
 
     const enabled = Boolean(process.env.LINKEDIN_ACCESS_TOKEN && process.env.LINKEDIN_AUTHOR_URN) ||
       Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
@@ -199,13 +201,13 @@ async function main() {
     } else if (channels.linkedin) post.delivery.linkedin = "already-sent";
 
     state.articles[item.slug] = { fingerprint, channels, lastAttemptAt: new Date().toISOString() };
-    fs.writeFileSync(statePath, JSON.stringify(state, null, 2) + "\\n");
-    fs.writeFileSync(path.join(outboxDir, item.slug + ".json"), JSON.stringify(post, null, 2) + "\\n");
+    fs.writeFileSync(statePath, JSON.stringify(state, null, 2) + "\n");
+    fs.writeFileSync(path.join(outboxDir, item.slug + ".json"), JSON.stringify(post, null, 2) + "\n");
     results.push({ slug: item.slug, delivery: post.delivery });
   }
 
   fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY || path.join(root, "distribution", "last-run.md"),
-    "# Founders Knowledge distribution run\\n\\n" + results.map(r => "- **" + r.slug + "**: " + (r.status || JSON.stringify(r.delivery))).join("\\n") + "\\n");
+    "# Founders Knowledge distribution run\n\n" + results.map(r => "- **" + r.slug + "**: " + (r.status || JSON.stringify(r.delivery))).join("\n") + "\n");
   console.log(JSON.stringify(results, null, 2));
 }
 
