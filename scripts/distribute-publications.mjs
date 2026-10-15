@@ -186,6 +186,7 @@ async function main() {
     const post = {
       brand: "Founders Knowledge",
       title, description, url, image,
+      x: makeXPost(title, description, url),
       linkedin: postText + "\n\n#FoundersKnowledge #AfricanTech #Startups",
       telegram: postText,
       createdAt: new Date().toISOString(),
