@@ -1,0 +1,72 @@
+name: Distribute new Founders Knowledge publications
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "lessons/**/index.html"
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Optional lesson slug to distribute manually"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: founders-knowledge-distribution
+  cancel-in-progress: false
+
+jobs:
+  distribute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out published source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Wait for the production article and distribute it
+        env:
+          BASE_SHA: ${{ github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
+          ARTICLE_SLUG: ${{ inputs.slug }}
+          SITE_URL: https://founders-knowledge.vercel.app
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISTRIBUTION_REPOST_UPDATES: "false"
+        run: node scripts/distribute-publications.mjs
+
+      - name: Upload the generated distribution pack
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: founders-knowledge-distribution-pack
+          path: distribution/outbox/*.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Commit delivery state
+        if: success()
+        run: |
+          if [[ -n "$(git status --porcelain distribution/state.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add distribution/state.json
+            git commit -m "Record publication distribution status"
+            git push
+          else
+            echo "No delivery state changes to record."
+          fi
