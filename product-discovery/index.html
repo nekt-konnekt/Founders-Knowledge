@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover the products founders are building for real problems across African markets—from early prototypes to launched products.">
+  <meta name="theme-color" content="#f3ecff">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <title>Product Discovery — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/product-discovery/">
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Product Discovery — See What Founders Are Building">
+  <meta property="og:description" content="A closer look at the problems founders are solving, the products taking shape, and what is ready to use.">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/product-discovery/">
+  <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Fproduct-discovery.svg&output=png&w=1200&h=630&fit=cover&maxage=1y">
+  <meta property="og:image:secure_url" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Fproduct-discovery.svg&output=png&w=1200&h=630&fit=cover&maxage=1y">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Product Discovery by Founders Knowledge — See what founders are building">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Product Discovery — Founders Knowledge">
+  <meta name="twitter:description" content="Discover products in progress, prototypes, betas, and launched products solving real problems.">
+  <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Fproduct-discovery.svg&output=png&w=1200&h=630&fit=cover&maxage=1y">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Product Discovery — Founders Knowledge",
+    "url":"https://founders-knowledge.vercel.app/product-discovery/",
+    "description":"A curated discovery layer for products being built for African users and markets.",
+    "isPartOf":{"@type":"WebSite","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},
+    "inLanguage":"en"
+  }
+  </script>
+  <style>
+    .pd-hero{max-width:1400px;margin:auto;padding:clamp(46px,7vw,88px) clamp(20px,6vw,82px) 38px;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:center}
+    .pd-kicker{display:flex;align-items:center;gap:9px;font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--muted);margin:0 0 20px}
+    .pd-kicker:before{content:"";width:9px;height:9px;background:var(--yellow);border:1px solid var(--ink);border-radius:50%}
+    .pd-hero h1{font:700 clamp(48px,7vw,88px)/.98 var(--display);letter-spacing:-.055em;margin:0;max-width:760px}
+    .pd-hero h1 span{position:relative;z-index:0;white-space:nowrap}
+    .pd-hero h1 span:after{content:"";position:absolute;z-index:-1;left:-4px;right:-7px;bottom:5px;height:23%;background:var(--yellow);border:2px solid var(--ink);transform:rotate(-1deg)}
+    .pd-intro{font-size:17px;line-height:1.75;color:var(--ink-soft);max-width:630px;margin:24px 0 25px}
+    .pd-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .pd-visual{position:relative;min-height:330px;padding:20px;display:flex;align-items:center;justify-content:center}
+    .pd-orbit{position:absolute;width:270px;height:270px;border:2px dashed #c5b3e9;border-radius:50%}
+    .pd-orbit:before,.pd-orbit:after{content:"";position:absolute;border:2px solid var(--ink);border-radius:50%;background:var(--pink)}
+    .pd-orbit:before{width:25px;height:25px;left:12px;top:43px}.pd-orbit:after{width:18px;height:18px;right:6px;bottom:55px;background:var(--green)}
+    .pd-stack{position:relative;width:min(100%,350px);display:grid;gap:12px;transform:rotate(-2deg)}
+    .pd-float{border:2px solid var(--ink);border-radius:16px;padding:15px 17px;background:white;box-shadow:var(--shadow);display:flex;align-items:center;gap:13px}
+    .pd-float:nth-child(2){margin-left:28px;background:var(--lavender);transform:rotate(2deg)}
+    .pd-float:nth-child(3){margin-right:18px;background:#fff5bf;transform:rotate(-1deg)}
+    .pd-symbol{width:44px;height:44px;border:2px solid var(--ink);border-radius:13px;display:grid;place-items:center;font:700 20px var(--display);background:var(--green);flex-shrink:0}
+    .pd-float:nth-child(2) .pd-symbol{background:var(--pink)}.pd-float:nth-child(3) .pd-symbol{background:var(--blue)}
+    .pd-float strong{display:block;font:600 16px var(--display)}.pd-float small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+    .pd-sticker{position:absolute;right:0;top:24px;z-index:2;padding:9px 12px;background:var(--purple);color:white;border:2px solid var(--ink);border-radius:10px;box-shadow:var(--shadow-small);font:600 12px var(--display);transform:rotate(7deg)}
+    .pd-proofbar{max-width:1240px;margin:0 auto 35px;padding:0 clamp(20px,5vw,60px)}
+    .pd-proofinner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:var(--lavender);border:2px solid var(--ink);border-radius:16px;padding:18px 22px}
+    .pd-proofinner strong{font:600 16px var(--display)}.pd-proofinner p{font-size:12px;color:var(--ink-soft);margin:5px 0 0}
+    .pd-demo-tag{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--ink);background:#fff5bf;padding:7px 10px;border-radius:8px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+    .pd-demo-tag:before{content:"";width:7px;height:7px;background:#d97706;border-radius:50%}
+    .pd-directory{max-width:1400px;margin:auto;padding:30px clamp(20px,6vw,82px) 84px}
+    .pd-section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:25px}
+    .pd-section-head h2{font:600 clamp(28px,4vw,43px)/1.1 var(--display);letter-spacing:-.035em;margin:0}
+    .pd-section-head p{max-width:470px;color:var(--muted);font-size:13px;line-height:1.6;margin:10px 0 0}
+    .pd-count{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
+    .pd-controls{display:grid;grid-template-columns:minmax(220px,1.3fr) minmax(150px,.7fr);gap:12px;margin-bottom:17px}
+    .pd-search{width:100%;border:2px solid var(--ink);border-radius:11px;padding:14px 15px;background:white;color:var(--ink);font:500 13px var(--body);box-shadow:var(--shadow-small)}
+    .pd-search:focus,.pd-select:focus{outline:3px solid var(--purple);outline-offset:3px}
+    .pd-select{width:100%;border:2px solid var(--ink);border-radius:11px;padding:13px;background:white;color:var(--ink);font:500 13px var(--body)}
+    .pd-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+    .pd-chip{border:1.5px solid var(--ink);border-radius:999px;background:white;padding:9px 14px;font:600 12px var(--display);cursor:pointer;transition:transform .15s,background .15s}
+    .pd-chip:hover{transform:translateY(-2px)}.pd-chip[aria-pressed=true]{background:var(--ink);color:white}
+    .pd-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .pd-card{background:white;border:2px solid var(--ink);border-radius:17px;overflow:hidden;box-shadow:var(--shadow-small);display:flex;flex-direction:column;min-width:0;transition:transform .18s,box-shadow .18s}
+    .pd-card:hover{transform:translate(-2px,-3px);box-shadow:6px 7px 0 var(--ink)}.pd-card[hidden]{display:none}
+    .pd-card-art{min-height:145px;padding:19px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
+    .pd-card-art:after{content:"";position:absolute;width:150px;height:150px;border:2px dashed rgba(26,15,46,.35);border-radius:50%;right:-36px;top:-48px}
+    .art-lime{background:#dcfce7}.art-lilac{background:#e9d5ff}.art-peach{background:#ffdfcf}.art-blue{background:#dbeafe}.art-yellow{background:#fef3c7}
+    .pd-app-icon{width:61px;height:61px;border:2px solid var(--ink);border-radius:18px;background:white;display:grid;place-items:center;font:700 27px var(--display);box-shadow:var(--shadow-small);z-index:1}
+    .pd-art-copy{z-index:1;text-align:right;max-width:56%}.pd-art-copy small{font-size:9px;font-weight:700;letter-spacing:.13em;display:block}.pd-art-copy strong{font:600 20px var(--display);display:block;margin-top:6px}
+    .pd-card-content{padding:19px 19px 17px;display:flex;flex-direction:column;flex:1}
+    .pd-card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:13px}
+    .pd-stage{display:inline-flex;align-items:center;gap:6px;padding:6px 8px;border-radius:7px;background:#f4f0fa;font-size:10px;font-weight:700}
+    .pd-stage:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--purple)}
+    .pd-category{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:right}
+    .pd-card h3{font:600 25px/1.1 var(--display);letter-spacing:-.02em;margin:0 0 7px}
+    .pd-byline{font-size:11px;color:var(--muted);margin:0 0 15px}
+    .pd-card-description{font-size:13px;line-height:1.65;color:var(--ink-soft);margin:0 0 15px}
+    .pd-problem{border-top:1px solid var(--line);padding-top:13px;margin-top:auto}
+    .pd-problem span{font-size:9px;font-weight:700;letter-spacing:.12em;color:var(--muted);display:block;margin-bottom:5px}
+    .pd-problem p{font-size:12px;line-height:1.55;margin:0}
+    .pd-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:17px;padding-top:13px;border-top:1px solid var(--line)}
+    .pd-location{font-size:11px;color:var(--muted)}
+    .pd-profile-btn{border:0;background:transparent;color:var(--purple-deep);font:700 12px var(--display);cursor:pointer;padding:6px 0}
+    .pd-profile-btn:hover{text-decoration:underline}
+    .pd-details{padding:0 19px 19px;display:none}.pd-card[data-expanded=true] .pd-details{display:block}
+    .pd-details-inner{border-top:2px dashed var(--line);padding-top:15px}
+    .pd-details h4{font:600 16px var(--display);margin:0 0 8px}.pd-details p{font-size:12px;line-height:1.65;color:var(--ink-soft);margin:0 0 10px}
+    .pd-detail-label{font-size:9px;font-weight:700;letter-spacing:.12em;color:var(--muted);display:block;margin:12px 0 5px}
+    .pd-detail-action{display:inline-flex;margin-top:6px;background:var(--yellow);border:1.5px solid var(--ink);border-radius:8px;padding:9px 11px;font:600 11px var(--display)}
+    .pd-empty{display:none;text-align:center;padding:42px 20px;border:2px dashed var(--line);border-radius:15px;color:var(--muted);font-size:14px}
+    .pd-empty strong{display:block;color:var(--ink);font:600 20px var(--display);margin-bottom:8px}
+    .pd-submission{max-width:1240px;margin:0 auto 80px;padding:0 clamp(20px,5vw,60px)}
+    .pd-submit-panel{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:clamp(22px,4vw,42px);border:2px solid var(--ink);border-radius:18px;background:#fff3c4;box-shadow:var(--shadow)}
+    .pd-submit-panel h2{font:600 clamp(25px,3vw,35px)/1.1 var(--display);margin:0 0 10px}
+    .pd-submit-panel p{font-size:13px;line-height:1.7;color:var(--ink-soft);max-width:690px;margin:0}
+    .pd-submit-note{font-size:10px!important;margin-top:10px!important;color:var(--muted)!important}
+    .pd-footer-note{max-width:1240px;margin:0 auto;padding:0 22px 35px;color:var(--muted);font-size:11px;line-height:1.7}
+    @media(max-width:950px){.pd-hero{grid-template-columns:1fr;padding-top:48px}.pd-visual{min-height:280px}.pd-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pd-section-head{align-items:start;flex-direction:column}}
+    @media(max-width:620px){.site-header nav{display:none}.pd-hero{padding-top:37px}.pd-hero h1{font-size:clamp(46px,14vw,70px)}.pd-hero h1 span{white-space:normal}.pd-visual{min-height:265px}.pd-orbit{width:220px;height:220px}.pd-float{padding:12px}.pd-controls{grid-template-columns:1fr}.pd-grid{grid-template-columns:1fr}.pd-card-art{min-height:130px}.pd-submit-panel{grid-template-columns:1fr}.pd-proofinner{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#products">Skip to products</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+    <nav aria-label="Main navigation"><a href="/library/">Knowledge library</a><a href="/product-discovery/" aria-current="page">Product discovery</a><a href="/#approach">Our approach</a></nav>
+    <a class="nav-cta" href="#submit-product">Feature a product ↗</a>
+  </header>
+  <main>
+    <section class="pd-hero">
+      <div>
+        <p class="pd-kicker">A NEW WAY TO DISCOVER WHAT'S BEING BUILT</p>
+        <h1>Good ideas deserve to be <span>discovered.</span></h1>
+        <p class="pd-intro">Meet the founders working on real problems. Explore products while they're still taking shape, see what's ready to use, and understand why each build matters.</p>
+        <div class="pd-actions"><a class="button button-primary" href="#products">Explore products <span aria-hidden="true">↘</span></a><a class="button button-secondary" href="#how-it-works">How we select</a></div>
+      </div>
+      <div class="pd-visual" aria-label="Illustration of products at different stages">
+        <span class="pd-orbit" aria-hidden="true"></span><span class="pd-sticker">IDEA → IMPACT</span>
+        <div class="pd-stack">
+          <div class="pd-float"><span class="pd-symbol">M</span><div><strong>MarketMinder</strong><small>In production · Lagos</small></div></div>
+          <div class="pd-float"><span class="pd-symbol">K</span><div><strong>KopaFlow</strong><small>Beta · Nairobi</small></div></div>
+          <div class="pd-float"><span class="pd-symbol">C</span><div><strong>ClinicLoop</strong><small>Prototype · Accra</small></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="pd-proofbar" id="how-it-works">
+      <div class="pd-proofinner"><div><strong>Not just who raised money. Who is solving something?</strong><p>We look at the problem, the product's stage, its availability, and what can be verified.</p></div><span class="pd-demo-tag">Concept preview · fictional data</span></div>
+    </section>
+    <section class="pd-directory" id="products">
+      <div class="pd-section-head"><div><p class="pd-kicker">THE PRODUCT SHELF</p><h2>What founders are working on.</h2><p>From the first working version to products people can use today. Every profile should tell you what it does, who it helps, and what happens next.</p></div><span class="pd-count" id="result-count" aria-live="polite">5 demo products</span></div>
+      <div class="pd-controls">
+        <label><span class="skip-link">Search products</span><input class="pd-search" id="product-search" type="search" placeholder="Search products, problems, or cities…" aria-label="Search products, problems, or cities"></label>
+        <label><span class="skip-link">Filter by stage</span><select class="pd-select" id="stage-filter" aria-label="Filter by product stage"><option value="all">Every stage</option><option value="idea">Idea / prototype</option><option value="production">In production</option><option value="beta">Beta</option><option value="launched">Launched</option></select></label>
+      </div>
+      <div class="pd-chips" role="group" aria-label="Filter by category">
+        <button class="pd-chip" type="button" data-category="all" aria-pressed="true">All products</button><button class="pd-chip" type="button" data-category="Commerce" aria-pressed="false">Commerce</button><button class="pd-chip" type="button" data-category="Finance" aria-pressed="false">Finance</button><button class="pd-chip" type="button" data-category="Health" aria-pressed="false">Health</button><button class="pd-chip" type="button" data-category="Logistics" aria-pressed="false">Logistics</button><button class="pd-chip" type="button" data-category="Learning" aria-pressed="false">Learning</button>
+      </div>
+      <div class="pd-grid" id="product-grid">
+        <article class="pd-card" data-category="Commerce" data-stage="production" data-search="marketminder amina okafor commerce inventory market traders stock sales lagos nigeria">
+          <div class="pd-card-art art-lime"><span class="pd-app-icon">M</span><div class="pd-art-copy"><small>DEMO PRODUCT 01</small><strong>Know what sells.</strong></div></div>
+          <div class="pd-card-content"><div class="pd-card-meta"><span class="pd-stage">In production</span><span class="pd-category">Commerce</span></div><h3>MarketMinder</h3><p class="pd-byline">Amina Okafor · Sample founder</p><p class="pd-card-description">A lightweight stock and sales tracker designed around the way independent market traders actually work.</p><div class="pd-problem"><span>THE PROBLEM</span><p>Small traders can lose track of fast-moving stock, daily sales, and the cash tied up in inventory.</p></div><div class="pd-card-bottom"><span class="pd-location">Lagos, Nigeria</span><button class="pd-profile-btn" type="button" aria-expanded="false">Explore profile ↗</button></div></div>
+          <div class="pd-details"><div class="pd-details-inner"><h4>Why this is interesting</h4><p>Inventory tools often assume tidy spreadsheets and stable routines. This concept explores a simpler workflow for busy, cash-based businesses.</p><span class="pd-detail-label">AVAILABILITY</span><p>Private build; not available to the public in this mockup.</p><span class="pd-detail-label">WHAT NEEDS VERIFYING</span><p>Whether traders return to the tool daily, how stock is entered, and whether the workflow saves time or reduces stock-outs.</p><span class="pd-detail-label">EDITORIAL NOTE</span><p>Illustrative profile only. Founder, product, and details are fictional.</p></div></div>
+        </article>
+        <article class="pd-card" data-category="Finance" data-stage="beta" data-search="kopaflow brian mwangi finance cash flow invoices small businesses kenya nairobi">
+          <div class="pd-card-art art-lilac"><span class="pd-app-icon">K</span><div class="pd-art-copy"><small>DEMO PRODUCT 02</small><strong>Cash flow, clearer.</strong></div></div>
+          <div class="pd-card-content"><div class="pd-card-meta"><span class="pd-stage">Beta</span><span class="pd-category">Finance</span></div><h3>KopaFlow</h3><p class="pd-byline">Brian Mwangi · Sample founder</p><p class="pd-card-description">A cash-flow companion that helps small service businesses track invoices, incoming payments, and upcoming commitments.</p><div class="pd-problem"><span>THE PROBLEM</span><p>Owners can be profitable on paper and still struggle to know what cash will be available next week.</p></div><div class="pd-card-bottom"><span class="pd-location">Nairobi, Kenya</span><button class="pd-profile-btn" type="button" aria-expanded="false">Explore profile ↗</button></div></div>
+          <div class="pd-details"><div class="pd-details-inner"><h4>Why this is interesting</h4><p>Cash-flow planning can be too complex for small teams that do not have a finance manager.</p><span class="pd-detail-label">AVAILABILITY</span><p>Closed beta in this fictional scenario.</p><span class="pd-detail-label">WHAT NEEDS VERIFYING</span><p>Payment-data reliability, repeat use, and whether forecasts improve decisions rather than simply summarize balances.</p><span class="pd-detail-label">EDITORIAL NOTE</span><p>Illustrative profile only. Founder, product, and details are fictional.</p></div></div>
+        </article>
+        <article class="pd-card" data-category="Health" data-stage="idea" data-search="clinicloop efua mensah health clinics patient follow-up missed appointments accra ghana prototype">
+          <div class="pd-card-art art-peach"><span class="pd-app-icon">C</span><div class="pd-art-copy"><small>DEMO PRODUCT 03</small><strong>Care that follows up.</strong></div></div>
+          <div class="pd-card-content"><div class="pd-card-meta"><span class="pd-stage">Prototype</span><span class="pd-category">Health</span></div><h3>ClinicLoop</h3><p class="pd-byline">Efua Mensah · Sample founder</p><p class="pd-card-description">A simple follow-up workflow for small clinics to remind patients about check-ins and next appointments.</p><div class="pd-problem"><span>THE PROBLEM</span><p>Busy clinics may struggle to keep follow-up tasks visible after a patient leaves the facility.</p></div><div class="pd-card-bottom"><span class="pd-location">Accra, Ghana</span><button class="pd-profile-btn" type="button" aria-expanded="false">Explore profile ↗</button></div></div>
+          <div class="pd-details"><div class="pd-details-inner"><h4>Why this is interesting</h4><p>The value may be less about adding another clinical system and more about fitting follow-up into a team's existing routine.</p><span class="pd-detail-label">AVAILABILITY</span><p>Prototype concept; no real patients or clinics involved.</p><span class="pd-detail-label">WHAT NEEDS VERIFYING</span><p>Staff workflow fit, consent and privacy safeguards, reminder delivery, and follow-up completion.</p><span class="pd-detail-label">EDITORIAL NOTE</span><p>Illustrative profile only. Founder, product, and details are fictional.</p></div></div>
+        </article>
+        <article class="pd-card" data-category="Logistics" data-stage="launched" data-search="routewise chidi okeke logistics dispatch delivery route planning lagos nigeria launched">
+          <div class="pd-card-art art-blue"><span class="pd-app-icon">R</span><div class="pd-art-copy"><small>DEMO PRODUCT 04</small><strong>Fewer wasted miles.</strong></div></div>
+          <div class="pd-card-content"><div class="pd-card-meta"><span class="pd-stage">Launched</span><span class="pd-category">Logistics</span></div><h3>Routewise</h3><p class="pd-byline">Chidi Okeke · Sample founder</p><p class="pd-card-description">A dispatch planning dashboard concept for small delivery teams coordinating multiple riders and drop-offs.</p><div class="pd-problem"><span>THE PROBLEM</span><p>Dispatchers can spend hours coordinating routes and responding to changes through scattered messages.</p></div><div class="pd-card-bottom"><span class="pd-location">Lagos, Nigeria</span><button class="pd-profile-btn" type="button" aria-expanded="false">Explore profile ↗</button></div></div>
+          <div class="pd-details"><div class="pd-details-inner"><h4>Why this is interesting</h4><p>Last-mile efficiency depends on real constraints: traffic, failed deliveries, rider capacity, and changing customer availability.</p><span class="pd-detail-label">AVAILABILITY</span><p>Shown as launched for demo purposes only; there is no real product link.</p><span class="pd-detail-label">WHAT NEEDS VERIFYING</span><p>Route completion rates, failed delivery reduction, dispatcher time saved, and how the tool handles exceptions.</p><span class="pd-detail-label">EDITORIAL NOTE</span><p>Illustrative profile only. Founder, product, and details are fictional.</p></div></div>
+        </article>
+        <article class="pd-card" data-category="Learning" data-stage="idea" data-search="tandalearn zainab uwimana learning skills career micro lessons kigali rwanda waitlist">
+          <div class="pd-card-art art-yellow"><span class="pd-app-icon">T</span><div class="pd-art-copy"><small>DEMO PRODUCT 05</small><strong>Learn in small steps.</strong></div></div>
+          <div class="pd-card-content"><div class="pd-card-meta"><span class="pd-stage">Idea / waitlist</span><span class="pd-category">Learning</span></div><h3>TandaLearn</h3><p class="pd-byline">Zainab Uwimana · Sample founder</p><p class="pd-card-description">A mobile-first learning concept built around short practical lessons and small portfolio projects for early-career workers.</p><div class="pd-problem"><span>THE PROBLEM</span><p>People need job-relevant skills but may not have the time, bandwidth, or money for long courses.</p></div><div class="pd-card-bottom"><span class="pd-location">Kigali, Rwanda</span><button class="pd-profile-btn" type="button" aria-expanded="false">Explore profile ↗</button></div></div>
+          <div class="pd-details"><div class="pd-details-inner"><h4>Why this is interesting</h4><p>Short lessons only matter if they help people do something useful. The test is whether learners finish, apply, and can show what they learned.</p><span class="pd-detail-label">AVAILABILITY</span><p>Waitlist concept only in this fictional scenario.</p><span class="pd-detail-label">WHAT NEEDS VERIFYING</span><p>Completion, demonstrated skill gains, access constraints, and whether employers value the resulting work.</p><span class="pd-detail-label">EDITORIAL NOTE</span><p>Illustrative profile only. Founder, product, and details are fictional.</p></div></div>
+        </article>
+      </div>
+      <div class="pd-empty" id="empty-state"><strong>No products match that search.</strong>Try another keyword or clear a filter to see more of the shelf.</div>
+    </section>
+    <section class="pd-submission" id="submit-product">
+      <div class="pd-submit-panel"><div><p class="pd-kicker">BUILDING SOMETHING?</p><h2>Your product could be next.</h2><p>We want to hear from founders building useful things—whether you are testing a prototype, preparing a beta, or already serving customers. Each submission would be reviewed before publication.</p><p class="pd-submit-note">This is a concept preview. Product submissions are not yet connected or being collected.</p></div><a class="button button-primary" href="#products">Explore the concept ↗</a></div>
+    </section>
+    <p class="pd-footer-note"><strong>How to read this preview:</strong> All five profiles are fictional examples created to demonstrate the experience. They are not real companies, founder endorsements, or verified product claims. A live version should label founder-reported information, independently checked facts, availability, and the date each profile was last verified.</p>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#products">Explore products ↑</a></footer>
+  <script>
+    (function(){
+      const cards=[...document.querySelectorAll('.pd-card')];
+      const search=document.getElementById('product-search');
+      const stage=document.getElementById('stage-filter');
+      const chips=[...document.querySelectorAll('.pd-chip')];
+      const count=document.getElementById('result-count');
+      const empty=document.getElementById('empty-state');
+      let category='all';
+      function applyFilters(){
+        const term=search.value.trim().toLowerCase();
+        let visible=0;
+        cards.forEach(card=>{
+          const matchesText=card.dataset.search.includes(term);
+          const matchesStage=stage.value==='all'||card.dataset.stage===stage.value;
+          const matchesCategory=category==='all'||card.dataset.category===category;
+          const show=matchesText&&matchesStage&&matchesCategory;
+          card.hidden=!show;
+          if(show) visible++;
+        });
+        count.textContent=visible+' demo product'+(visible===1?'':'s');
+        empty.style.display=visible?'none':'block';
+      }
+      search.addEventListener('input',applyFilters);
+      stage.addEventListener('change',applyFilters);
+      chips.forEach(chip=>chip.addEventListener('click',()=>{
+        category=chip.dataset.category;
+        chips.forEach(item=>item.setAttribute('aria-pressed',String(item===chip)));
+        applyFilters();
+      }));
+      document.querySelectorAll('.pd-profile-btn').forEach(button=>button.addEventListener('click',()=>{
+        const card=button.closest('.pd-card');
+        const expanded=card.dataset.expanded==='true';
+        card.dataset.expanded=String(!expanded);
+        button.setAttribute('aria-expanded',String(!expanded));
+        button.textContent=expanded?'Explore profile ↗':'Close profile ↑';
+      }));
+      applyFilters();
+    })();
+  </script>
+</body>
+</html>
