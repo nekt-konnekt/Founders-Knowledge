@@ -211,13 +211,15 @@
           <div class="pd-form-field"><label for="submit-email">Contact email *</label><input id="submit-email" name="email" type="email" maxlength="254" required autocomplete="email" placeholder="you@company.com"></div>
           <div class="pd-form-field"><label for="submit-website">Product website <em>(if available)</em></label><input id="submit-website" name="website" type="url" maxlength="500" placeholder="https://"></div>
           <div class="pd-form-field"><label for="submit-category">Category *</label><select id="submit-category" name="category" required><option value="">Choose a category</option><option>Commerce</option><option>Finance</option><option>Health</option><option>Logistics</option><option>Learning</option><option>Climate</option><option>Productivity</option><option>Other</option></select></div>
+          <div class="pd-form-field" id="custom-category-field" hidden><label for="submit-custom-category">Specify your category *</label><input id="submit-custom-category" name="customCategory" maxlength="80" placeholder="e.g. Agritech, Creator Economy, Cybersecurity" aria-describedby="custom-category-help"><small id="custom-category-help">Help us place your product in the right category.</small></div>
           <div class="pd-form-field"><label for="submit-stage">Product stage *</label><select id="submit-stage" name="stage" required><option value="">Choose your stage</option><option>Idea</option><option>Prototype</option><option>Beta</option><option>In production</option><option>Launched</option></select></div>
           <div class="pd-form-field"><label for="submit-location">City and country *</label><input id="submit-location" name="location" maxlength="120" required placeholder="e.g. Lagos, Nigeria"></div>
           <div class="pd-form-field"><label for="submit-demo">Demo or product link <em>(optional)</em></label><input id="submit-demo" name="demo" type="url" maxlength="500" placeholder="https://"></div>
           <div class="pd-form-field full"><label for="submit-description">Describe your product in one sentence *</label><input id="submit-description" name="description" maxlength="280" required placeholder="What does it do, and who is it for?"></div>
           <div class="pd-form-field full"><label for="submit-problem">What problem are you solving? *</label><textarea id="submit-problem" name="problem" maxlength="2000" required placeholder="Describe the problem in the words your users would use."></textarea></div>
           <div class="pd-form-field"><label for="submit-users">Who is it for? *</label><input id="submit-users" name="targetUsers" maxlength="500" required placeholder="Your primary users or customers"></div>
-          <div class="pd-form-field"><label for="submit-linkedin">Founder LinkedIn <em>(optional)</em></label><input id="submit-linkedin" name="linkedin" type="url" maxlength="500" placeholder="https://linkedin.com/in/…"></div>
+          <div class="pd-form-field"><label for="submit-linkedin">Founder LinkedIn <em>(optional)</em></label><input id="submit-linkedin" name="linkedin" type="url" maxlength="500" autocomplete="url" placeholder="https://linkedin.com/in/…"></div>
+          <div class="pd-form-field"><label for="submit-x">Founder X profile <em>(optional)</em></label><input id="submit-x" name="xProfile" type="url" maxlength="500" autocomplete="url" placeholder="https://x.com/yourhandle"></div>
           <div class="pd-honeypot" aria-hidden="true"><label for="company-website">Leave this field empty</label><input id="company-website" name="companyWebsite" tabindex="-1" autocomplete="off"></div>
         </div>
         <label class="pd-consent"><input type="checkbox" name="consent" required><span>I confirm these details are accurate to the best of my knowledge and give Founders Knowledge permission to review this submission and contact me about it. I understand that submission does not guarantee publication.</span></label>
@@ -267,6 +269,17 @@
       applyFilters();
       const submissionForm=document.getElementById('product-submission-form');
       const submissionStatus=document.getElementById('submission-status');
+      const categorySelect=document.getElementById('submit-category');
+      const customCategoryField=document.getElementById('custom-category-field');
+      const customCategoryInput=document.getElementById('submit-custom-category');
+      function syncCustomCategory(){
+        const isOther=categorySelect.value==='Other';
+        customCategoryField.hidden=!isOther;
+        customCategoryInput.required=isOther;
+        if(!isOther){customCategoryInput.value='';customCategoryInput.setCustomValidity('');}
+      }
+      categorySelect.addEventListener('change',syncCustomCategory);
+      syncCustomCategory();
       submissionForm.addEventListener('submit',async(event)=>{
         event.preventDefault();
         if(!submissionForm.reportValidity()) return;

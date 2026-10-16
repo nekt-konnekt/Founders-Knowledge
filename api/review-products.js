@@ -11,7 +11,7 @@ export default async function handler(req,res){
    const args=[], where=[];
    if(status){args.push(status);where.push("review_status=$"+args.length);}
    if(q){args.push("%"+q+"%");where.push("(product_name ILIKE $"+args.length+" OR founder_name ILIKE $"+args.length+" OR contact_email ILIKE $"+args.length+" OR location ILIKE $"+args.length+")");}
-   const result=await db().query("SELECT id,product_name,founder_name,contact_email,product_website,category,product_stage,location,description,problem_solved,target_users,demo_url,founder_linkedin,review_status,review_notes,notion_sync_status,created_at,updated_at FROM fk_product_submissions "+(where.length?"WHERE "+where.join(" AND "):"")+" ORDER BY created_at DESC LIMIT 200",args);
+   const result=await db().query("SELECT id,product_name,founder_name,contact_email,product_website,category,product_stage,location,description,problem_solved,target_users,demo_url,founder_linkedin,founder_x,custom_category,review_status,review_notes,notion_sync_status,created_at,updated_at FROM fk_product_submissions "+(where.length?"WHERE "+where.join(" AND "):"")+" ORDER BY created_at DESC LIMIT 200",args);
    return res.status(200).json({items:result.rows});
   }
   if(req.method==="PATCH"){
