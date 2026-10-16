@@ -6,6 +6,8 @@ Founders Knowledge publishes reusable guidance for people building products and 
 
 ## Main pages
 
+- [Product Discovery](https://founders-knowledge.vercel.app/product-discovery/): Explore a concept preview of products being built for African users and markets. Current profiles are fictional mock data, not real founders or verified claims.
+
 - [Home](https://founders-knowledge.vercel.app/): Introduction to Founders Knowledge and its knowledge areas.
 - [All Knowledge Library](https://founders-knowledge.vercel.app/library/): Browse the published lessons and practical guides.
 
