@@ -1,9 +1,84 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f3ecff"><title>Product Review — Founders Knowledge</title><link rel="stylesheet" href="/assets/site.css"><style>
-.review-wrap{max-width:1100px;margin:0 auto;padding:40px 22px 80px}.review-head{display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}.review-head h1{font-size:clamp(2rem,5vw,3.8rem);line-height:1.05;margin:.2em 0}.review-login,.review-tools,.review-item{background:#fff;border:1px solid #ded5ed;border-radius:18px;padding:22px;margin:20px 0}.review-login{max-width:540px}.review-login input,.review-tools input,.review-tools select,.review-item select,.review-item textarea{font:inherit;width:100%;padding:12px;border:1px solid #cfc4df;border-radius:10px;margin:7px 0 14px;background:#fff}.review-btn{font:inherit;border:0;border-radius:999px;background:#21123b;color:#fff;padding:12px 18px;cursor:pointer}.review-btn:disabled{opacity:.5}.review-muted{color:#62586f}.review-tools{display:grid;grid-template-columns:2fr 1fr auto;gap:12px;align-items:end}.review-item h2{margin:0 0 8px;font-size:1.5rem}.review-meta{font-size:.9rem;color:#62586f}.review-columns{display:grid;grid-template-columns:1fr 1fr;gap:12px}.review-item a{overflow-wrap:anywhere}.review-error{color:#a32035}.review-success{color:#236c43}@media(max-width:650px){.review-tools,.review-columns{grid-template-columns:1fr}.review-wrap{padding:26px 15px}}
-</style></head><body><header class="site-header"><a class="brand" href="/"><span class="brand-mark">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><a href="/product-discovery/">Product Discovery ↗</a></header><main class="review-wrap"><p class="review-muted">EDITORIAL WORKSPACE · PRIVATE</p><div class="review-head"><div><h1>Product review queue</h1><p class="review-muted">Review founder submissions, leave internal notes, and make the call. Neon is the source of truth.</p></div><button class="review-btn" id="logout" hidden>Lock dashboard</button></div><section class="review-login" id="login-panel"><h2>Team access</h2><p class="review-muted">Enter the private review key to open the queue.</p><form id="login-form"><label for="review-key">Review key</label><input id="review-key" type="password" autocomplete="current-password" required><button class="review-btn" type="submit">Open review queue</button><p id="login-status" role="status"></p></form></section><section id="workspace" hidden><div class="review-tools"><div><label for="search">Search submissions</label><input id="search" placeholder="Product, founder, email, location"></div><div><label for="filter">Review status</label><select id="filter"><option value="">All statuses</option><option>New</option><option>Reviewing</option><option>Needs information</option><option>Approved</option><option>Published</option><option>Declined</option></select></div><div><button class="review-btn" id="refresh">Refresh queue</button></div></div><p id="queue-status" role="status" class="review-muted"></p><div id="queue"></div></section></main><script>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#f3ecff">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Product Review — Founders Knowledge</title>
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+/* Private workspace: use the same FK tokens, typography and editorial rhythm as the lesson system. */
+body{background:var(--paper,#fbf9ff);color:var(--ink,#21123b);font-family:"Space Grotesk",sans-serif}
+.site-header{gap:20px}
+.site-header>a:last-child{font-weight:600}
+.review-wrap{width:min(1120px,100%);margin:0 auto;padding:clamp(28px,5vw,64px) 22px 88px}
+.review-eyebrow,.review-meta,.review-kicker,.review-field-label{font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.review-eyebrow{display:flex;align-items:center;gap:9px;color:var(--muted,#62586f);margin:0 0 16px}
+.review-eyebrow:before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#8d5be8}
+.review-head{display:flex;gap:24px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;padding:0 0 28px;border-bottom:1px solid #ded5ed}
+.review-head h1{font-family:"Fredoka",sans-serif;font-size:clamp(2.4rem,6vw,4.6rem);font-weight:600;letter-spacing:-.035em;line-height:.98;margin:0 0 16px;max-width:760px}
+.review-head h1 span{color:#8252d6}
+.review-head p{max-width:660px;line-height:1.7;margin:0}
+.review-muted{color:var(--muted,#62586f)}
+.review-login,.review-tools,.review-item{background:#fff;border:1px solid #ded5ed;border-radius:22px;padding:clamp(18px,3vw,28px);margin:24px 0;box-shadow:0 8px 28px rgba(48,24,78,.045)}
+.review-login{max-width:580px;margin-top:32px}
+.review-login h2,.review-item h2{font-family:"Fredoka",sans-serif;font-weight:600;letter-spacing:-.02em}
+.review-login h2{font-size:1.65rem;margin:0 0 6px}
+.review-login p{line-height:1.65}
+.review-login label,.review-tools label,.review-item label{font-size:.88rem;font-weight:600}
+.review-login input,.review-tools input,.review-tools select,.review-item select,.review-item textarea{box-sizing:border-box;display:block;font:inherit;width:100%;padding:13px 14px;border:1px solid #d5c9e5;border-radius:12px;margin:8px 0 16px;background:#fff;color:#21123b;transition:border-color .15s,box-shadow .15s}
+.review-login input:focus,.review-tools input:focus,.review-tools select:focus,.review-item select:focus,.review-item textarea:focus{outline:0;border-color:#8956dd;box-shadow:0 0 0 3px #8956dd22}
+.review-btn{font:inherit;font-weight:700;border:0;border-radius:999px;background:#21123b;color:#fff;padding:13px 20px;cursor:pointer;transition:transform .15s,background .15s}
+.review-btn:hover{background:#56308d;transform:translateY(-1px)}
+.review-btn:focus-visible{outline:3px solid #a886ef;outline-offset:3px}
+.review-btn:disabled{opacity:.55;cursor:wait;transform:none}
+.review-tools{display:grid;grid-template-columns:minmax(220px,2fr) minmax(180px,1fr) auto;gap:14px;align-items:end}
+.review-tools label{display:block}
+.review-tools input,.review-tools select{margin-bottom:0}
+.review-tools .review-btn{white-space:nowrap}
+#queue-status{min-height:1.5em;margin:22px 2px}
+.review-item{margin:16px 0}
+.review-item h2{font-size:clamp(1.45rem,3vw,2rem);line-height:1.15;margin:8px 0 12px}
+.review-meta{font-size:.72rem;letter-spacing:.055em;line-height:1.6;color:#746783;overflow-wrap:anywhere}
+.review-item p{line-height:1.7;overflow-wrap:anywhere}
+.review-item h3{font-family:"Fredoka",sans-serif;font-size:1.15rem;margin:18px 0 4px}
+.review-item a{color:#7042bd;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
+.review-item a:hover{color:#39205e}
+.review-columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);margin-top:20px;padding-top:18px;border-top:1px solid #eee7f6}
+.review-columns>div{min-width:0}
+.review-item textarea{resize:vertical;line-height:1.55}
+.review-item [data-feedback]{font-size:.88rem;font-weight:600}
+.review-error{color:#a32035}.review-success{color:#236c43}
+#queue>p{background:#fff;border:1px dashed #cfc0e5;border-radius:18px;padding:24px}
+[hidden]{display:none!important}
+@media(max-width:760px){.review-tools{grid-template-columns:1fr}.review-tools .review-btn{width:100%}.review-columns{grid-template-columns:1fr}.review-head{align-items:flex-start}.review-wrap{padding-left:16px;padding-right:16px}.review-login,.review-tools,.review-item{border-radius:18px}}
+@media(prefers-reduced-motion:reduce){.review-btn{transition:none}}
+</style>
+</head>
+<body class="review-page">
+<a class="skip-link" href="#review-content">Skip to review queue</a>
+<header class="site-header">
+<a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+<nav aria-label="Workspace navigation"><a href="/product-discovery/">Product Discovery ↗</a></nav>
+</header>
+<main class="review-wrap" id="review-content">
+<p class="review-eyebrow">Editorial workspace <span aria-hidden="true">/</span> Private</p>
+<div class="review-head"><div><h1>Product review <span>queue.</span></h1><p class="review-muted">A considered look at what founders are building. Review submissions, record the evidence, and decide what deserves the community’s attention.</p></div><button class="review-btn" id="logout" hidden>Lock workspace</button></div>
+<section class="review-login" id="login-panel"><h2>Team access</h2><p class="review-muted">This workspace is private. Enter your review key to open the editorial queue.</p><form id="login-form"><label for="review-key">Review key</label><input id="review-key" type="password" autocomplete="current-password" required><button class="review-btn" type="submit">Open review queue <span aria-hidden="true">↗</span></button><p id="login-status" role="status" aria-live="polite"></p></form></section>
+<section id="workspace" hidden><div class="review-tools"><div><label for="search">Search submissions</label><input id="search" placeholder="Product, founder, email, location"></div><div><label for="filter">Review status</label><select id="filter"><option value="">All statuses</option><option>New</option><option>Reviewing</option><option>Needs information</option><option>Approved</option><option>Published</option><option>Declined</option></select></div><div><button class="review-btn" id="refresh">Refresh queue ↻</button></div></div><p id="queue-status" role="status" aria-live="polite" class="review-muted"></p><div id="queue"></div></section>
+</main>
+<script>
+
 (()=>{const $=id=>document.getElementById(id);let key=sessionStorage.getItem("fk-review-key")||"";const statuses=["New","Reviewing","Needs information","Approved","Published","Declined"];function auth(){return {Authorization:"Bearer "+key,"Content-Type":"application/json"}}function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}function link(url,label){return url?'<p><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(label)+'</a></p>':""}
 function setMode(on){$("login-panel").hidden=on;$("workspace").hidden=!on;$("logout").hidden=!on}
 async function load(){ $("queue-status").textContent="Loading submissions…";$("queue").innerHTML="";try{const p=new URLSearchParams();if($("filter").value)p.set("status",$("filter").value);if($("search").value.trim())p.set("q",$("search").value.trim());const r=await fetch("/api/review-products?"+p.toString(),{headers:auth()});const d=await r.json();if(!r.ok)throw Error(d.error||"Unable to load queue.");$("queue-status").textContent=d.items.length+" submission"+(d.items.length===1?"":"s")+" · latest 200";if(!d.items.length){$("queue").innerHTML="<p>No submissions match those filters.</p>";return}for(const x of d.items){const el=document.createElement("article");el.className="review-item";el.innerHTML='<div class="review-meta">#'+esc(x.id)+' · '+esc(new Date(x.created_at).toLocaleString())+' · Notion: '+esc(x.notion_sync_status)+'</div><h2>'+esc(x.product_name)+'</h2><p><strong>'+esc(x.founder_name)+'</strong> · <a href="mailto:'+esc(x.contact_email)+'">'+esc(x.contact_email)+'</a></p><p>'+esc(x.category)+' · '+esc(x.product_stage)+' · '+esc(x.location)+'</p><p>'+esc(x.description)+'</p><div class="review-columns"><div><h3>Problem</h3><p>'+esc(x.problem_solved)+'</p><h3>Who it serves</h3><p>'+esc(x.target_users)+'</p>'+link(x.product_website,"Product website ↗")+link(x.demo_url,"Demo ↗")+link(x.founder_linkedin,"Founder LinkedIn ↗")+'</div><div><label>Status<select data-status>'+statuses.map(s=>'<option'+(s===x.review_status?' selected':'')+'>'+esc(s)+'</option>').join("")+'</select></label><label>Internal editorial notes<textarea data-notes rows="5" maxlength="10000" placeholder="What did we verify? What should happen next?">'+esc(x.review_notes)+'</textarea></label><button class="review-btn" data-save>Save review</button> <span data-feedback role="status"></span></div></div>';el.querySelector("[data-save]").addEventListener("click",async()=>{const b=el.querySelector("[data-save]"),fb=el.querySelector("[data-feedback]");b.disabled=true;fb.textContent="Saving…";try{const r=await fetch("/api/review-products",{method:"PATCH",headers:auth(),body:JSON.stringify({id:x.id,status:el.querySelector("[data-status]").value,notes:el.querySelector("[data-notes]").value})});const d=await r.json();if(!r.ok)throw Error(d.error||"Could not save.");fb.className="review-success";fb.textContent="Saved";}catch(e){fb.className="review-error";fb.textContent=e.message}finally{b.disabled=false}});$("queue").appendChild(el)}}catch(e){$("queue-status").className="review-error";$("queue-status").textContent=e.message;if(/Unauthorized/i.test(e.message)){sessionStorage.removeItem("fk-review-key");key="";setMode(false)}}}
 $("login-form").addEventListener("submit",async e=>{e.preventDefault();key=$("review-key").value.trim();$("login-status").textContent="Checking access…";try{const r=await fetch("/api/review-products",{headers:auth()});const d=await r.json();if(!r.ok)throw Error(d.error||"Access denied.");sessionStorage.setItem("fk-review-key",key);$("login-status").textContent="";setMode(true);await load()}catch(e){$("login-status").className="review-error";$("login-status").textContent="Could not open the queue. Check the key and try again."}});$("logout").addEventListener("click",()=>{sessionStorage.removeItem("fk-review-key");key="";$("review-key").value="";setMode(false)});$("refresh").addEventListener("click",load);$("filter").addEventListener("change",load);let timer; $("search").addEventListener("input",()=>{clearTimeout(timer);timer=setTimeout(load,250)});if(key){setMode(true);load()}else setMode(false)})();
-</script></body></html>
+</script>
+<footer class="site-footer"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#review-content">Back to top</a></footer>
+</body>
+</html>
