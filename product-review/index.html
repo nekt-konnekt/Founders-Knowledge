@@ -58,6 +58,8 @@ body{background:var(--paper,#fbf9ff);color:var(--ink,#21123b);font-family:"Space
 [hidden]{display:none!important}
 @media(max-width:760px){.review-tools{grid-template-columns:1fr}.review-tools .review-btn{width:100%}.review-columns{grid-template-columns:1fr}.review-head{align-items:flex-start}.review-wrap{padding-left:16px;padding-right:16px}.review-login,.review-tools,.review-item{border-radius:18px}}
 @media(prefers-reduced-motion:reduce){.review-btn{transition:none}}
+
+.priority-panel{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:16px;margin:18px 0;border:1px solid #d8c8f2;border-radius:16px;background:#f7f1ff}.priority-score{font-family:"Fredoka",sans-serif;font-size:2rem;color:#5e329e}.priority-panel ul{margin:6px 0;padding-left:18px;font-size:.86rem;line-height:1.5}.priority-panel small{color:#746783;line-height:1.5}@media(max-width:540px){.priority-panel{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="review-page">
@@ -80,5 +82,12 @@ async function load(){ $("queue-status").textContent="Loading submissions…";$(
 $("login-form").addEventListener("submit",async e=>{e.preventDefault();key=$("review-key").value.trim();$("login-status").textContent="Checking access…";try{const r=await fetch("/api/review-products",{headers:auth()});const d=await r.json();if(!r.ok)throw Error(d.error||"Access denied.");sessionStorage.setItem("fk-review-key",key);$("login-status").textContent="";setMode(true);await load()}catch(e){$("login-status").className="review-error";$("login-status").textContent="Could not open the queue. Check the key and try again."}});$("logout").addEventListener("click",()=>{sessionStorage.removeItem("fk-review-key");key="";$("review-key").value="";setMode(false)});$("refresh").addEventListener("click",load);$("filter").addEventListener("change",load);let timer; $("search").addEventListener("input",()=>{clearTimeout(timer);timer=setTimeout(load,250)});if(key){setMode(true);load()}else setMode(false)})();
 </script>
 <footer class="site-footer"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#review-content">Back to top</a></footer>
+
+<script type="module">
+import { editorialScore } from "./editorial-scoring.js";
+const queue=document.getElementById("queue");
+function decorate(){for(const card of queue.querySelectorAll(".review-item")){if(card.querySelector(".priority-panel"))continue;const headings=[...card.querySelectorAll("h3")];const textFor=(label)=>{const h=headings.find(n=>n.textContent.trim().toLowerCase()===label);return h?.nextElementSibling?.textContent||""};const links=[...card.querySelectorAll("a[href]")].map(a=>a.href);const meta=card.querySelector(".review-meta")?.textContent||"";const fields={location:card.children[2]?.textContent||"",product_stage:card.children[2]?.textContent||"",description:card.children[3]?.textContent||"",problem_solved:textFor("Problem"),target_users:textFor("Who it serves"),product_website:links.find(u=>!u.includes("linkedin")&&!u.includes("mailto:"))||"",demo_url:links.find(u=>u.toLowerCase().includes("demo"))||"",founder_linkedin:links.find(u=>u.toLowerCase().includes("linkedin"))||""};const score=editorialScore(fields);const panel=document.createElement("section");panel.className="priority-panel";panel.innerHTML="<div><span class=\\"priority-label\\">Editorial triage</span><strong class=\\"priority-score\\">"+score.total+"/100</strong><b>"+score.band+"</b></div><div><ul>"+score.notes.map(n=>"<li>"+n+"</li>").join("")+"</ul><small>Heuristic triage only. It does not verify claims or measure novelty; check existing coverage before deciding.</small></div>";card.querySelector("h2")?.after(panel);}}
+new MutationObserver(decorate).observe(queue,{childList:true,subtree:true});decorate();
+</script>
 </body>
 </html>
