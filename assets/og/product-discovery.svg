@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Product Discovery — See what founders are building.">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect x="64" y="42" width="58" height="58" rx="12" fill="#fde047" stroke="#1a0f2e" stroke-width="3"/>
+  <text x="93" y="80" text-anchor="middle" fill="#1a0f2e" font-family="Space Grotesk, Arial, sans-serif" font-size="32" font-weight="700">FK</text>
+  <text x="140" y="82" fill="#1a0f2e" font-family="Space Grotesk, Arial, sans-serif" font-size="45" font-weight="700">Founders Knowledge</text>
+  <rect x="65" y="151" width="275" height="42" rx="9" fill="#e9d5ff" stroke="#1a0f2e" stroke-width="2"/>
+  <text x="84" y="178" fill="#1a0f2e" font-family="Space Grotesk, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2">PRODUCT DISCOVERY</text>
+  <text x="64" y="317" fill="#1a0f2e" font-family="Fredoka, Arial, sans-serif" font-size="82" font-weight="700" letter-spacing="-2"><tspan x="64" dy="0">See what founders</tspan><tspan x="64" dy="93">are building.</tspan></text>
+  <rect x="65" y="456" width="435" height="5" fill="#fde047"/>
+  <text x="66" y="511" fill="#45375d" font-family="Space Grotesk, Arial, sans-serif" font-size="24">From first prototype to launched product.</text>
+  <g transform="translate(790 160)">
+    <rect x="0" y="0" width="300" height="112" rx="18" fill="#dcfce7" stroke="#1a0f2e" stroke-width="3" transform="rotate(5 150 56)"/>
+    <rect x="25" y="27" width="54" height="54" rx="15" fill="#ffffff" stroke="#1a0f2e" stroke-width="2"/>
+    <text x="52" y="64" text-anchor="middle" fill="#1a0f2e" font-family="Fredoka, Arial, sans-serif" font-size="30" font-weight="700">M</text>
+    <text x="96" y="48" fill="#1a0f2e" font-family="Fredoka, Arial, sans-serif" font-size="24" font-weight="700">MarketMinder</text>
+    <text x="97" y="76" fill="#45375d" font-family="Space Grotesk, Arial, sans-serif" font-size="16">In production</text>
+    <rect x="37" y="143" width="300" height="112" rx="18" fill="#e9d5ff" stroke="#1a0f2e" stroke-width="3" transform="rotate(-4 187 199)"/>
+    <rect x="59" y="169" width="54" height="54" rx="15" fill="#ffffff" stroke="#1a0f2e" stroke-width="2"/>
+    <text x="86" y="206" text-anchor="middle" fill="#1a0f2e" font-family="Fredoka, Arial, sans-serif" font-size="30" font-weight="700">K</text>
+    <text x="130" y="191" fill="#1a0f2e" font-family="Fredoka, Arial, sans-serif" font-size="24" font-weight="700">KopaFlow</text>
+    <text x="131" y="219" fill="#45375d" font-family="Space Grotesk, Arial, sans-serif" font-size="16">Beta</text>
+    <rect x="0" y="280" width="300" height="95" rx="18" fill="#ffdfcf" stroke="#1a0f2e" stroke-width="3" transform="rotate(3 150 327)"/>
+    <text x="26" y="323" fill="#1a0f2e" font-family="Fredoka, Arial, sans-serif" font-size="24" font-weight="700">ClinicLoop</text>
+    <text x="26" y="350" fill="#45375d" font-family="Space Grotesk, Arial, sans-serif" font-size="16">Prototype</text>
+  </g>
+</svg>
