@@ -78,7 +78,7 @@
     .pd-chip:hover{transform:translateY(-2px)}.pd-chip[aria-pressed=true]{background:var(--ink);color:white}
     .pd-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
     .pd-card{background:white;border:2px solid var(--ink);border-radius:17px;overflow:hidden;box-shadow:var(--shadow-small);display:flex;flex-direction:column;min-width:0;transition:transform .18s,box-shadow .18s}
-    .pd-card:hover{transform:translate(-2px,-3px);box-shadow:6px 7px 0 var(--ink)}
+    .pd-card:hover{transform:translate(-2px,-3px);box-shadow:6px 7px 0 var(--ink)}.pd-card[hidden]{display:none}
     .pd-card-art{min-height:145px;padding:19px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
     .pd-card-art:after{content:"";position:absolute;width:150px;height:150px;border:2px dashed rgba(26,15,46,.35);border-radius:50%;right:-36px;top:-48px}
     .art-lime{background:#dcfce7}.art-lilac{background:#e9d5ff}.art-peach{background:#ffdfcf}.art-blue{background:#dbeafe}.art-yellow{background:#fef3c7}
@@ -182,7 +182,7 @@
       <div class="pd-empty" id="empty-state"><strong>No products match that search.</strong>Try another keyword or clear a filter to see more of the shelf.</div>
     </section>
     <section class="pd-submission" id="submit-product">
-      <div class="pd-submit-panel"><div><p class="pd-kicker">BUILDING SOMETHING?</p><h2>Your product could be next.</h2><p>We want to hear from founders building useful things—whether you are testing a prototype, preparing a beta, or already serving customers. Each submission would be reviewed before publication.</p><p class="pd-submit-note">This is a concept preview. Product submissions are not yet connected or being collected.</p></div><a class="button button-primary" href="mailto:hello@founders-knowledge.vercel.app?subject=Product%20Discovery%20enquiry">Register your interest ↗</a></div>
+      <div class="pd-submit-panel"><div><p class="pd-kicker">BUILDING SOMETHING?</p><h2>Your product could be next.</h2><p>We want to hear from founders building useful things—whether you are testing a prototype, preparing a beta, or already serving customers. Each submission would be reviewed before publication.</p><p class="pd-submit-note">This is a concept preview. Product submissions are not yet connected or being collected.</p></div><a class="button button-primary" href="#products">Explore the concept ↗</a></div>
     </section>
     <p class="pd-footer-note"><strong>How to read this preview:</strong> All five profiles are fictional examples created to demonstrate the experience. They are not real companies, founder endorsements, or verified product claims. A live version should label founder-reported information, independently checked facts, availability, and the date each profile was last verified.</p>
   </main>
