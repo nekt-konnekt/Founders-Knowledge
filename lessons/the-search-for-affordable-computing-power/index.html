@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A founder’s field note on comparing Hetzner, Agent37, and Contabo to run six client-facing AI agents concurrently on a $10–$20 monthly infrastructure budget.">
+  <meta name="description" content="A founder’s field note comparing Hetzner, Agent37 and Contabo for six concurrent AI agents: what a vCPU tells you, what a VPS must handle, and how to test before committing.">
   <meta name="theme-color" content="#f3ecff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="shortcut icon" href="/favicon.svg">
@@ -14,7 +14,7 @@
     "@context":"https://schema.org",
     "@type":"Article",
     "headline":"The Search for Affordable Computing Power: Three VPS Options for Running Our AI Service",
-    "description":"A founder’s field note on comparing Hetzner, Agent37, and Contabo to run six client-facing AI agents concurrently on a $10–$20 monthly infrastructure budget.",
+    "description":"A founder’s field note comparing Hetzner, Agent37 and Contabo for six concurrent AI agents: what a vCPU tells you, what a VPS must handle, and how to test before committing.",
     "mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/the-search-for-affordable-computing-power/",
     "publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},
     "isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},
@@ -24,7 +24,7 @@
   <meta property="og:site_name" content="Founders Knowledge">
   <meta property="og:type" content="article">
   <meta property="og:title" content="The Search for Affordable Computing Power: Three VPS Options for Running Our AI Service — Founders Knowledge">
-  <meta property="og:description" content="A founder’s field note on comparing Hetzner, Agent37, and Contabo to run six client-facing AI agents concurrently on a $10–$20 monthly infrastructure budget.">
+  <meta property="og:description" content="A founder’s field note comparing Hetzner, Agent37 and Contabo for six concurrent AI agents: what a vCPU tells you, what a VPS must handle, and how to test before committing.">
   <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/the-search-for-affordable-computing-power/">
   <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fthe-search-for-affordable-computing-power.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=1">
   <meta property="og:image:width" content="1200">
@@ -32,7 +32,7 @@
   <meta property="og:image:alt" content="The Search for Affordable Computing Power: Three VPS Options for Running Our AI Service">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Search for Affordable Computing Power: Three VPS Options for Running Our AI Service — Founders Knowledge">
-  <meta name="twitter:description" content="A founder’s field note on comparing Hetzner, Agent37, and Contabo to run six client-facing AI agents concurrently on a $10–$20 monthly infrastructure budget.">
+  <meta name="twitter:description" content="A founder’s field note comparing Hetzner, Agent37 and Contabo for six concurrent AI agents: what a vCPU tells you, what a VPS must handle, and how to test before committing.">
   <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fthe-search-for-affordable-computing-power.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,8 +55,8 @@
         <div class="lesson-cover-copy">
           <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> FOUNDER FIELD NOTE <span class="lesson-separator">/</span> AI &amp; INFRASTRUCTURE</p>
           <h1>The search for affordable <span>computing power.</span></h1>
-          <p class="lesson-dek">Three VPS options, six concurrent AI agents, and a $10–$20 monthly budget. What matters when the infrastructure has to serve real clients?</p>
-          <div class="lesson-meta"><span>◷ 8 minute read</span><span>✳ Founder field note</span></div>
+          <p class="lesson-dek">Three hosting approaches, six concurrent AI agents, and a $10–$20 monthly budget. How do we buy enough capacity without paying for a number that tells us very little?</p>
+          <div class="lesson-meta"><span>◷ 9 minute read</span><span>✳ Founder field note</span></div>
         </div>
         <div class="lesson-cover-art" aria-hidden="true">
           <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
@@ -72,73 +72,90 @@
       <aside class="lesson-sidebar" aria-label="On this page">
         <div class="lesson-sidebar-inner">
           <p class="sidebar-label">IN THIS ARTICLE</p>
-          <a href="#challenge">01 <span>The challenge</span></a>
-          <a href="#options">02 <span>Three providers</span></a>
-          <a href="#capacity">03 <span>Capacity, not price</span></a>
-          <a href="#budget">04 <span>What fits the budget?</span></a>
+          <a href="#challenge">01 <span>The actual job</span></a>
+          <a href="#terms">02 <span>VPS vs vCPU</span></a>
+          <a href="#options">03 <span>Three approaches</span></a>
+          <a href="#decision">04 <span>Choose and test</span></a>
           <a href="#lesson">05 <span>The bigger lesson</span></a>
-          <div class="sidebar-note"><span>✳</span><p>The cheapest server is only a bargain if it can reliably handle the work your clients depend on.</p></div>
+          <div class="sidebar-note"><span>✳</span><p>A vCPU count is a specification, not a performance guarantee. The right choice is the one that passes your workload test at a sustainable total cost.</p></div>
         </div>
       </aside>
       <article class="lesson-body">
-        <div class="lesson-opening"><span class="opening-mark">“</span><p>Our journey began with a practical challenge. We wanted to run Hermes Agent and Claude Code to support a service we provide to clients. The plan was to have six AI agents running concurrently, but our current computer couldn’t comfortably handle that workload.</p></div>
+        <div class="lesson-opening"><span class="opening-mark">“</span><p>We want to run Hermes Agent and Claude Code in a client-facing service, with six agents able to work at the same time. Our current computer is not a comfortable home for that workload, and our infrastructure budget is $10–$20 a month. It is tempting to compare hosting plans by the number of vCPUs they advertise. That shortcut can send us towards the wrong server.</p></div>
         <section id="challenge" class="lesson-section">
-          <p class="section-number">01 — THE CHALLENGE</p>
-          <h2>Could cloud infrastructure give us room to grow?</h2>
-          <p>Rather than immediately investing in a more powerful machine, we started exploring cloud infrastructure. Could we rent the computing power we needed at a reasonable monthly cost and build a setup that could grow alongside the business?</p>
-          <p>Our budget was between $10 and $20 per month. That meant we had to look beyond attractive prices and consider what each provider actually offered: computing resources, reliability, flexibility and the ability to keep our clients’ agents available.</p>
-          <p>Three options caught our attention: Hetzner, Agent37 and Contabo.</p>
+          <p class="section-number">01 — DEFINE THE JOB BEFORE THE SERVER</p>
+          <h2>Six agents running is not the same as six agents working hard.</h2>
+          <p>Before comparing providers, we need to be precise about what the machine will do. If our agents call hosted AI models, the VPS usually runs the agent processes, tools, integrations, files and background jobs. The model inference itself happens with the external model provider. That is different from trying to load and run a large model locally, which may require substantially more memory and possibly a GPU.</p>
+          <p>Concurrency matters, but it does not tell the whole story. Six agents waiting for API responses may use modest CPU. Six agents parsing large files, running browser sessions, executing code or processing many jobs at once can place very different demands on CPU, RAM, disk and network.</p>
+          <p>For a client-facing service, raw capacity is only part of the job. We also need dependable uptime, secure storage of credentials, separation between clients, logs, backups and a recovery path when a process fails. Those requirements should be part of the comparison, not a footnote after we choose the cheapest plan.</p>
+        </section>
+        <section id="terms" class="lesson-section">
+          <p class="section-number">02 — SEPARATE THE TERMS</p>
+          <h2>A VPS is the environment. A vCPU is one resource inside it.</h2>
+          <p>A <strong>virtual private server (VPS)</strong> is a virtual machine rented from a hosting provider. It gives us an operating environment with a package of resources and features: virtual CPU capacity, memory, storage, network access and some level of isolation. The package, management tools, backup options and terms vary by provider.</p>
+          <p>A <strong>virtual CPU (vCPU)</strong> is a unit of CPU capacity allocated to that virtual machine. It is not a standardised measure of real-world speed across every provider. The underlying processor, whether CPU resources are shared or dedicated, scheduling policies and the workload itself all affect the work a vCPU can complete.</p>
+          <p>So “four vCPUs” does not automatically mean a server is twice as fast as a two-vCPU server. Nor does “eight gigabytes of RAM” tell us whether a particular workload will be responsive. Specifications describe the offer; a representative test tells us how well that offer fits our job.</p>
+          <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Do not confuse hosting with model capacity</strong><p>A larger VPS does not automatically give an agent a better AI model, more model context, higher API limits or cheaper tokens. Those are usually controlled by the model provider and our application design.</p></div></div>
         </section>
         <section id="options" class="lesson-section">
-          <p class="section-number">02 — THREE PROVIDERS, THREE APPROACHES</p>
-          <h2>What each option brings to the table.</h2>
-          <h3>Hetzner: Computing power with greater control</h3>
-          <p><a href="https://www.hetzner.com/cloud/" rel="noopener">Hetzner</a> stood out as a conventional cloud infrastructure option. A VPS gives us a remote machine on which we can install and configure the software we want, rather than being restricted to a specialised agent-hosting environment.</p>
-          <p>The appeal is control. We can shape the environment around our workflow, install the tools we need and manage the processes that keep our agents running.</p>
-          <p>In our comparison, we noted a configuration advertised at about $7.49 per month for 2 vCPUs and 4 GB of RAM. That figure and configuration must be checked against the exact server, region and current checkout price before a purchase; pricing can vary by plan and billing details.</p>
-          <p>The trade-off is that we take on more responsibility for setup, security, monitoring and maintenance. We also need to verify the exact server specifications and price available at checkout.</p>
-          <h3>Agent37: Convenience for AI agents</h3>
-          <p><a href="https://agent37.com/" rel="noopener">Agent37</a> caught our attention because it offers hosting options specifically aimed at running AI agents, including Hermes Agent.</p>
-          <p>Its managed Hermes hosting has been advertised from $3.99 per month for a Basic plan. A separate Cloud API option we examined showed a 2-vCPU, 4-GB RAM instance with 4 GB of disk space at about $4.76 per month if running continuously, or around $0.0065 per hour while running. That Cloud API option can sleep when idle; the disk charge continues while it sleeps, estimated in our comparison at roughly $0.36 per month.</p>
-          <p>These are different products, not interchangeable plans. The managed hosting option is presented as always-on, while the Cloud API instance is designed to sleep when idle. Before choosing either, we would need to confirm the exact uptime behaviour, the supported concurrency, and whether our intended Claude Code workflow is supported.</p>
-          <p>The appeal is convenience. A purpose-built environment could reduce the amount of manual setup involved in getting an agent running. But a low entry price is attractive only if the service fits the workload and keeps client-facing agents available when required.</p>
-          <h3>Contabo: More resources for the money</h3>
-          <p><a href="https://contabo.com/" rel="noopener">Contabo</a> emerged as an interesting candidate because of the specifications advertised on its VPS plans and its one-click Hermes installation option.</p>
-          <p>Its Cloud VPS 4 plan lists 4 vCPUs and 8 GB of RAM, while the Cloud VPS 6 lists 6 vCPUs and 12 GB of RAM. During our research, the displayed prices were approximately $6.60 and $9.00 per month respectively, with lower promotional rates advertised for longer commitments: about $5.28 and $7.20 per month under the offer shown.</p>
-          <p>Those specifications make Contabo worth investigating for a workload involving multiple agent processes. Still, advertised resources are only one part of the decision. We must also consider the actual checkout price, billing commitment, performance under load and the work involved in maintaining the server. Initial setup may be assisted, but maintenance and troubleshooting for additional software remain our responsibility.</p>
-          <p>There is a crucial distinction: having enough memory to run agent software does not mean the server can run large AI models locally. If our agents use cloud-based models, model inference happens with the external provider, while the VPS runs the agents, tools, integrations and background processes.</p>
-          <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Pricing is a moving target</strong><p>The prices above reflect figures captured during our research, not a guarantee of current availability or final checkout cost. Promotional pricing, subscription length, taxes, server location and usage can change the total. Confirm the final price and terms directly with each provider.</p></div></div>
+          <p class="section-number">03 — THREE APPROACHES, NOT THREE IDENTICAL PLANS</p>
+          <h2>What are we really buying?</h2>
+          <p>Hetzner and Contabo sell general-purpose virtual servers. Agent37 offers managed agent hosting and a metered cloud API for persistent agent instances. These are different operating models, so a fair comparison must include the work we have to do ourselves—not just the advertised CPU and RAM.</p>
+          <h3>Hetzner: control and a conventional cloud server</h3>
+          <p><a href="https://www.hetzner.com/cloud/cost-optimized/" rel="noopener">Hetzner’s cost-optimised cloud range</a> is positioned for development, testing and lighter workloads, with shared CPU resources and a choice of server sizes. The provider says these plans are intended for low-to-medium CPU usage; availability can vary, and its published prices and plan availability have changed. Check the current region, plan and checkout total rather than relying on an old comparison.</p>
+          <p>The benefit is control: we can install the software and supporting services we need and shape the environment around our workflow. The cost is operational responsibility. We must secure the machine, apply updates, monitor resources, configure backups, manage secrets and troubleshoot failures. That work is real even when the server bill is low.</p>
+          <h3>Contabo: more advertised resources for a low fixed price</h3>
+          <p><a href="https://contabo.com/en-us/pricing/" rel="noopener">Contabo’s US pricing page</a> lists Core VPS options such as Cloud VPS 4 with 4 vCPU cores, 8 GB RAM and 100 GB SSD, and Cloud VPS 6 with 6 vCPU cores, 12 GB RAM and 200 GB SSD. At the time of research, the page displayed introductory prices of $4.40 and $6.00 per month for those plans under a 24-month term. Pricing can differ by storefront, currency, location, taxes and commitment; treat these as a dated indication, not a guaranteed checkout quote.</p>
+          <p>Those resource bundles make Contabo worth testing against our workload. But a higher advertised vCPU count is not proof of higher throughput, and a long billing commitment is a risk if the machine fails our test. Before paying, verify the renewal price, billing term, server location, backup options, network limits and cancellation conditions. As with any self-managed VPS, we remain responsible for the software and its security.</p>
+          <h3>Agent37: pay for an agent environment, or for a metered sandbox</h3>
+          <p><a href="https://www.agent37.com/solutions/hermes-hosting" rel="noopener">Agent37’s managed Hermes hosting</a> lists a Basic plan at $3.99 per month with 1 vCPU, 4 GB RAM and 8 GB disk. It is designed to make a Hermes instance easier to launch and maintain. That is not the same thing as a general-purpose server sized for six independent agents or an arbitrary Claude Code workflow. We must confirm the supported software, concurrency and resource limits before treating it as a fit.</p>
+          <p><a href="https://www.agent37.com/cloud" rel="noopener">Agent37 Cloud API</a> uses metered compute and disk billing. Its pricing page currently shows a 2-vCPU, 4-GB instance at about $4.76 per month if it runs continuously, plus approximately $0.36 per month for 4 GB of disk. The total is therefore about $5.12 for that example, before model usage or other services. Compute charges stop while a sandbox is asleep, while disk charges continue until the instance is deleted. The actual bill depends on size and running time.</p>
+          <p>The appeal is that a purpose-built environment can reduce server administration and may make per-customer agent instances easier to provision. The trade-off is that metered usage, supported workflows and the provider’s platform model need to match our service. A low example price does not prove that six agents can run concurrently within budget.</p>
+          <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Price is not a like-for-like benchmark</strong><p>These examples differ in resource size, management, billing model and contract term. Provider prices were checked on 18 October 2026 and can change. Recheck the official pages and final checkout price before committing.</p></div></div>
         </section>
-        <section id="capacity" class="lesson-section">
-          <p class="section-number">03 — CAPACITY, NOT JUST PRICE</p>
-          <h2>Six agents change the calculation.</h2>
-          <p>Six agents running concurrently introduce a different set of considerations from running a single assistant.</p>
-          <p>Each agent may be waiting for instructions, calling an API, executing tools, handling files or performing background tasks. Their resource consumption will vary depending on what they are doing. Six mostly idle agents are not the same workload as six agents actively running complex jobs.</p>
-          <p>We also have to think beyond computing power. A client-facing service needs dependable uptime, secure handling of client credentials, sensible separation of client data and a way to recover when a process fails.</p>
-          <p>That is why the cheapest plan is not automatically the best choice. A server that struggles under load or requires frequent intervention can cost us more in lost time and disrupted service than we save on hosting.</p>
-          <p>We also need to account for costs outside the VPS itself, including AI model usage, backups and any additional services. Renting a server provides computing capacity; it does not make the AI models or every supporting service free. API rate limits and model-provider charges remain separate considerations.</p>
-        </section>
-        <section id="budget" class="lesson-section">
-          <p class="section-number">04 — WHAT MAKES SENSE FOR OUR BUDGET?</p>
-          <h2>Start with a test, not an assumption.</h2>
-          <p>With $10–$20 per month available for infrastructure, Contabo’s advertised 4-vCPU/8-GB plan looks like a reasonable candidate for an initial test. The 6-vCPU/12-GB option offers more headroom, provided its final price and billing terms fit our budget.</p>
-          <p>Hetzner remains worth comparing for its flexibility, while Agent37 may be attractive if its hosting environment supports our complete workflow and continuous-availability requirements.</p>
-          <p>These are candidates, not yet proven winners. The sensible next step is to deploy the actual agent setup, run all six agents together, measure memory and CPU usage, test recovery after failures and confirm that each client’s agents remain accessible. We should make a final choice based on those results rather than specifications alone.</p>
-          <div class="lesson-question-card"><p class="question-card-title">BEFORE COMMITTING TO A PLAN</p><ul>
-            <li>Can all six agents run concurrently without exhausting memory or CPU?</li>
-            <li>Do the agents stay available, or can the service sleep or time out?</li>
-            <li>Can each client’s data, files and credentials be kept separate?</li>
-            <li>What are the real monthly costs after model usage, backups and add-ons?</li>
-            <li>How easily can we restart a failed process and inspect logs?</li>
-          </ul></div>
+        <section id="decision" class="lesson-section">
+          <p class="section-number">04 — CHOOSE WITH EVIDENCE</p>
+          <h2>Use the table to shortlist. Use a test to decide.</h2>
+          <p>The meaningful comparison is not “which provider has the most vCPUs per dollar?” It is “which option can run our actual service reliably, with acceptable operational effort and a total cost we can sustain?”</p>
+          <div class="lesson-question-card">
+            <p class="question-card-title">THE TRADE-OFF AT A GLANCE</p>
+            <ul>
+              <li><strong>Self-managed VPS:</strong> most control over the environment; we carry setup, security, monitoring and recovery work.</li>
+              <li><strong>Managed agent hosting:</strong> less routine server administration; we must confirm product fit, concurrency and platform limits.</li>
+              <li><strong>Metered agent sandbox:</strong> costs can follow actual runtime; always-on workloads and persistent disk still have a cost, and usage must be estimated carefully.</li>
+            </ul>
+          </div>
+          <p>With a $10–$20 monthly infrastructure budget, a self-managed VPS with enough memory is a sensible candidate for a controlled trial. Contabo’s advertised resource bundles make it one candidate; Hetzner is another if a suitable plan is available at the right price. Agent37 may be attractive if the managed or metered model supports our exact workflow. None is a proven winner until we run the same workload on it.</p>
+          <h3>Run a test that could change the decision</h3>
+          <p>Use a small test plan before moving client work to the server:</p>
+          <ul>
+            <li><strong>Deploy the real stack.</strong> Use the same agent software, integrations, tools and model APIs we intend to use in production.</li>
+            <li><strong>Run six agents concurrently.</strong> Include realistic browser, file, API and background jobs—not six idle processes.</li>
+            <li><strong>Measure the bottlenecks.</strong> Record peak and sustained RAM, CPU use, disk pressure, response latency, failed jobs and restarts over a representative period.</li>
+            <li><strong>Test failure and recovery.</strong> Restart a process, simulate a temporary API failure, check logs, restore a backup and verify that one client cannot access another client’s data.</li>
+            <li><strong>Calculate the full monthly cost.</strong> Include the server or sandbox, storage, backups, model tokens, search or integration fees, taxes and any required monitoring.</li>
+          </ul>
+          <p>Decide the pass conditions before running the test. For example: all six agents finish the defined workload without out-of-memory kills; jobs recover after a process restart; credentials and client data remain separated; and the projected monthly bill stays inside the agreed ceiling. Set an acceptable response time based on the service you promise clients, not an arbitrary benchmark.</p>
+          <p>If the test fails, do not automatically buy a larger server. First identify the bottleneck. It may be RAM, CPU, a single-threaded process, API rate limits, disk performance, a browser workload or application architecture. Paying for more vCPUs will not fix every one of those problems.</p>
         </section>
         <section id="lesson" class="lesson-section">
           <p class="section-number">05 — THE BIGGER LESSON</p>
-          <h2>Infrastructure is part of the business model.</h2>
-          <p>For founders building AI-powered services, infrastructure decisions are part of the business model. The objective is not to buy the biggest server available or chase the lowest advertised price. It is to find a dependable starting point that supports the current workload while leaving room to grow.</p>
-          <p>Our search for a place to run six AI agents has become a lesson in evaluating cloud infrastructure with a founder’s mindset: understand the workload, test the assumptions, calculate the full cost and pay for capacity that serves a clear business purpose.</p>
+          <h2>Buy the capacity your service needs—not the biggest number on a plan.</h2>
+          <p>Infrastructure is part of the business model. A cheap server that repeatedly interrupts client work is not cheap in practice. A larger plan that sits idle may be wasteful. And a managed service that saves hours of maintenance can be worth more than raw compute savings—if it supports the workflow we actually need.</p>
+          <p>Our next move is not to declare a provider the winner from its marketing page. It is to shortlist a self-managed VPS and, if the workflow fits, a managed or metered agent option; run the same six-agent workload; then compare reliability, operational effort and full cost. The evidence from that test should decide where we deploy.</p>
         </section>
-        <div class="lesson-takeaway"><span class="takeaway-label">THE TAKEAWAY</span><p>The goal is not simply to get six agents running. <em>It is to build a service that can support its clients reliably, within a budget the business can sustain.</em></p></div>
+        <div class="lesson-takeaway"><span class="takeaway-label">THE TAKEAWAY</span><p>A vCPU count tells you part of what you are buying. <em>The right hosting choice is the one that passes your real workload and recovery tests at a total cost your business can sustain.</em></p></div>
+        <section class="lesson-section" aria-label="Sources">
+          <p class="section-number">SOURCES — CHECK BEFORE YOU BUY</p>
+          <p>Provider prices and plans change. These official pages were consulted on 18 October 2026; verify the exact region, terms and final checkout price before making a decision.</p>
+          <ul>
+            <li><a href="https://www.hetzner.com/cloud/cost-optimized/" rel="noopener">Hetzner — Cost-Optimised Cloud</a></li>
+            <li><a href="https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/" rel="noopener">Hetzner — Cloud price adjustment and current price list</a></li>
+            <li><a href="https://contabo.com/en-us/pricing/" rel="noopener">Contabo — Official US pricing</a></li>
+            <li><a href="https://www.agent37.com/solutions/hermes-hosting" rel="noopener">Agent37 — Managed Hermes hosting</a></li>
+            <li><a href="https://www.agent37.com/cloud" rel="noopener">Agent37 — Cloud API pricing and billing model</a></li>
+          </ul>
+        </section>
         <nav class="lesson-next" aria-label="Article navigation">
           <a href="/library/" class="next-library"><span></span><span><small>WHEN YOU'RE READY</small><strong>Back to the knowledge library</strong></span></a>
           <a href="/lessons/the-tools-we-take-for-granted/" class="next-card"><span class="next-card-label">RELATED FIELD NOTE</span><strong>The tools we take for granted</strong><span class="next-arrow"></span></a>
