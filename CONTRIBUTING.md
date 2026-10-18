@@ -1,32 +1,42 @@
 # Publishing to Founders Knowledge
 
+## The editorial source of truth
+
+Before drafting or editing any FK publication, read [content/founders-knowledge-editorial-standard.md](content/founders-knowledge-editorial-standard.md). It defines the FK voice, reasoning standard, research discipline, technical comparison requirements, page design system, metadata requirements, and quality gate.
+
+Use [content/lesson-template.md](content/lesson-template.md) to start a draft. The template is a working scaffold; the editorial standard determines whether the finished piece meets FK quality.
+
 ## Content principles
 
-Founders Knowledge is a knowledge centre, not a chronological blog. Organize material around recurring founder problems. Content types include lessons, practical guides, frameworks, and field notes.
+Founders Knowledge is a knowledge centre, not a chronological blog. Organize material around recurring founder problems. Content types include lessons, practical guides, frameworks, comparisons, and field notes.
 
 ## Current static-site structure
 
-- `index.html` — library homepage and navigation
-- `assets/site.css` — shared visual system
-- `assets/analytics.js` — shared PostHog initialization and custom event tracking
-- `assets/share.js` — shared lesson-sharing behavior
-- `lessons/<slug>/index.html` — individual lesson pages
-- `content/lesson-template.md` — editorial template for drafting new lessons
+- index.html — library homepage and navigation
+- assets/site.css — shared visual system and design tokens
+- assets/analytics.js — shared PostHog initialization and custom event tracking
+- assets/share.js — shared lesson-sharing behavior
+- lessons/<slug>/index.html — individual lesson pages
+- content/founders-knowledge-editorial-standard.md — canonical writing, research, and design standard
+- content/lesson-template.md — editorial template for drafting new lessons
+- assets/og/lessons/ — lesson Open Graph artwork
 
 ## Add a lesson
 
-1. Draft the content with `content/lesson-template.md`.
-2. Choose a short, readable slug such as `find-your-first-customers`.
-3. Create `lessons/<slug>/index.html`, using an existing lesson page as the visual and semantic pattern.
-4. Include the shared stylesheet and analytics script; include the shared sharing script on lesson pages.
-5. Add a card linking to the new page in `index.html`.
-6. Check internal links, mobile layout, headings, page title, description, and social preview metadata.
-7. Commit the change to the `main` branch.
-8. Confirm the Vercel production deployment is ready and open the live page.
+1. Read the editorial standard and choose the right content type.
+2. Draft with the lesson template, adapting the structure to the actual argument rather than filling sections mechanically.
+3. Research and verify claims that are current, technical, regulated, consequential, or disputed. Keep facts, reported claims, interpretation, and illustrative examples distinct.
+4. Choose a short, readable slug such as find-your-first-customers.
+5. Create lessons/<slug>/index.html, using the current lesson design system and a relevant existing lesson as the structural reference.
+6. Reuse the shared stylesheet and existing design tokens; include the established analytics and sharing scripts as appropriate.
+7. Complete unique page metadata, canonical URL, Article structured data, OG/Twitter metadata, and the lesson's Open Graph artwork.
+8. Add the piece to the knowledge library and any relevant reading path or series links.
+9. Check factual accuracy, citations, internal links, mobile layout, headings, accessibility, metadata, and the editorial quality gate.
+10. Commit through the repository workflow, confirm the Vercel deployment is ready, and inspect the live page. A successful commit alone does not prove that production is correct.
 
 ## Publishing workflow with ChatGPT
 
-Bring an observation, question, rough note, or founder problem into the conversation. We can challenge assumptions, research claims when needed, shape it into the right format, and draft it using the shared content standard. Publish only after approval.
+Bring an observation, question, rough note, or founder problem into the conversation. Challenge assumptions, research claims when needed, choose the right format, and draft using the canonical editorial standard. Do not publish until the piece passes the quality gate and has approval.
 
 ## Infrastructure decisions
 
