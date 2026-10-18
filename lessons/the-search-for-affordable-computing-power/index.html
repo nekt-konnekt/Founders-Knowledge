@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A founder’s field note on comparing Hetzner, Agent37, and Contabo to run six client-facing AI agents concurrently on a $10–$20 monthly infrastructure budget.">
+  <meta name="theme-color" content="#f3ecff">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <title>The Search for Affordable Computing Power: Three VPS Options for Running Our AI Service — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/the-search-for-affordable-computing-power/">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"The Search for Affordable Computing Power: Three VPS Options for Running Our AI Service",
+    "description":"A founder’s field note on comparing Hetzner, Agent37, and Contabo to run six client-facing AI agents concurrently on a $10–$20 monthly infrastructure budget.",
+    "mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/the-search-for-affordable-computing-power/",
+    "publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},
+    "isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},
+    "inLanguage":"en"
+  }
+  </script>
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Search for Affordable Computing Power: Three VPS Options for Running Our AI Service — Founders Knowledge">
+  <meta property="og:description" content="A founder’s field note on comparing Hetzner, Agent37, and Contabo to run six client-facing AI agents concurrently on a $10–$20 monthly infrastructure budget.">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/the-search-for-affordable-computing-power/">
+  <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fthe-search-for-affordable-computing-power.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=1">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Search for Affordable Computing Power: Three VPS Options for Running Our AI Service">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Search for Affordable Computing Power: Three VPS Options for Running Our AI Service — Founders Knowledge">
+  <meta name="twitter:description" content="A founder’s field note on comparing Hetzner, Agent37, and Contabo to run six client-facing AI agents concurrently on a $10–$20 monthly infrastructure budget.">
+  <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fthe-search-for-affordable-computing-power.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/analytics.js" defer></script>
+  <meta property="og:image:secure_url" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fthe-search-for-affordable-computing-power.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=1">
+</head>
+<body class="lesson-page">
+  <a class="skip-link" href="#lesson-content">Skip to article</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+    <nav aria-label="Article navigation"><a href="/library/">Knowledge library</a><a href="/#approach">Our approach</a></nav>
+    <a class="nav-cta" href="/library/">All knowledge</a>
+  </header>
+  <main id="lesson-content">
+    <section class="lesson-hero">
+      <a class="lesson-back" href="/library/">Back to the knowledge library</a>
+      <div class="lesson-cover">
+        <div class="lesson-cover-copy">
+          <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> FOUNDER FIELD NOTE <span class="lesson-separator">/</span> AI &amp; INFRASTRUCTURE</p>
+          <h1>The search for affordable <span>computing power.</span></h1>
+          <p class="lesson-dek">Three VPS options, six concurrent AI agents, and a $10–$20 monthly budget. What matters when the infrastructure has to serve real clients?</p>
+          <div class="lesson-meta"><span>◷ 8 minute read</span><span>✳ Founder field note</span></div>
+        </div>
+        <div class="lesson-cover-art" aria-hidden="true">
+          <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
+          <div class="lesson-art-card art-current"><span class="art-label">THE WORKLOAD</span><div class="art-lines"><i></i><i></i><i></i></div><span class="art-small">Six agents. One service.</span></div>
+          <div class="lesson-art-card art-better"><span class="art-label">THE DECISION</span><strong>Capacity.<br>Cost. Control.</strong><span class="art-highlight"></span></div>
+          <span class="lesson-art-stamp">BUILD<br>TO SCALE</span>
+        </div>
+      </div>
+      <div class="lesson-progress"><span></span></div>
+      <div class="lesson-progress-caption"><span>AI &amp; INFRASTRUCTURE</span><span>Choose capacity that fits the real workload</span></div>
+    </section>
+    <div class="lesson-layout">
+      <aside class="lesson-sidebar" aria-label="On this page">
+        <div class="lesson-sidebar-inner">
+          <p class="sidebar-label">IN THIS ARTICLE</p>
+          <a href="#challenge">01 <span>The challenge</span></a>
+          <a href="#options">02 <span>Three providers</span></a>
+          <a href="#capacity">03 <span>Capacity, not price</span></a>
+          <a href="#budget">04 <span>What fits the budget?</span></a>
+          <a href="#lesson">05 <span>The bigger lesson</span></a>
+          <div class="sidebar-note"><span>✳</span><p>The cheapest server is only a bargain if it can reliably handle the work your clients depend on.</p></div>
+        </div>
+      </aside>
+      <article class="lesson-body">
+        <div class="lesson-opening"><span class="opening-mark">“</span><p>Our journey began with a practical challenge. We wanted to run Hermes Agent and Claude Code to support a service we provide to clients. The plan was to have six AI agents running concurrently, but our current computer couldn’t comfortably handle that workload.</p></div>
+        <section id="challenge" class="lesson-section">
+          <p class="section-number">01 — THE CHALLENGE</p>
+          <h2>Could cloud infrastructure give us room to grow?</h2>
+          <p>Rather than immediately investing in a more powerful machine, we started exploring cloud infrastructure. Could we rent the computing power we needed at a reasonable monthly cost and build a setup that could grow alongside the business?</p>
+          <p>Our budget was between $10 and $20 per month. That meant we had to look beyond attractive prices and consider what each provider actually offered: computing resources, reliability, flexibility and the ability to keep our clients’ agents available.</p>
+          <p>Three options caught our attention: Hetzner, Agent37 and Contabo.</p>
+        </section>
+        <section id="options" class="lesson-section">
+          <p class="section-number">02 — THREE PROVIDERS, THREE APPROACHES</p>
+          <h2>What each option brings to the table.</h2>
+          <h3>Hetzner: Computing power with greater control</h3>
+          <p><a href="https://www.hetzner.com/cloud/" rel="noopener">Hetzner</a> stood out as a conventional cloud infrastructure option. A VPS gives us a remote machine on which we can install and configure the software we want, rather than being restricted to a specialised agent-hosting environment.</p>
+          <p>The appeal is control. We can shape the environment around our workflow, install the tools we need and manage the processes that keep our agents running.</p>
+          <p>In our comparison, we noted a configuration advertised at about $7.49 per month for 2 vCPUs and 4 GB of RAM. That figure and configuration must be checked against the exact server, region and current checkout price before a purchase; pricing can vary by plan and billing details.</p>
+          <p>The trade-off is that we take on more responsibility for setup, security, monitoring and maintenance. We also need to verify the exact server specifications and price available at checkout.</p>
+          <h3>Agent37: Convenience for AI agents</h3>
+          <p><a href="https://agent37.com/" rel="noopener">Agent37</a> caught our attention because it offers hosting options specifically aimed at running AI agents, including Hermes Agent.</p>
+          <p>Its managed Hermes hosting has been advertised from $3.99 per month for a Basic plan. A separate Cloud API option we examined showed a 2-vCPU, 4-GB RAM instance with 4 GB of disk space at about $4.76 per month if running continuously, or around $0.0065 per hour while running. That Cloud API option can sleep when idle; the disk charge continues while it sleeps, estimated in our comparison at roughly $0.36 per month.</p>
+          <p>These are different products, not interchangeable plans. The managed hosting option is presented as always-on, while the Cloud API instance is designed to sleep when idle. Before choosing either, we would need to confirm the exact uptime behaviour, the supported concurrency, and whether our intended Claude Code workflow is supported.</p>
+          <p>The appeal is convenience. A purpose-built environment could reduce the amount of manual setup involved in getting an agent running. But a low entry price is attractive only if the service fits the workload and keeps client-facing agents available when required.</p>
+          <h3>Contabo: More resources for the money</h3>
+          <p><a href="https://contabo.com/" rel="noopener">Contabo</a> emerged as an interesting candidate because of the specifications advertised on its VPS plans and its one-click Hermes installation option.</p>
+          <p>Its Cloud VPS 4 plan lists 4 vCPUs and 8 GB of RAM, while the Cloud VPS 6 lists 6 vCPUs and 12 GB of RAM. During our research, the displayed prices were approximately $6.60 and $9.00 per month respectively, with lower promotional rates advertised for longer commitments: about $5.28 and $7.20 per month under the offer shown.</p>
+          <p>Those specifications make Contabo worth investigating for a workload involving multiple agent processes. Still, advertised resources are only one part of the decision. We must also consider the actual checkout price, billing commitment, performance under load and the work involved in maintaining the server. Initial setup may be assisted, but maintenance and troubleshooting for additional software remain our responsibility.</p>
+          <p>There is a crucial distinction: having enough memory to run agent software does not mean the server can run large AI models locally. If our agents use cloud-based models, model inference happens with the external provider, while the VPS runs the agents, tools, integrations and background processes.</p>
+          <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Pricing is a moving target</strong><p>The prices above reflect figures captured during our research, not a guarantee of current availability or final checkout cost. Promotional pricing, subscription length, taxes, server location and usage can change the total. Confirm the final price and terms directly with each provider.</p></div></div>
+        </section>
+        <section id="capacity" class="lesson-section">
+          <p class="section-number">03 — CAPACITY, NOT JUST PRICE</p>
+          <h2>Six agents change the calculation.</h2>
+          <p>Six agents running concurrently introduce a different set of considerations from running a single assistant.</p>
+          <p>Each agent may be waiting for instructions, calling an API, executing tools, handling files or performing background tasks. Their resource consumption will vary depending on what they are doing. Six mostly idle agents are not the same workload as six agents actively running complex jobs.</p>
+          <p>We also have to think beyond computing power. A client-facing service needs dependable uptime, secure handling of client credentials, sensible separation of client data and a way to recover when a process fails.</p>
+          <p>That is why the cheapest plan is not automatically the best choice. A server that struggles under load or requires frequent intervention can cost us more in lost time and disrupted service than we save on hosting.</p>
+          <p>We also need to account for costs outside the VPS itself, including AI model usage, backups and any additional services. Renting a server provides computing capacity; it does not make the AI models or every supporting service free. API rate limits and model-provider charges remain separate considerations.</p>
+        </section>
+        <section id="budget" class="lesson-section">
+          <p class="section-number">04 — WHAT MAKES SENSE FOR OUR BUDGET?</p>
+          <h2>Start with a test, not an assumption.</h2>
+          <p>With $10–$20 per month available for infrastructure, Contabo’s advertised 4-vCPU/8-GB plan looks like a reasonable candidate for an initial test. The 6-vCPU/12-GB option offers more headroom, provided its final price and billing terms fit our budget.</p>
+          <p>Hetzner remains worth comparing for its flexibility, while Agent37 may be attractive if its hosting environment supports our complete workflow and continuous-availability requirements.</p>
+          <p>These are candidates, not yet proven winners. The sensible next step is to deploy the actual agent setup, run all six agents together, measure memory and CPU usage, test recovery after failures and confirm that each client’s agents remain accessible. We should make a final choice based on those results rather than specifications alone.</p>
+          <div class="lesson-question-card"><p class="question-card-title">BEFORE COMMITTING TO A PLAN</p><ul>
+            <li>Can all six agents run concurrently without exhausting memory or CPU?</li>
+            <li>Do the agents stay available, or can the service sleep or time out?</li>
+            <li>Can each client’s data, files and credentials be kept separate?</li>
+            <li>What are the real monthly costs after model usage, backups and add-ons?</li>
+            <li>How easily can we restart a failed process and inspect logs?</li>
+          </ul></div>
+        </section>
+        <section id="lesson" class="lesson-section">
+          <p class="section-number">05 — THE BIGGER LESSON</p>
+          <h2>Infrastructure is part of the business model.</h2>
+          <p>For founders building AI-powered services, infrastructure decisions are part of the business model. The objective is not to buy the biggest server available or chase the lowest advertised price. It is to find a dependable starting point that supports the current workload while leaving room to grow.</p>
+          <p>Our search for a place to run six AI agents has become a lesson in evaluating cloud infrastructure with a founder’s mindset: understand the workload, test the assumptions, calculate the full cost and pay for capacity that serves a clear business purpose.</p>
+        </section>
+        <div class="lesson-takeaway"><span class="takeaway-label">THE TAKEAWAY</span><p>The goal is not simply to get six agents running. <em>It is to build a service that can support its clients reliably, within a budget the business can sustain.</em></p></div>
+        <nav class="lesson-next" aria-label="Article navigation">
+          <a href="/library/" class="next-library"><span></span><span><small>WHEN YOU'RE READY</small><strong>Back to the knowledge library</strong></span></a>
+          <a href="/lessons/the-tools-we-take-for-granted/" class="next-card"><span class="next-card-label">RELATED FIELD NOTE</span><strong>The tools we take for granted</strong><span class="next-arrow"></span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#lesson-content">Back to top</a></footer>
+  <script src="/assets/share.js" defer></script>
+</body>
+</html>
