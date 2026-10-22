@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A practical guide to payment failures, pending transactions, duplicate-charge prevention, verification, and recovery for founders.">
-<meta name="theme-color" content="#f3ecff">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="shortcut icon" href="/favicon.svg">
-<title>What Happens When Your Payment Provider Fails? — Founders Knowledge</title>
-<link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/what-happens-when-your-payment-provider-fails/">
-<script type="application/ld+json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical guide to payment failures, pending transactions, duplicate-charge prevention, verification, and recovery for founders.">
+  <meta name="theme-color" content="#f3ecff">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <title>What Happens When Your Payment Provider Fails? — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/what-happens-when-your-payment-provider-fails/">
+  <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Article",
@@ -22,37 +22,37 @@
   "isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},
   "inLanguage":"en"
 }
-</script>
-<meta property="og:site_name" content="Founders Knowledge">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:title" content="What Happens When Your Payment Provider Fails? — Founders Knowledge">
-<meta property="og:description" content="A practical guide to payment failures, pending transactions, duplicate-charge prevention, verification, and recovery for founders.">
-<meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/what-happens-when-your-payment-provider-fails/">
-<meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fwhat-happens-when-your-payment-provider-fails.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=ab3d1aafa7">
-<meta property="og:image:secure_url" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fwhat-happens-when-your-payment-provider-fails.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=ab3d1aafa7">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="What Happens When Your Payment Provider Fails? — Founders Knowledge social preview">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What Happens When Your Payment Provider Fails? — Founders Knowledge">
-<meta name="twitter:description" content="A practical guide to payment failures, pending transactions, duplicate-charge prevention, verification, and recovery for founders.">
-<meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fwhat-happens-when-your-payment-provider-fails.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=ab3d1aafa7">
-<meta name="twitter:image:alt" content="What Happens When Your Payment Provider Fails? — Founders Knowledge social preview">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
-<script src="/assets/analytics.js" defer></script>
+  </script>
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What Happens When Your Payment Provider Fails? — Founders Knowledge">
+  <meta property="og:description" content="A practical guide to payment failures, pending transactions, duplicate-charge prevention, verification, and recovery for founders.">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/what-happens-when-your-payment-provider-fails/">
+  <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fwhat-happens-when-your-payment-provider-fails.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=ab3d1aafa7">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="What Happens When Your Payment Provider Fails? — Founders Knowledge social preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Happens When Your Payment Provider Fails? — Founders Knowledge">
+  <meta name="twitter:description" content="A practical guide to payment failures, pending transactions, duplicate-charge prevention, verification, and recovery for founders.">
+  <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fwhat-happens-when-your-payment-provider-fails.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=ab3d1aafa7">
+  <meta name="twitter:image:alt" content="What Happens When Your Payment Provider Fails? — Founders Knowledge social preview">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/analytics.js" defer></script>
+  <meta property="og:image:secure_url" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fwhat-happens-when-your-payment-provider-fails.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=ab3d1aafa7">
 </head>
 <body class="lesson-page">
-<a class="skip-link" href="#lesson-content">Skip to lesson</a>
+<a class="skip-link" href="#lesson-content">Skip to article</a>
 <header class="site-header">
-<a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
-<nav aria-label="Main navigation"><a href="/library/">Knowledge library</a><a href="/lessons/app-monetization/">Monetization guide</a></nav>
-<a class="nav-cta" href="/library/">All knowledge</a>
-</header>
+    <a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+    <nav aria-label="Article navigation"><a href="/library/">Knowledge library</a><a href="/#approach">Our approach</a></nav>
+    <a class="nav-cta" href="/library/">All knowledge</a>
+  </header>
 <main id="lesson-content">
 <section class="lesson-hero">
 <a class="lesson-back" href="/library/">Back to the knowledge library</a>
@@ -65,12 +65,12 @@
 </div>
 <div class="lesson-cover-art" aria-hidden="true">
 <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
-<div class="lesson-art-card art-current"><span class="art-label">THE MOMENT</span><strong style="display:block;font:600 25px/1.1 var(--display)">Payment status<br>is uncertain.</strong><div class="art-lines"><i></i><i></i><i></i></div></div>
+<div class="lesson-art-card art-current"><span class="art-label">THE MOMENT</span><strong>Payment status<br>is uncertain.</strong><div class="art-lines"><i></i><i></i><i></i></div></div>
 <div class="lesson-art-card art-better"><span class="art-label">THE RESPONSE</span><strong>Verify.<br>Reconcile.<br>Recover.</strong><span class="art-highlight"></span></div>
 <span class="lesson-art-stamp">STAY<br>READY</span>
 </div>
 </div>
-<div class="lesson-progress"><span style="width:50%"></span></div>
+<div class="lesson-progress"><span class="progress-50"></span></div>
 <div class="lesson-progress-caption"><span>PRACTICAL GUIDE</span><span>Prepare for uncertainty before it reaches your customers</span></div>
 </section>
 <div class="lesson-layout">
@@ -126,7 +126,7 @@
 <p>A general success rate can conceal a problem affecting only one card scheme or country. Monitoring should help you locate the source of a problem, not merely tell you that something went wrong.</p>
 </section>
 <div class="lesson-exercise"><p class="section-number">YOUR NEXT STEP</p><h2>Answer three questions before the next incident.</h2><p>Write down how your team will establish what happened to the customer's money, what should happen to the order, and what to do if neither answer can be confirmed immediately.</p><a class="button button-primary" href="/lessons/connect-payments-to-paid-access/">Next: connect payments to paid access</a></div>
-<section class="lesson-section">
+<section class="lesson-section" aria-label="Sources">
 <p class="section-number">SOURCES &amp; REALITY CHECK</p><h2>What this guide does—and does not—claim.</h2>
 <p>This is a practical reliability guide, not a claim that all payment failures have the same cause. Payment verification, retry, refund, and fallback procedures must be adapted to the provider, payment method, and market.</p>
 <ul><li><a href="https://status.paystack.com/" target="_blank" rel="noopener noreferrer"><u>Paystack official status page</u></a></li><li><a href="https://status.paystack.com/history/1" target="_blank" rel="noopener noreferrer"><u>Paystack incident and maintenance history</u></a></li><li><a href="https://support.paystack.com/en/articles/2127106" target="_blank" rel="noopener noreferrer"><u>Paystack refund support guidance</u></a></li></ul>
