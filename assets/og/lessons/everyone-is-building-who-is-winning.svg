@@ -1,27 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Everyone is building. Who is actually winning?">
-  <rect width="1200" height="630" fill="#f3ecff"/>
-  <circle cx="1070" cy="110" r="150" fill="#fbcfe8"/>
-  <circle cx="1100" cy="540" r="150" fill="#bbf7d0"/>
-  <path d="M810 95 C940 60 1030 150 1050 250" fill="none" stroke="#1a0f2e" stroke-width="3" stroke-dasharray="8 10" opacity=".5"/>
-  <rect x="64" y="38" width="56" height="56" rx="11" fill="#fde047" stroke="#1a0f2e" stroke-width="2"/>
-  <text x="92" y="75" text-anchor="middle" fill="#1a0f2e" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="30" font-weight="700">FK</text>
-  <text x="136" y="78" fill="#1a0f2e" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Founders Knowledge</text>
-  <rect x="64" y="142" width="340" height="38" rx="10" fill="#e9d5ff" stroke="#1a0f2e" stroke-width="2"/>
-  <text x="82" y="167" fill="#1a0f2e" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2">THE FOUNDER'S BOTTLENECK</text>
-  <text x="64" y="280" fill="#1a0f2e" font-family="Fredoka, Arial, Helvetica, sans-serif" font-size="82" font-weight="700" letter-spacing="-2">
-    <tspan x="64" dy="0">Everyone is building.</tspan>
-    <tspan x="64" dy="96">Who is actually winning?</tspan>
-  </text>
-  <rect x="64" y="435" width="610" height="8" rx="4" fill="#fde047" stroke="#1a0f2e" stroke-width="2" transform="rotate(-1 64 435)"/>
-  <text x="68" y="505" fill="#45375d" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="27" font-weight="600">AI lowers the cost of building.</text>
-  <text x="68" y="545" fill="#45375d" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="27" font-weight="600">It doesn't remove the work of earning demand.</text>
-  <g transform="translate(850 330) rotate(7)">
-    <rect x="0" y="0" width="230" height="148" rx="18" fill="#ffffff" stroke="#1a0f2e" stroke-width="3"/>
-    <text x="22" y="34" fill="#786d8e" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2">THE BUSINESS</text>
-    <text x="22" y="76" fill="#1a0f2e" font-family="Fredoka, Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Reach.</text>
-    <text x="22" y="111" fill="#1a0f2e" font-family="Fredoka, Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Trust. Earn.</text>
-    <rect x="20" y="122" width="170" height="9" rx="4" fill="#fde047" stroke="#1a0f2e" stroke-width="1.5"/>
-  </g>
-  <text x="1090" y="605" text-anchor="end" fill="#786d8e" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">FIELD NOTE / 22 OCT 2026</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Everyone is building. Who is actually winning?"><rect width="1200" height="630" fill="#ffffff"/><rect x="64" y="38" width="56" height="56" rx="11" fill="#6d3be8"/><text x="92" y="75" text-anchor="middle" fill="#ffffff" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="34" font-weight="700">FK</text><text x="136" y="80" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="52" font-weight="700">Founders Knowledge</text><text x="64" y="294" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="-1.4"><tspan x="64" dy="0">Everyone is building.</tspan><tspan x="64" dy="104">Who is actually</tspan><tspan x="64" dy="104">winning?</tspan></text></svg>
