@@ -1,14 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Sell it or shut it down?">
-  <rect width="1200" height="630" fill="#ffffff"/>
-  <rect x="64" y="38" width="56" height="56" rx="11" fill="#2B146B"/>
-  <text x="92" y="75" text-anchor="middle" fill="#ffffff" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="34" font-weight="700">FK</text>
-  <text x="136" y="80" fill="#2B146B" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="52" font-weight="700">Founders Knowledge</text>
-  <rect x="880" y="180" width="256" height="256" rx="28" fill="#FFE600"/>
-  <text x="1008" y="300" text-anchor="middle" fill="#111111" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="44" font-weight="700">−56%</text>
-  <text x="1008" y="344" text-anchor="middle" fill="#111111" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="24" font-weight="700">revenue</text>
-  <text x="1008" y="376" text-anchor="middle" fill="#111111" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="24" font-weight="700">goodwill: 0</text>
-  <text x="64" y="330" fill="#111111" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="-1.4"><tspan x="64" dy="0">Sell it or shut</tspan><tspan x="64" dy="104">it down?</tspan></text>
-  <text x="64" y="500" fill="#444444" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="34" font-weight="400">The Baxi shutdown: read the unit, decide, wind down clean.</text>
-  <text x="64" y="576" fill="#6d3be8" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="26" font-weight="700" letter-spacing="2">FOUNDER FIELD NOTE • 7-MINUTE READ</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Sell it or shut it down?"><rect width="1200" height="630" fill="#ffffff"/><rect x="64" y="38" width="56" height="56" rx="11" fill="#6d3be8"/><text x="92" y="75" text-anchor="middle" fill="#ffffff" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="34" font-weight="700">FK</text><text x="136" y="80" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="52" font-weight="700">Founders Knowledge</text><text x="64" y="346" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="-1.4"><tspan x="64" dy="0">Sell it or shut it</tspan><tspan x="64" dy="104">down?</tspan></text></svg>
