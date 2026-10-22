@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A practical guide to verifying payments, granting access exactly once, handling webhooks, and keeping paid access in sync with refunds and subscriptions.">
-<meta name="theme-color" content="#f3ecff">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="shortcut icon" href="/favicon.svg">
-<title>Connect Payments to Paid Access — Founders Knowledge</title>
-<link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/connect-payments-to-paid-access/">
-<script type="application/ld+json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical guide to verifying payments, granting access exactly once, handling webhooks, and keeping paid access in sync with refunds and subscriptions.">
+  <meta name="theme-color" content="#f3ecff">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <title>Connect Payments to Paid Access — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/connect-payments-to-paid-access/">
+  <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Article",
@@ -22,40 +22,40 @@
   "isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},
   "inLanguage":"en"
 }
-</script>
-<meta property="og:site_name" content="Founders Knowledge">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Connect Payments to Paid Access — Founders Knowledge">
-<meta property="og:description" content="A practical guide to verifying payments, granting access exactly once, handling webhooks, and keeping paid access in sync with refunds and subscriptions.">
-<meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/connect-payments-to-paid-access/">
-<meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fconnect-payments-to-paid-access.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=2f4b2d115a">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Connect Payments to Paid Access — Founders Knowledge social preview">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Connect Payments to Paid Access — Founders Knowledge">
-<meta name="twitter:description" content="A practical guide to verifying payments, granting access exactly once, handling webhooks, and keeping paid access in sync with refunds and subscriptions.">
-<meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fconnect-payments-to-paid-access.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=2f4b2d115a">
-<meta name="twitter:image:alt" content="Connect Payments to Paid Access — Founders Knowledge social preview">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
-<script src="/assets/analytics.js" defer></script>
+  </script>
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Connect Payments to Paid Access — Founders Knowledge">
+  <meta property="og:description" content="A practical guide to verifying payments, granting access exactly once, handling webhooks, and keeping paid access in sync with refunds and subscriptions.">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/connect-payments-to-paid-access/">
+  <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fconnect-payments-to-paid-access.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=2f4b2d115a">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Connect Payments to Paid Access — Founders Knowledge social preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Connect Payments to Paid Access — Founders Knowledge">
+  <meta name="twitter:description" content="A practical guide to verifying payments, granting access exactly once, handling webhooks, and keeping paid access in sync with refunds and subscriptions.">
+  <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fconnect-payments-to-paid-access.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=2f4b2d115a">
+  <meta name="twitter:image:alt" content="Connect Payments to Paid Access — Founders Knowledge social preview">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/analytics.js" defer></script>
   <meta property="og:image:secure_url" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fconnect-payments-to-paid-access.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=2f4b2d115a">
 </head>
 <body class="lesson-page">
-<a class="skip-link" href="#lesson-content">Skip to lesson</a>
+<a class="skip-link" href="#lesson-content">Skip to article</a>
 <header class="site-header">
-<a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
-<nav aria-label="Main navigation"><a href="/library/">Knowledge library</a><a href="/lessons/app-monetization/">Monetization guide</a></nav>
-<a class="nav-cta" href="/library/">All knowledge</a>
-</header>
+    <a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+    <nav aria-label="Article navigation"><a href="/library/">Knowledge library</a><a href="/#approach">Our approach</a></nav>
+    <a class="nav-cta" href="/library/">All knowledge</a>
+  </header>
 <main id="lesson-content">
 <section class="lesson-hero">
-<a class="lesson-back" href="/lessons/what-happens-when-your-payment-provider-fails/">← Previous: payment provider failures</a>
+<a class="lesson-back" href="/library/">Back to the knowledge library</a>
 <div class="lesson-cover">
 <div class="lesson-cover-copy">
 <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> PAYMENTS &amp; PRODUCT DELIVERY <span class="lesson-separator">/</span> PRACTICAL GUIDE</p>
@@ -65,12 +65,12 @@
 </div>
 <div class="lesson-cover-art" aria-hidden="true">
 <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
-<div class="lesson-art-card art-current"><span class="art-label">PAYMENT</span><strong style="display:block;font:600 25px/1.1 var(--display)">Verified.<br>Not yet delivered.</strong><div class="art-lines"><i></i><i></i><i></i></div></div>
+<div class="lesson-art-card art-current"><span class="art-label">PAYMENT</span><strong>Verified.<br>Not yet delivered.</strong><div class="art-lines"><i></i><i></i><i></i></div></div>
 <div class="lesson-art-card art-better"><span class="art-label">FULFILMENT</span><strong>Confirm.<br>Grant access.<br>Record it.</strong><span class="art-highlight"></span></div>
 <span class="lesson-art-stamp">PAY<br>READY</span>
 </div>
 </div>
-<div class="lesson-progress"><span style="width:50%"></span></div>
+<div class="lesson-progress"><span class="progress-50"></span></div>
 <div class="lesson-progress-caption"><span>PRACTICAL GUIDE</span><span>Connect payment confirmation to a dependable customer outcome</span></div>
 </section>
 <div class="lesson-layout">
@@ -142,7 +142,7 @@
 <p>Track at least two separate outcomes: <strong>verified payment success</strong> and <strong>successful fulfilment</strong>. Also monitor the number and age of paid orders whose access remains pending. That is where a “payment succeeded” dashboard can hide a product failure.</p>
 </section>
 <div class="lesson-exercise"><p class="section-number">YOUR NEXT STEP</p><h2>Trace one purchase from checkout to access.</h2><p>Pick one paid feature in your product. Write down where the order is created, how payment is verified, where access is recorded, and how the system recovers if the last step fails. If any step exists only in your head, document it before adding more payment options.</p><a class="button button-primary" href="/lessons/app-monetization/">Next: monetise your web app</a></div>
-<section class="lesson-section">
+<section class="lesson-section" aria-label="Sources">
 <p class="section-number">SOURCES &amp; REALITY CHECK</p><h2>Use your provider's current implementation guidance.</h2>
 <p>The architecture in this guide is a general reliability pattern. Exact webhook authentication, transaction verification, idempotency support, subscription events, and refund handling differ by provider. Follow the documentation for the payment provider and method you have integrated.</p>
 <ul>
