@@ -203,3 +203,14 @@
 .reading-path-sequence{margin-top:auto;padding-top:13px;border-top:1px solid rgba(26,15,46,.2);font-size:10px;font-weight:700;line-height:1.6;color:var(--ink-soft)}
 @media(max-width:850px){.reading-path-grid{grid-template-columns:1fr 1fr}.reading-path-card:last-child{grid-column:1/-1;min-height:220px}}
 @media(max-width:560px){.reading-path-grid{grid-template-columns:1fr}.reading-path-card:last-child{grid-column:auto}.reading-path-card{min-height:220px;padding:20px}.reading-path-card h3{font-size:23px}}
+
+/* LESSON DESIGN-SYSTEM NORMALIZATION */
+/* Declarations formerly carried as inline style= attributes on lesson pages,
+   plus the one lesson class that was used but never defined. Values are the
+   exact former inline declarations, so rendering is unchanged. */
+.art-current strong{display:block;font:600 25px/1.1 var(--display)}
+.lesson-question-card h3{font:600 21px var(--display);color:var(--ink);margin:0 0 8px}
+.lesson-progress .progress-50{width:50%}
+.lesson-progress .progress-100{width:100%}
+.readiness-checklist{padding-left:22px;margin:0}
+.readiness-checklist li{padding-left:5px;margin:9px 0}

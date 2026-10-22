@@ -69,3 +69,149 @@ Use these when the content type calls for them:
 - Has the deployed page been inspected?
 
 **A polished draft is not automatically a good FK piece. It must be grounded, insightful, and useful.**
+
+---
+
+## Canonical page shell (HTML) — build every lesson on this, exactly
+
+Every lesson page uses the single FK design system: `assets/site.css` is the only
+stylesheet, and the page shell below is the only shell. It is copied from the
+reference lesson (`lessons/list-at-home-or-list-abroad/`, 2026-10-22). Replace the
+`[BRACKETED]` placeholders with the lesson's own values; change nothing else in
+the shell. Editorial content (kicker text, title, dek, meta, cover art, sidebar
+labels and note, sections, callouts, takeaway, sources) is the lesson's own —
+the shell, classes and element order are not.
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="[META DESCRIPTION]">
+  <meta name="theme-color" content="#f3ecff">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <title>[TITLE] — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/[SLUG]/">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"[TITLE]",
+    "description":"[META DESCRIPTION]",
+    "mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/[SLUG]/",
+    "publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},
+    "isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},
+    "datePublished":"[YYYY-MM-DD — the real publication date]",
+    "dateModified":"[YYYY-MM-DD]",
+    "inLanguage":"en"
+  }
+  </script>
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="[TITLE] — Founders Knowledge">
+  <meta property="og:description" content="[META DESCRIPTION]">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/[SLUG]/">
+  <meta property="og:image" content="[OG IMAGE URL — wsrv.nl 1200x630 pipeline URL for /assets/og/lessons/[SLUG].svg]">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="[SHORT ALT TEXT]">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[TITLE] — Founders Knowledge">
+  <meta name="twitter:description" content="[META DESCRIPTION]">
+  <meta name="twitter:image" content="[SAME OG IMAGE URL]">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/analytics.js" defer></script>
+  <meta property="og:image:secure_url" content="[SAME OG IMAGE URL]">
+</head>
+<body class="lesson-page">
+  <a class="skip-link" href="#lesson-content">Skip to article</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+    <nav aria-label="Article navigation"><a href="/library/">Knowledge library</a><a href="/#approach">Our approach</a></nav>
+    <a class="nav-cta" href="/library/">All knowledge</a>
+  </header>
+  <main id="lesson-content">
+    <section class="lesson-hero">
+      <a class="lesson-back" href="/library/">Back to the knowledge library</a>
+      <div class="lesson-cover">
+        <div class="lesson-cover-copy">
+          <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> [TYPE, ALL CAPS] <span class="lesson-separator">/</span> [TOPIC, ALL CAPS]</p>
+          <h1>[TITLE — wrap the phrase to highlight in a <span>]</h1>
+          <p class="lesson-dek">[DEK]</p>
+          <div class="lesson-meta"><span>◷ [N] minute read</span><span>✳ [TYPE LABEL]</span><span>Published [D MONTH YYYY]</span></div>
+        </div>
+        <div class="lesson-cover-art" aria-hidden="true">
+          <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
+          <div class="lesson-art-card art-current"><span class="art-label">[CARD 1 LABEL]</span><div class="art-lines"><i></i><i></i><i></i></div><span class="art-small">[CARD 1 NOTE]</span></div>
+          <div class="lesson-art-card art-better"><span class="art-label">[CARD 2 LABEL]</span><strong>[CARD 2 HEADLINE]</strong><span class="art-highlight"></span></div>
+          <span class="lesson-art-stamp">[STAMP TEXT]</span>
+        </div>
+      </div>
+      <div class="lesson-progress"><span></span></div>
+      <div class="lesson-progress-caption"><span>[TOPIC, ALL CAPS]</span><span>[ONE-LINE TAGLINE]</span></div>
+    </section>
+    <div class="lesson-layout">
+      <aside class="lesson-sidebar" aria-label="On this page">
+        <div class="lesson-sidebar-inner">
+          <p class="sidebar-label">IN THIS ARTICLE</p>
+          <!-- One link per numbered section, in order:
+          <a href="#[SECTION-ID]">01 <span>[SHORT HAND-WRITTEN LABEL]</span></a> -->
+          <div class="sidebar-note"><span>✳</span><p>[THE LESSON'S ONE-LINE BOTTOM LINE]</p></div>
+        </div>
+      </aside>
+      <article class="lesson-body">
+        <div class="lesson-opening"><span class="opening-mark">“</span><p>[OPENING PARAGRAPH]</p></div>
+        <section id="[SECTION-ID]" class="lesson-section">
+          <p class="section-number">01 — [SECTION LABEL, ALL CAPS]</p>
+          <h2>[SECTION HEADING]</h2>
+          <!-- Body copy. Inline components, all defined in assets/site.css:
+               .lesson-callout.callout-yellow / .callout-lilac (with .callout-icon),
+               .lesson-question-card (with .question-card-title),
+               .fill-in-card, .lesson-two-up, .translation-list, .lesson-equation -->
+        </section>
+        <!-- [further numbered sections] -->
+        <div class="lesson-takeaway"><span class="takeaway-label">THE TAKEAWAY</span><p>[TAKEAWAY — the decision rule, with the highlighted part in <em>]</p></div>
+        <div class="lesson-callout callout-lilac"><span class="callout-icon">◈</span><div><strong>Evidence &amp; limits</strong><p>[WHAT IS VERIFIED, WHAT IS REPORTED, WHAT IS NOT VERIFIED]</p></div></div>
+        <section class="lesson-section" aria-label="Sources">
+          <p class="section-number">SOURCES — CHECK BEFORE YOU ACT</p>
+          <!-- source list -->
+        </section>
+        <nav class="lesson-next" aria-label="Article navigation">
+          <a href="/library/" class="next-library"><span></span><span><small>WHEN YOU'RE READY</small><strong>Back to the knowledge library</strong></span></a>
+          <a href="/lessons/[RELATED-SLUG]/" class="next-card"><span class="next-card-label">[RELATED LABEL]</span><strong>[RELATED TITLE]</strong><span class="next-arrow"></span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#lesson-content">Back to top</a></footer>
+  <script src="/assets/share.js" defer></script>
+</body>
+</html>
+```
+
+### Shell rules (no exceptions)
+
+- **No inline `style=` attributes, ever.** If a component needs a declaration,
+  it belongs in `assets/site.css`. The art-current card headline is styled by
+  `.art-current strong` and question-card sub-headings by `.lesson-question-card h3`.
+- **Progress bar width:** the stylesheet default is 14%. For a different fill,
+  put `class="progress-50"` or `class="progress-100"` on the progress `<span>` —
+  never an inline width.
+- **Every class used must already exist in `assets/site.css`.** If it doesn't,
+  add the rule to the stylesheet (using the existing design tokens) in the same
+  change — never leave a class undefined, and never invent a one-off class name
+  when an existing component covers the need.
+- **Sidebar TOC links are hand-written**: the number matches the section's
+  `section-number`, the label is a short editorial label (not a copy of the
+  section heading), and every numbered section — plus the exercise/checklist
+  block when it has an `id` — gets a link.
+- **Closing order:** takeaway → Evidence & limits callout → sources section →
+  `lesson-next` nav. An exercise block (`.lesson-exercise`, a `<div>`) goes
+  before the takeaway when the lesson has one.
+- **Fonts link** is the exact URL in the shell above (raw `&`, not `&amp;`),
+  and `og:image:secure_url` stays last in the head, after the analytics script.
