@@ -88,42 +88,77 @@ function makeXPost(title, description, url) {
   return prefix + summary + suffix;
 }
 
-async function getXAccessToken() {
-  const clientId = process.env.X_API_CLIENT_ID;
-  const clientSecret = process.env.X_API_CLIENT_SECRET;
-  const refreshToken = process.env.X_API_REFRESH_TOKEN;
-  if (!clientId || !clientSecret || !refreshToken) {
-    throw new Error("X publishing requires X_API_CLIENT_ID, X_API_CLIENT_SECRET, and X_API_REFRESH_TOKEN.");
-  }
-
-  const response = await fetch("https://api.x.com/2/oauth2/token", {
-    method: "POST",
-    headers: {
-      Authorization: "Basic " + Buffer.from(clientId + ":" + clientSecret).toString("base64"),
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: new URLSearchParams({
-      grant_type: "refresh_token",
-      refresh_token: refreshToken,
-      client_id: clientId
-    })
-  });
-  const body = await response.json().catch(() => ({}));
-  if (!response.ok || !body.access_token) {
-    throw new Error("X token refresh failed (" + response.status + "): " + JSON.stringify(body).slice(0, 400));
-  }
-  if (body.refresh_token && body.refresh_token !== refreshToken) {
-    throw new Error("X returned a rotated refresh token. For safety, publishing stopped; update the X_API_REFRESH_TOKEN repository secret before retrying.");
-  }
-  console.log("X OAuth 2.0 access token refreshed successfully.");
-  return body.access_token;
+function percentEncode(value) {
+  return encodeURIComponent(String(value))
+    .replace(/!/g, "%21")
+    .replace(/'/g, "%27")
+    .replace(/\(/g, "%28")
+    .replace(/\)/g, "%29")
+    .replace(/\*/g, "%2A");
 }
 
-async function sendXPost(text, token) {
-  const response = await fetch("https://api.x.com/2/tweets", {
+function oauth1Signature(method, url, params, consumerSecret, tokenSecret) {
+  const parameterString = params
+    .map(([key, value]) => [percentEncode(key), percentEncode(value)])
+    .sort((a, b) => (a[0] === b[0] ? (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0) : (a[0] < b[0] ? -1 : 1)))
+    .map(([key, value]) => key + "=" + value)
+    .join("&");
+  const baseString = method.toUpperCase() + "&" + percentEncode(url) + "&" + percentEncode(parameterString);
+  const signingKey = percentEncode(consumerSecret) + "&" + percentEncode(tokenSecret);
+  return crypto.createHmac("sha1", signingKey).update(baseString).digest("base64");
+}
+
+function oauth1AuthorizationHeader(method, url, credentials) {
+  const oauthParams = [
+    ["oauth_consumer_key", credentials.consumerKey],
+    ["oauth_nonce", crypto.randomBytes(16).toString("hex")],
+    ["oauth_signature_method", "HMAC-SHA1"],
+    ["oauth_timestamp", Math.floor(Date.now() / 1000).toString()],
+    ["oauth_token", credentials.accessToken],
+    ["oauth_version", "1.0"]
+  ];
+  const parsed = new URL(url);
+  const signingParams = [...oauthParams];
+  for (const [key, value] of parsed.searchParams) signingParams.push([key, value]);
+  const signature = oauth1Signature(method, parsed.origin + parsed.pathname, signingParams,
+    credentials.consumerSecret, credentials.accessTokenSecret);
+  const headerParams = [...oauthParams, ["oauth_signature", signature]]
+    .map(([key, value]) => [percentEncode(key), percentEncode(value)])
+    .sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0));
+  return "OAuth " + headerParams.map(([key, value]) => key + '="' + value + '"').join(", ");
+}
+
+function getXCredentials() {
+  const consumerKey = process.env.X_API_CLIENT_ID;
+  const consumerSecret = process.env.X_API_CLIENT_SECRET;
+  const packedToken = process.env.X_API_REFRESH_TOKEN;
+  if (!consumerKey || !consumerSecret || !packedToken) {
+    throw new Error("X publishing requires X_API_CLIENT_ID, X_API_CLIENT_SECRET, and X_API_REFRESH_TOKEN.");
+  }
+  // The X channel uses OAuth 1.0a user-context credentials, which never expire
+  // or rotate. The existing repository values are reused with new meanings:
+  // X_API_CLIENT_ID carries the Consumer Key, X_API_CLIENT_SECRET the Consumer
+  // Secret, and X_API_REFRESH_TOKEN the user token pair joined by a single
+  // colon: "<Access Token>:<Access Token Secret>".
+  const separator = packedToken.indexOf(":");
+  if (separator <= 0 || separator === packedToken.length - 1) {
+    throw new Error("X configuration error: X_API_REFRESH_TOKEN must contain the OAuth 1.0a access token and access token secret joined by a single colon (\"<Access Token>:<Access Token Secret>\").");
+  }
+  return {
+    consumerKey,
+    consumerSecret,
+    accessToken: packedToken.slice(0, separator),
+    accessTokenSecret: packedToken.slice(separator + 1)
+  };
+}
+
+async function sendXPost(text) {
+  const credentials = getXCredentials();
+  const url = "https://api.twitter.com/2/tweets";
+  const response = await fetch(url, {
     method: "POST",
     headers: {
-      Authorization: "Bearer " + token,
+      Authorization: oauth1AuthorizationHeader("POST", url, credentials),
       "Content-Type": "application/json"
     },
     body: JSON.stringify({ text })
@@ -178,6 +213,84 @@ async function sendLinkedIn(article, postText) {
   return { configured: true, postId: response.headers.get("x-restli-id") || null };
 }
 
+function redditUserAgent() {
+  const username = process.env.REDDIT_USERNAME || "unknown";
+  return "FoundersKnowledgeDistribution/1.0 (by /u/" + username + ")";
+}
+
+function redditConfigured() {
+  return Boolean(process.env.REDDIT_CLIENT_ID && process.env.REDDIT_CLIENT_SECRET &&
+    process.env.REDDIT_USERNAME && process.env.REDDIT_PASSWORD);
+}
+
+function redditTargets() {
+  const subs = (process.env.REDDIT_SUBREDDITS || "").split(",")
+    .map(value => value.trim().replace(/^\/?r\//i, "").replace(/^\/+|\/+$/g, ""))
+    .filter(Boolean);
+  if (subs.length) return [...new Set(subs)];
+  // No subreddits configured: post to the account's own profile.
+  return ["u_" + process.env.REDDIT_USERNAME];
+}
+
+async function getRedditAccessToken() {
+  const clientId = process.env.REDDIT_CLIENT_ID;
+  const clientSecret = process.env.REDDIT_CLIENT_SECRET;
+  const username = process.env.REDDIT_USERNAME;
+  const password = process.env.REDDIT_PASSWORD;
+  if (!clientId || !clientSecret || !username || !password) {
+    throw new Error("Reddit publishing requires REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, and REDDIT_PASSWORD.");
+  }
+
+  const response = await fetch("https://www.reddit.com/api/v1/access_token", {
+    method: "POST",
+    headers: {
+      Authorization: "Basic " + Buffer.from(clientId + ":" + clientSecret).toString("base64"),
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": redditUserAgent()
+    },
+    body: new URLSearchParams({
+      grant_type: "password",
+      username,
+      password
+    })
+  });
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok || !body.access_token) {
+    throw new Error("Reddit token request failed (" + response.status + "): " + JSON.stringify(body).slice(0, 400));
+  }
+  console.log("Reddit OAuth 2.0 access token obtained successfully.");
+  return body.access_token;
+}
+
+async function sendRedditPost(token, target, title, text) {
+  const response = await fetch("https://oauth.reddit.com/api/submit", {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + token,
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": redditUserAgent()
+    },
+    body: new URLSearchParams({
+      api_type: "json",
+      kind: "self",
+      sr: target,
+      title,
+      text,
+      resubmit: "false",
+      sendreplies: "true"
+    })
+  });
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new Error("Reddit delivery to " + target + " failed (" + response.status + "): " + JSON.stringify(body).slice(0, 500));
+  }
+  const errors = body?.json?.errors || [];
+  if (errors.length) {
+    throw new Error("Reddit delivery to " + target + " failed: " + JSON.stringify(errors).slice(0, 500));
+  }
+  return { postId: body?.json?.data?.id || null, url: body?.json?.data?.url || null };
+}
+
 async function main() {
   const changed = getChangedLessons();
   if (!changed.length) {
@@ -217,6 +330,7 @@ async function main() {
       x: makeXPost(title, description, url),
       linkedin: postText + "\n\n#FoundersKnowledge #AfricanTech #Startups",
       telegram: postText,
+      reddit: description + "\n\nWhat should founders take away from this? Read the full analysis from Founders Knowledge.\n\n" + url,
       createdAt: new Date().toISOString(),
       delivery: { linkedin: "pending", telegram: "pending" }
     };
@@ -224,7 +338,8 @@ async function main() {
 
     const enabled = Boolean(process.env.X_API_REFRESH_TOKEN && process.env.X_API_CLIENT_ID && process.env.X_API_CLIENT_SECRET) ||
       Boolean(process.env.LINKEDIN_ACCESS_TOKEN && process.env.LINKEDIN_AUTHOR_URN) ||
-      Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
+      Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) ||
+      redditConfigured();
     if (!enabled) {
       console.log("No distribution credentials configured. Draft pack written for " + item.slug + ".");
       results.push({ slug: item.slug, status: "draft-only" });
@@ -235,8 +350,7 @@ async function main() {
 
     if (!channels.x && process.env.X_API_REFRESH_TOKEN && process.env.X_API_CLIENT_ID && process.env.X_API_CLIENT_SECRET) {
       try {
-        const accessToken = await getXAccessToken();
-        const result = await sendXPost(post.x, accessToken);
+        const result = await sendXPost(post.x);
         channels.x = true;
         post.delivery.x = "sent";
         console.log("X post sent: " + item.slug + " (" + result.postId + ")");
@@ -269,6 +383,39 @@ async function main() {
         console.error(error.message);
       }
     } else if (channels.linkedin) post.delivery.linkedin = "already-sent";
+
+    if (redditConfigured()) {
+      // Reddit posts once per target (each configured subreddit, or the account's
+      // own profile when none are configured). State tracks each target separately
+      // so a retry only attempts the targets that have not already succeeded.
+      const sentTargets = channels.reddit && typeof channels.reddit === "object" ? { ...channels.reddit } : {};
+      const pendingTargets = redditTargets().filter(target => !sentTargets[target]);
+      if (!pendingTargets.length) {
+        post.delivery.reddit = "already-sent";
+      } else {
+        try {
+          const redditToken = await getRedditAccessToken();
+          const failures = [];
+          for (const target of pendingTargets) {
+            try {
+              const result = await sendRedditPost(redditToken, target, title, post.reddit);
+              sentTargets[target] = true;
+              console.log("Reddit sent: " + item.slug + " -> " + target + " (" + (result.postId || "confirmed") + ")");
+            } catch (error) {
+              failures.push(error.message);
+              console.error(error.message);
+            }
+          }
+          if (Object.keys(sentTargets).length) channels.reddit = sentTargets;
+          if (!failures.length) post.delivery.reddit = "sent";
+          else if (Object.keys(sentTargets).length) post.delivery.reddit = "partial";
+          else post.delivery.reddit = "failed";
+        } catch (error) {
+          post.delivery.reddit = "failed";
+          console.error(error.message);
+        }
+      }
+    }
 
     state.articles[item.slug] = { fingerprint, channels, lastAttemptAt: new Date().toISOString() };
     fs.writeFileSync(statePath, JSON.stringify(state, null, 2) + "\n");
