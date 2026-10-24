@@ -53,6 +53,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
 
+  <style>
+    /* Newsletter signup — page-local, honest "coming soon" state (no backend yet). */
+    .newsletter{background:var(--paper);border-top:2px solid var(--ink)}
+    .newsletter-panel{max-width:1240px;margin:auto;background:var(--ink);color:#fff;border:2px solid var(--ink);border-radius:22px;padding:clamp(28px,5vw,58px);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(26px,4vw,54px)}
+    .newsletter-copy .eyebrow{color:#c8b5f4}
+    .newsletter-copy h2{font:600 clamp(30px,4vw,48px)/1.06 var(--display);letter-spacing:-.04em;margin:0 0 16px}
+    .newsletter-copy h2 span{color:var(--yellow)}
+    .newsletter-copy>p{max-width:440px;color:#e0d7f2;font-size:14px;line-height:1.75;margin:0 0 8px}
+    .newsletter-form{background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:16px;padding:clamp(20px,3vw,30px);box-shadow:5px 5px 0 rgba(0,0,0,.35);transform:rotate(1deg)}
+    .newsletter-form label{display:block;font:700 11px var(--display);letter-spacing:.1em;margin-bottom:8px}
+    .newsletter-form input{width:100%;box-sizing:border-box;border:2px solid var(--ink);border-radius:12px;padding:13px 15px;font:500 15px var(--body);margin-bottom:12px}
+    .newsletter-form input:focus{outline:3px solid var(--lilac)}
+    .newsletter-form button{width:100%;border:2px solid var(--ink);border-radius:12px;padding:13px 17px;background:var(--yellow);font:600 15px var(--display);cursor:not-allowed;opacity:.55}
+    .newsletter-soon{margin:12px 0 0;font-size:12px;line-height:1.6;color:var(--muted)}
+    .newsletter-soon strong{color:var(--ink-soft)}
+    @media(max-width:860px){.newsletter-panel{grid-template-columns:1fr}}
+    @media(max-width:650px){.newsletter-form{transform:none}}
+  </style>
+
 <script src="/assets/analytics.js" defer></script>
 
 </head>
@@ -297,6 +316,21 @@
         <h2>Built by founders,<br><span>for founders.</span></h2>
         <p>Founders Knowledge turns useful observations into clear lessons, practical frameworks, and ideas you can return to when the work gets difficult. We make room for nuance: not every business is the same, and no single answer fits every founder.</p>
         <p class="approach-principle"><span>01</span> Clarity over noise <span>02</span> Practice over posturing <span>03</span> Progress over perfection</p>
+      </div>
+    </section>
+      <section class="newsletter section" id="newsletter">
+      <div class="newsletter-panel">
+        <div class="newsletter-copy">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>THE NEWSLETTER</p>
+          <h2>One useful lesson in your inbox, <span>every week.</span></h2>
+          <p>Founders Knowledge publishes a new lesson every day. The weekly letter picks the one that matters most to early founders — plus the number worth knowing — and delivers it in about three minutes.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="return false" aria-describedby="newsletter-soon-note">
+          <label for="newsletter-email">EMAIL ADDRESS</label>
+          <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" aria-disabled="true" disabled>
+          <button type="submit" disabled aria-disabled="true">Coming soon</button>
+          <p class="newsletter-soon" id="newsletter-soon-note"><strong>Honest note:</strong> the newsletter is not live yet — we have not chosen a provider, so no email is collected or stored anywhere. This form will start working the day the letter launches.</p>
+        </form>
       </div>
     </section>
   </main>
