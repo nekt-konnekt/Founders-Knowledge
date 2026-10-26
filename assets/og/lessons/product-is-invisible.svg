@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Your product is invisible."><rect width="1200" height="630" fill="#ffffff"/><rect x="64" y="38" width="56" height="56" rx="11" fill="#6d3be8"/><text x="92" y="75" text-anchor="middle" fill="#ffffff" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="34" font-weight="700">FK</text><text x="136" y="80" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="52" font-weight="700">Founders Knowledge</text><text x="64" y="346" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="-1.4"><tspan x="64" dy="0">Your product is</tspan><tspan x="64" dy="104">invisible.</tspan></text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">The Distribution Problem — Founders Knowledge</title>
+  <desc id="desc">A useful product can still fail when the right customers never find it.</desc>
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="64" y="42" width="54" height="54" rx="10" fill="#FFFFFF" stroke="#2B146B" stroke-width="3"/>
+    <text x="91" y="78" text-anchor="middle" font-size="25" font-weight="800" fill="#2B146B">FK</text>
+    <text x="136" y="79" font-size="36" font-weight="700" fill="#2B146B">Founders Knowledge</text>
+    <path d="M64 120 H1136" stroke="#2B146B" stroke-width="2" opacity=".18"/>
+    <text x="64" y="235" font-size="72" font-weight="800" letter-spacing="-2.8" fill="#111111">The distribution</text>
+    <text x="64" y="321" font-size="86" font-weight="800" letter-spacing="-3.2" fill="#111111">problem.</text>
+    <rect x="64" y="345" width="420" height="12" rx="6" fill="#FFF000" stroke="#111111" stroke-width="2"/>
+    <text x="64" y="414" font-size="27" font-weight="500" fill="#222222">Why a useful product can still fail</text>
+    <text x="64" y="451" font-size="27" font-weight="500" fill="#222222">without a path to its customers.</text>
+    <g transform="translate(850 180)">
+      <rect x="0" y="0" width="260" height="100" rx="16" fill="#FFFFFF" stroke="#111111" stroke-width="3"/>
+      <text x="130" y="37" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="2" fill="#555555">PRODUCT</text>
+      <text x="130" y="71" text-anchor="middle" font-size="24" font-weight="800" fill="#111111">Useful value</text>
+      <path d="M130 101 V147" stroke="#111111" stroke-width="4" stroke-dasharray="8 8"/>
+      <path d="M116 137 L130 153 L144 137" fill="none" stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="0" y="160" width="260" height="100" rx="16" fill="#FFF000" stroke="#111111" stroke-width="3"/>
+      <text x="130" y="197" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="2" fill="#555555">CUSTOMER</text>
+      <text x="130" y="231" text-anchor="middle" font-size="24" font-weight="800" fill="#111111">Repeatable reach</text>
+      <path d="M-18 42 l-18 -14 m18 14 l-18 14" stroke="#2B146B" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <circle cx="-35" cy="42" r="6" fill="#2B146B"/>
+    </g>
+    <text x="64" y="578" font-size="14" font-weight="700" letter-spacing="2" fill="#2B146B">FOUNDER FIELD GUIDE  ·  7-MINUTE READ</text>
+    <text x="1136" y="578" text-anchor="end" font-size="13" font-weight="700" fill="#555555">BUILD THE PATH, TOO.</text>
+  </g>
+</svg>
