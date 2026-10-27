@@ -110,7 +110,7 @@ the shell, classes and element order are not.
   </script>
   <meta property="og:site_name" content="Founders Knowledge">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="[TITLE] — Founders Knowledge">
+  <meta property="og:title" content="[TITLE]">
   <meta property="og:description" content="[META DESCRIPTION]">
   <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/[SLUG]/">
   <meta property="og:image" content="[OG IMAGE URL — wsrv.nl 1200x630 pipeline URL for /assets/og/lessons/[SLUG].svg]">
@@ -118,7 +118,7 @@ the shell, classes and element order are not.
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="[SHORT ALT TEXT]">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="[TITLE] — Founders Knowledge">
+  <meta name="twitter:title" content="[TITLE]">
   <meta name="twitter:description" content="[META DESCRIPTION]">
   <meta name="twitter:image" content="[SAME OG IMAGE URL]">
   <link rel="preconnect" href="https://fonts.googleapis.com">
