@@ -1,6 +1,6 @@
 # Founders Knowledge — Weekly Editorial Slate
 
-**Week:** Saturday 2026-10-24 → Sunday 2026-11-01 · **Drafted:** Fri 2026-10-23
+**Week:** Saturday 2026-10-24 → Tuesday 2026-11-03 (rolling 7-day horizon, extended 2026-10-27) · **Drafted:** Fri 2026-10-23
 **Format per day:** 1 Flagship · 1 Briefing · 1 Teardown · 1 Practical — all angled at **early founders** (pre-seed/seed, small teams).
 **Source tags:** (C) = confirmed by primary/official source or company statement · (R) = reported by reputable press, not independently verified · (D) = dataset figure — trackers differ, cite the tracker by name.
 **Briefing rule:** the briefing slot is filled from that morning's scan. Themes below are watch-candidates from live storylines, not predicted news. Each carries an evergreen fallback if nothing qualifies.
@@ -38,7 +38,7 @@
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
-| Flagship | **Your First Five Hires Decide Your Burn and Your Culture** | Order matters more than headcount: which roles to hire in which sequence, what a wrong first hire costs in runway, and when a contractor beats an employee. | Evergreen. Anchor in the week's economics: (D) capital concentration (Big Deal Q3) as the reason runway discipline matters now. Any salary figures must come from a named, dated source or be labelled illustrative. | No existing FK lesson covers hiring — clear gap. Keep it a decision framework, not HR generalities. |
+| Flagship | **Your First Five Hires Decide Your Burn and Your Culture** — ✅ **PUBLISHED 2026-10-27** ([live](https://founders-knowledge.vercel.app/lessons/first-five-hires-burn-and-culture/)) | Order matters more than headcount: which roles to hire in which sequence, what a wrong first hire costs in runway, and when a contractor beats an employee. | Evergreen. Anchor in the week's economics: (D) capital concentration (Big Deal Q3) as the reason runway discipline matters now. Any salary figures must come from a named, dated source or be labelled illustrative. | No existing FK lesson covers hiring — clear gap. Kept as a decision framework, not HR generalities. Published as planned: morning scan (Oct 27) found no story strong enough to displace it — strongest fresh items (Klump shutdown, DPI Nclude $112m close, Fuliza fee analysis, Ecobank InnovateX finalists) published as the day's first briefings instead. Briefings feed home built this run (see /briefings/). |
 | Briefing | Morning-scan pick | — | **Watch:** (1) Kenya merchant credit — uptake signals and rival responses to Fuliza Ya Pochi (launched Oct 22); (2) M-PESA platform moves (Jumbe verification product; Pesapal QR/tap rollout, Oct 1) — platform vs independent fintechs. **Fallback:** "When the platform becomes your competitor: a short history of rails owners moving up the stack." | The fallback is a theme, not a news claim — research examples before use. |
 | Teardown | **Safaricom Put Credit Inside the Till: Fuliza Ya Pochi** | The rails owner now lends against the payment flow itself, repaid automatically from incoming payments — if you lend to or serve Kenyan micro-merchants, your competitor just changed. | (C/R) Launch Oct 22 2026, Thika (Soko Directory, Oct 23): targets Pochi La Biashara merchants, 1m+ qualifying, 6-month account-age requirement, auto-repayment from incoming Pochi payments; recent Pochi fee cuts (zero-rated ≤KES 200) as context. Verify against Safaricom's own announcement. | Figures (1m merchants) are company claims — label as such. Angle is competitive strategy, not a product review. |
 | Practical | **Non-Dilutive Money Without the Distraction Tax: Grants and Prizes Done Right** | A grant is worth it only if the application hours buy more than cash: a filter for which prizes to chase, which to skip, and how to reuse one strong application. | (C) FINCA Ventures Prize 2026 (APO release, Oct 7): 700+ applicants, six winners, $40k–$100k grants across fintech-for-inclusion and agri-food categories. Use as the worked example of odds and effort. | Prize is ~3 weeks old at publish — fine as a case, not as an open call. Do not imply the competition is currently open. |
@@ -90,6 +90,25 @@
 | Briefing | Morning-scan pick | — | **Watch:** (1) data-localisation vendor moves as the Jan 1 2027 deadline nears; (2) Q4 fundraising window — final 2026 cheques announced before December. **Fallback:** "Exit routes nobody plans for: acqui-hires, asset sales, and soft landings." | Fallback doubles as a reader-facing recap format test. |
 | Teardown | **Yellow Card's $40m Raise: What Stablecoin Infrastructure Actually Sells** | Stablecoin infrastructure keeps attracting capital while consumer crypto struggles — angle strictly on the raise and business model, not stablecoin mechanics. | Flex pool #3. (D: Big Deal deal lists.) | Fenced: the library already has a stablecoin off-ramp lesson — do not repeat its mechanics. |
 | Practical | **The Reference-Call Swap: Hiring Checks That Work in Informal Markets** | Structured back-channel references for markets where formal HR trails are thin. | Flex pool #6. Evergreen; no figures without dated sources. | Pairs with Tue's hiring flagship without repeating it. |
+
+
+## Mon 2026-11-02
+
+| Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
+|---|---|---|---|---|
+| Flagship | **Senegal's Quiet Year: What Happens When a Market Falls Off the Funding Map** | Geographic concentration risk: build revenue-first outside the Big Four, and read a funding collapse as information about your market, not just bad luck. | Flex pool #8 (D: Big Deal — Senegal $153m → ~$5m Q1–Q3). | Evergreen-leaning; verify the Big Deal figures on the day before publishing any total. |
+| Briefing | Morning-scan pick | — | **Watch:** (1) data-localisation vendor moves as the Jan 1 2027 deadline nears; (2) Q4 fundraising window. **Fallback:** "How one deal can bend a statistic." | — |
+| Teardown | **Nedbank Buys Into NCBA/iKhokha While LOOP's Chief Leaves for Absa** | Acquirers buy people as much as platforms; key-person risk in African bank–fintech M&A. | Flex pool #1 (R: Frontier Fintech GPS #89, Oct 21 — needs bank statements to upgrade). | Do not publish as fact until a bank statement confirms the deal shape. |
+| Practical | **Accelerator Maths: What $50,000 and a Programme Actually Cost You** | Work the real exchange — equity %, time, demo-day theatre vs network and follow-on odds — before signing a term sheet you can't undo. | (R) MARL cohort 14, Oct 21. Programme terms vary — verify on the programme's own site. | Candidate carried from Sun Oct 25 slot; still unpublished, still valid. |
+
+## Tue 2026-11-03
+
+| Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
+|---|---|---|---|---|
+| Flagship | **When Your Partner Is Your Business Model: Klump, Baxi and the Dependency Trap** | If your product cannot work without a partner's balance sheet or rails, the partnership is not distribution — it is your business model, and its timeline is your timeline. | Klump shutdown (Business Post, Oct 26); Onafriq/Baxi wind-down (Onafriq statement, Oct 16). | Fresh from the Oct 27 scan; keep the two cases distinct (bank-credit dependency vs agent-channel obsolescence). |
+| Briefing | Morning-scan pick | — | **Watch:** (1) NITDA/CBN data-localisation dialogue follow-ups (dialogue held Oct 28); (2) Ecobank InnovateX finale outcomes (Oct 30). **Fallback:** "Exit routes nobody plans for." | — |
+| Teardown | **Jumia's $50m Equity Raise** | A listed incumbent returning to equity markets while smaller rivals starve: what public-market access changes about competitive pressure on early commerce founders. | Flex pool #7 (D: Big Deal deal lists). | Verify raise size and date against a primary filing or reputable report before publishing. |
+| Practical | **The Partner-Dependency Audit: Five Questions Before You Build on Someone Else's Rails** | A one-page audit — what breaks if the partner pauses, reprices, or exits — applied to banks, telcos, and platforms alike. | Evergreen method; Klump/Baxi as worked cases. | Deliberately pairs with the flagship without repeating it: flagship argues the trap, practical is the audit. |
 
 ## Flex pool — spares for breaking-news swaps
 
