@@ -200,13 +200,19 @@
   </url>
   <url>
     <loc>https://founders-knowledge.vercel.app/briefings/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://founders-knowledge.vercel.app/lessons/first-five-hires-burn-and-culture/</loc>
     <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://founders-knowledge.vercel.app/lessons/three-numbers-unit-economics/</loc>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
