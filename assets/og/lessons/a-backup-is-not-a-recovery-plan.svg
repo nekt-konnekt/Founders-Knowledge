@@ -1,17 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Founders Knowledge: A Backup Is Not a Recovery Plan">
-  <rect width="1200" height="630" fill="#ffffff"/>
-  <rect x="64" y="38" width="56" height="56" rx="11" fill="#2B146B"/>
-  <text x="92" y="75" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">FK</text>
-  <text x="136" y="78" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700">Founders Knowledge</text>
-  <rect x="840" y="170" width="270" height="290" rx="28" fill="#fff000" stroke="#171717" stroke-width="5"/>
-  <rect x="890" y="215" width="170" height="55" rx="12" fill="#ffffff" stroke="#171717" stroke-width="4"/>
-  <path d="M920 242h110M920 253h76" stroke="#171717" stroke-width="5" stroke-linecap="round"/>
-  <path d="M975 290v35m0 0l-16-16m16 16l16-16" fill="none" stroke="#171717" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="885" y="340" width="180" height="72" rx="12" fill="#2B146B"/>
-  <text x="975" y="368" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">RESTORE</text>
-  <text x="975" y="392" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">VERIFY</text>
-  <text x="64" y="225" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="83" font-weight="800" letter-spacing="-2"><tspan x="64" dy="0">A BACKUP IS</tspan><tspan x="64" dy="94">NOT A RECOVERY</tspan><tspan x="64" dy="94">PLAN.</tspan></text>
-  <text x="68" y="525" fill="#333333" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600">A copy of data is not a working service.</text>
-  <text x="68" y="585" fill="#2B146B" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2">FOUNDER OPERATIONS • PRACTICAL GUIDE</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="A backup is not a recovery plan ."><rect width="1200" height="630" fill="#ffffff"/><rect x="64" y="38" width="56" height="56" rx="11" fill="#6d3be8"/><text x="92" y="75" text-anchor="middle" fill="#ffffff" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="34" font-weight="700">FK</text><text x="136" y="80" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="52" font-weight="700">Founders Knowledge</text><text x="64" y="346" fill="#171717" font-family="Space Grotesk, Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="-1.4"><tspan x="64" dy="0">A backup is not a</tspan><tspan x="64" dy="104">recovery plan .</tspan></text></svg>
