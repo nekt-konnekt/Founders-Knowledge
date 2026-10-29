@@ -75,7 +75,16 @@ Use these when the content type calls for them:
 ## Canonical page shell (HTML) — build every lesson on this, exactly
 
 Every lesson page uses the single FK design system: `assets/site.css` is the only
-stylesheet, and the page shell below is the only shell. It is copied from the
+stylesheet, and the page shell below is the only shell.
+
+**Theme v2 — "Hippo-sky" (2026-10-30):** sky-blue platform primary `#2e9bff`
+(deep link blue `#1668b8`), deep-navy ink `#12263a`, lime marker highlight
+`#c8f04b`, sky-tint surfaces `#e8f3ff`, pastel card bands (sky `#bfe0ff`, peach
+`#ffd9c4`, mint `#b9ecd2`), soft shadows and 1px `#a9c6de` borders — no purple,
+no hard offset shadows. In `site.css` the legacy token names are kept: `--purple`
+holds the sky-blue primary and `--yellow` holds the lime highlight. New OG
+artwork must use this palette (background `#e8f3ff`, ink `#12263a`, blue
+`#1d7fe0`, lime `#c8f04b`). It is copied from the
 reference lesson (`lessons/list-at-home-or-list-abroad/`, 2026-10-22). Replace the
 `[BRACKETED]` placeholders with the lesson's own values; change nothing else in
 the shell. Editorial content (kicker text, title, dek, meta, cover art, sidebar
@@ -89,7 +98,7 @@ the shell, classes and element order are not.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="[META DESCRIPTION]">
-  <meta name="theme-color" content="#f3ecff">
+  <meta name="theme-color" content="#2e9bff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="shortcut icon" href="/favicon.svg">
   <title>[TITLE] — Founders Knowledge</title>

@@ -5,11 +5,11 @@ This is the canonical specification for share images used by lesson, field-note,
 ## Core composition
 
 - **Canvas:** 1200 × 630 px (1.91:1), landscape. Keep essential text and the brand inside a safe margin of at least 48 px.
-- **Background:** white (#FFFFFF) by default. Do not use lavender or purple as the full canvas unless a deliberate campaign variation calls for it.
-- **Brand:** place the FK mark and the “Founders Knowledge” name together at the **top-left**. The FK mark and wordmark use deep purple (#2B146B; approved close equivalent #301078). Maintain strong contrast and do not substitute a yellow logo tile.
-- **Headline:** very large, heavy, black (#111111), editorial/post-style typography. The title is the main visual anchor; use deliberate line breaks and avoid tiny type.
+- **Background:** white (#FFFFFF) by default. Do not use sky blue as the full canvas unless a deliberate campaign variation calls for it.
+- **Brand:** place the FK mark and the “Founders Knowledge” name together at the **top-left**. The FK mark and wordmark use platform blue (#1D7FE0) and deep navy (#12263A). Maintain strong contrast and do not substitute a lime logo tile.
+- **Headline:** very large, heavy, deep navy (#12263A), editorial/post-style typography. The title is the main visual anchor; use deliberate line breaks and avoid tiny type.
 - **Supporting line:** one concise, readable sentence that states the lesson's central tension or takeaway.
-- **Visual:** one strong editorial subject or illustration, ideally on the right half. Yellow (#FFF000 / #FFE600) is the main accent for shapes and annotations; use black hand-drawn notes/icons sparingly to signal an active founder's field notes.
+- **Visual:** one strong editorial subject or illustration, ideally on the right half. Lime (#C8F04B) is the main accent for shapes and annotations; use navy hand-drawn notes/icons sparingly to signal an active founder's field notes.
 - **Footer:** a small consistent label such as “FOUNDER FIELD NOTE • 7-MINUTE READ”, positioned near the bottom with clear spacing.
 
 ## Typography and hierarchy
@@ -33,9 +33,9 @@ Prefer bold, compact sans-serif display type for headlines and a clean sans-seri
 
 ## Do / don't
 
-**Do:** white canvas, deep-purple FK logo and brand name at top-left, thick black post title, yellow accent, readable editorial composition.
+**Do:** white canvas, blue FK logo and navy brand name at top-left, thick navy post title, lime accent, readable editorial composition.
 
-**Don't:** generic stock art, unrelated generated graphics, a purple full-bleed background by default, tiny headline text, an FK logo detached from the brand name, or an image proxy where a first-party asset is available.
+**Don't:** generic stock art, unrelated generated graphics, a blue full-bleed background by default, tiny headline text, an FK logo detached from the brand name, or an image proxy where a first-party asset is available.
 
 ## Reference implementation
 

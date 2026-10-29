@@ -271,9 +271,9 @@ The published lesson page is part of the product. Writing quality and page desig
 
 - **Display typeface:** Fredoka.
 - **Body typeface:** Space Grotesk.
-- **Palette:** warm paper background, deep ink, lavender/lilac, purple, yellow, and restrained pastel accents.
+- **Palette (Theme v2 — "Hippo-sky", 2026-10-30):** white and sky-tint surfaces, deep-navy ink, sky-blue primary, lime marker highlights, and restrained pastel accents (sky, peach, mint).
 - **Visual language:** bold, friendly, editorial, slightly playful, with clear contrast and visible structure. It should feel approachable without looking unserious.
-- **Shape and depth:** rounded cards, strong dark outlines, and purposeful offset shadows. Use these as a system, not as decoration on every element.
+- **Shape and depth:** large-radius rounded cards, soft 1px borders, and soft drop shadows. Use these as a system, not as decoration on every element.
 - **Layout:** generous whitespace, readable line lengths, clear hierarchy, and a responsive mobile layout.
 
 The canonical tokens live in `assets/site.css`. Reuse the existing classes and tokens rather than inventing a second visual system for an individual lesson.
