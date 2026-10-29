@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Founders Knowledge is a practical knowledge centre for founders: clear lessons, useful frameworks, and better decisions for the work of building.">
-  <meta name="theme-color" content="#f3ecff">
+  <meta name="theme-color" content="#2e9bff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="shortcut icon" href="/favicon.svg">
   <title>Founders Knowledge — Built by founders, for founders</title>
@@ -55,17 +55,17 @@
 
   <style>
     /* Newsletter signup — page-local, honest "coming soon" state (no backend yet). */
-    .newsletter{background:var(--paper);border-top:2px solid var(--ink)}
-    .newsletter-panel{max-width:1240px;margin:auto;background:var(--ink);color:#fff;border:2px solid var(--ink);border-radius:22px;padding:clamp(28px,5vw,58px);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(26px,4vw,54px)}
-    .newsletter-copy .eyebrow{color:#c8b5f4}
+    .newsletter{background:transparent;border-top:none}
+    .newsletter-panel{max-width:1240px;margin:auto;background:var(--ink);color:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(28px,5vw,58px);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(26px,4vw,54px)}
+    .newsletter-copy .eyebrow{color:#a9d6ff}
     .newsletter-copy h2{font:600 clamp(30px,4vw,48px)/1.06 var(--display);letter-spacing:-.04em;margin:0 0 16px}
     .newsletter-copy h2 span{color:var(--yellow)}
-    .newsletter-copy>p{max-width:440px;color:#e0d7f2;font-size:14px;line-height:1.75;margin:0 0 8px}
-    .newsletter-form{background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:16px;padding:clamp(20px,3vw,30px);box-shadow:5px 5px 0 rgba(0,0,0,.35);transform:rotate(1deg)}
+    .newsletter-copy>p{max-width:440px;color:#d7e9f8;font-size:14px;line-height:1.75;margin:0 0 8px}
+    .newsletter-form{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3vw,30px);box-shadow:0 16px 38px rgba(0,0,0,.35);transform:rotate(1deg)}
     .newsletter-form label{display:block;font:700 11px var(--display);letter-spacing:.1em;margin-bottom:8px}
-    .newsletter-form input{width:100%;box-sizing:border-box;border:2px solid var(--ink);border-radius:12px;padding:13px 15px;font:500 15px var(--body);margin-bottom:12px}
+    .newsletter-form input{width:100%;box-sizing:border-box;border:1.5px solid var(--line-strong);border-radius:12px;padding:13px 15px;font:500 15px var(--body);margin-bottom:12px}
     .newsletter-form input:focus{outline:3px solid var(--lilac)}
-    .newsletter-form button{width:100%;border:2px solid var(--ink);border-radius:12px;padding:13px 17px;background:var(--yellow);font:600 15px var(--display);cursor:not-allowed;opacity:.55}
+    .newsletter-form button{width:100%;border:1px solid var(--line-strong);border-radius:12px;padding:13px 17px;background:var(--yellow);font:600 15px var(--display);cursor:not-allowed;opacity:.55}
     .newsletter-soon{margin:12px 0 0;font-size:12px;line-height:1.6;color:var(--muted)}
     .newsletter-soon strong{color:var(--ink-soft)}
     @media(max-width:860px){.newsletter-panel{grid-template-columns:1fr}}
