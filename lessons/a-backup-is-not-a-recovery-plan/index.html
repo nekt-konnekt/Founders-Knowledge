@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Backups alone cannot guarantee recovery. Learn how to protect your startup's data, set recovery targets, test restoration and resume operations safely.">
+  <meta name="theme-color" content="#f3ecff">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <title>A Backup Is Not a Recovery Plan — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/a-backup-is-not-a-recovery-plan/">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"A Backup Is Not a Recovery Plan","description":"Backups alone cannot guarantee recovery. Learn how to protect your startup's data, set recovery targets, test restoration and resume operations safely.","mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/a-backup-is-not-a-recovery-plan/","publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},"datePublished":"2026-10-29","dateModified":"2026-10-29","inLanguage":"en"}
+  </script>
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A Backup Is Not a Recovery Plan — Founders Knowledge">
+  <meta property="og:description" content="A backup is a copy of data. Recovery is a tested way to restore a working service.">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/a-backup-is-not-a-recovery-plan/">
+  <meta property="og:image" content="https://founders-knowledge.vercel.app/assets/og/lessons/a-backup-is-not-a-recovery-plan.svg">
+  <meta property="og:image:secure_url" content="https://founders-knowledge.vercel.app/assets/og/lessons/a-backup-is-not-a-recovery-plan.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Founders Knowledge: A Backup Is Not a Recovery Plan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Backup Is Not a Recovery Plan — Founders Knowledge">
+  <meta name="twitter:description" content="A backup is a copy of data. Recovery is a tested way to restore a working service.">
+  <meta name="twitter:image" content="https://founders-knowledge.vercel.app/assets/og/lessons/a-backup-is-not-a-recovery-plan.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body class="lesson-page">
+  <a class="skip-link" href="#lesson-content">Skip to article</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+    <nav aria-label="Article navigation"><a href="/library/">Knowledge library</a><a href="/#approach">Our approach</a></nav>
+    <a class="nav-cta" href="/library/">All knowledge</a>
+  </header>
+  <main id="lesson-content">
+    <section class="lesson-hero">
+      <a class="lesson-back" href="/library/">Back to the knowledge library</a>
+      <div class="lesson-cover">
+        <div class="lesson-cover-copy">
+          <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> FOUNDER OPERATIONS <span class="lesson-separator">/</span> INFRASTRUCTURE</p>
+          <h1>A backup is not a recovery plan<span>.</span></h1>
+          <p class="lesson-dek">How to make sure your startup can recover when its data, database or infrastructure fails.</p>
+          <div class="lesson-meta"><span>◷ 10 minute read</span><span>✳ Practical founder guide</span><span>Published 29 October 2026</span></div>
+        </div>
+        <div class="lesson-cover-art" aria-hidden="true">
+          <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
+          <div class="lesson-art-card art-current"><span class="art-label">THE RISK</span><strong>Backup exists.<br>Recovery unknown.</strong><div class="art-lines"><i></i><i></i><i></i></div><span class="art-small">Data is not the whole service</span></div>
+          <div class="lesson-art-card art-better"><span class="art-label">THE TEST</span><strong>Restore.<br>Verify.<br>Recover.</strong><span class="art-highlight"></span></div>
+          <span class="lesson-art-stamp">BUILD<br>WISELY</span>
+        </div>
+      </div>
+      <div class="lesson-progress"><span></span></div>
+    </section>
+    <div class="lesson-layout">
+      <aside class="lesson-sidebar" aria-label="On this page">
+        <div class="lesson-sidebar-inner">
+          <p class="sidebar-label">IN THIS LESSON</p>
+          <a href="#backup">01 <span>What a backup protects</span></a>
+          <a href="#targets">02 <span>Set recovery targets</span></a>
+          <a href="#provider">03 <span>Know your provider's limits</span></a>
+          <a href="#separation">04 <span>Separate your backups</span></a>
+          <a href="#test">05 <span>Test restoration</span></a>
+          <a href="#reconcile">06 <span>Reconcile the business</span></a>
+          <a href="#checklist">07 <span>Recovery checklist</span></a>
+          <div class="sidebar-note"><span>✳</span><p>A backup is useful only when you can restore what matters and prove the service works.</p></div>
+        </div>
+      </aside>
+      <article class="lesson-body">
+        <div class="lesson-opening"><span class="opening-mark">“</span><p>You have a database. Your hosting provider says it takes backups. Your code is in GitHub. Your website is live. You feel reasonably safe. Then someone deletes important records, a deployment breaks the application, or a cloud project becomes unusable. You discover that the backup exists, but you do not know whether it contains everything you need—or how to restore a working service.</p></div>
+        <section id="backup" class="lesson-section">
+          <p class="section-number">01 — WHAT A BACKUP PROTECTS</p>
+          <h2>A backup is a copy of data. Recovery is a business capability.</h2>
+          <p>Modern software is rarely a single database on a single server. Even a relatively simple web application may depend on a database, uploaded files, application code, authentication, domain settings, scheduled jobs and external services.</p>
+          <p>Consider a marketplace. Its database stores users, listings, orders and transaction records. File storage holds product images and identity documents. A hosting platform runs the application. A payment provider keeps its own transaction records. DNS directs visitors to the website.</p>
+          <p>Now imagine restoring only the database. The records might return, but uploaded files could still be missing. Authentication settings might need to be configured again. Payment-provider records might not match the application's records. Background jobs could remain broken. You have restored a component—not necessarily the service your customers use.</p>
+          <p>Supabase documents that database backups do not include the actual objects stored through its Storage API. Its project restoration and cloning guidance also identifies settings and services that may need manual reconfiguration. See the <a href="https://supabase.com/docs/guides/platform/backups" target="_blank" rel="noopener noreferrer">Supabase backup documentation</a> and <a href="https://supabase.com/docs/guides/platform/clone-project" target="_blank" rel="noopener noreferrer">project cloning guide</a>. These are provider-specific details, not rules that automatically apply to every host.</p>
+          <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Start with dependencies, not products</strong><p>List what makes your product work, not just where your database lives.</p></div></div>
+          <p>Your inventory may include database records and roles, uploaded files, application code and deployment configuration, authentication settings, secrets, domains and DNS, scheduled jobs, webhooks, and external systems that maintain their own state. Identify what applies to your application and how each component would be restored.</p>
+        </section>
+        <section id="targets" class="lesson-section">
+          <p class="section-number">02 — SET RECOVERY TARGETS</p>
+          <h2>Decide how much data you can afford to lose.</h2>
+          <p>Suppose your application takes a backup every night at midnight. A failure happens at 9 p.m. the following day. If you can restore only the midnight backup, you may lose almost 21 hours of changes: customer registrations, orders, inventory updates or records created during the day.</p>
+          <p>Whether that loss is tolerable depends on the product. Recreating a day's blog posts may be manageable. Losing a day's orders or transaction updates can create serious operational and reconciliation problems.</p>
+          <div class="lesson-question-card">
+            <p><strong>Recovery Point Objective (RPO)</strong><br>How much recent data, measured in time, can the business afford to lose? An RPO of one hour means your recovery strategy should aim to limit lost changes to no more than an hour for the failure scenario you have defined.</p>
+            <p><strong>Recovery Time Objective (RTO)</strong><br>How long can the service remain unavailable? An RTO of four hours means the plan aims to restore the agreed service within four hours of the disruption.</p>
+          </div>
+          <p>These are targets, not guarantees that your infrastructure will automatically meet them. A low-risk internal tool may tolerate longer downtime and more data loss than a product processing time-sensitive transactions. Choose targets based on the consequences of failure, not on what sounds impressive.</p>
+          <p>If losing a day's work would seriously damage the business, daily backups alone may not provide the protection you need. More frequent backups or point-in-time recovery may be appropriate. If the business can tolerate longer downtime, paying for elaborate high-availability infrastructure may be unnecessary.</p>
+          <p>The goal is not to buy the most sophisticated recovery system. It is to build a recovery capability proportionate to the consequences of failure.</p>
+        </section>
+        <section id="provider" class="lesson-section">
+          <p class="section-number">03 — KNOW YOUR PROVIDER'S LIMITS</p>
+          <h2>Understand what your provider actually protects.</h2>
+          <p>Managed infrastructure makes it easier to launch software. It also makes it easy to assume the provider handles more than it does.</p>
+          <p>Supabase's published backup documentation describes plan-dependent backup retention, recommends off-site database exports for Free Plan projects, and explains that standard database backups exclude stored file objects. It also warns that deleting a project permanently removes its associated data and stored backups. Review the <a href="https://supabase.com/docs/guides/platform/backups" target="_blank" rel="noopener noreferrer">current backup documentation</a> for the terms that apply to your project. Provider policies change; do not generalise these limits to another service.</p>
+          <p>For each critical service, answer these questions:</p>
+          <ul>
+            <li>Is backup automatic, or must I configure it?</li>
+            <li>What data and resources are included?</li>
+            <li>How long are backups retained?</li>
+            <li>Can I restore to a point before an accidental change or deletion?</li>
+            <li>Can I obtain a copy outside the provider?</li>
+            <li>What happens if the entire project or account is deleted?</li>
+            <li>Which settings, files or credentials must be recreated manually?</li>
+          </ul>
+          <p>Write the answers down and link to official documentation. If your recovery strategy depends on a feature you have never tested, you have an assumption—not a verified recovery process.</p>
+        </section>
+        <section id="separation" class="lesson-section">
+          <p class="section-number">04 — SEPARATE YOUR BACKUPS</p>
+          <h2>Keep a way to recover outside your main failure point.</h2>
+          <p>A backup stored only alongside the system it is meant to protect can share the same failure risk. If a project is accidentally deleted and the provider removes the associated backups, a copy that existed only inside that project may be gone too.</p>
+          <p>For important business data, consider maintaining a separate, securely stored copy outside the primary failure point. Depending on your needs, that might be an encrypted database export in a separate storage account, another environment, or a managed backup service.</p>
+          <p>Separation alone is not enough. Protect the backup location with appropriate access controls. Do not casually store recovery credentials alongside the files they unlock. If your business depends on uploaded documents, give those objects their own backup strategy.</p>
+          <div class="lesson-two-up">
+            <div><span class="mini-check">01</span><strong>Live system</strong><p>Run the application and the provider-supported backup mechanism.</p></div>
+            <div><span class="mini-check">02</span><strong>Independent copy</strong><p>Keep a separate protected copy when your recovery needs justify it.</p></div>
+            <div><span class="mini-check">03</span><strong>Recovery instructions</strong><p>Document the restore steps somewhere accessible if the main app is down.</p></div>
+            <div><span class="mini-check">04</span><strong>Named owner</strong><p>Make sure at least one authorised person can carry out the procedure.</p></div>
+          </div>
+          <p>You do not necessarily need a second production server running around the clock. A separate, verified backup may be the right first improvement. Let your recovery requirements and budget determine the architecture.</p>
+        </section>
+        <section id="test" class="lesson-section">
+          <p class="section-number">05 — TEST RESTORATION</p>
+          <h2>The most important test is restoring the backup.</h2>
+          <p>When did you last restore a backup and verify that the application worked? Not when did you last see a green checkmark, but when did you recover data into an environment where you could inspect and use it?</p>
+          <p>A backup can exist but be incomplete, inaccessible, outdated or difficult to restore. A restoration can complete while important parts of the application remain broken. PostgreSQL documents the procedures and options for restoring databases with <a href="https://www.postgresql.org/docs/current/app-pgrestore.html" target="_blank" rel="noopener noreferrer"><code>pg_restore</code></a>; the correct procedure depends on the backup format and environment.</p>
+          <h3>Run a safe recovery drill</h3>
+          <ol>
+            <li>Identify a backup and confirm its timestamp and coverage.</li>
+            <li>Prepare an isolated test environment or separate recovery project.</li>
+            <li>Restore the database using the provider's documented procedure.</li>
+            <li>Restore or verify required uploaded files and storage objects.</li>
+            <li>Check authentication, permissions, application configuration and secrets.</li>
+            <li>Run important user workflows, such as signing in, creating a record and retrieving it.</li>
+            <li>Record how long recovery took and what was missing or confusing.</li>
+            <li>Update the recovery instructions and assign responsibility for the next test.</li>
+          </ol>
+          <p>Do not test by deleting production data or experimenting on the live database. Use a separate environment. If your application triggers webhooks, scheduled jobs or other external actions, make sure the test cannot send real messages, charge customers or alter external records.</p>
+          <p>Then ask whether another authorised person could follow the instructions without needing the person who originally built the application. If the answer is no, your recovery plan still depends too heavily on individual knowledge.</p>
+        </section>
+        <section id="reconcile" class="lesson-section">
+          <p class="section-number">06 — RECONCILE THE BUSINESS</p>
+          <h2>Recovering the database is not the same as reconciling reality.</h2>
+          <p>Some systems contain records that must agree with information held elsewhere. Consider a marketplace payment. Your application records an order as paid, but the payment provider keeps a separate transaction record. A restoration may return the database to a point before a later payment update was recorded, while the provider still knows that the payment succeeded.</p>
+          <p>If the business resumes processing without checking the discrepancy, it could mark a valid order as unpaid, retry a transaction unnecessarily or create an inaccurate account balance.</p>
+          <p>The same problem can arise with inventory, delivery status, subscription renewals, refunds and external integrations. Restoring an old database does not automatically reverse actions that have already occurred outside it.</p>
+          <div class="lesson-callout callout-lilac"><span class="callout-icon">?</span><div><strong>Ask whether the recovered records match reality</strong><p>For transactional products, define how you will compare internal records with authoritative external records and resolve differences safely.</p></div></div>
+          <p>For payment systems, that may mean reconciling orders with payment-provider transactions, verifying settlement records and checking whether webhooks or background jobs need to be replayed. The correct procedure depends on the provider and your architecture. Involve finance and operations—not only the developer restoring the database.</p>
+        </section>
+        <div id="checklist" class="lesson-exercise">
+          <p class="section-number">PUT IT TO WORK</p>
+          <h2>Build a one-page recovery plan.</h2>
+          <ol>
+            <li><strong>Critical services:</strong> list the systems your product needs to operate.</li>
+            <li><strong>Data protection:</strong> record what is backed up, where it is stored and how often.</li>
+            <li><strong>Recovery targets:</strong> decide how much data loss and downtime you can tolerate.</li>
+            <li><strong>Restoration steps:</strong> document the sequence for rebuilding the service.</li>
+            <li><strong>Validation:</strong> define the workflows and records that prove recovery succeeded.</li>
+            <li><strong>External dependencies:</strong> list payment providers, email, storage, DNS and integrations.</li>
+            <li><strong>Ownership:</strong> name who is responsible and who can act if the primary owner is unavailable.</li>
+            <li><strong>Test schedule:</strong> record the next restore drill and where its results will live.</li>
+          </ol>
+          <div class="reality-check"><strong><span>!</span> Reality check</strong><p>A quarterly restoration drill may be a reasonable starting point for a small, low-risk application. Systems with faster-changing data or greater consequences of failure may need more frequent tests. Choose a schedule that fits your risk; this is not a universal standard.</p></div>
+        </div>
+        <div class="lesson-takeaway"><span class="takeaway-label">THE TAKEAWAY</span><p><em>A backup is not proof that your business can recover.</em> Know how much data you can afford to lose, understand what your provider protects, keep important copies outside the primary failure point, test restoration safely, and verify that the recovered system agrees with the real world.</p></div>
+        <nav class="lesson-next" aria-label="Article navigation">
+          <a href="/library/" class="next-library"><span>✳</span><span><small>KEEP LEARNING</small><strong>Back to the knowledge library</strong></span></a>
+          <a href="/lessons/your-free-backend-isnt-always-available/" class="next-card"><span class="next-card-label">RELATED GUIDE</span><strong>Your free backend isn't always available</strong><span class="next-arrow"></span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#lesson-content">Back to top</a></footer>
+  <script src="/assets/share.js" defer></script>
+</body>
+</html>
