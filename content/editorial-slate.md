@@ -61,6 +61,9 @@
 | Teardown | **A Five-Year Mastercard Deal for a Small Fintech: How Moovn Got Network Distribution** | You don't need scale to land a network partnership — you need a corridor the network wants: what Moovn offered (transport/delivery merchant base, Start Path track record) and what it must now deliver. | (R) Announced Oct 19 2026, Nairobi (Kenya Today): five-year prepaid card rollout in Kenya/Tanzania via MoovnPay, Mastercard Payment Gateway Services, Start Path Emerging Fintech (Sept 2025). Terms undisclosed. Verify via Mastercard/Moovn releases. | Do not speculate on deal value — none was disclosed. Angle is partnership mechanics, not celebration. |
 | Practical | **Founder Paperwork Hygiene: The Records Everyone Asks for Eventually** | Cap table, incorporation filings, founder agreements, customer contracts, tax IDs: the boring folder that decides whether diligence, a grant, or a licence application takes a week or a quarter. | Evergreen. Cross-reference (don't repeat) the Delaware-incorporation lesson for the foreign-flip question and the fintech-verification lesson for counterparty checks. Nigeria CAC processes — verify current steps on CAC's official site before listing them. | Keep it a checklist with a payoff per item; no legal advice — direct readers to verify specifics. |
 
+
+**Additional evergreen publication — 2026-10-29:** **A Backup Is Not a Recovery Plan** ([live](https://founders-knowledge.vercel.app/lessons/a-backup-is-not-a-recovery-plan/)). Practical infrastructure guide: distinguish backup from recovery, set RPO/RTO targets, test restoration, and reconcile external transactional records. Published after the daily slate was prepared; keep distinct from the existing free-backend availability lesson.
+
 ## Fri 2026-10-30
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
