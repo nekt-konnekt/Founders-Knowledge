@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<rect width="1200" height="630" fill="#f3ecff"/><path d="M0 0H1200V630H0Z" fill="none" stroke="#1a0f2e" stroke-width="12"/>
-<circle cx="1040" cy="120" r="130" fill="#fbcfe8"/><circle cx="1080" cy="520" r="90" fill="#bbf7d0"/>
-<rect x="72" y="66" width="84" height="84" rx="22" fill="#fde047" stroke="#1a0f2e" stroke-width="5"/>
-<text x="114" y="120" text-anchor="middle" font-family="Fredoka,Arial,sans-serif" font-size="33" font-weight="700" fill="#1a0f2e">FK</text>
-<text x="180" y="100" font-family="Space Grotesk,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="#45375d">FOUNDERS KNOWLEDGE</text>
-<text x="180" y="133" font-family="Space Grotesk,Arial,sans-serif" font-size="15" font-weight="600" letter-spacing="3" fill="#786d8e">DISTRIBUTION SYSTEM · PART 1</text>
-<rect x="72" y="205" width="760" height="300" rx="28" fill="#fffdf9" stroke="#1a0f2e" stroke-width="5"/>
-<text x="112" y="275" font-family="Fredoka,Arial,sans-serif" font-size="50" font-weight="700" fill="#1a0f2e">Distribution should</text>
-<text x="112" y="335" font-family="Fredoka,Arial,sans-serif" font-size="50" font-weight="700" fill="#1a0f2e">not be a mystery.</text>
-<text x="114" y="400" font-family="Space Grotesk,Arial,sans-serif" font-size="22" font-weight="500" fill="#45375d">Start with the customer. Map the route.</text>
-<rect x="114" y="450" width="520" height="16" rx="7" fill="#fde047" stroke="#1a0f2e" stroke-width="3"/>
-<rect x="865" y="370" width="250" height="120" rx="22" fill="#bbf7d0" stroke="#1a0f2e" stroke-width="5" transform="rotate(5 990 430)"/>
-<text x="900" y="416" font-family="Space Grotesk,Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="2" fill="#45375d">FOUNDER GUIDE</text>
-<text x="900" y="457" font-family="Fredoka,Arial,sans-serif" font-size="28" font-weight="600" fill="#1a0f2e">PART 1</text>
-<text x="72" y="576" font-family="Space Grotesk,Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="4" fill="#786d8e">CLARITY OVER NOISE · PRACTICE OVER POSTURING</text></svg>
+<rect width="1200" height="630" fill="#e8f3ff"/><path d="M0 0H1200V630H0Z" fill="none" stroke="#12263a" stroke-width="12"/>
+<circle cx="1040" cy="120" r="130" fill="#ffd9c4"/><circle cx="1080" cy="520" r="90" fill="#bbf7d0"/>
+<rect x="72" y="66" width="84" height="84" rx="22" fill="#c8f04b" stroke="#12263a" stroke-width="5"/>
+<text x="114" y="120" text-anchor="middle" font-family="Fredoka,Arial,sans-serif" font-size="33" font-weight="700" fill="#12263a">FK</text>
+<text x="180" y="100" font-family="Space Grotesk,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="#3d546e">FOUNDERS KNOWLEDGE</text>
+<text x="180" y="133" font-family="Space Grotesk,Arial,sans-serif" font-size="15" font-weight="600" letter-spacing="3" fill="#71879e">DISTRIBUTION SYSTEM · PART 1</text>
+<rect x="72" y="205" width="760" height="300" rx="28" fill="#ffffff" stroke="#12263a" stroke-width="5"/>
+<text x="112" y="275" font-family="Fredoka,Arial,sans-serif" font-size="50" font-weight="700" fill="#12263a">Distribution should</text>
+<text x="112" y="335" font-family="Fredoka,Arial,sans-serif" font-size="50" font-weight="700" fill="#12263a">not be a mystery.</text>
+<text x="114" y="400" font-family="Space Grotesk,Arial,sans-serif" font-size="22" font-weight="500" fill="#3d546e">Start with the customer. Map the route.</text>
+<rect x="114" y="450" width="520" height="16" rx="7" fill="#c8f04b" stroke="#12263a" stroke-width="3"/>
+<rect x="865" y="370" width="250" height="120" rx="22" fill="#bbf7d0" stroke="#12263a" stroke-width="5" transform="rotate(5 990 430)"/>
+<text x="900" y="416" font-family="Space Grotesk,Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="2" fill="#3d546e">FOUNDER GUIDE</text>
+<text x="900" y="457" font-family="Fredoka,Arial,sans-serif" font-size="28" font-weight="600" fill="#12263a">PART 1</text>
+<text x="72" y="576" font-family="Space Grotesk,Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="4" fill="#71879e">CLARITY OVER NOISE · PRACTICE OVER POSTURING</text></svg>
