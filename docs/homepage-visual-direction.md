@@ -1,54 +1,32 @@
-# Founders Knowledge — Reference 02 design system
+# Founders Knowledge — expressive editorial design system
 
-Status: implementation branch for full-site review.
+Status: active implementation direction for full-site review.
 
 ## Design direction
-Use the second visual reference as the complete design direction: a calm, structured, photography-led editorial publication. The site should feel like a considered journal and practical knowledge library, not a creative-agency portfolio, course platform, social feed or SaaS dashboard.
+A confident, reader-first editorial publication with the visual energy of contemporary product storytelling. Use the supplied Bolt references as inspiration for rhythm, asymmetry, bold typography, compact story previews and memorable visual moments—not as a template to copy. FK is a knowledge publication, not a checkout product site.
 
 ## Visual language
-- Warm near-white paper background, charcoal typography and restrained sage-green accents.
-- Manrope display typography and DM Sans body typography.
-- Generous whitespace, clear typographic hierarchy and quiet dividers.
-- Editorial photography is the primary visual component. Images should show the actual subject, environment, people or process relevant to the article.
-- Clean rectangular image frames, restrained controls, minimal ornament and no decorative stickers or floating paper illustrations.
-- Consistent responsive layouts for homepage, library, briefings, article pages, product discovery and private editorial review.
+- Warm paper and cream surfaces, deep forest/charcoal ink, restrained sage and vivid lime accents.
+- Bold Manrope display typography with DM Sans body copy.
+- Asymmetric editorial bento layouts mixed with spacious long-form reading pages.
+- Subject-led photography, conceptual CSS artwork and custom illustrations where they help explain an idea.
+- Strong contrast between featured stories and supporting cards; avoid identical grids of generic cards.
+- Short, useful previews and clear invitations to read, explore or apply.
+- Keep the design expressive without letting decoration compete with the knowledge.
 
-## Article template
-1. Category and content-type label.
-2. Clear headline and concise reader-focused dek.
-3. Publication date and reading time.
-4. Wide, relevant lead photograph with descriptive alt text and caption/credit where appropriate.
-5. Readable article body with section hierarchy, sources, practical callouts and a clear takeaway.
-6. Related reading and sharing controls.
-
-## Photography rules
-- Prefer original, commissioned, licensed or appropriately attributed images.
-- Select images for editorial relevance, not generic startup aesthetics.
-- Avoid random laptop stock photos, staged handshakes and decorative images that add no information.
-- Preserve subject context when cropping on mobile.
-- Always provide meaningful alt text; use an empty alt only for genuinely decorative imagery.
-- If an appropriate photograph is unavailable, use a neutral image placeholder rather than reverting to the previous illustrated card system.
+## Content presentation
+- Homepage: a clear publication promise followed by a curated, asymmetric set of featured stories across business, distribution, product, technology and operations.
+- Library: useful browsing and filtering remain primary; use editorial hierarchy rather than a chronological feed.
+- Articles: clear category, headline, reader-focused dek, date and reading time; subject-relevant cover visual; comfortable reading column; practical callouts, sources and takeaway.
+- Use different visual treatments when the subject calls for it. Not every article needs a photograph or illustration.
 
 ## Components and behaviour
-- Keep navigation, search, filters, submission forms, authentication, analytics, structured data, URLs and publishing workflows functional.
-- Use the same visual language on public and private pages.
-- Keep text contrast accessible, controls keyboard accessible and motion restrained.
-- Article content must remain comfortable to read on mobile and desktop.
-
-## Design tokens
-- Paper: #fbfaf7
-- White: #ffffff
-- Ink: #20211f
-- Muted: #777a73
-- Soft surface: #ecece6
-- Accent: #536b55
-- Deep accent: #354b39
-- Rule: #dedfd8
+Keep navigation, search, filters, submission forms, authentication, analytics, structured data, URLs, sharing and publishing workflows functional. Maintain keyboard access, readable contrast, responsive layouts and reduced-motion support.
 
 ## Acceptance checks
-- No visible blue/pastel course-platform styling, oversized rounded cards, playful stickers, floating note graphics or shadow-heavy components.
-- Homepage and article cover use real editorial photography.
-- All published article routes, library, briefings, product discovery and private review use the same visual system.
+- No remnants of the old playful pastel course-platform styling.
+- Homepage feels distinctive, lively and easy to explore without resembling a SaaS landing page.
+- Editorial cards are asymmetric and visually varied; article pages remain focused and readable.
+- Visuals are relevant to the subject, properly attributed and accessible.
 - Search, filters, sharing, product submission and review workflows remain operational.
-- Desktop and mobile layouts are checked before merge.
-- The production domain is verified only after the deployment is ready and the live pages are inspected.
+- Desktop and mobile layouts are inspected before merge; production is verified only after deployment and live-page inspection.
