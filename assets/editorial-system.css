@@ -352,3 +352,15 @@ html,body{background:var(--fk-aqua)!important;color:var(--fk-ink)!important}
 @media(max-width:900px){.site-header{width:calc(100% - 28px)!important;padding:12px 18px!important;gap:12px!important}.site-header nav{gap:10px!important}.lesson-layout{grid-template-columns:minmax(0,1fr) 220px!important}}
 @media(max-width:700px){.site-header{margin:14px auto 20px!important;border-radius:22px!important;flex-wrap:wrap!important}.site-header nav{order:3;width:100%;justify-content:center;overflow-x:auto;padding:5px 0}.brand-name{font-size:25px!important}.fk-editorial-bento{grid-template-columns:1fr!important}.fk-bento-feature,.fk-bento-conversion,.fk-bento-loyalty,.fk-bento-wide,.fk-bento-last{grid-column:1!important;grid-row:auto!important}.lesson-cover{grid-template-columns:1fr!important}.lesson-cover-art{min-height:220px!important}.lesson-layout{grid-template-columns:1fr!important;padding-top:14px!important}.lesson-body{grid-column:1!important;grid-row:2!important;padding:24px 20px!important}.lesson-sidebar{grid-column:1!important;grid-row:1!important}.lesson-sidebar-inner{position:static!important;padding:17px!important}.lesson-sidebar a{display:inline-flex!important;margin:4px 8px 4px 0!important;border:1px solid #e5dda9!important;border-radius:999px!important;padding:7px 10px!important}.sidebar-note{display:none!important}.library.section{border-radius:16px 16px 0 0!important}.newsletter-panel{grid-template-columns:1fr!important}.site-footer{flex-wrap:wrap!important}}
 @media(prefers-reduced-motion:reduce){.fk-bento-card{transition:none!important}}
+
+/* Photo-led card treatments, following the supplied editorial references. */
+.fk-bento-conversion:before,.fk-bento-loyalty:before,.fk-bento-wide:before,.fk-bento-last:before{
+ content:"";position:absolute;inset:0 0 auto;height:116px;background-size:cover;background-position:center;opacity:.24;pointer-events:none;
+}
+.fk-bento-conversion:before{background-image:linear-gradient(90deg,#fff8c8aa,#fff8c8aa),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80')}
+.fk-bento-loyalty:before{background-image:linear-gradient(90deg,#d9f5d2aa,#d9f5d2aa),url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80')}
+.fk-bento-wide:before{background-image:linear-gradient(90deg,#e5edffaa,#e5edffaa),url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80')}
+.fk-bento-last:before{height:100%;inset:0;background-image:linear-gradient(90deg,#ffffffef 10%,#ffffffa8 70%),url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80)';opacity:.4}
+.fk-bento-card>*{position:relative;z-index:1}
+.fk-bento-card .fk-bento-kicker{align-self:flex-start}
+@media(max-width:600px){.fk-bento-conversion:before,.fk-bento-loyalty:before,.fk-bento-wide:before{height:90px}}
