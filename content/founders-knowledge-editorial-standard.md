@@ -6,7 +6,7 @@
 
 **Editorial promise:** Help founders make better decisions. Do not merely explain a topic; show why it matters, how to reason about it, what to do next, and where the advice stops applying.
 
-**Design reference:** [Validate the Idea Before You Build](https://founders-knowledge.vercel.app/lessons/validate-the-idea/). Use it as the reference for the current lesson-page design system. Also inspect recent technical and field-note lessons when the format calls for evidence, current facts, or operational detail.
+**Design reference:** Use the current expressive Founders Knowledge visual system: warm paper, forest/charcoal ink, sage and lime accents, bold typography, asymmetric editorial layouts and subject-led visual storytelling. The design should invite readers in without turning the publication into a sales landing page.
 
 ---
 
