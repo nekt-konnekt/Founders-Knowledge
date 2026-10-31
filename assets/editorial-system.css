@@ -42,6 +42,7 @@ main{min-height:60vh}
 .hero-copy{max-width:570px;margin:23px 0 27px!important;color:#555951!important;font-size:clamp(15px,1.35vw,17px)!important;line-height:1.8!important}
 .hero-note{margin-top:34px!important;padding-top:15px!important;border-top:1px solid var(--fk-line)!important;color:var(--fk-muted)!important;font-size:11px!important}
 .note-icon,.eyebrow-dot{background:var(--fk-accent)!important;border:0!important;border-radius:50%!important;color:#fff!important}
+.hero-art img{position:absolute;width:100%;height:100%;inset:0;object-fit:cover}
 .hero-art{position:relative;min-height:390px!important;max-width:560px!important;width:100%;justify-self:center;background:#e7e8e0!important;border:0!important;border-radius:2px!important;overflow:hidden}
 .hero-art:before{display:none!important}
 .hero-art .art-orbit,.hero-art .float-card,.hero-art .art-sticker,.hero-art .art-caption{display:none!important}
@@ -106,6 +107,7 @@ main{min-height:60vh}
 .lesson-cover-art:before{display:none!important}
 .lesson-cover-art .lesson-art-spark,.lesson-cover-art .lesson-art-card,.lesson-cover-art .lesson-art-stamp,.lesson-cover-art .lesson-art-arrow{display:none!important}
 .lesson-cover-art img,.lesson-cover-art picture{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.lesson-cover-art figcaption{position:absolute;z-index:2;left:12px;bottom:10px;color:#fff;font-size:10px;text-shadow:0 1px 3px #0008}
 .lesson-cover-art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,24,20,.15),transparent 40%);pointer-events:none}
 .lesson-progress{height:2px!important;margin:20px 0 8px!important;border:0!important;border-radius:0!important;background:#e5e6df!important}
 .lesson-progress span{height:2px!important;background:var(--fk-accent)!important}
