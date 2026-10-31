@@ -98,7 +98,7 @@ the shell, classes and element order are not.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="[META DESCRIPTION]">
-  <meta name="theme-color" content="#2e9bff">
+  <meta name="theme-color" content="#fbfaf7">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="shortcut icon" href="/favicon.svg">
   <title>[TITLE] — Founders Knowledge</title>
@@ -132,8 +132,8 @@ the shell, classes and element order are not.
   <meta name="twitter:image" content="[SAME OG IMAGE URL]">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/editorial-system.css">
   <script src="/assets/analytics.js" defer></script>
   <meta property="og:image:secure_url" content="[SAME OG IMAGE URL]">
 </head>
@@ -154,12 +154,10 @@ the shell, classes and element order are not.
           <p class="lesson-dek">[DEK]</p>
           <div class="lesson-meta"><span>◷ [N] minute read</span><span>✳ [TYPE LABEL]</span><span>Published [D MONTH YYYY]</span></div>
         </div>
-        <div class="lesson-cover-art" aria-hidden="true">
-          <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
-          <div class="lesson-art-card art-current"><span class="art-label">[CARD 1 LABEL]</span><div class="art-lines"><i></i><i></i><i></i></div><span class="art-small">[CARD 1 NOTE]</span></div>
-          <div class="lesson-art-card art-better"><span class="art-label">[CARD 2 LABEL]</span><strong>[CARD 2 HEADLINE]</strong><span class="art-highlight"></span></div>
-          <span class="lesson-art-stamp">[STAMP TEXT]</span>
-        </div>
+        <figure class="lesson-cover-art">
+          <img src="/assets/images/[SLUG]-cover.webp" alt="[DESCRIPTIVE IMAGE ALT]" fetchpriority="high">
+          <figcaption>[IMAGE CAPTION OR CREDIT]</figcaption>
+        </figure>
       </div>
       <div class="lesson-progress"><span></span></div>
       <div class="lesson-progress-caption"><span>[TOPIC, ALL CAPS]</span><span>[ONE-LINE TAGLINE]</span></div>
