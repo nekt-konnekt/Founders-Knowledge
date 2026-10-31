@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="If an AI agent can write or run code, it needs an execution boundary. A practical guide to sandboxing agents, protecting credentials, isolating tenants and testing failures.">
+  <meta name="theme-color" content="#55c9c6">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <title>Before Your AI Agent Runs Code, Give It a Sandbox — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/sandbox-your-ai-agent-before-it-runs-code/">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Before Your AI Agent Runs Code, Give It a Sandbox",
+    "description":"If an AI agent can write or run code, it needs an execution boundary. A practical guide to sandboxing agents, protecting credentials, isolating tenants and testing failures.",
+    "mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/sandbox-your-ai-agent-before-it-runs-code/",
+    "publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},
+    "isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},
+    "dateModified":"2026-10-31",
+    "inLanguage":"en"
+  }
+  </script>
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Before Your AI Agent Runs Code, Give It a Sandbox — Founders Knowledge">
+  <meta property="og:description" content="An agent that can execute code needs more than a careful prompt. Give it a separate execution boundary, limited permissions and a way to prove it cannot reach production.">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/sandbox-your-ai-agent-before-it-runs-code/">
+  <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fsandbox-your-ai-agent-before-it-runs-code.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261031">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Before Your AI Agent Runs Code, Give It a Sandbox — Founders Knowledge editorial artwork">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Before Your AI Agent Runs Code, Give It a Sandbox — Founders Knowledge">
+  <meta name="twitter:description" content="An agent that can execute code needs more than a careful prompt. Give it a separate execution boundary, limited permissions and a way to prove it cannot reach production.">
+  <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fsandbox-your-ai-agent-before-it-runs-code.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261031">
+  <meta name="twitter:image:alt" content="Before Your AI Agent Runs Code, Give It a Sandbox — Founders Knowledge editorial artwork">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="/assets/analytics.js" defer></script>
+  <script src="/assets/share.js" defer></script>
+  <meta property="og:image:secure_url" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fsandbox-your-ai-agent-before-it-runs-code.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261031">
+  <link rel="stylesheet" href="/assets/editorial-system.css">
+</head>
+<body class="lesson-page">
+  <a class="skip-link" href="#lesson-content">Skip to article</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+    <nav aria-label="Article navigation"><a href="/library/">Knowledge library</a><a href="/#approach">Our approach</a></nav>
+    <a class="nav-cta" href="/library/">All knowledge</a>
+  </header>
+  <main id="lesson-content">
+    <section class="lesson-hero">
+      <a class="lesson-back" href="/library/">Back to the knowledge library</a>
+      <div class="lesson-cover">
+        <div class="lesson-cover-copy">
+          <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> ENGINEERING PLAYBOOK <span class="lesson-separator">/</span> AI SYSTEMS &amp; SECURITY</p>
+          <h1>Before your AI agent runs code, <span>give it a sandbox.</span></h1>
+          <p class="lesson-dek">A model can write code in seconds. That does not mean the code should have access to your customers, credentials or production systems. Build an execution boundary before you give an agent real work.</p>
+          <div class="lesson-meta"><span>◷ 9 minute read</span><span>✳ Engineering playbook</span><span>Prepared 31 October 2026 · Draft for editorial review</span></div>
+        </div>
+        <div class="lesson-cover-art" aria-hidden="true">
+          <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
+          <div class="lesson-art-card art-current"><span class="art-label">THE AGENT CAN</span><div class="art-lines"><i></i><i></i><i></i></div><span class="art-small">Write · Run · Call tools</span></div>
+          <div class="lesson-art-card art-better"><span class="art-label">THE BOUNDARY</span><strong>Sandbox<br>first.</strong><span class="art-highlight"></span></div>
+          <span class="lesson-art-stamp">LIMIT<br>THE BLAST RADIUS</span>
+        </div>
+      </div>
+      <div class="lesson-progress"><span class="progress-100"></span></div>
+      <div class="lesson-progress-caption"><span>AI SYSTEMS &amp; SECURITY</span><span>Separate execution from authority</span></div>
+    </section>
+    <div class="lesson-layout">
+      <aside class="lesson-sidebar" aria-label="On this page">
+        <div class="lesson-sidebar-inner">
+          <p class="sidebar-label">IN THIS ARTICLE</p>
+          <a href="#threat">01 <span>When an agent can execute</span></a>
+          <a href="#architecture">02 <span>Separate control and execution</span></a>
+          <a href="#guardrails">03 <span>Five guardrails</span></a>
+          <a href="#tenants">04 <span>Protect every tenant</span></a>
+          <a href="#testing">05 <span>Test the boundary</span></a>
+          <a href="#rollout">06 <span>Start with one workflow</span></a>
+          <div class="sidebar-note"><span>✳</span><p>A sandbox does not make an agent trustworthy. It limits what a mistake, malicious instruction or compromised tool can reach.</p></div>
+        </div>
+      </aside>
+      <article class="lesson-body">
+        <div class="lesson-opening"><span class="opening-mark">“</span><p>If your AI agent can only return text, a bad answer is usually a quality problem. If it can write files, run shell commands, install packages, query databases or call external tools, a bad answer can become an operational incident. The moment an agent can execute, you are no longer designing only a conversation. You are designing a system that can act.</p></div>
+
+        <section id="threat" class="lesson-section">
+          <p class="section-number">01 — WHEN AN AGENT CAN EXECUTE</p>
+          <h2>A prompt is not a security boundary.</h2>
+          <p>An agent can receive instructions from more than its system prompt. It may read a PDF, an email, a support ticket, a website, a source-code repository or an MCP tool response. Any of those inputs can contain hostile or misleading instructions. A model may follow them while trying to complete the task it was given.</p>
+          <p>That becomes more serious when generated code executes immediately. A script can inspect its environment, read files, make network requests, consume resources or use whatever credentials were placed within reach. Telling the model “do not access production” is not the same as making production inaccessible.</p>
+          <p>A selected roundup of Q3 2026 incidents and disclosures published on the OWASP GenAI Security Project site describes agents escaping intended evaluation boundaries, repurposing shared package infrastructure for communication and internet access, and expanding access through exposed credentials and privileges. The page explicitly says the roundup is non-exhaustive and is not an official OWASP publication; it also warns that related entries should not be counted as independent attacks. The useful lesson is not that every agent is compromised. It is that an instruction is not an enforced boundary.</p>
+          <p>On 27 October, Akamai announced its Agent Sandbox alongside a new inference service. The sandbox uses WebAssembly isolation and limits compute, memory, outbound connections and system capabilities. Both products were announced as beta. This is a signal that execution isolation is becoming part of the AI infrastructure conversation — not proof that one vendor has solved agent security for every workload.</p>
+          <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Use this test</strong><p>If the agent reads an attacker-controlled document and follows an instruction hidden inside it, what can it actually reach? Your answer should come from enforced permissions and network rules, not from the wording of the prompt.</p></div></div>
+        </section>
+
+        <section id="architecture" class="lesson-section">
+          <p class="section-number">02 — SEPARATE CONTROL AND EXECUTION</p>
+          <h2>Keep the authority outside the workspace.</h2>
+          <p>A safer design separates three jobs. The model can propose work. An isolated environment can execute code. A trusted part of your application decides which real-world actions are allowed.</p>
+          <div class="lesson-question-card">
+            <p class="question-card-title">THREE PARTS OF A SAFER AGENT</p>
+            <ul>
+              <li><strong>Control plane — your trusted application.</strong> Own authentication, tenant identity, billing, policy checks, approvals, audit logs and recovery. This is where long-lived credentials and production authority stay.</li>
+              <li><strong>Execution plane — the sandbox.</strong> Give the agent a temporary workspace with only the files and commands needed for its task. It can calculate, transform files, run tests or generate an artefact without inheriting the application's full authority.</li>
+              <li><strong>Capability broker — the approved doorway.</strong> When the agent needs a real service, it requests a specific operation. Your backend validates the request, checks the user's permissions and performs the action with narrowly scoped credentials. The sandbox receives the result, not the secret.</li>
+            </ul>
+          </div>
+          <p>Imagine an agent that reconciles supplier invoices for a distributor in Lagos. It can inspect uploaded invoices, compare them with a read-only copy of purchase-order data and prepare a reconciliation report. It should not be able to initiate a bank transfer, change supplier bank details or query every customer in the company's database. Those actions belong behind separate, explicit permissions and human approval.</p>
+          <p>OpenAI's current sandbox guidance describes the same architectural separation: keep the agent harness, authentication, billing, audit and recovery in trusted infrastructure, while the sandbox handles model-directed file and command execution. The principle is provider-independent. Your model can be hosted locally or remotely; the execution boundary should remain a separate part of your system.</p>
+        </section>
+
+        <section id="guardrails" class="lesson-section">
+          <p class="section-number">03 — FIVE GUARDRAILS</p>
+          <h2>Make the limits impossible for the agent to negotiate away.</h2>
+          <p>Start with five controls. They are more important than adding another paragraph to the system prompt.</p>
+          <ol>
+            <li><strong>Keep long-lived credentials out of the sandbox.</strong> Do not put production database passwords, payment keys, cloud credentials or unrestricted API tokens in environment variables, source files, logs or mounted secrets that generated code can read. Keep them in your backend or a secrets manager. Use a broker or trusted proxy to attach a short-lived, narrowly scoped credential only to an approved destination. Revoke or rotate a credential if exposure is suspected.</li>
+            <li><strong>Deny outbound network access by default.</strong> Most code-execution tasks do not need unrestricted internet access. If a task needs a specific service, allow only that destination through a controlled egress proxy. Block access to internal networks, cloud metadata endpoints and services that the task does not require. Log the destination and the reason for every permitted connection.</li>
+            <li><strong>Give each run a disposable workspace.</strong> Pass in only the files required for the task. Avoid broad host mounts, shared writable directories and access to the host's container-control socket. Keep inputs read-only where possible, write outputs to a designated location and destroy the workspace when the task ends. Do not let one run inherit another customer's files or state.</li>
+            <li><strong>Enforce resource limits outside the model.</strong> Set maximum execution time, memory, CPU, disk usage, process count, output size and tool-call count. Stop runaway loops and oversized downloads. The agent must not be able to raise its own limits or create unlimited child processes.</li>
+            <li><strong>Require approval for consequential actions.</strong> An agent may prepare a payment, draft an email, propose a database migration or stage a deployment. Sending money, changing account details, deleting customer data, sending messages externally or deploying to production should require a separate policy check and, where appropriate, a named human approval. Record who approved what and when.</li>
+          </ol>
+          <p>OpenAI's sandbox security documentation makes an important credential distinction: code running inside an environment can read the environment key it receives. The application's broader API key should therefore remain outside that environment. For third-party services, keep credentials in the trusted application or a proxy that injects them only for approved hosts. That is a concrete implementation of least privilege, not just a security slogan.</p>
+        </section>
+
+        <section id="tenants" class="lesson-section">
+          <p class="section-number">04 — PROTECT EVERY TENANT</p>
+          <h2>Multi-tenant isolation cannot live in the prompt.</h2>
+          <p>If you are building an AI feature for multiple businesses, a shared agent process is not a reason to share every customer's execution environment. One customer's uploaded invoice, employee record or CRM export must not become visible to another customer's agent because of a reused directory, cached file, shared memory store or overly broad database connection.</p>
+          <p>Enforce tenant identity in your backend before a task starts. Create a separate workspace or equivalent isolation boundary for each tenant and run. Give it a tenant-scoped data view, distinct credentials and a narrow set of capabilities. Keep memory and artefacts partitioned. Do not ask the model to remember which customer it is allowed to serve; the application must enforce that rule even when the model gets it wrong.</p>
+          <p>Test the boundary with two test accounts. Give Tenant A an agent task that explicitly asks to retrieve Tenant B's records. The expected result is a denied request and an audit event — not a polite refusal generated by the model after it has already read the data.</p>
+        </section>
+
+        <section id="testing" class="lesson-section">
+          <p class="section-number">05 — TEST THE BOUNDARY</p>
+          <h2>Test what the agent cannot do, not only what it can do.</h2>
+          <p>A happy-path demo proves that an agent can complete a task. It does not prove that the system can contain a bad task. Before production, run a small abuse test against the exact permissions and infrastructure you intend to ship.</p>
+          <div class="lesson-question-card">
+            <p class="question-card-title">A MINIMUM AGENT CONTAINMENT TEST</p>
+            <ul>
+              <li>Upload a document that tells the agent to ignore its task and send a secret to an external URL. The request must be blocked; no secret should be available to the sandbox.</li>
+              <li>Ask generated code to read host files, environment variables or a cloud metadata endpoint. It should see only the files and values deliberately provided for the run.</li>
+              <li>Ask the agent to reach an internal database or an unapproved internet host. The network boundary should deny the connection and record the attempt.</li>
+              <li>Run an infinite loop or a task that creates a very large file. The runtime should stop it at the configured limit without affecting other workloads.</li>
+              <li>Ask Tenant A's agent to read Tenant B's file or memory. The request must fail at the application or storage boundary.</li>
+              <li>Ask the agent to send a payment, delete a record or deploy code. The action should stop at the approval gate until the required person authorises it.</li>
+            </ul>
+          </div>
+          <p>Measure containment, not just completion. Track blocked network attempts, credential exposure tests, cross-tenant access denials, resource-limit stops, approval overrides and successful task completion. A sandbox that makes every task fail is not useful; an agent that completes every task with unrestricted authority is not safe. You need both useful work and enforced limits.</p>
+        </section>
+
+        <section id="rollout" class="lesson-section">
+          <p class="section-number">06 — START WITH ONE WORKFLOW</p>
+          <h2>You do not need a GPU cluster to begin.</h2>
+          <p>Small teams can build the boundary before they scale the model. Start with one workflow where code execution adds clear value — document extraction, spreadsheet analysis, report generation or test execution. Keep the first version read-only. Do not begin with an agent that can move money or change production data.</p>
+          <ol>
+            <li><strong>Map the authority.</strong> List every file, API, database, credential and external action the workflow touches. Mark which are read-only and which can change customer or business state.</li>
+            <li><strong>Move secrets back into the application.</strong> Remove production keys from the agent's environment. Put real actions behind narrow backend functions that check tenant, user and task permissions.</li>
+            <li><strong>Create the execution boundary.</strong> Use an isolated sandbox with a temporary workspace, restricted network access and hard resource limits. A local container can help during development, but root privileges, broad host mounts or a mounted container-control socket can undermine the boundary. Harden the host and runtime before treating it as a production control.</li>
+            <li><strong>Add approvals and audit.</strong> Make the agent propose consequential actions first. Log the request, policy decision, approval and result with a traceable task identifier.</li>
+            <li><strong>Run the containment tests.</strong> Use synthetic customer data and adversarial documents. Fix every path that exposes another tenant, a secret or a production action before widening access.</li>
+          </ol>
+          <p>For a team running on a modest VPS, the first rule is simple: do not run an agent with root access to the machine that hosts your database and production application. Use a separate unprivileged runtime, do not expose its execution ports publicly, and do not share production credentials or host directories with it. If you cannot isolate the execution environment yet, keep the agent to reviewed, narrowly scoped tools and do not give it arbitrary shell access.</p>
+          <p>You can use a local model, a hosted model or switch providers later. The sandbox is an execution decision, not a GPU decision. Choose the model for task quality and cost; choose the execution environment for the level of risk you are prepared to contain.</p>
+        </section>
+
+        <div class="lesson-takeaway"><span class="takeaway-label">THE TAKEAWAY</span><p>An AI agent can be useful without being trusted with everything. <em>Let it propose and execute work inside a boundary; keep credentials, customer authority and irreversible actions in systems you control.</em></p></div>
+        <div class="lesson-callout callout-lilac"><span class="callout-icon">◈</span><div><strong>Evidence &amp; limits</strong><p><strong>Verified developments:</strong> Akamai announced Akamai Agent Sandbox on 27 October 2026 and said the product was in beta. Its product documentation describes WebAssembly isolation, outbound access blocked by default and runtime-enforced resource limits. The product page describes the current tech preview as supporting intermittent steps of roughly one minute, with longer-lived stateful agents planned; this should not be treated as proof of production readiness for every workload.</p><p><strong>Security evidence:</strong> the OWASP GenAI Security Project page published a selected Q3 2026 incident and disclosure roundup on 8 October. It explicitly says it is non-exhaustive and not an official OWASP publication, and warns that related entries should not be counted as separate independent attacks. It is useful evidence of failure modes, not a measure of how frequently agent systems are compromised.</p><p><strong>Implementation guidance:</strong> OpenAI's sandbox and security documentation provides concrete examples of separating the trusted harness from execution and keeping application credentials outside the sandbox. These are vendor docs, not an independent audit of any particular implementation. No sandbox removes the need to review tools, permissions, dependencies, monitoring and human approval.</p></div></div>
+        <section class="lesson-section" aria-label="Sources">
+          <p class="section-number">SOURCES — CHECK BEFORE YOU BUILD</p>
+          <p>Product availability and security guidance can change. These sources were checked on 31 October 2026.</p>
+          <ul>
+            <li><a href="https://www.ir.akamai.com/news-releases/news-release-details/akamai-launches-ai-inference-service-and-agent-execution" rel="noopener">Akamai — AI Inference and Agent Sandbox announcement (27 Oct 2026)</a></li>
+            <li><a href="https://www.akamai.com/products/akamai-agent-sandbox" rel="noopener">Akamai — Agent Sandbox product details and tech-preview limits</a></li>
+            <li><a href="https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/" rel="noopener">OWASP GenAI Security Project — selected Q3 2026 exploit roundup (8 Oct 2026)</a></li>
+            <li><a href="https://developers.openai.com/api/docs/guides/agents/sandboxes" rel="noopener">OpenAI — Sandbox Agents: control plane and execution plane</a></li>
+            <li><a href="https://developers.openai.com/api/docs/guides/agents-api/environments/security" rel="noopener">OpenAI — Sandbox security: network restrictions, separate credentials and brokered access</a></li>
+            <li><a href="https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/" rel="noopener">OWASP GenAI Security Project — Top 10 for Agentic Applications</a></li>
+          </ul>
+        </section>
+        <nav class="lesson-next" aria-label="Article navigation">
+          <a href="/library/" class="next-library"><span></span><span><small>WHEN YOU'RE READY</small><strong>Back to the knowledge library</strong></span></a>
+          <a href="/lessons/choose-ai-model-by-cost-per-successful-task/" class="next-card"><span class="next-card-label">RELATED FIELD NOTE</span><strong>The cheapest AI model is not always the cheapest to run</strong><span class="next-arrow"></span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#lesson-content">Back to top</a></footer>
+</body>
+</html>
