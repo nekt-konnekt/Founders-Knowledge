@@ -1,39 +1,54 @@
-# Founders Knowledge — Editorial design system
+# Founders Knowledge — Reference 02 design system
 
-Status: site-wide redesign prototype for review.
+Status: implementation branch for full-site review.
 
-## Design thesis
-Combine the confident, playful editorial personality of the creative-studio reference with the clean information structure and whitespace of the tennis-programmes reference. FK remains an independent publication and reusable knowledge library—not an agency portfolio, generic newswire, or SaaS dashboard.
+## Design direction
+Use the second visual reference as the complete design direction: a calm, structured, photography-led editorial publication. The site should feel like a considered journal and practical knowledge library, not a creative-agency portfolio, course platform, social feed or SaaS dashboard.
 
 ## Visual language
-- Warm off-white paper foundation and deep ink typography.
-- Deep FK purple as the primary brand accent, supported by orange, pink and yellow.
-- Space Grotesk for confident display typography and comfortable long-form reading.
-- Strong rectangular editorial cards, thin dark borders and deliberate colour blocking.
-- Generous whitespace and a clear scanning hierarchy.
-- Distinctive hero compositions without decorative stock imagery.
-- Mobile layouts that preserve the same hierarchy and character rather than merely shrinking desktop components.
+- Warm near-white paper background, charcoal typography and restrained sage-green accents.
+- Manrope display typography and DM Sans body typography.
+- Generous whitespace, clear typographic hierarchy and quiet dividers.
+- Editorial photography is the primary visual component. Images should show the actual subject, environment, people or process relevant to the article.
+- Clean rectangular image frames, restrained controls, minimal ornament and no decorative stickers or floating paper illustrations.
+- Consistent responsive layouts for homepage, library, briefings, article pages, product discovery and private editorial review.
 
-## Experience system
-1. **Homepage:** a strong editorial promise, founder-problem discovery, featured lesson and editorial point of view.
-2. **Knowledge library:** discover content by problem, decision and reading path; retain search and filtering.
-3. **Lesson and briefing pages:** calm, readable long-form layout with a bold cover, clear section hierarchy, useful callouts and next-reading paths.
-4. **Product discovery:** retain the submission and discovery workflow while applying the shared brand language.
-5. **Private product review:** retain authentication and review operations while bringing the interface into the same visual system.
-6. **Navigation and footer:** consistent identity and wayfinding across the public site.
+## Article template
+1. Category and content-type label.
+2. Clear headline and concise reader-focused dek.
+3. Publication date and reading time.
+4. Wide, relevant lead photograph with descriptive alt text and caption/credit where appropriate.
+5. Readable article body with section hierarchy, sources, practical callouts and a clear takeaway.
+6. Related reading and sharing controls.
+
+## Photography rules
+- Prefer original, commissioned, licensed or appropriately attributed images.
+- Select images for editorial relevance, not generic startup aesthetics.
+- Avoid random laptop stock photos, staged handshakes and decorative images that add no information.
+- Preserve subject context when cropping on mobile.
+- Always provide meaningful alt text; use an empty alt only for genuinely decorative imagery.
+- If an appropriate photograph is unavailable, use a neutral image placeholder rather than reverting to the previous illustrated card system.
+
+## Components and behaviour
+- Keep navigation, search, filters, submission forms, authentication, analytics, structured data, URLs and publishing workflows functional.
+- Use the same visual language on public and private pages.
+- Keep text contrast accessible, controls keyboard accessible and motion restrained.
+- Article content must remain comfortable to read on mobile and desktop.
 
 ## Design tokens
-- Paper: #fff8ef
-- Ink: #171514
-- Purple: #5524a8
-- Orange: #ff5a1f
-- Pink: #f47bc2
-- Yellow: #ffd52f
-- Supporting neutral: #f0e9df
+- Paper: #fbfaf7
+- White: #ffffff
+- Ink: #20211f
+- Muted: #777a73
+- Soft surface: #ecece6
+- Accent: #536b55
+- Deep accent: #354b39
+- Rule: #dedfd8
 
-## Guardrails
-- Replace the previous blue/pastel course-platform visual language across the site.
-- Preserve lesson content, URLs, search/filter behaviour, analytics, structured data, forms, authentication and publishing workflows.
-- Do not turn the homepage into a chronological news feed.
-- Keep editorial pages accessible, responsive and comfortable for extended reading.
-- Review desktop and mobile layouts and test functional flows before merging.
+## Acceptance checks
+- No visible blue/pastel course-platform styling, oversized rounded cards, playful stickers, floating note graphics or shadow-heavy components.
+- Homepage and article cover use real editorial photography.
+- All published article routes, library, briefings, product discovery and private review use the same visual system.
+- Search, filters, sharing, product submission and review workflows remain operational.
+- Desktop and mobile layouts are checked before merge.
+- The production domain is verified only after the deployment is ready and the live pages are inspected.
