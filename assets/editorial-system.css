@@ -307,3 +307,25 @@ main{min-height:60vh}
  .fk-bento-last{grid-template-columns:1fr;gap:12px;min-height:0}
  .fk-bento-footer{align-items:flex-start;flex-direction:column;padding:0 2px}
 }
+
+/* Cross-site expression: bring the new identity to reading and discovery surfaces. */
+.library-hero,.briefings-hero{background:#f0f0e9!important}
+.library-hero h1,.briefings-hero h1{font-weight:800!important;letter-spacing:-.07em!important}
+.library-hero h1 span,.briefings-hero h1 span{color:#536b3f!important}
+.library-search,.library-filter,.briefings-filter{border-radius:9px!important;border-color:#d9ddd1!important}
+.lesson-cover{border-bottom-color:#d9ddd1!important}
+.lesson-cover-art{border-radius:12px!important;background:#e5eadf!important}
+.lesson-cover-art img{border-radius:12px}
+.lesson-kicker,.section-number,.takeaway-label{color:#526b3f!important}
+.lesson-kicker-dot,.lesson-progress span{background:#b7d900!important}
+.lesson-callout,.lesson-exercise,.lesson-question-card,.fill-in-card{border-radius:10px!important}
+.lesson-callout{background:#edf0e7!important}
+.lesson-callout.callout-lilac,.lesson-callout.callout-yellow{background:#f2f0e7!important}
+.lesson-takeaway{border-left:4px solid #b7d900!important;background:#f1f2e9!important}
+.category-card{border-radius:10px!important}
+.category-card:hover{background:#f1f2e9!important}
+.pd-hero{background:#f0f0e9!important}
+.pd-hero h1 span{color:#536b3f!important}
+.pd-submit-panel,.pd-proofinner{border-radius:12px!important}
+.review-login,.review-tools,.review-item{border-radius:10px!important}
+@media(prefers-reduced-motion:reduce){.fk-bento-card{transition:none!important}}
