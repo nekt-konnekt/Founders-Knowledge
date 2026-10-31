@@ -120,7 +120,6 @@ Every article needs one meaningful lead photograph. Prefer original, commissione
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/assets/editorial-system.css">
-  <link rel="stylesheet" href="/assets/editorial-system.css">
   <script src="/assets/analytics.js" defer></script>
   <meta property="og:image:secure_url" content="[SAME OG IMAGE URL]">
 </head>
@@ -191,12 +190,11 @@ Every article needs one meaningful lead photograph. Prefer original, commissione
 ### Shell rules (no exceptions)
 
 - **No inline `style=` attributes, ever.** If a component needs a declaration,
-  it belongs in `assets/site.css`. The art-current card headline is styled by
-  `.art-current strong` and question-card sub-headings by `.lesson-question-card h3`.
+  it belongs in `assets/editorial-system.css`. Article covers use a semantic `<figure>` and `<img>`, not decorative floating cards.
 - **Progress bar width:** the stylesheet default is 14%. For a different fill,
   put `class="progress-50"` or `class="progress-100"` on the progress `<span>` —
   never an inline width.
-- **Every class used must already exist in `assets/site.css`.** If it doesn't,
+- **Every class used must already exist in `assets/editorial-system.css`.** If it doesn't,
   add the rule to the stylesheet (using the existing design tokens) in the same
   change — never leave a class undefined, and never invent a one-off class name
   when an existing component covers the need.
