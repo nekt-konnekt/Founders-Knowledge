@@ -74,22 +74,9 @@ Use these when the content type calls for them:
 
 ## Canonical page shell (HTML) — build every lesson on this, exactly
 
-Every lesson page uses the single FK design system: `assets/site.css` is the only
-stylesheet, and the page shell below is the only shell.
+Every lesson page uses the Reference 02 editorial system in `assets/editorial-system.css`. The visual language is calm and photography-led: warm neutral surfaces, charcoal typography, restrained sage accents, generous whitespace, thin rules and simple rectangular controls. Do not reintroduce the previous blue/pastel course-platform styling, playful stickers, floating paper graphics, oversized rounded cards or shadow-heavy components.
 
-**Theme v2 — "Hippo-sky" (2026-10-30):** sky-blue platform primary `#2e9bff`
-(deep link blue `#1668b8`), deep-navy ink `#12263a`, lime marker highlight
-`#c8f04b`, sky-tint surfaces `#e8f3ff`, pastel card bands (sky `#bfe0ff`, peach
-`#ffd9c4`, mint `#b9ecd2`), soft shadows and 1px `#a9c6de` borders — no purple,
-no hard offset shadows. In `site.css` the legacy token names are kept: `--purple`
-holds the sky-blue primary and `--yellow` holds the lime highlight. New OG
-artwork must use this palette (background `#e8f3ff`, ink `#12263a`, blue
-`#1d7fe0`, lime `#c8f04b`). It is copied from the
-reference lesson (`lessons/list-at-home-or-list-abroad/`, 2026-10-22). Replace the
-`[BRACKETED]` placeholders with the lesson's own values; change nothing else in
-the shell. Editorial content (kicker text, title, dek, meta, cover art, sidebar
-labels and note, sections, callouts, takeaway, sources) is the lesson's own —
-the shell, classes and element order are not.
+Every article needs one meaningful lead photograph. Prefer original, commissioned, licensed or appropriately attributed imagery that helps explain the subject. Do not use generic laptop stock photography as filler. Use a semantic figure and image with descriptive alt text, responsive sizing and a caption/credit when required. If a suitable image is unavailable, use a quiet neutral fallback rather than decorative vector artwork. Replace the `[BRACKETED]` placeholders with the lesson's own values; change nothing else in the shell. Editorial content (kicker text, title, dek, meta, photograph, sidebar labels and note, sections, callouts, takeaway, sources) is the lesson's own — the shell, classes and element order are not.
 
 ```html
 <!doctype html>
@@ -132,7 +119,7 @@ the shell, classes and element order are not.
   <meta name="twitter:image" content="[SAME OG IMAGE URL]">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/editorial-system.css">
   <link rel="stylesheet" href="/assets/editorial-system.css">
   <script src="/assets/analytics.js" defer></script>
   <meta property="og:image:secure_url" content="[SAME OG IMAGE URL]">
@@ -176,7 +163,7 @@ the shell, classes and element order are not.
         <section id="[SECTION-ID]" class="lesson-section">
           <p class="section-number">01 — [SECTION LABEL, ALL CAPS]</p>
           <h2>[SECTION HEADING]</h2>
-          <!-- Body copy. Inline components, all defined in assets/site.css:
+          <!-- Body copy. Inline components, all defined in assets/editorial-system.css:
                .lesson-callout.callout-yellow / .callout-lilac (with .callout-icon),
                .lesson-question-card (with .question-card-title),
                .fill-in-card, .lesson-two-up, .translation-list, .lesson-equation -->
