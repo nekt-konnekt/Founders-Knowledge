@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Before Your AI Agent Runs Code, Give It a Sandbox">
+  <rect width="1200" height="630" fill="#55c9c6"/>
+  <circle cx="54" cy="170" r="7" fill="#fff8c8"/>
+  <circle cx="1142" cy="132" r="6" fill="#fff8c8"/>
+  <circle cx="1115" cy="560" r="8" fill="#c9f1eb"/>
+  <rect x="48" y="34" width="1104" height="92" rx="46" fill="#ffffff" stroke="#d6e9e5" stroke-width="2"/>
+  <rect x="76" y="51" width="58" height="58" rx="16" fill="#2d174f"/>
+  <text x="105" y="91" text-anchor="middle" fill="#ffffff" font-family="Manrope, Arial, sans-serif" font-size="28" font-weight="800">FK</text>
+  <text x="158" y="88" fill="#20201f" font-family="Manrope, Arial, sans-serif" font-size="32" font-weight="800">Founders Knowledge</text>
+  <text x="78" y="205" fill="#174f4d" font-family="Manrope, Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="3">ENGINEERING PLAYBOOK / AI SECURITY</text>
+  <text x="78" y="300" fill="#20201f" font-family="Manrope, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="-2">
+    <tspan x="78" dy="0">Before your AI</tspan>
+    <tspan x="78" dy="70">agent runs code,</tspan>
+    <tspan x="78" dy="70" fill="#ffffff">give it a sandbox.</tspan>
+  </text>
+  <text x="80" y="545" fill="#174f4d" font-family="DM Sans, Arial, sans-serif" font-size="21" font-weight="600">Separate execution from authority.</text>
+  <rect x="758" y="177" width="370" height="374" rx="26" fill="#fffdf0" stroke="#e9dfaa" stroke-width="2"/>
+  <text x="792" y="222" fill="#66716d" font-family="Manrope, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="2">A SAFER EXECUTION PATH</text>
+  <rect x="792" y="251" width="302" height="64" rx="14" fill="#e5edff" stroke="#b6c9e8"/>
+  <circle cx="824" cy="283" r="15" fill="#2d174f"/>
+  <text x="824" y="289" text-anchor="middle" fill="#ffffff" font-family="Manrope, Arial, sans-serif" font-size="14" font-weight="800">AI</text>
+  <text x="854" y="289" fill="#20201f" font-family="Manrope, Arial, sans-serif" font-size="19" font-weight="800">Agent proposes</text>
+  <path d="M943 315 V338" stroke="#176b62" stroke-width="4" stroke-linecap="round"/>
+  <path d="M934 330 L943 340 L952 330" fill="none" stroke="#176b62" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="792" y="345" width="302" height="80" rx="16" fill="#fff0a8" stroke="#ddc85a" stroke-width="2"/>
+  <path d="M817 375 L829 363 L841 375 L829 387 Z" fill="#2d174f"/>
+  <text x="858" y="380" fill="#20201f" font-family="Manrope, Arial, sans-serif" font-size="20" font-weight="800">Sandbox executes</text>
+  <text x="858" y="402" fill="#66716d" font-family="DM Sans, Arial, sans-serif" font-size="13" font-weight="600">Temporary · Restricted · Logged</text>
+  <path d="M943 425 V448" stroke="#176b62" stroke-width="4" stroke-linecap="round"/>
+  <path d="M934 440 L943 450 L952 440" fill="none" stroke="#176b62" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="792" y="457" width="302" height="64" rx="14" fill="#d9f5d2" stroke="#9bcf9a"/>
+  <path d="M814 478 L829 472 L844 478 V491 C844 502 829 508 829 508 C829 508 814 502 814 491 Z" fill="#176b62"/>
+  <path d="M822 490 L827 495 L837 484" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="858" y="495" fill="#20201f" font-family="Manrope, Arial, sans-serif" font-size="19" font-weight="800">Backend approves</text>
+  <rect x="1010" y="237" width="102" height="25" rx="12" fill="#2d174f"/>
+  <text x="1061" y="254" text-anchor="middle" fill="#ffffff" font-family="Manrope, Arial, sans-serif" font-size="10" font-weight="800" letter-spacing="1">NO PROD KEYS</text>
+</svg>
