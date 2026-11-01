@@ -9,6 +9,12 @@
 - **Reading time:** Estimate after drafting
 - **Evidence status:** Research needed / Researched / Field observation / Mixed
 
+> **Understand / Build / Do gate (2026-10-30 — fill in before drafting, delete before publishing):**
+> - **Understand:** [What will a founder understand differently? Name the mechanism, not the event.]
+> - **Build:** [What can they build, change, or set up differently in their own company?]
+> - **Do next:** [The specific next action, test, checklist, or decision rule.]
+> **Headline rule:** The title names the founder's problem, decision, or consequence — never a company + event (raised / shut down / launched / acquired). If the summary reads "X happened to Y company", reframe before drafting.
+>
 > **Before drafting:** Read [The Founders Knowledge Editorial Standard](founders-knowledge-editorial-standard.md). This template is a scaffold, not a mandatory sequence. Use only sections that help the reader understand the problem and make a better decision.
 
 ## The situation
@@ -56,6 +62,9 @@ Use these when the content type calls for them:
 
 ## Editorial quality gate
 
+- Does the piece pass the Understand / Build / Do gate stated at the top of this template?
+- Does the piece pass the first-read test? (Clarity rule, 2026-10-30: plain words, short sentences, main point first, every hard word/short form/company explained the first time it appears — if a new reader must read any part twice, rewrite it.)
+- Does the headline follow the headline rule (founder problem/decision, not company + event)?
 - Does the piece solve a real founder problem rather than merely describe a topic?
 - Is the main argument clear and does each section advance it?
 - Does it explain why, show trade-offs, and provide a practical next step?

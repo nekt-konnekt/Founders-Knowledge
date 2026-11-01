@@ -26,6 +26,27 @@ A strong FK piece gives the reader at least one of these:
 
 Do not publish a piece just because a topic is trending. The question is: **What will a founder understand or decide better after reading this?**
 
+### The pivot — explain, don't report (added 2026-10-30)
+
+FK does not report what happened in African technology. It explains what African founders need to understand, build and do next. News is raw material — a peg, a case, a data point inside a lesson — never the product itself.
+
+Every flagship piece must pass the **Understand / Build / Do gate** before drafting:
+
+1. **Understand:** What will a founder understand differently after reading? Name the mechanism, not the event.
+2. **Build:** What can they build, change, or set up differently in their own company because of it?
+3. **Do next:** What is the specific next action — a test, checklist, decision rule, or Monday-morning step?
+
+If a topic's honest summary is "X happened to Y company", it does not publish as a flagship. Reframe it until it passes the gate, or hold it as evidence for a future lesson.
+
+**Headline rule:** No flagship headline whose subject is a company plus an event (raised / shut down / launched / acquired). Headlines name the founder's problem, decision, or consequence; companies appear inside as evidence and worked examples.
+
+**Teardowns are retired as a category.** A company story becomes a lesson with the company as the worked example, not the subject. Practical guides are flagship-eligible in their own right.
+
+**Briefings — Signal → So What → Do Next (converted 2026-10-30):** A briefing is not a news item. Every brief must carry all three parts: **Signal** (what happened, ~2 lines, dated, sourced), **So What** (what it means for an early founder), and **Do Next** (one specific action, check, or watch-item it should trigger, with a link to the related lesson when one exists). A signal that cannot honestly fill So What and Do Next does not publish.
+
+**Clarity rule (Tomori, 2026-10-30):** Write so a reader can understand what you are writing about the first time they read it. Tomori's words: "when you write, write so readers can understand what you are writing about." In practice: put the main point first. Use plain, easy words and short sentences. Take one idea at a time. The first time a hard word, a short form, or a company appears, explain it in plain words — say what it is and what it does. Use a real example when an idea is hard. **The first-read test:** before a piece is ready, read it as a new reader. If any part must be read twice to be understood, rewrite that part. Use simple words, not simple ideas — the reasoning stays full and sharp.
+
+
 ## 2. The editorial point of view
 
 ### Start with the founder's real problem
@@ -319,7 +340,7 @@ Do not copy another lesson's canonical URL, title, description, or OG image. Val
 
 ## 13. Publishing workflow
 
-1. **Frame the question.** Write the founder's real decision in one sentence.
+1. **Frame the question and pass the gate.** Write the founder's real decision in one sentence, then state the piece's Understand / Build / Do legs in one sentence each. Do not proceed to drafting if any leg cannot be filled honestly.
 2. **Choose the content type.** Lesson, guide, framework, comparison, or field note.
 3. **Research and collect evidence.** Identify the claims that require verification before drafting.
 4. **Build the argument.** Outline the problem, mechanism, trade-offs, framework, limits, and next step.
@@ -335,6 +356,9 @@ Do not copy another lesson's canonical URL, title, description, or OG image. Val
 A draft is not ready because it is grammatically correct or visually attractive. Before publication, ask:
 
 ### Value and framing
+- Does the piece pass Understand / Build / Do — can each leg be stated in one sentence?
+- Does the headline name a founder problem or decision, not a company + event?
+- If the piece mentions a current event, is the event evidence inside the lesson rather than the lesson's subject?
 - Is the piece built around a real founder problem or decision?
 - Can the reader tell why it matters within the opening?
 - Does the article provide insight beyond a generic explanation or a rephrased search result?
@@ -355,6 +379,8 @@ A draft is not ready because it is grammatically correct or visually attractive.
 - Have invented claims, generic filler, and unsupported certainty been removed?
 
 ### Writing and structure
+- Does the piece pass the first-read test — can a new reader understand every part the first time?
+- Is every hard word, short form, and company explained in plain words the first time it appears?
 - Is the language plain, direct, and respectful?
 - Do headings move the argument forward?
 - Is any point repeated without adding value?
