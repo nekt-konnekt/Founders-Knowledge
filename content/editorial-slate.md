@@ -1,6 +1,6 @@
 # Founders Knowledge — Weekly Editorial Slate
 
-**Week:** Saturday 2026-10-24 → Saturday 2026-11-07 (rolling 7-day horizon, extended 2026-10-31) · **Drafted:** Fri 2026-10-23
+**Week:** Saturday 2026-10-24 → Sunday 2026-11-08 (rolling 7-day horizon, extended 2026-11-01) · **Drafted:** Fri 2026-10-23
 **Format per day (PIVOT 2026-10-30):** 1 Flagship lesson that passes the **Understand / Build / Do** gate · Briefings in **Signal → So What → Do Next** form — all angled at **early founders** (pre-seed/seed, small teams). **Teardowns are retired as a category** (company stories become worked examples inside lessons, or evidence only). **Practicals are flagship-eligible.**
 **Source tags:** (C) = confirmed by primary/official source or company statement · (R) = reported by reputable press, not independently verified · (D) = dataset figure — trackers differ, cite the tracker by name.
 **Briefing rule (converted 2026-10-30):** every brief must carry **Signal** (what happened, ~2 lines, dated, sourced) → **So What** (what it means for an early founder) → **Do Next** (one specific action, check, or watch-item). A signal that cannot fill So What and Do Next does not publish. Themes below are watch-candidates, not predicted news.
@@ -90,8 +90,8 @@
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
-| Flagship | **Borrowed Rails, Borrowed Time: Building on Platforms You Don't Control** | Agent networks, WhatsApp storefronts, app stores: when platform dependence is a strategy and when it is a trap — and what an exit ramp looks like before you need one. | Flex pool #2. Platform-dependence cases to verify on the day (e.g. ChatCash WhatsApp storefronts via FINCA prize coverage). | Deliberately held off the Oct 24–31 slate to avoid colliding with distribution-heavy teardowns; now the slate's first post-week flagship. |
-| Briefing | Morning-scan pick | — | **Watch:** (1) data-localisation vendor moves as the Jan 1 2027 deadline nears; (2) Q4 fundraising window — final 2026 cheques announced before December. **Fallback:** "Exit routes nobody plans for: acqui-hires, asset sales, and soft landings." | Fallback doubles as a reader-facing recap format test. |
+| Flagship | **Borrowed Rails, Borrowed Time: Building on Platforms You Don't Control** — ✅ **PUBLISHED 2026-11-01** ([live](https://founders-knowledge.vercel.app/lessons/borrowed-rails-borrowed-time/)) | Agent networks, WhatsApp storefronts, app stores: when platform dependence is a strategy and when it is a trap — and what an exit ramp looks like before you need one. | Flex pool #2. Platform-dependence cases to verify on the day (e.g. ChatCash WhatsApp storefronts via FINCA prize coverage). | Deliberately held off the Oct 24–31 slate to avoid colliding with distribution-heavy teardowns; now the slate's first post-week flagship. |
+| Briefing | Morning-scan pick — ✅ **PUBLISHED 2026-11-01: 3 briefs** (October funding totals via StartupList Africa; Magna 61-meeting matchmaking + 18 Nov report; Baxi 30-day window ending mid-November) | — | Scan supplied evidence/pegs for the flagship (WhatsApp Oct 1 pricing, Baxi, ChatCash) and the three briefs; no displacement — no urgent founder decision found in the scan. |
 | Retired — evidence only | **Yellow Card's $40m Raise** — teardown slot retired 2026-10-30; hold as evidence for a future lesson on selling infrastructure vs an app, do not publish as a raise report | Stablecoin infrastructure keeps attracting capital while consumer crypto struggles — angle strictly on the raise and business model, not stablecoin mechanics. | Flex pool #3. (D: Big Deal deal lists.) | Fenced: the library already has a stablecoin off-ramp lesson — do not repeat its mechanics. |
 | Practical (flagship-eligible) | **The Reference-Call Swap: Hiring Checks That Work in Informal Markets** | Structured back-channel references for markets where formal HR trails are thin. | Flex pool #6. Evergreen; no figures without dated sources. | Pairs with Tue's hiring flagship without repeating it. |
 
@@ -167,6 +167,14 @@
 7. **Teardown — Jumia's $50m equity raise (2026).** A listed incumbent returning to equity markets while smaller rivals starve: what public-market access changes about competitive pressure on early commerce founders. (D: Big Deal deal lists.)
 8. **Flagship — Senegal's Quiet Year: What Happens When a Market Falls Off the Funding Map.** Senegal fell from $153m to ~$5m (Q1–Q3, Big Deal) — geographic concentration risk and the case for building revenue-first outside the Big Four. (D) — strong evergreen-leaning flagship if a weekday flagship falls through.
 9. **Flagship — The Liquidity Question: Share-Backed Loans and What Early Founders Owe Their Teams.** Flutterwave employees can now borrow against vested shares via a programme with Techdollar (US private credit), 6–12 month loans under half the share value at 0.8–1.5%/month, disbursed via Nuvion (C: TechCabal, Oct 22, 2026 — CEO statement quoted). Moniepoint and Arnergy let staff sell equity at a discount during 2025 raises; 181 verified VC-backed exits 2011–2026, ~6.2 years average hold (R: Stears/Ventures Platform via TechCabal). Angle: the "paper-wealth-but-no-cash" employee problem arrives long before any exit — how early founders handle employee liquidity (discounted secondaries, loan schemes, honest expectations at offer stage) is talent retention, not HR. Held from Sat 2026-10-24 scan — was the strongest challenger but not a funding story, so it did not clear the displacement bar. Fresh hook; publish while Q4.
+
+
+## Sun 2026-11-08
+
+| Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
+|---|---|---|---|---|
+| Flagship | **The Reference-Call Swap: Hiring Checks That Work in Informal Markets** (promoted 2026-11-01 from the Nov 1 flagship-eligible practical row) | Structured back-channel references for markets where formal HR trails are thin. Understand: why a CV and a formal reference check tell you too little in informal markets. Build: a reference-call routine you can run yourself. Do next: three questions to ask every referee, and what answer should worry you. | Flex pool #6. Evergreen; no figures without dated sources. | Pairs with the Oct 27 hiring flagship without repeating it (that lesson is hiring sequence; this is verification). |
+| Briefing | Morning-scan pick | — | **Watch:** (1) data-localisation vendor moves as the Jan 1 2027 deadline nears; (2) Q4 fundraising window — final 2026 cheques announced before December. **Fallback:** "How one deal can bend a statistic." | — |
 
 ## Coverage check
 
