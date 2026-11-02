@@ -1,39 +1,32 @@
-# Founders Knowledge — Editorial design system
+# Founders Knowledge — expressive editorial design system
 
-Status: site-wide redesign prototype for review.
+Status: active implementation direction for full-site review.
 
-## Design thesis
-Combine the confident, playful editorial personality of the creative-studio reference with the clean information structure and whitespace of the tennis-programmes reference. FK remains an independent publication and reusable knowledge library—not an agency portfolio, generic newswire, or SaaS dashboard.
+## Design direction
+A confident, reader-first editorial publication with the visual energy of contemporary product storytelling. Use the supplied Bolt references as inspiration for rhythm, asymmetry, bold typography, compact story previews and memorable visual moments—not as a template to copy. FK is a knowledge publication, not a checkout product site.
 
 ## Visual language
-- Warm off-white paper foundation and deep ink typography.
-- Deep FK purple as the primary brand accent, supported by orange, pink and yellow.
-- Space Grotesk for confident display typography and comfortable long-form reading.
-- Strong rectangular editorial cards, thin dark borders and deliberate colour blocking.
-- Generous whitespace and a clear scanning hierarchy.
-- Distinctive hero compositions without decorative stock imagery.
-- Mobile layouts that preserve the same hierarchy and character rather than merely shrinking desktop components.
+- Warm paper and cream surfaces, deep forest/charcoal ink, restrained sage and vivid lime accents.
+- Bold Manrope display typography with DM Sans body copy.
+- Asymmetric editorial bento layouts mixed with spacious long-form reading pages.
+- Subject-led photography, conceptual CSS artwork and custom illustrations where they help explain an idea.
+- Strong contrast between featured stories and supporting cards; avoid identical grids of generic cards.
+- Short, useful previews and clear invitations to read, explore or apply.
+- Keep the design expressive without letting decoration compete with the knowledge.
 
-## Experience system
-1. **Homepage:** a strong editorial promise, founder-problem discovery, featured lesson and editorial point of view.
-2. **Knowledge library:** discover content by problem, decision and reading path; retain search and filtering.
-3. **Lesson and briefing pages:** calm, readable long-form layout with a bold cover, clear section hierarchy, useful callouts and next-reading paths.
-4. **Product discovery:** retain the submission and discovery workflow while applying the shared brand language.
-5. **Private product review:** retain authentication and review operations while bringing the interface into the same visual system.
-6. **Navigation and footer:** consistent identity and wayfinding across the public site.
+## Content presentation
+- Homepage: a clear publication promise followed by a curated, asymmetric set of featured stories across business, distribution, product, technology and operations.
+- Library: useful browsing and filtering remain primary; use editorial hierarchy rather than a chronological feed.
+- Articles: clear category, headline, reader-focused dek, date and reading time; subject-relevant cover visual; comfortable reading column; practical callouts, sources and takeaway.
+- Use different visual treatments when the subject calls for it. Not every article needs a photograph or illustration.
 
-## Design tokens
-- Paper: #fff8ef
-- Ink: #171514
-- Purple: #5524a8
-- Orange: #ff5a1f
-- Pink: #f47bc2
-- Yellow: #ffd52f
-- Supporting neutral: #f0e9df
+## Components and behaviour
+Keep navigation, search, filters, submission forms, authentication, analytics, structured data, URLs, sharing and publishing workflows functional. Maintain keyboard access, readable contrast, responsive layouts and reduced-motion support.
 
-## Guardrails
-- Replace the previous blue/pastel course-platform visual language across the site.
-- Preserve lesson content, URLs, search/filter behaviour, analytics, structured data, forms, authentication and publishing workflows.
-- Do not turn the homepage into a chronological news feed.
-- Keep editorial pages accessible, responsive and comfortable for extended reading.
-- Review desktop and mobile layouts and test functional flows before merging.
+## Acceptance checks
+- No remnants of the old playful pastel course-platform styling.
+- Homepage feels distinctive, lively and easy to explore without resembling a SaaS landing page.
+- Editorial cards are asymmetric and visually varied; article pages remain focused and readable.
+- Visuals are relevant to the subject, properly attributed and accessible.
+- Search, filters, sharing, product submission and review workflows remain operational.
+- Desktop and mobile layouts are inspected before merge; production is verified only after deployment and live-page inspection.

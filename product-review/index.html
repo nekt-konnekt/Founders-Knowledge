@@ -4,37 +4,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#2e9bff">
+<meta name="theme-color" content="#fbfaf7">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>Product Review — Founders Knowledge</title>
-<link rel="stylesheet" href="/assets/site.css">
+
 <style>
 /* Private workspace: use the same FK tokens, typography and editorial rhythm as the lesson system. */
-body{background:var(--paper,#ffffff);color:var(--ink,#12263a);font-family:"Space Grotesk",sans-serif}
+body{background:var(--paper,#ffffff);color:var(--ink,#20211f);font-family:"DM Sans",sans-serif}
 .site-header{gap:20px}
 .site-header>a:last-child{font-weight:600}
 .review-wrap{width:min(1120px,100%);margin:0 auto;padding:clamp(28px,5vw,64px) 22px 88px}
 .review-eyebrow,.review-meta,.review-kicker,.review-field-label{font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
-.review-eyebrow{display:flex;align-items:center;gap:9px;color:var(--muted,#71879e);margin:0 0 16px}
-.review-eyebrow:before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#2e9bff}
-.review-head{display:flex;gap:24px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;padding:0 0 28px;border-bottom:1px solid #d3e2f0}
-.review-head h1{font-family:"Fredoka",sans-serif;font-size:clamp(2.4rem,6vw,4.6rem);font-weight:600;letter-spacing:-.035em;line-height:.98;margin:0 0 16px;max-width:760px}
+.review-eyebrow{display:flex;align-items:center;gap:9px;color:var(--muted,#777a73);margin:0 0 16px}
+.review-eyebrow:before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#536b55}
+.review-head{display:flex;gap:24px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;padding:0 0 28px;border-bottom:1px solid #dedfd8}
+.review-head h1{font-family:"Manrope",sans-serif;font-size:clamp(2.4rem,6vw,4.6rem);font-weight:600;letter-spacing:-.035em;line-height:.98;margin:0 0 16px;max-width:760px}
 .review-head h1 span{color:#1d7fe0}
 .review-head p{max-width:660px;line-height:1.7;margin:0}
-.review-muted{color:var(--muted,#71879e)}
-.review-login,.review-tools,.review-item{background:#fff;border:1px solid #d3e2f0;border-radius:22px;padding:clamp(18px,3vw,28px);margin:24px 0;box-shadow:0 8px 28px rgba(18,60,100,.06)}
+.review-muted{color:var(--muted,#777a73)}
+.review-login,.review-tools,.review-item{background:#fff;border:1px solid #dedfd8;border-radius:22px;padding:clamp(18px,3vw,28px);margin:24px 0;box-shadow:0 8px 28px rgba(18,60,100,.06)}
 .review-login{max-width:580px;margin-top:32px}
-.review-login h2,.review-item h2{font-family:"Fredoka",sans-serif;font-weight:600;letter-spacing:-.02em}
+.review-login h2,.review-item h2{font-family:"Manrope",sans-serif;font-weight:600;letter-spacing:-.02em}
 .review-login h2{font-size:1.65rem;margin:0 0 6px}
 .review-login p{line-height:1.65}
 .review-login label,.review-tools label,.review-item label{font-size:.88rem;font-weight:600}
-.review-login input,.review-tools input,.review-tools select,.review-item select,.review-item textarea{box-sizing:border-box;display:block;font:inherit;width:100%;padding:13px 14px;border:1px solid #c3d9ee;border-radius:12px;margin:8px 0 16px;background:#fff;color:#12263a;transition:border-color .15s,box-shadow .15s}
-.review-login input:focus,.review-tools input:focus,.review-tools select:focus,.review-item select:focus,.review-item textarea:focus{outline:0;border-color:#2e9bff;box-shadow:0 0 0 3px #2e9bff22}
-.review-btn{font:inherit;font-weight:700;border:0;border-radius:999px;background:#12263a;color:#fff;padding:13px 20px;cursor:pointer;transition:transform .15s,background .15s}
-.review-btn:hover{background:#1668b8;transform:translateY(-1px)}
+.review-login input,.review-tools input,.review-tools select,.review-item select,.review-item textarea{box-sizing:border-box;display:block;font:inherit;width:100%;padding:13px 14px;border:1px solid #c3d9ee;border-radius:12px;margin:8px 0 16px;background:#fff;color:#20211f;transition:border-color .15s,box-shadow .15s}
+.review-login input:focus,.review-tools input:focus,.review-tools select:focus,.review-item select:focus,.review-item textarea:focus{outline:0;border-color:#536b55;box-shadow:0 0 0 3px #536b5522}
+.review-btn{font:inherit;font-weight:700;border:0;border-radius:999px;background:#20211f;color:#fff;padding:13px 20px;cursor:pointer;transition:transform .15s,background .15s}
+.review-btn:hover{background:#354b39;transform:translateY(-1px)}
 .review-btn:focus-visible{outline:3px solid #7cc0ff;outline-offset:3px}
 .review-btn:disabled{opacity:.55;cursor:wait;transform:none}
 .review-tools{display:grid;grid-template-columns:minmax(220px,2fr) minmax(180px,1fr) auto;gap:14px;align-items:end}
@@ -44,10 +43,10 @@ body{background:var(--paper,#ffffff);color:var(--ink,#12263a);font-family:"Space
 #queue-status{min-height:1.5em;margin:22px 2px}
 .review-item{margin:16px 0}
 .review-item h2{font-size:clamp(1.45rem,3vw,2rem);line-height:1.15;margin:8px 0 12px}
-.review-meta{font-size:.72rem;letter-spacing:.055em;line-height:1.6;color:#71879e;overflow-wrap:anywhere}
+.review-meta{font-size:.72rem;letter-spacing:.055em;line-height:1.6;color:#777a73;overflow-wrap:anywhere}
 .review-item p{line-height:1.7;overflow-wrap:anywhere}
-.review-item h3{font-family:"Fredoka",sans-serif;font-size:1.15rem;margin:18px 0 4px}
-.review-item a{color:#1668b8;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
+.review-item h3{font-family:"Manrope",sans-serif;font-size:1.15rem;margin:18px 0 4px}
+.review-item a{color:#354b39;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
 .review-item a:hover{color:#0f4c8c}
 .review-columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);margin-top:20px;padding-top:18px;border-top:1px solid #e3eefb}
 .review-columns>div{min-width:0}
@@ -59,7 +58,8 @@ body{background:var(--paper,#ffffff);color:var(--ink,#12263a);font-family:"Space
 @media(max-width:760px){.review-tools{grid-template-columns:1fr}.review-tools .review-btn{width:100%}.review-columns{grid-template-columns:1fr}.review-head{align-items:flex-start}.review-wrap{padding-left:16px;padding-right:16px}.review-login,.review-tools,.review-item{border-radius:18px}}
 @media(prefers-reduced-motion:reduce){.review-btn{transition:none}}
 </style>
-  <link rel="stylesheet" href="/assets/site.css" data-editorial-reload>
+
+  <link rel="stylesheet" href="/assets/editorial-system.css">
 </head>
 <body class="review-page">
 <a class="skip-link" href="#review-content">Skip to review queue</a>

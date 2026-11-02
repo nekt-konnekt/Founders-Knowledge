@@ -6,7 +6,7 @@
 
 **Editorial promise:** Help founders make better decisions. Do not merely explain a topic; show why it matters, how to reason about it, what to do next, and where the advice stops applying.
 
-**Design reference:** [Validate the Idea Before You Build](https://founders-knowledge.vercel.app/lessons/validate-the-idea/). Use it as the reference for the current lesson-page design system. Also inspect recent technical and field-note lessons when the format calls for evidence, current facts, or operational detail.
+**Design reference:** Use the current expressive Founders Knowledge visual system: warm paper, forest/charcoal ink, sage and lime accents, bold typography, asymmetric editorial layouts and subject-led visual storytelling. The design should invite readers in without turning the publication into a sales landing page.
 
 ---
 
@@ -290,14 +290,14 @@ The published lesson page is part of the product. Writing quality and page desig
 
 ### Core visual identity
 
-- **Display typeface:** Fredoka.
-- **Body typeface:** Space Grotesk.
-- **Palette (Theme v2 — "Hippo-sky", 2026-10-30):** white and sky-tint surfaces, deep-navy ink, sky-blue primary, lime marker highlights, and restrained pastel accents (sky, peach, mint).
+- **Display typeface:** Manrope.
+- **Body typeface:** DM Sans.
+- **Palette (Reference 02 editorial system: warm neutral paper, charcoal ink, restrained sage accents and photography-led layouts.nd sky-tint surfaces, deep-navy ink, sky-blue primary, lime marker highlights, and restrained pastel accents (sky, peach, mint).
 - **Visual language:** bold, friendly, editorial, slightly playful, with clear contrast and visible structure. It should feel approachable without looking unserious.
 - **Shape and depth:** large-radius rounded cards, soft 1px borders, and soft drop shadows. Use these as a system, not as decoration on every element.
 - **Layout:** generous whitespace, readable line lengths, clear hierarchy, and a responsive mobile layout.
 
-The canonical tokens live in `assets/site.css`. Reuse the existing classes and tokens rather than inventing a second visual system for an individual lesson.
+The canonical tokens live in `assets/editorial-system.css`. Reuse its classes and tokens rather than inventing a second visual system for an individual lesson.ng classes and tokens rather than inventing a second visual system for an individual lesson.
 
 ### Standard lesson-page anatomy
 

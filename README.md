@@ -52,7 +52,7 @@ No database or publishing dashboard unless a real need justifies one.
 .
 ├── index.html
 ├── assets/
-│   ├── site.css
+│   ├── editorial-system.css
 │   ├── analytics.js
 │   ├── share.js
 │   └── og/

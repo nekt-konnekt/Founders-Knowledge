@@ -13,7 +13,7 @@ Founders Knowledge is a knowledge centre, not a chronological blog. Organize mat
 ## Current static-site structure
 
 - index.html — library homepage and navigation
-- assets/site.css — shared visual system and design tokens
+- assets/editorial-system.css — shared visual system and design tokens
 - assets/analytics.js — shared PostHog initialization and custom event tracking
 - assets/share.js — shared lesson-sharing behavior
 - lessons/<slug>/index.html — individual lesson pages

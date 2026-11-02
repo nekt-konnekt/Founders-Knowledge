@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Founders Knowledge is a practical knowledge centre for founders: clear lessons, useful frameworks, and better decisions for the work of building.">
-  <meta name="theme-color" content="#fff8ef">
+  <meta name="theme-color" content="#fbfaf7">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="shortcut icon" href="/favicon.svg">
   <title>Founders Knowledge — Built by founders, for founders</title>
@@ -50,11 +50,8 @@
 <meta name="twitter:image:alt" content="Founders Knowledge — Build with more clarity. — branded Founders Knowledge social preview">
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/site.css">
-  <link rel="stylesheet" href="/assets/home-editorial.css">
 
-  <style>
+<style>
     /* Newsletter signup — page-local, honest "coming soon" state (no backend yet). */
     .newsletter{background:transparent;border-top:none}
     .newsletter-panel{max-width:1240px;margin:auto;background:var(--ink);color:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(28px,5vw,58px);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(26px,4vw,54px)}
@@ -75,6 +72,7 @@
 
 <script src="/assets/analytics.js" defer></script>
 
+  <link rel="stylesheet" href="/assets/editorial-system.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -93,38 +91,15 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="hero-copy-wrap">
-        <p class="eyebrow"><span class="eyebrow-dot"></span> INDEPENDENT KNOWLEDGE FOR AFRICAN BUILDERS</p>
-        <h1>Build better.<br><span class="highlight-word">Think bigger.</span></h1>
-        <p class="hero-copy">Practical knowledge for the real work of building a business. Learn how to find customers, make better products, earn revenue and build companies that last.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="/library/">Explore the library ↗</a>
-          <a class="button button-secondary" href="/lessons/why-should-users-choose-your-product/">Start with a lesson ↗</a>
-        </div>
-        <div class="hero-note"><span class="note-icon" aria-hidden="true">✳</span><span>Original lessons · Field guides · Founder investigations</span></div>
-      </div>
-      <div class="hero-art" aria-label="A preview of practical founder knowledge">
-        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-        <div class="art-sticker sticker-top"><span class="sticker-spark">✳</span> LESS NOISE</div>
-        <article class="float-card card-question">
-          <span class="mini-label">THE QUESTION</span>
-          <span class="question-mark">?</span>
-          <h2>Why should<br>they choose you?</h2>
-          <span class="card-underline"></span>
-        </article>
-        <article class="float-card card-note">
-          <span class="note-top"><span class="note-dot"></span> A FOUNDER NOTE</span>
-          <p>Start with the problem.<br><strong>Not the feature list.</strong></p>
-          <span class="note-lines"><i></i><i></i><i></i></span>
-        </article>
-        <article class="float-card card-framework">
-          <div class="framework-icon" aria-hidden="true"></div>
-          <div><span class="mini-label">A BETTER NEXT STEP</span><strong>Understand<br>the alternative.</strong></div>
-        </article>
-        <div class="art-caption">THINK CLEARLY. BUILD DELIBERATELY.</div>
-      </div>
-    </section>
+    <section class="hero fk-showcase-hero">
+  <div class="fk-hero-intro">
+    <p class="eyebrow"><span class="eyebrow-dot"></span> INDEPENDENT KNOWLEDGE FOR AFRICAN BUILDERS</p>
+    <h1>Building is hard.<br><span class="highlight-word">Build with clarity.</span></h1>
+    <p class="hero-copy">The decisions behind a business matter as much as the product. Explore practical knowledge on customers, money, technology and the work of building something that lasts.</p>
+    <div class="hero-actions"><a class="button button-primary" href="/library/">Explore the knowledge ↗</a><a class="button button-secondary" href="/lessons/why-should-users-choose-your-product/">Start with the essentials ↗</a></div>
+  </div>
+  <div class="fk-hero-proof"><span class="fk-proof-number">01</span><span>Useful thinking.<br>Real business context.</span><span class="fk-proof-mark" aria-hidden="true">FK↗</span></div>
+</section>
 
     <section class="library section" id="library">
       <div class="section-heading">
@@ -132,165 +107,26 @@
         <p>Not a chronological feed. A growing library organized around the questions founders actually face.</p>
       </div>
 
-      <div class="category-grid">
-        <a class="category-card category-live" href="/lessons/everyone-is-building-who-is-winning/">
-          <span class="category-icon icon-pink" aria-hidden="true">✳</span>
-          <span class="category-kicker">FOUNDER FIELD NOTE · AI, DISTRIBUTION &amp; CAPITAL</span>
-          <h3>Everyone is building. Who is actually winning?</h3>
-          <p>AI lowers the cost of making software. Customer trust, distribution, and demand remain hard to earn.</p>
-          <span class="category-bottom"><span>Read the editorial</span><span>7 min read</span></span>
-        </a>
-        <a class="category-card category-live" href="/lessons/everyone-is-building-who-is-winning/">
-          <span class="category-icon icon-pink" aria-hidden="true">✳</span>
-          <span class="category-kicker">FOUNDER FIELD NOTE · AI, DISTRIBUTION &amp; CAPITAL</span>
-          <h3>Everyone is building. Who is actually winning?</h3>
-          <p>AI lowers the cost of making software. Customer trust, distribution, and demand remain hard to earn.</p>
-          <span class="category-bottom"><span>Read the editorial</span><span>7 min read</span></span>
-        </a>
-        <a class="category-card category-live" href="/lessons/list-at-home-or-list-abroad/">
-          <span class="category-icon icon-lilac" aria-hidden="true">◈</span>
-          <span class="category-kicker">FOUNDER FIELD NOTE · CAPITAL &amp; EXITS</span>
-          <h3>List at home or list abroad?</h3>
-          <p>October's fintech listings — MNT-Halan on the EGX, Airtel Money on the LSE, OPay's NYSE filing — and what was actually sold, to whom, and at what price.</p>
-          <span class="category-bottom"><span>Read the editorial</span><span>8 min read</span></span>
-        </a>
-
-        <a class="category-card category-live" href="/lessons/how-to-verify-a-fintech-or-investment-partner-before-you-trust-it/">
-          <span class="category-icon icon-lilac" aria-hidden="true">✓</span>
-          <span class="category-kicker">FOUNDER OPERATIONS · PARTNER DUE DILIGENCE</span>
-          <h3>How to verify a fintech or investment partner before you trust it</h3>
-          <p>Verify the legal entity, the relevant regulator, and the actual partnership before committing money or customer data.</p>
-          <span class="category-bottom"><span>Use the checklist</span><span>8 min read</span></span>
-        </a>
-
-                
-                <a class="category-card category-live" href="/lessons/the-search-for-affordable-computing-power/">
-          <span class="category-icon icon-blue" aria-hidden="true">⌁</span>
-          <span class="category-kicker">FOUNDER FIELD NOTE · AI &amp; INFRASTRUCTURE</span>
-          <h3>The search for affordable computing power</h3>
-          <p>Compare Hetzner, Agent37, and Contabo while planning for six concurrent client-facing AI agents on a tight monthly budget.</p>
-          <span class="category-bottom"><span>Read the field note</span><span>8 min read</span></span>
-        </a>
-
-<a class="category-card category-live" href="/lessons/the-tools-we-take-for-granted/">
-          <span class="category-icon icon-blue" aria-hidden="true">✳</span>
-          <span class="category-kicker">FOUNDER FIELD NOTE · AI &amp; TECHNOLOGY</span>
-          <h3>The tools we take for granted may be more powerful than we realize</h3>
-          <p>Move beyond individual tasks and discover how existing tools can preserve knowledge, reduce repetition, and support better workflows.</p>
-          <span class="category-bottom"><span>Read the field note</span><span>8 min read</span></span>
-        </a>
-
-<a class="category-card category-live" href="/lessons/choose-ai-model-by-cost-per-successful-task/">
-          <span class="category-icon icon-blue" aria-hidden="true">⌁</span>
-          <span class="category-kicker">FOUNDER FRAMEWORK · AI &amp; TECHNOLOGY</span>
-          <h3>The cheapest AI model is not always the cheapest to run</h3>
-          <p>Compare AI models by successful outcomes, quality, retries, latency, and total cost—not token prices alone.</p>
-          <span class="category-bottom"><span>Use the decision framework</span><span>7 min read</span></span>
-        </a>
-
-        <a class="category-card category-live" href="/lessons/before-your-hosting-provider-deletes-old-deployments/">
-          <span class="category-icon icon-lilac" aria-hidden="true">↻</span>
-          <span class="category-kicker">PRACTICAL AUDIT · INFRASTRUCTURE &amp; OPERATIONS</span>
-          <h3>Before your hosting provider deletes old deployments, check this</h3>
-          <p>Review Vercel retention, storage charges, and the releases you may need to recover safely.</p>
-          <span class="category-bottom"><span>Run the audit</span><span>7 min read</span></span>
-        </a>
-
-        <a class="category-card category-live" href="/lessons/connect-payments-to-paid-access/">
-          <span class="category-icon icon-blue" aria-hidden="true">₦</span>
-          <span class="category-kicker">PRACTICAL GUIDE · PAYMENTS &amp; PRODUCT DELIVERY</span>
-          <h3>Connect payments to paid access</h3>
-          <p>Verify payment, grant the right access once, and handle the gap between a successful charge and product delivery.</p>
-          <span class="category-bottom"><span>Read the guide</span><span>9 min read</span></span>
-        </a>
-
-        <a class="category-card category-live" href="/lessons/what-happens-when-your-payment-provider-fails/">
-          <span class="category-icon icon-lilac" aria-hidden="true">↗</span>
-          <span class="category-kicker">PRACTICAL GUIDE · OPERATIONS &amp; RELIABILITY</span>
-          <h3>What happens when your payment provider fails?</h3>
-          <p>Handle payment errors, pending transactions, duplicate-charge risks, and recovery without losing customer trust.</p>
-          <span class="category-bottom"><span>Read the guide</span><span>8 min read</span></span>
-        </a>
-
-        <a class="category-card category-live" href="/lessons/ship-launch-debug-repeat/">
-          <span class="category-icon icon-yellow" aria-hidden="true">↗</span>
-          <span class="category-kicker">FOUNDER FIELD NOTE · PRODUCT &amp; EXECUTION</span>
-          <h3>Ship. Launch. Debug. Repeat.</h3>
-          <p>Stop waiting for a perfect product. Ship the core, learn from real users, and improve with evidence.</p>
-          <span class="category-bottom"><span>Read the lesson</span><span>5 min read</span></span>
-        </a>
-
-        <a class="category-card category-live" href="/lessons/distribution-is-not-posting/">
-          <span class="category-icon icon-yellow" aria-hidden="true">↗</span>
-          <span class="category-kicker">FOUNDER FIELD NOTE · DISTRIBUTION</span>
-          <h3>Distribution is not posting</h3>
-          <p>Why visibility and marketing activity do not guarantee sales—and how to spend to learn.</p>
-          <span class="category-bottom"><span>Read the lesson</span><span>7 min read</span></span>
-        </a>
-
-        <a class="category-card category-live" href="/lessons/why-should-users-choose-your-product/">
-          <span class="category-icon icon-yellow" aria-hidden="true">◎</span>
-          <span class="category-kicker">START HERE · PUBLISHED LESSON</span>
-          <h3>Understand your customers</h3>
-          <p>Why would the right people choose your product over what they already use?</p>
-          <span class="category-bottom"><span>Read the lesson</span></span>
-        </a>
-        <a class="category-card category-live" href="/lessons/validate-the-idea/">
-          <span class="category-icon icon-pink" aria-hidden="true">✳</span>
-          <span class="category-kicker">PRACTICAL GUIDE · IDEA VALIDATION</span>
-          <h3>Validate the idea</h3>
-          <p>Test whether the problem matters before investing heavily in building a solution.</p>
-          <span class="category-bottom"><span>Read the guide</span></span>
-        </a>
-        <a class="category-card category-live" href="/lessons/product-is-invisible/">
-          <span class="category-icon icon-green" aria-hidden="true">↗</span>
-          <span class="category-kicker">FOUNDER FIELD GUIDE · DISTRIBUTION</span>
-          <h3>The distribution problem</h3>
-          <p>A useful product can still fail without a repeatable path to customers. Diagnose the bottleneck before adding more features.</p>
-          <span class="category-bottom"><span>Read the guide</span></span>
-        </a>
-          <a class="category-card category-live" href="/lessons/founder-distribution-foundations/">
-            <span class="category-icon icon-green" aria-hidden="true">↗</span>
-            <span class="category-kicker">FOUNDER FRAMEWORK · DISTRIBUTION · PART 1 OF 2</span>
-            <h3>Founder Distribution System: Start with the customer <span>Part 1</span></h3>
-            <p>Understand the problem, discover the audience, and map distribution routes that fit the product and buyer.</p>
-            <span class="category-bottom"><span>Read Part 1</span><span>9 min read</span></span>
-          </a>
-          <a class="category-card category-live" href="/lessons/founder-distribution-validation/">
-            <span class="category-icon icon-yellow" aria-hidden="true">✓</span>
-            <span class="category-kicker">FOUNDER FRAMEWORK · VALIDATION · PART 2 OF 2</span>
-            <h3>Founder Distribution System: Test what works <span>Part 2</span></h3>
-            <p>Run a 30-day validation programme, measure customer progress, and decide what deserves to become software.</p>
-            <span class="category-bottom"><span>Read Part 2</span><span>10 min read</span></span>
-          </a>
-          <a class="category-card category-live" href="/lessons/your-free-backend-isnt-always-available/">
-            <span class="category-icon icon-blue" aria-hidden="true">⌁</span>
-            <span class="category-kicker">FOUNDER GUIDE · INFRASTRUCTURE</span>
-            <h3>Your free backend isn't always available</h3>
-            <p>Understand inactivity policies, database availability, recovery, and the real cost of reliable infrastructure.</p>
-            <span class="category-bottom"><span>Read the guide</span><span>7 min read</span></span>
-          </a>
-        <a class="category-card category-live" href="/lessons/app-monetization/">
-          <span class="category-icon icon-blue" aria-hidden="true">₦</span>
-          <span class="category-kicker">FIELD GUIDE · MONETIZATION</span>
-          <h3>Your app doesn't need an app store to earn</h3>
-          <p>Choose a pricing model and connect customer discovery, payment, and paid access.</p>
-          <span class="category-bottom"><span>Read the field guide</span></span>
-        </a>
-        <a class="category-card category-live" href="/lessons/choose-what-to-build/">
-          <span class="category-icon icon-lilac" aria-hidden="true">⌘</span>
-          <span class="category-kicker">FRAMEWORK · FOUNDER DECISIONS</span>
-          <h3>Choose what to build</h3>
-          <p>Decide what to ship now, build next, test first, or deliberately leave aside.</p>
-          <span class="category-bottom"><span>Use the framework</span></span>
-        </a>
-        <article class="category-card category-manifesto">
-          <span class="manifesto-symbol" aria-hidden="true">“</span>
-          <h3>Useful knowledge should help you do something.</h3>
-          <p>Less theory for theory's sake. More clarity for the next decision.</p>
-          <a href="#approach" class="manifesto-link">How we think </a>
-        </article>
-      </div>
+      <div class="fk-editorial-bento" aria-label="Featured knowledge">
+  <a class="fk-bento-card fk-bento-feature" href="/lessons/everyone-is-building-who-is-winning/">
+    <div class="fk-bento-copy"><span class="fk-bento-kicker">FOUNDER FIELD NOTE · AI &amp; CAPITAL</span><h3>Everyone is building.<br>Who is actually winning?</h3><p>AI has made software easier to create. It has not made customers, trust or distribution any easier to earn.</p><span class="fk-bento-link">Read the field note <b>↗</b></span></div>
+    <div class="fk-bento-image"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85" alt="A small team working together around a table" loading="lazy"><span class="fk-image-stamp">THE<br>REAL<br>WORK</span></div>
+  </a>
+  <a class="fk-bento-card fk-bento-conversion" href="/lessons/distribution-is-not-posting/">
+    <span class="fk-bento-kicker">DISTRIBUTION</span><div class="fk-bento-art fk-art-arrows" aria-hidden="true"><i>↗</i><i>↗</i><i>↗</i></div><h3>Attention is not<br>distribution.</h3><p>Turn visibility into conversations, customers and repeatable sales.</p><span class="fk-bento-link">Explore distribution <b>↗</b></span>
+  </a>
+  <a class="fk-bento-card fk-bento-loyalty" href="/lessons/what-happens-when-your-payment-provider-fails/">
+    <span class="fk-bento-kicker">OPERATIONS &amp; TRUST</span><div class="fk-bento-art fk-art-orbit" aria-hidden="true"><span>₦</span><i>↻</i><b>✓</b></div><h3>A successful payment<br>is only the beginning.</h3><p>What happens after the customer pays is part of your product.</p><span class="fk-bento-link">Understand reliability <b>↗</b></span>
+  </a>
+  <a class="fk-bento-card fk-bento-wide" href="/lessons/the-search-for-affordable-computing-power/">
+    <div class="fk-bento-wide-copy"><span class="fk-bento-kicker">TECHNOLOGY &amp; INFRASTRUCTURE</span><h3>Build the stack.<br>Understand the bill.</h3><p>Practical infrastructure decisions for teams building with limited time, money and compute.</p><span class="fk-bento-link">Explore the field note <b>↗</b></span></div>
+    <div class="fk-bento-wide-art" aria-hidden="true"><span>4</span><small>CPU<br>CORE</small><i>↗</i></div>
+  </a>
+  <a class="fk-bento-card fk-bento-last" href="/lessons/why-should-users-choose-your-product/">
+    <span class="fk-bento-kicker">PRODUCT &amp; CUSTOMERS</span><h3>Make something<br>people choose.</h3><span class="fk-bento-link">Start here <b>↗</b></span>
+  </a>
+</div>
+<div class="fk-bento-footer"><span>LESS NOISE. BETTER DECISIONS.</span><a class="button button-primary" href="/library/">Browse the full library ↗</a></div>
       <div style="display:flex;justify-content:center;margin-top:30px"><a class="button button-primary" href="/library/">Browse all published knowledge</a></div>
     </section>
 
