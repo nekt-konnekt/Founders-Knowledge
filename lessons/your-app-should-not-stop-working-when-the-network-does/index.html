@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Design offline-first products that keep critical customer work available without a network. Learn local data, persistent queues, safe retries and conflict handling.">
+  <meta name="theme-color" content="#2e9bff">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <title>Your App Should Not Stop Working When the Network Does — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/your-app-should-not-stop-working-when-the-network-does/">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Your App Should Not Stop Working When the Network Does","description":"Design offline-first products that keep critical customer work available without a network. Learn local data, persistent queues, safe retries and conflict handling.","mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/your-app-should-not-stop-working-when-the-network-does/","publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},"datePublished":"2026-11-02","dateModified":"2026-11-02","inLanguage":"en"}
+  </script>
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Your App Should Not Stop Working When the Network Does">
+  <meta property="og:description" content="Design offline-first products so customers can keep working, even without an internet connection.">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/your-app-should-not-stop-working-when-the-network-does/">
+  <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fyour-app-should-not-stop-working-when-the-network-does.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261102">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Founders Knowledge: Your App Should Not Stop Working When the Network Does">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your App Should Not Stop Working When the Network Does">
+  <meta name="twitter:description" content="Design offline-first products so customers can keep working, even without an internet connection.">
+  <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fyour-app-should-not-stop-working-when-the-network-does.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261102">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/analytics.js" defer></script>
+  <meta property="og:image:secure_url" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fyour-app-should-not-stop-working-when-the-network-does.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261102">
+</head>
+<body class="lesson-page">
+  <a class="skip-link" href="#lesson-content">Skip to article</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+    <nav aria-label="Article navigation"><a href="/library/">Knowledge library</a><a href="/briefings/">Briefings</a></nav>
+    <a class="nav-cta" href="/library/">All knowledge</a>
+  </header>
+  <main id="lesson-content">
+    <section class="lesson-hero">
+      <a class="lesson-back" href="/library/">Back to the knowledge library</a>
+      <div class="lesson-cover">
+        <div class="lesson-cover-copy">
+          <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> LESSON <span class="lesson-separator">/</span> PRODUCT ENGINEERING</p>
+          <h1>Your App Should Not Stop Working <span>When the Network Does</span></h1>
+          <p class="lesson-dek">Design offline-first products so customers can keep working, even when connectivity disappears. A practical guide to local data, synchronization and safe recovery.</p>
+          <div class="lesson-meta"><span>◷ 11 minute read</span><span>✳ Practical guide</span><span>Published 2 November 2026</span></div>
+        </div>
+        <div class="lesson-cover-art" aria-hidden="true">
+          <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
+          <div class="lesson-art-card art-current"><span class="art-label">NETWORK LOST</span><strong>Customer work<br>must not disappear.</strong><div class="art-lines"><i></i><i></i><i></i></div><span class="art-small">Saved locally first</span></div>
+          <div class="lesson-art-card art-better"><span class="art-label">WHEN ONLINE</span><strong>Sync.<br>Verify.<br>Continue.</strong><span class="art-highlight"></span></div>
+          <span class="lesson-art-stamp">BUILD<br>RESILIENTLY</span>
+        </div>
+      </div>
+      <div class="lesson-progress"><span></span></div>
+      <div class="lesson-progress-caption"><span>PRODUCT ENGINEERING</span><span>Reliable products are designed for real working conditions.</span></div>
+    </section>
+    <div class="lesson-layout">
+      <aside class="lesson-sidebar" aria-label="On this page">
+        <div class="lesson-sidebar-inner">
+          <p class="sidebar-label">IN THIS LESSON</p>
+          <a href="#offline-first">01 <span>Offline-first is not caching</span></a>
+          <a href="#classify">02 <span>Classify each operation</span></a>
+          <a href="#architecture">03 <span>Use a local source of truth</span></a>
+          <a href="#outbox">04 <span>Save before syncing</span></a>
+          <a href="#conflicts">05 <span>Handle conflicts deliberately</span></a>
+          <a href="#web">06 <span>Do not depend on one API</span></a>
+          <a href="#interface">07 <span>Show honest status</span></a>
+          <a href="#testing">08 <span>Test the failure paths</span></a>
+          <div class="sidebar-note"><span>✳</span><p>Design around the customer's ability to finish the job—not around a perfect network.</p></div>
+        </div>
+      </aside>
+      <article class="lesson-body">
+        <div class="lesson-opening"><span class="opening-mark">“</span><p>A teacher marks attendance for 32 students. The connection drops just before the records are saved. The application displays an error. The teacher tries again, but now nobody knows which records reached the server. The problem is not simply that the internet went away. The product made the customer's work depend on the internet being available at exactly the right moment.</p></div>
+        <section id="offline-first" class="lesson-section">
+          <p class="section-number">01 — OFFLINE-FIRST IS NOT CACHING</p>
+          <h2>A page that opens offline is not necessarily a product that works offline.</h2>
+          <p>Caching helps a browser retrieve resources it downloaded earlier. A service worker can intercept network requests and return cached assets or a fallback page. That is useful, but it does not automatically save a customer's form, record or transaction.</p>
+          <p>Imagine a sales representative opens a cached customer page, fills in an order and presses Save. The page is available. The server is not. If the application only sends the order to a remote API, the work still fails.</p>
+          <p>An offline-first product is designed so its critical jobs can continue without a live connection. It has a local data source, a deliberate way to store changes, and a synchronization process that sends those changes when the network returns. Google's Android guidance describes offline-first applications as those that can perform all or a critical subset of core functionality without internet access.</p>
+          <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Do not confuse an offline screen with an offline workflow.</strong><p>The real test is whether the customer can complete and safely retain the work they came to do.</p></div></div>
+        </section>
+        <section id="classify" class="lesson-section">
+          <p class="section-number">02 — CLASSIFY EACH OPERATION</p>
+          <h2>Not every action should be allowed offline.</h2>
+          <p>Start with the customer's jobs, not with a service worker or a database choice. For each operation, decide what should happen when connectivity disappears.</p>
+          <div class="lesson-question-card">
+            <p class="question-card-title">THREE OFFLINE POLICIES</p>
+            <p><strong>Local-first:</strong> Save locally and let the customer continue. Use this for drafts, attendance records or notes when the business rules allow later synchronization.</p>
+            <p><strong>Queued:</strong> Store the operation for later delivery. Use this for work such as analytics or notifications that does not need an immediate result.</p>
+            <p><strong>Online-only:</strong> Require a live server response. Use this for actions that need current authority or external confirmation, such as initiating a bank transfer or changing sensitive account permissions.</p>
+          </div>
+          <p>Google's offline-first guidance describes these different write strategies. The right choice depends on the consequence of delaying an operation and the risk of accepting it without server-side checks.</p>
+          <table>
+            <thead><tr><th>Customer action</th><th>Starting policy</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>View previously loaded class list</td><td>Local-first</td><td>Reading known information need not wait for a request.</td></tr>
+              <tr><td>Record attendance</td><td>Local-first</td><td>Preserve the work, then synchronize.</td></tr>
+              <tr><td>Save a draft order</td><td>Local-first</td><td>A draft can wait for server processing.</td></tr>
+              <tr><td>Send analytics</td><td>Queued</td><td>Delivery can happen later.</td></tr>
+              <tr><td>Transfer money</td><td>Online-only</td><td>The transaction needs live verification and authoritative processing.</td></tr>
+            </tbody>
+          </table>
+          <p>These are starting points, not universal rules. For example, an order draft may be local-first while final price, stock availability and payment confirmation still require the server.</p>
+        </section>
+        <section id="architecture" class="lesson-section">
+          <p class="section-number">03 — USE A LOCAL SOURCE OF TRUTH</p>
+          <h2>Let the interface read from local data, not wait for every API call.</h2>
+          <p>A useful architecture separates the user interface from the way data is stored and retrieved. A repository coordinates a local database and a remote API. The interface reads from local storage, while the repository refreshes or synchronizes remote changes.</p>
+          <p>For a web application, IndexedDB can store structured records in the browser. A service worker can manage application resources and network requests. These have different jobs: IndexedDB stores application data; the service worker helps manage how the application responds to network conditions.</p>
+          <figure class="lesson-question-card" style="margin:26px 0;padding:14px">
+            <img src="/assets/illustrations/offline-first-architecture.svg" alt="Offline-first architecture: customer action is validated, saved in a local database, placed in a persistent outbox and sent to the remote server when connectivity returns." width="1200" height="520" style="display:block;width:100%;height:auto;border-radius:10px">
+            <figcaption style="font-size:12px;color:#456078;padding:10px 4px 2px">The customer’s work is saved locally first. Synchronization is a separate step.</figcaption>
+          </figure>
+          <p>The local database is the immediate source for the device's view. The remote server remains the shared system of record. That distinction helps the application respond quickly without pretending that every local change has already been accepted by the server.</p>
+        </section>
+        <section id="outbox" class="lesson-section">
+          <p class="section-number">04 — SAVE BEFORE SYNCING</p>
+          <h2>Make the local save and the server request two separate events.</h2>
+          <p>For an operation that is allowed offline, the application should validate the input, generate a stable operation ID, save the record locally, add it to a persistent outbox and update the interface. It can then attempt to deliver the operation to the server.</p>
+          <p>A simplified attendance record might look like this:</p>
+          <pre><code>{
+  "operation_id": "op_8f32a1",
+  "student_id": "student_104",
+  "class_id": "class_12",
+  "attendance_date": "2026-11-02",
+  "status": "present",
+  "recorded_by": "teacher_09",
+  "created_at": "2026-11-02T08:15:00Z",
+  "sync_status": "pending"
+}</code></pre>
+          <p>The operation ID should remain the same across retries. The server should use it to recognize a repeated submission and avoid creating a second attendance event when the first response was lost.</p>
+          <p>This is the purpose of idempotency: repeating the same operation should not create a second business effect. A network timeout does not tell the client whether the server received the request. Stable identifiers and server-side duplicate protection make retries safer.</p>
+          <div class="lesson-callout callout-lilac"><span class="callout-icon">↻</span><div><strong>Keep the outbox persistent.</strong><p>Do not store pending operations only in application memory. They should survive a closed tab, an application restart and a device reboot.</p></div></div>
+          <p>Retry temporary failures with increasing delays, often called exponential backoff. Do not retry every error forever. A network interruption may be temporary; an expired session or invalid record needs a different response. Preserve the pending operation and tell the user what needs attention.</p>
+        </section>
+        <section id="conflicts" class="lesson-section">
+          <p class="section-number">05 — HANDLE CONFLICTS DELIBERATELY</p>
+          <h2>Two devices can make valid changes while disconnected.</h2>
+          <p>A teacher records attendance on one device. An administrator corrects the same record on another. Both devices are offline. When they reconnect, the application must decide how to reconcile the changes.</p>
+          <p>One simple rule is last-write-wins: accept the update with the latest timestamp. That may be acceptable for a low-risk preference, but it can be dangerous for business records. Device clocks can be wrong, and a later edit can erase an important earlier change.</p>
+          <p>Choose conflict rules based on the meaning of the data:</p>
+          <ul>
+            <li><strong>Personal notes:</strong> a latest-version rule may be acceptable if the product preserves edit history.</li>
+            <li><strong>Attendance:</strong> preserve who changed a record, when and why; corrections may need an audit trail.</li>
+            <li><strong>Inventory:</strong> record stock movements rather than allowing disconnected devices to overwrite a shared total.</li>
+            <li><strong>Money:</strong> do not reconcile financial transactions by choosing the latest device timestamp. Use authoritative transaction processing and reconciliation.</li>
+          </ul>
+          <p>For important records, a conflict should be visible and recoverable. It is better to ask an authorised person to resolve a genuine conflict than to silently discard a valid change.</p>
+        </section>
+        <section id="web" class="lesson-section">
+          <p class="section-number">06 — DO NOT DEPEND ON ONE BROWSER API</p>
+          <h2>Background sync is useful, but it cannot be your only delivery plan.</h2>
+          <p>The Background Synchronization API lets a service worker defer some work until a browser detects connectivity. It can improve the experience, but browser support is limited. Do not make your only synchronization path depend on it.</p>
+          <p>Also attempt synchronization when the application opens, when the user returns to it and when connectivity is restored. Keep a visible retry option for failed operations. The queue itself must remain durable even if the browser never runs a background task.</p>
+          <p>For native Android applications, WorkManager is a common option for persistent, deferrable background work. Choose platform tools based on the devices and browsers your customers actually use, and test the complete workflow on those platforms.</p>
+        </section>
+        <section id="interface" class="lesson-section">
+          <p class="section-number">07 — SHOW AN HONEST STATUS</p>
+          <h2>Do not tell customers a change succeeded when it has only been saved locally.</h2>
+          <p>Offline-first changes the interface as well as the architecture. A single green success message is not enough. The customer needs to know whether a record is stored on the device, waiting to synchronize, confirmed by the server or blocked by a problem.</p>
+          <div class="lesson-question-card">
+            <p class="question-card-title">FOUR STATES TO MAKE VISIBLE</p>
+            <p><strong>Saved on this device:</strong> the local database has stored the work.</p>
+            <p><strong>Waiting to sync:</strong> the operation is queued for delivery.</p>
+            <p><strong>Synchronized:</strong> the server has acknowledged the operation.</p>
+            <p><strong>Needs attention:</strong> the operation needs a retry, sign-in or human decision.</p>
+          </div>
+          <p>Show how many operations are pending and when the last successful synchronization occurred. If something fails, explain what happened and what the customer can do. Do not hide pending work behind a generic error message.</p>
+        </section>
+        <section id="testing" class="lesson-section">
+          <p class="section-number">08 — TEST THE FAILURE PATHS</p>
+          <h2>Airplane mode is only the first test.</h2>
+          <p>Test the workflow under the conditions it claims to support. Include slow connections, dropped requests, application restarts, expired sessions, duplicate submissions and two devices changing the same record.</p>
+          <div class="lesson-exercise">
+            <p class="section-number">PUT IT TO WORK</p>
+            <h2>Run this offline-readiness test.</h2>
+            <ol>
+              <li>Open the application offline. Previously loaded critical information should still be available.</li>
+              <li>Create a record offline. It should be saved locally and clearly marked as pending.</li>
+              <li>Close and reopen the application. Pending records should still exist.</li>
+              <li>Restore connectivity. Pending operations should begin synchronizing.</li>
+              <li>Drop the connection during synchronization. Unconfirmed operations should remain pending.</li>
+              <li>Submit the same operation twice. The server should not create duplicate business records.</li>
+              <li>Expire the user's session. Protected operations should not be silently accepted or retried forever.</li>
+              <li>Edit the same record on two devices. The conflict should follow a documented rule.</li>
+              <li>Fill local storage. The application should explain the problem and must not claim unsaved work is safe.</li>
+            </ol>
+            <div class="reality-check"><strong><span>!</span> Reality check</strong><p>Offline support increases responsibility for data stored on a device. Consider device access, local encryption where appropriate, sign-out behaviour, data retention and what happens when a device is lost. Offline access should not bypass your product's security model.</p></div>
+          </div>
+        </section>
+        <section class="lesson-section">
+          <p class="section-number">WHAT TO BUILD FIRST</p>
+          <h2>Start with one critical customer workflow.</h2>
+          <p>You do not need a sophisticated distributed system for your first release. Pick one workflow—recording attendance, saving a field-sales order draft or capturing an inventory movement—and make that workflow reliable.</p>
+          <p>First, store the records needed for the task locally. Then save new work locally, create a persistent outbox and synchronize when possible. Add duplicate protection and clear status messages. Only then expand to multi-device conflict handling and more complex workflows.</p>
+          <p>Measure whether the customer can complete the job, how many operations remain pending, how long synchronization takes and how often conflicts need intervention. Those measures tell you more about the quality of the offline experience than whether the page happens to open in airplane mode.</p>
+        </section>
+        <div class="lesson-takeaway"><span class="takeaway-label">THE TAKEAWAY</span><p><em>Build around the customer's ability to finish the job—not around the assumption that the internet will always cooperate.</em> Some operations must stay online. Others can safely wait. Know the difference, save the work locally, synchronize it deliberately and tell the customer what has actually happened.</p></div>
+        <section class="lesson-section">
+          <p class="section-number">SOURCES AND FURTHER READING</p>
+          <ul>
+            <li><a href="https://developer.android.com/topic/architecture/data-layer/offline-first" target="_blank" rel="noopener noreferrer">Android Developers — Build an offline-first app</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="noopener noreferrer">MDN — Service Worker API</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noopener noreferrer">MDN — IndexedDB API</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Background_Synchronization_API" target="_blank" rel="noopener noreferrer">MDN — Background Synchronization API and browser availability</a></li>
+            <li><a href="https://developer.android.com/topic/libraries/architecture/workmanager" target="_blank" rel="noopener noreferrer">Android Developers — WorkManager</a></li>
+          </ul>
+          <p>These references support the platform and architecture guidance. The school, sales and inventory scenarios are illustrative examples, not claims about a particular company.</p>
+        </section>
+        <nav class="lesson-next" aria-label="Article navigation">
+          <a href="/library/" class="next-library"><span>✳</span><span><small>KEEP LEARNING</small><strong>Back to the knowledge library</strong></span></a>
+          <a href="/lessons/a-backup-is-not-a-recovery-plan/" class="next-card"><span class="next-card-label">RELATED GUIDE</span><strong>A backup is not a recovery plan</strong><span class="next-arrow"></span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#lesson-content">Back to top</a></footer>
+  <script src="/assets/share.js" defer></script>
+</body>
+</html>
