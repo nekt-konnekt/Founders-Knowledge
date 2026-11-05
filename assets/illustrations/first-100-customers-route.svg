@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">A repeatable first-customer route</title>
+<desc id="desc">Five connected steps: find a narrow customer group, earn trusted access, make a specific offer, deliver first value, and earn the next introduction.</desc>
+<rect width="1200" height="650" rx="28" fill="#e8f3ff"/>
+<path d="M95 260H1105" stroke="#9bb8d2" stroke-width="5" stroke-linecap="round" stroke-dasharray="12 14"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#12263a">
+  <text x="80" y="72" font-size="20" font-weight="700" letter-spacing="4" fill="#1d7fe0">THE CUSTOMER ROUTE</text>
+  <text x="80" y="118" font-size="38" font-weight="700">From a known problem to a repeatable introduction</text>
+  <g transform="translate(70 180)">
+    <rect width="190" height="178" rx="20" fill="#ffffff" stroke="#9bb8d2" stroke-width="2"/>
+    <circle cx="36" cy="38" r="20" fill="#c8f04b" stroke="#12263a" stroke-width="2"/>
+    <text x="36" y="45" text-anchor="middle" font-size="18" font-weight="700">01</text>
+    <text x="22" y="91" font-size="21" font-weight="700">FIND THE</text><text x="22" y="119" font-size="21" font-weight="700">GROUP</text>
+    <text x="22" y="151" font-size="13" fill="#51677b">Same buyer. Same job.</text>
+  </g>
+  <g transform="translate(300 180)">
+    <rect width="190" height="178" rx="20" fill="#ffffff" stroke="#9bb8d2" stroke-width="2"/>
+    <circle cx="36" cy="38" r="20" fill="#1d7fe0" stroke="#12263a" stroke-width="2"/>
+    <text x="36" y="45" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">02</text>
+    <text x="22" y="91" font-size="21" font-weight="700">EARN</text><text x="22" y="119" font-size="21" font-weight="700">ACCESS</text>
+    <text x="22" y="151" font-size="13" fill="#51677b">A route they trust.</text>
+  </g>
+  <g transform="translate(530 180)">
+    <rect width="190" height="178" rx="20" fill="#ffffff" stroke="#9bb8d2" stroke-width="2"/>
+    <circle cx="36" cy="38" r="20" fill="#c8f04b" stroke="#12263a" stroke-width="2"/>
+    <text x="36" y="45" text-anchor="middle" font-size="18" font-weight="700">03</text>
+    <text x="22" y="91" font-size="21" font-weight="700">MAKE THE</text><text x="22" y="119" font-size="21" font-weight="700">OFFER</text>
+    <text x="22" y="151" font-size="13" fill="#51677b">One costly job solved.</text>
+  </g>
+  <g transform="translate(760 180)">
+    <rect width="190" height="178" rx="20" fill="#ffffff" stroke="#9bb8d2" stroke-width="2"/>
+    <circle cx="36" cy="38" r="20" fill="#1d7fe0" stroke="#12263a" stroke-width="2"/>
+    <text x="36" y="45" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">04</text>
+    <text x="22" y="91" font-size="21" font-weight="700">DELIVER</text><text x="22" y="119" font-size="21" font-weight="700">VALUE</text>
+    <text x="22" y="151" font-size="13" fill="#51677b">Prove the first result.</text>
+  </g>
+  <g transform="translate(990 180)">
+    <rect width="140" height="178" rx="20" fill="#c8f04b" stroke="#12263a" stroke-width="2"/>
+    <circle cx="36" cy="38" r="20" fill="#ffffff" stroke="#12263a" stroke-width="2"/>
+    <text x="36" y="45" text-anchor="middle" font-size="18" font-weight="700">05</text>
+    <text x="18" y="91" font-size="19" font-weight="700">EARN THE</text><text x="18" y="119" font-size="19" font-weight="700">NEXT INTRO</text>
+    <text x="18" y="151" font-size="12" fill="#33495d">Repeat the route.</text>
+  </g>
+  <path d="M260 269h35m-11-11 11 11-11 11M490 269h35m-11-11 11 11-11 11M720 269h35m-11-11 11 11-11 11M950 269h35m-11-11 11 11-11 11" fill="none" stroke="#12263a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="80" y="425" width="1040" height="132" rx="18" fill="#12263a"/>
+  <text x="112" y="468" font-size="17" font-weight="700" letter-spacing="3" fill="#c8f04b">THE ROUTE MUST CONNECT</text>
+  <text x="112" y="510" font-size="23" font-weight="700" fill="#ffffff">Buyer access</text>
+  <text x="286" y="510" font-size="23" font-weight="700" fill="#ffffff">→</text>
+  <text x="330" y="510" font-size="23" font-weight="700" fill="#ffffff">Trust</text>
+  <text x="430" y="510" font-size="23" font-weight="700" fill="#ffffff">→</text>
+  <text x="475" y="510" font-size="23" font-weight="700" fill="#ffffff">Payment</text>
+  <text x="600" y="510" font-size="23" font-weight="700" fill="#ffffff">→</text>
+  <text x="648" y="510" font-size="23" font-weight="700" fill="#ffffff">First value</text>
+  <text x="790" y="510" font-size="23" font-weight="700" fill="#ffffff">→</text>
+  <text x="840" y="510" font-size="23" font-weight="700" fill="#ffffff">Referral</text>
+  <text x="80" y="612" font-size="14" font-weight="700" letter-spacing="2" fill="#51677b">A POST IS ONE POSSIBLE ENTRY POINT. IT IS NOT THE WHOLE SYSTEM.</text>
+</g>
+</svg>

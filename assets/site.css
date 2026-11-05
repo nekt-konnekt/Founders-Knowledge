@@ -382,3 +382,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
  .library-tools{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* First-100-customer playbook: explanatory route diagram. */
+.lesson-diagram{margin:30px 0;padding:14px;background:#fff;border:1px solid var(--line-strong);border-radius:16px;box-shadow:var(--shadow-small)}
+.lesson-diagram img{display:block;width:100%;height:auto;border-radius:10px}
+.lesson-diagram figcaption{margin:11px 4px 2px;font-size:11px;line-height:1.6;color:var(--muted)}
