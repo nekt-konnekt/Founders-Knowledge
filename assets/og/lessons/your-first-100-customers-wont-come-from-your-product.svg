@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Your First 100 Customers Won't Come From Your Product</title>
+<desc id="desc">Founders Knowledge founder playbook about earning trust and building a repeatable route to customers.</desc>
+<rect width="1200" height="630" rx="0" fill="#e8f3ff"/>
+<circle cx="1030" cy="90" r="210" fill="#c8f04b" opacity=".8"/>
+<path d="M780 0H1200V630H920c-65-90-108-202-118-314C792 195 786 95 780 0Z" fill="#1d7fe0" opacity=".13"/>
+<g font-family="Arial,Helvetica,sans-serif">
+  <rect x="72" y="58" width="54" height="54" rx="15" fill="#12263a"/>
+  <text x="99" y="94" font-size="22" font-weight="700" text-anchor="middle" fill="#ffffff">FK</text>
+  <text x="145" y="93" font-size="21" font-weight="700" fill="#12263a">FOUNDERS KNOWLEDGE</text>
+  <text x="72" y="171" font-size="18" font-weight="700" letter-spacing="4" fill="#1d7fe0">FOUNDER PLAYBOOK · DISTRIBUTION &amp; GROWTH</text>
+  <text x="72" y="260" font-size="62" font-weight="800" letter-spacing="-2" fill="#12263a">YOUR FIRST 100</text>
+  <text x="72" y="332" font-size="62" font-weight="800" letter-spacing="-2" fill="#12263a">CUSTOMERS WON'T</text>
+  <text x="72" y="404" font-size="62" font-weight="800" letter-spacing="-2" fill="#12263a">COME FROM YOUR</text>
+  <text x="72" y="476" font-size="62" font-weight="800" letter-spacing="-2" fill="#12263a">PRODUCT.</text>
+  <rect x="72" y="515" width="600" height="6" rx="3" fill="#c8f04b"/>
+  <text x="72" y="565" font-size="20" font-weight="700" fill="#51677b">TRUST. OFFER. VALUE. REPEAT.</text>
+  <g transform="translate(810 180)">
+    <rect width="310" height="250" rx="24" fill="#ffffff" stroke="#12263a" stroke-width="3"/>
+    <rect x="26" y="28" width="112" height="52" rx="12" fill="#c8f04b" stroke="#12263a" stroke-width="2"/>
+    <text x="82" y="60" font-size="15" font-weight="800" text-anchor="middle" fill="#12263a">TRUST</text>
+    <path d="M145 54h36m-12-12 12 12-12 12" stroke="#12263a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="190" y="28" width="94" height="52" rx="12" fill="#1d7fe0" stroke="#12263a" stroke-width="2"/>
+    <text x="237" y="60" font-size="15" font-weight="800" text-anchor="middle" fill="#ffffff">OFFER</text>
+    <path d="M155 94v36m-12-12 12 12 12-12" stroke="#12263a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="72" y="143" width="166" height="72" rx="14" fill="#12263a"/>
+    <text x="155" y="187" font-size="22" font-weight="800" text-anchor="middle" fill="#ffffff">FIRST VALUE</text>
+  </g>
+  <text x="810" y="486" font-size="17" font-weight="700" fill="#12263a">A ROUTE, NOT A POST.</text>
+</g>
+</svg>
