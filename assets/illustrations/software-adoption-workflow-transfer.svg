@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="The workday transfer test">
+  <rect width="1200" height="520" rx="28" fill="#e8f3ff"/>
+  <text x="54" y="68" fill="#12263a" font-family="Fredoka, Arial, sans-serif" font-size="38" font-weight="600">The workday transfer test</text>
+  <text x="56" y="105" fill="#40566b" font-family="Space Grotesk, Arial, sans-serif" font-size="18">A real job must move through all five stages before you call it adopted.</text>
+  <g font-family="Space Grotesk, Arial, sans-serif">
+    <rect x="40" y="150" width="204" height="238" rx="22" fill="#ffffff" stroke="#a9c6de" stroke-width="2"/>
+    <circle cx="76" cy="190" r="20" fill="#1d7fe0"/><text x="76" y="197" text-anchor="middle" fill="#ffffff" font-size="17" font-weight="700">01</text>
+    <text x="62" y="244" fill="#12263a" font-size="23" font-weight="700">Choose a job</text>
+    <text x="62" y="282" fill="#40566b" font-size="17"><tspan x="62" dy="0">One repeated</tspan><tspan x="62" dy="25">business task.</tspan></text>
+    <rect x="62" y="340" width="160" height="8" rx="4" fill="#c8f04b"/>
+    <rect x="276" y="150" width="204" height="238" rx="22" fill="#ffffff" stroke="#a9c6de" stroke-width="2"/>
+    <circle cx="312" cy="190" r="20" fill="#1d7fe0"/><text x="312" y="197" text-anchor="middle" fill="#ffffff" font-size="17" font-weight="700">02</text>
+    <text x="298" y="244" fill="#12263a" font-size="23" font-weight="700">First value</text>
+    <text x="298" y="282" fill="#40566b" font-size="17"><tspan x="298" dy="0">Complete real</tspan><tspan x="298" dy="25">work once.</tspan></text>
+    <rect x="298" y="340" width="160" height="8" rx="4" fill="#b9ecd2"/>
+    <rect x="512" y="150" width="204" height="238" rx="22" fill="#ffffff" stroke="#a9c6de" stroke-width="2"/>
+    <circle cx="548" cy="190" r="20" fill="#1d7fe0"/><text x="548" y="197" text-anchor="middle" fill="#ffffff" font-size="17" font-weight="700">03</text>
+    <text x="534" y="244" fill="#12263a" font-size="23" font-weight="700">Repeat</text>
+    <text x="534" y="282" fill="#40566b" font-size="17"><tspan x="534" dy="0">Do it again</tspan><tspan x="534" dy="25">without rescue.</tspan></text>
+    <rect x="534" y="340" width="160" height="8" rx="4" fill="#ffd9c4"/>
+    <rect x="748" y="150" width="204" height="238" rx="22" fill="#ffffff" stroke="#a9c6de" stroke-width="2"/>
+    <circle cx="784" cy="190" r="20" fill="#1d7fe0"/><text x="784" y="197" text-anchor="middle" fill="#ffffff" font-size="17" font-weight="700">04</text>
+    <text x="770" y="244" fill="#12263a" font-size="23" font-weight="700">Handoff</text>
+    <text x="770" y="282" fill="#40566b" font-size="17"><tspan x="770" dy="0">Another person</tspan><tspan x="770" dy="25">can do their part.</tspan></text>
+    <rect x="770" y="340" width="160" height="8" rx="4" fill="#bfe0ff"/>
+    <rect x="984" y="150" width="176" height="238" rx="22" fill="#12263a"/>
+    <circle cx="1020" cy="190" r="20" fill="#c8f04b"/><text x="1020" y="197" text-anchor="middle" fill="#12263a" font-size="17" font-weight="700">05</text>
+    <text x="1006" y="244" fill="#ffffff" font-size="23" font-weight="700">Routine</text>
+    <text x="1006" y="282" fill="#d6e8f6" font-size="17"><tspan x="1006" dy="0">The new route</tspan><tspan x="1006" dy="25">is trusted.</tspan></text>
+    <rect x="1006" y="340" width="132" height="8" rx="4" fill="#c8f04b"/>
+    <g fill="none" stroke="#1d7fe0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M248 269h20m-8-8 8 8-8 8"/>
+      <path d="M484 269h20m-8-8 8 8-8 8"/>
+      <path d="M720 269h20m-8-8 8 8-8 8"/>
+      <path d="M956 269h20m-8-8 8 8-8 8"/>
+    </g>
+  </g>
+  <rect x="40" y="422" width="1120" height="58" rx="16" fill="#ffffff" stroke="#a9c6de"/>
+  <text x="600" y="458" text-anchor="middle" fill="#12263a" font-family="Space Grotesk, Arial, sans-serif" font-size="19" font-weight="600">If the work returns to the old system, the transfer is not complete.</text>
+</svg>
