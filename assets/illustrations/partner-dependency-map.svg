@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+  <title id="title">One customer promise, five partner control points</title>
+  <desc id="desc">Five partner-controlled capabilities feed a startup's customer promise. A tested fallback protects continuity.</desc>
+  <rect width="1200" height="690" fill="#ffffff"/>
+  <text x="72" y="74" fill="#12263a" font-family="Space Grotesk, Arial, sans-serif" font-size="35" font-weight="700">ONE CUSTOMER PROMISE.</text>
+  <text x="72" y="118" fill="#1d7fe0" font-family="Space Grotesk, Arial, sans-serif" font-size="35" font-weight="700">FIVE PARTNER CONTROL POINTS.</text>
+  <text x="72" y="160" fill="#53677c" font-family="Space Grotesk, Arial, sans-serif" font-size="19">Your product may depend on capabilities you do not own.</text>
+  <g font-family="Space Grotesk, Arial, sans-serif">
+    <g fill="#f4f7fa" stroke="#12263a" stroke-width="3">
+      <rect x="72" y="210" width="196" height="110" rx="14"/>
+      <rect x="292" y="210" width="196" height="110" rx="14"/>
+      <rect x="512" y="210" width="196" height="110" rx="14"/>
+      <rect x="732" y="210" width="196" height="110" rx="14"/>
+      <rect x="952" y="210" width="176" height="110" rx="14"/>
+    </g>
+    <g fill="#12263a" font-size="21" font-weight="700" text-anchor="middle">
+      <text x="170" y="255"><tspan x="170">CREDIT</tspan><tspan x="170" dy="27">&amp; CAPITAL</tspan></text>
+      <text x="390" y="255"><tspan x="390">UNDERWRITING</tspan><tspan x="390" dy="27">&amp; ELIGIBILITY</tspan></text>
+      <text x="610" y="255"><tspan x="610">SETTLEMENT</tspan><tspan x="610" dy="27">&amp; RAILS</tspan></text>
+      <text x="830" y="255"><tspan x="830">LICENCE</tspan><tspan x="830" dy="27">&amp; PERMISSION</tspan></text>
+      <text x="1040" y="255"><tspan x="1040">DATA</tspan><tspan x="1040" dy="27">&amp; IDENTITY</tspan></text>
+    </g>
+    <g stroke="#1d7fe0" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M170 320 V390 L600 440"/>
+      <path d="M390 320 V390 L600 440"/>
+      <path d="M610 320 V440"/>
+      <path d="M830 320 V390 L600 440"/>
+      <path d="M1040 320 V390 L600 440"/>
+    </g>
+    <rect x="360" y="430" width="480" height="96" rx="18" fill="#12263a"/>
+    <text x="600" y="470" fill="#ffffff" font-size="17" font-weight="600" text-anchor="middle" letter-spacing="2">WHAT THE CUSTOMER BELIEVES</text>
+    <text x="600" y="505" fill="#c8f04b" font-size="28" font-weight="700" text-anchor="middle">YOUR PRODUCT PROMISE</text>
+    <path d="M600 526 V565" stroke="#12263a" stroke-width="4" fill="none"/>
+    <rect x="210" y="565" width="780" height="72" rx="16" fill="#f3f9df" stroke="#12263a" stroke-width="3"/>
+    <text x="600" y="594" fill="#12263a" font-size="17" font-weight="700" text-anchor="middle">TESTED FALLBACK</text>
+    <text x="600" y="620" fill="#40556b" font-size="18" font-weight="500" text-anchor="middle">Second provider · manual route · narrower promise · planned migration</text>
+  </g>
+  <text x="72" y="670" fill="#53677c" font-family="Space Grotesk, Arial, sans-serif" font-size="15">Map the dependency before the partner's decision becomes your customer incident.</text>
+</svg>
