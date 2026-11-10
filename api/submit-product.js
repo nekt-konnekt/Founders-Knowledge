@@ -14,6 +14,15 @@ function validUrl(value, label) {
   try { const u = new URL(value); if (u.protocol !== "https:" && u.protocol !== "http:") throw Error(); return u.toString(); }
   catch { throw Error("Please enter a valid URL for " + label + "."); }
 }
+function validProfileUrl(value, label, domains) {
+  const url = validUrl(value, label);
+  if (!url) return null;
+  const hostname = new URL(url).hostname.toLowerCase();
+  if (!domains.some(domain => hostname === domain || hostname.endsWith("." + domain))) {
+    throw Error("Please use a " + label + " profile URL.");
+  }
+  return url;
+}
 function notionProps(f) {
   const rich = v => ({ rich_text: [{ type: "text", text: { content: v } }] });
   const p = {
@@ -61,9 +70,9 @@ export default async function handler(req, res) {
   if (clean(b.companyWebsite)) return res.status(200).json({ ok: true });
   const f = {
     productName:clean(b.productName), founderName:clean(b.founderName), email:clean(b.email).toLowerCase(),
-    website:"", category:clean(b.category), stage:clean(b.stage), location:clean(b.location),
+    website:"", category:clean(b.category), customCategory:clean(b.customCategory), stage:clean(b.stage), location:clean(b.location),
     description:clean(b.description), problem:clean(b.problem), targetUsers:clean(b.targetUsers),
-    demo:"", linkedin:""
+    demo:"", linkedin:"", xProfile:""
   };
   const required = ["productName","founderName","email","category","stage","location","description","problem","targetUsers"];
   if (required.some(k => !f[k])) return res.status(400).json({ error: "Please complete all required fields." });
@@ -71,12 +80,15 @@ export default async function handler(req, res) {
   if (f.productName.length>120 || f.founderName.length>120 || f.email.length>254 || f.location.length>120 || f.description.length>280 || f.problem.length>2000 || f.targetUsers.length>500) return res.status(400).json({ error: "One or more fields exceed the allowed length." });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email)) return res.status(400).json({ error: "Please enter a valid contact email." });
   if (!categories.includes(f.category) || !stages.includes(f.stage)) return res.status(400).json({ error: "Please choose a valid category and product stage." });
-  try { f.website=validUrl(clean(b.website),"the product website"); f.demo=validUrl(clean(b.demo),"the demo link"); f.linkedin=validUrl(clean(b.linkedin),"the founder LinkedIn profile"); }
+  if (f.category === "Other" && !f.customCategory) return res.status(400).json({ error: "Please specify your product category." });
+  if (f.customCategory.length > 80) return res.status(400).json({ error: "Your custom category must be 80 characters or fewer." });
+  if (f.category !== "Other") f.customCategory = "";
+  try { f.website=validUrl(clean(b.website),"the product website"); f.demo=validUrl(clean(b.demo),"the demo link"); f.linkedin=validProfileUrl(clean(b.linkedin),"LinkedIn",["linkedin.com"]); f.xProfile=validProfileUrl(clean(b.xProfile),"X",["x.com","twitter.com"]); }
   catch (e) { return res.status(400).json({ error: e.message }); }
   try {
     const result = await database().query(
-      "INSERT INTO fk_product_submissions (product_name,founder_name,contact_email,product_website,category,product_stage,location,description,problem_solved,target_users,demo_url,founder_linkedin,consent_to_review,review_status,notion_sync_status) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,TRUE,'New','pending') RETURNING id",
-      [f.productName,f.founderName,f.email,f.website,f.category,f.stage,f.location,f.description,f.problem,f.targetUsers,f.demo,f.linkedin]
+      "INSERT INTO fk_product_submissions (product_name,founder_name,contact_email,product_website,category,custom_category,product_stage,location,description,problem_solved,target_users,demo_url,founder_linkedin,founder_x,consent_to_review,review_status,notion_sync_status) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,TRUE,'New','pending') RETURNING id",
+      [f.productName,f.founderName,f.email,f.website,f.category,f.customCategory || null,f.stage,f.location,f.description,f.problem,f.targetUsers,f.demo,f.linkedin,f.xProfile]
     );
     const id = result.rows[0].id;
     await syncNotion(id, f);
