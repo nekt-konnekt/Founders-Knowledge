@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">First-session activation funnel</title>
+  <desc id="desc">An illustrative cohort moves from 100 eligible sign-ups to 80 first sessions, 60 core tasks started, 42 completed tasks and 30 users reaching first value.</desc>
+  <rect width="1200" height="560" rx="28" fill="#f5f8fc"/>
+  <text x="64" y="78" fill="#172b4d" font-family="Arial, sans-serif" font-size="34" font-weight="700">Follow the user to the first outcome</text>
+  <text x="64" y="116" fill="#52627a" font-family="Arial, sans-serif" font-size="19">Illustrative cohort · same first-session window · unique users</text>
+  <g font-family="Arial, sans-serif">
+    <path d="M250 300 H278 M480 300 H508 M710 300 H738 M940 300 H968" stroke="#8da3bd" stroke-width="5" stroke-linecap="round"/>
+    <path d="M268 290 L280 300 L268 310 M498 290 L510 300 L498 310 M728 290 L740 300 L728 310 M958 290 L970 300 L958 310" fill="none" stroke="#8da3bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g>
+      <rect x="48" y="170" width="202" height="250" rx="20" fill="#ffffff" stroke="#c9d8e8" stroke-width="2"/>
+      <circle cx="82" cy="208" r="18" fill="#dcecff"/><text x="82" y="215" text-anchor="middle" fill="#1769aa" font-size="18" font-weight="700">1</text>
+      <text x="68" y="260" fill="#52627a" font-size="17" font-weight="700">ELIGIBLE</text><text x="68" y="284" fill="#172b4d" font-size="20" font-weight="700">SIGN-UPS</text>
+      <text x="68" y="354" fill="#1769aa" font-size="58" font-weight="700">100</text><text x="68" y="389" fill="#52627a" font-size="16">cohort denominator</text>
+    </g>
+    <g>
+      <rect x="278" y="170" width="202" height="250" rx="20" fill="#ffffff" stroke="#c9d8e8" stroke-width="2"/>
+      <circle cx="312" cy="208" r="18" fill="#dcecff"/><text x="312" y="215" text-anchor="middle" fill="#1769aa" font-size="18" font-weight="700">2</text>
+      <text x="298" y="260" fill="#52627a" font-size="17" font-weight="700">FIRST</text><text x="298" y="284" fill="#172b4d" font-size="20" font-weight="700">SESSION</text>
+      <text x="298" y="354" fill="#1769aa" font-size="58" font-weight="700">80</text><text x="298" y="389" fill="#52627a" font-size="16">80% of sign-ups</text>
+    </g>
+    <g>
+      <rect x="508" y="170" width="202" height="250" rx="20" fill="#ffffff" stroke="#c9d8e8" stroke-width="2"/>
+      <circle cx="542" cy="208" r="18" fill="#e4e8ff"/><text x="542" y="215" text-anchor="middle" fill="#4b55ad" font-size="18" font-weight="700">3</text>
+      <text x="528" y="260" fill="#52627a" font-size="17" font-weight="700">CORE TASK</text><text x="528" y="284" fill="#172b4d" font-size="20" font-weight="700">STARTED</text>
+      <text x="528" y="354" fill="#4b55ad" font-size="58" font-weight="700">60</text><text x="528" y="389" fill="#52627a" font-size="16">75% of first sessions</text>
+    </g>
+    <g>
+      <rect x="738" y="170" width="202" height="250" rx="20" fill="#ffffff" stroke="#c9d8e8" stroke-width="2"/>
+      <circle cx="772" cy="208" r="18" fill="#e0f3ed"/><text x="772" y="215" text-anchor="middle" fill="#16795f" font-size="18" font-weight="700">4</text>
+      <text x="758" y="260" fill="#52627a" font-size="17" font-weight="700">CORE TASK</text><text x="758" y="284" fill="#172b4d" font-size="20" font-weight="700">COMPLETED</text>
+      <text x="758" y="354" fill="#16795f" font-size="58" font-weight="700">42</text><text x="758" y="389" fill="#52627a" font-size="16">70% of task starters</text>
+    </g>
+    <g>
+      <rect x="968" y="170" width="202" height="250" rx="20" fill="#ffffff" stroke="#80c9b4" stroke-width="3"/>
+      <circle cx="1002" cy="208" r="18" fill="#d8f3e9"/><text x="1002" y="215" text-anchor="middle" fill="#16795f" font-size="18" font-weight="700">5</text>
+      <text x="988" y="260" fill="#52627a" font-size="17" font-weight="700">FIRST VALUE</text><text x="988" y="284" fill="#172b4d" font-size="20" font-weight="700">REACHED</text>
+      <text x="988" y="354" fill="#16795f" font-size="58" font-weight="700">30</text><text x="988" y="389" fill="#52627a" font-size="16">71.4% of completers</text>
+    </g>
+  </g>
+  <rect x="48" y="456" width="1122" height="58" rx="14" fill="#e7eef8"/>
+  <text x="72" y="492" fill="#172b4d" font-family="Arial, sans-serif" font-size="19" font-weight="700">First-session activation: 30 ÷ 80 = 37.5%</text>
+  <text x="650" y="492" fill="#52627a" font-family="Arial, sans-serif" font-size="19">Sign-up-to-value: 30 ÷ 100 = 30%</text>
+</svg>
