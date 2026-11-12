@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How to judge product completeness, choose between MVP, beta and launch, recruit testers, and measure useful learning before a wider release.">
+  <meta name="description" content="How to judge product readiness, run a useful beta, and measure whether new users reach first value—not just sign up.">
   <meta name="theme-color" content="#2e9bff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="shortcut icon" href="/favicon.svg">
@@ -14,18 +14,18 @@
     "@context":"https://schema.org",
     "@type":"Article",
     "headline":"When Is Your Product Ready to Launch?",
-    "description":"How to judge product completeness, choose between MVP, beta and launch, recruit testers, and measure useful learning before a wider release.",
+    "description":"How to judge product readiness, run a useful beta, and measure whether new users reach first value—not just sign up.",
     "mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/complete-product-launch-beta/",
     "publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},
     "isPartOf":{"@type":"CreativeWorkSeries","name":"Product Readiness and Launch","url":"https://founders-knowledge.vercel.app/library/"},
     "position":1,
-    "datePublished":"2026-10-11","dateModified":"2026-10-22","inLanguage":"en"
+    "datePublished":"2026-10-11","dateModified":"2026-11-12","inLanguage":"en"
   }
   </script>
   <meta property="og:site_name" content="Founders Knowledge">
   <meta property="og:type" content="article">
   <meta property="og:title" content="When Is Your Product Ready to Launch? — Founders Knowledge">
-  <meta property="og:description" content="How to judge product completeness, choose between MVP, beta and launch, recruit testers, and measure useful learning before a wider release.">
+  <meta property="og:description" content="How to judge product readiness, run a useful beta, and measure whether new users reach first value—not just sign up.">
   <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/complete-product-launch-beta/">
   <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fcomplete-product-launch-beta.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=8561a1cdaf">
   <meta property="og:image:width" content="1200">
@@ -33,7 +33,7 @@
   <meta property="og:image:alt" content="Founders Knowledge — When Is Your Product Ready to Launch?">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="When Is Your Product Ready to Launch? — Founders Knowledge">
-  <meta name="twitter:description" content="How to judge product completeness, choose between MVP, beta and launch, recruit testers, and measure useful learning before a wider release.">
+  <meta name="twitter:description" content="How to judge product readiness, run a useful beta, and measure whether new users reach first value—not just sign up.">
   <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fcomplete-product-launch-beta.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=8561a1cdaf">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@
           <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> PRODUCT DECISIONS <span class="lesson-separator">/</span> PART 1 OF 2</p>
           <h1>When Is Your Product Ready to Launch<span>?</span></h1>
           <p class="lesson-dek">What makes a product complete? When should you launch, and when is beta useful? Learn to judge readiness, reduce risk, and test the promise before adding more.</p>
-          <div class="lesson-meta"><span>◷ 8 minute read</span><span>✳ Practical founder guide</span><span>Published 11 October 2026</span></div>
+          <div class="lesson-meta"><span>◷ 10 minute read</span><span>✳ Practical founder guide</span><span>Published 11 October 2026 · Updated 12 November 2026</span></div>
         </div>
         <div class="lesson-cover-art" aria-hidden="true">
           <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
@@ -77,6 +77,7 @@
           <a href="#stages">04 <span>Prototype to launch</span></a>
           <a href="#testers">05 <span>How many testers?</span></a>
           <a href="#measure">06 <span>What to measure</span></a>
+          <a href="#first-session-activation">06a <span>First-session activation</span></a>
           <div class="sidebar-note"><span>✳</span><p>Build enough to test the promise—not every feature you can imagine.</p></div>
         </div>
       </aside>
@@ -175,6 +176,51 @@
           </ul></div>
           <p>Your measurements should follow the product's promise. A product used daily requires different retention measures from one used for an annual task.</p>
           <p>For an early-stage product, a small number of carefully observed users can be more informative than a large number of anonymous sign-ups.</p>
+
+          <div id="first-session-activation">
+            <h3>A sign-up is not an activation event</h3>
+            <p>Activation is the first observable moment a new user receives the outcome your product promised. It is not automatically a registration, page view, completed profile, imported contact list, or button click. Those events may be steps on the way to value; they are not proof that value arrived.</p>
+            <p>Write the event in plain language before opening an analytics dashboard: <strong>“A [specific user] receives [specific outcome] after [observable action].”</strong> For an invoicing tool, that might be an invoice sent to a customer—not an account created or an invoice form opened. For stock software, it might be a recorded stock movement that produces a correct updated balance. For a booking tool, it might be a booking confirmed and visible to the customer.</p>
+            <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Measure the outcome, not the interface</strong><p>If your activation event is “clicked the dashboard” or “opened the create screen”, you are measuring navigation. Choose the earliest event that proves the user received the core benefit.</p></div></div>
+            <figure style="margin:1.5rem 0;">
+              <img src="/assets/illustrations/first-session-activation-funnel.svg" alt="Illustrative first-session funnel: 100 eligible sign-ups, 80 first sessions, 60 core tasks started, 42 tasks completed and 30 users reaching first value." style="display:block;width:100%;height:auto;border-radius:18px;">
+              <figcaption style="margin-top:.65rem;font-size:.9rem;line-height:1.5;color:#596579;">Illustrative cohort only—not a benchmark. Count unique eligible users through the same observation window.</figcaption>
+            </figure>
+            <div class="lesson-question-card">
+              <p class="question-card-title">WORKED EXAMPLE · 100 ELIGIBLE SIGN-UPS</p>
+              <ul>
+                <li><strong>80</strong> start a first session — 80% of eligible sign-ups.</li>
+                <li><strong>60</strong> start the core task — 75% of first-session starters.</li>
+                <li><strong>42</strong> complete the core task — 70% of task starters.</li>
+                <li><strong>30</strong> reach the first-value event — 71.4% of task completers.</li>
+              </ul>
+              <p><strong>First-session activation:</strong> 30 ÷ 80 = 37.5% of users who started a first session.</p>
+              <p><strong>Sign-up-to-value:</strong> 30 ÷ 100 = 30% of eligible sign-ups.</p>
+            </div>
+            <p>Keep both rates. The first isolates what happens after someone begins using the product; the second includes people who signed up but never started a session. Do not quietly change the denominator between reports. These figures are invented to show the calculation, not measured results or an industry target.</p>
+            <h3>Make the funnel honest</h3>
+            <div class="lesson-question-card"><ul>
+              <li><strong>Use one cohort and one window.</strong> Decide who counts as a new eligible user and whether activation must happen in the first session, within 24 hours, or within a longer period that matches the job. State the rule and apply it consistently.</li>
+              <li><strong>Count people, not event volume.</strong> If one person sends five invoices in the first session, that is still one activated user. Use unique user IDs at each step and keep the order of events explicit.</li>
+              <li><strong>Separate roles and routes.</strong> A buyer and seller on a marketplace have different first-value events. An invited employee and a self-serve account owner may also have different journeys. Do not blend them into one funnel and then guess why it leaks.</li>
+              <li><strong>Separate user and account activation.</strong> In B2B software, one administrator completing a task does not prove the whole business has adopted the workflow. If the promise depends on a team, define a separate account-level event—such as a second role completing the next handoff.</li>
+              <li><strong>Record assistance.</strong> Mark whether activation was self-serve, guided by in-product help, or completed with founder/customer-success intervention. Human help can be appropriate, especially in complex B2B products, but its time and cost should not be hidden inside a self-serve rate.</li>
+            </ul></div>
+            <h3>Instrument only what you need</h3>
+            <p>A small event set is usually enough to begin: <code>user signed up</code>, <code>core task started</code>, <code>core task completed</code>, and the event that confirms first value. Add properties that help explain differences—cohort date, acquisition route, user role, device class, assistance type and a pseudonymous account ID where relevant. Avoid collecting names, phone numbers, emails or customer content just to calculate activation.</p>
+            <p>Use a stable pseudonymous user identifier across events; for a multi-user business product, keep a separate opaque account identifier. Event names should describe what happened in the business, not merely which screen or button was clicked. PostHog's documentation gives practical examples of event capture, event properties and account/group analysis, while its funnel guide explains step order, conversion windows and the difference between overall and previous-step conversion. These are implementation references, not universal activation standards.</p>
+            <h3>Choose the next fix from the evidence</h3>
+            <ol>
+              <li>Find the step where the largest number of eligible users are lost, then compare its conversion with the previous step.</li>
+              <li>Inspect a few successful and unsuccessful journeys around that step. Check device, network conditions, user role and acquisition route only where the sample is large enough to be useful.</li>
+              <li>Speak to users who stopped. Ask what they were trying to do, what happened, and what they did next—not what feature they want you to build.</li>
+              <li>Change one meaningful source of friction, then compare a new cohort using the same event definition and observation window.</li>
+            </ol>
+            <p>A low percentage is not automatically the biggest opportunity: a small drop-off may affect very few people, while a modest loss at an early step may affect many. Analytics can locate the leak; observation and conversation help explain it. Small cohorts are directional evidence, not proof that one device, channel or user type causes the problem.</p>
+            <p>Finally, first-session activation is not retention. It tells you whether a new user reached value once. For a product whose job recurs, measure whether that person returns when the job is due. For a weekly stock count, a weekly return may matter; for an annual compliance task, daily active use would be a misleading target.</p>
+            <p><a class="button button-primary" href="/resources/activation-funnel-worksheet.csv" download>Download the Activation Funnel Worksheet (CSV)</a></p>
+            <p><strong>Measurement references:</strong> <a href="https://posthog.com/docs/product-analytics/funnels" target="_blank" rel="noopener noreferrer">PostHog — Funnels</a>; <a href="https://posthog.com/docs/product-analytics/capture-events" target="_blank" rel="noopener noreferrer">Capturing events and event properties</a>; <a href="https://posthog.com/docs/product-analytics/group-analytics" target="_blank" rel="noopener noreferrer">Group analytics for account-level analysis</a>. Read the tool's session and conversion-window definitions before treating its default reports as first-session activation.</p>
+          </div>
         </section>
         <div class="lesson-exercise"><p class="section-number">PART 1 TAKEAWAY</p><h2>Build enough to test the promise.</h2><p>A product does not need every feature to be complete enough to test. It needs to deliver its central outcome, work reliably enough for the context, and let you learn from the people it is meant to serve.</p><p>Use the readiness checklist in Part 2 to decide what to do when you launch, how to interpret what happens, and when to improve, reposition, or change direction.</p><div class="lesson-callout callout-lilac"><span class="callout-icon">02</span><div><strong>Continue to Part 2: You launched. Now what?</strong><p>Learn how to handle bugs, diagnose low traction, decide when beta is over, and define a successful launch.</p></div></div><a class="button button-primary" href="/lessons/you-launched-now-what/">Read Part 2: You launched. Now what?</a></div>
       </article>
