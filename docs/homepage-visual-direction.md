@@ -1,32 +1,35 @@
-# Founders Knowledge — expressive editorial design system
+# Founders Knowledge — expressive neo-brutalist design system
 
-Status: active implementation direction for full-site review.
+Status: selected visual direction; implementation deployed to preview for review.
 
 ## Design direction
-A confident, reader-first editorial publication with the visual energy of contemporary product storytelling. Use the supplied Bolt references as inspiration for rhythm, asymmetry, bold typography, compact story previews and memorable visual moments—not as a template to copy. FK is a knowledge publication, not a checkout product site.
+Reference 01 — expressive neo-brutalism. FK should feel like an independent African knowledge publication with confidence, warmth, humour and a recognisable graphic voice. Borrow the reference's bold illustration, thick outlines, playful graphic devices, bright colours and personality; do not copy its exact layouts or turn FK into a novelty landing page. The knowledge remains serious, practical and evidence-led.
 
 ## Visual language
-- Warm paper and cream surfaces, deep forest/charcoal ink, restrained sage and vivid lime accents.
-- Bold Manrope display typography with DM Sans body copy.
-- Asymmetric editorial bento layouts mixed with spacious long-form reading pages.
-- Subject-led photography, conceptual CSS artwork and custom illustrations where they help explain an idea.
-- Strong contrast between featured stories and supporting cards; avoid identical grids of generic cards.
-- Short, useful previews and clear invitations to read, explore or apply.
-- Keep the design expressive without letting decoration compete with the knowledge.
+- Warm cream/paper foundation with deep near-black ink and strong 2–3px outlines.
+- Bright orange as the primary accent, supported by turquoise, pink, yellow and occasional blue.
+- Oversized, heavy, condensed-feeling display headlines paired with highly readable body typography.
+- Thick borders, offset hard shadows, sticker-like labels, badges, bursts, stars, geometric shapes and playful graphic annotations.
+- Asymmetric editorial layouts with varied card sizes and strong visual hierarchy; avoid repetitive generic grids.
+- Original, subject-specific illustrations and purposeful diagrams as the default lead-visual direction; use relevant real photography when it provides stronger evidence or context.
+- Never use generic stock imagery as decoration. Visuals must explain, contextualise or make the subject easier to remember.
+- Long-form article body remains comfortable, calm and accessible; expressive styling should frame the reading, not obstruct it.
 
 ## Content presentation
-- Homepage: a clear publication promise followed by a curated, asymmetric set of featured stories across business, distribution, product, technology and operations.
-- Library: useful browsing and filtering remain primary; use editorial hierarchy rather than a chronological feed.
-- Articles: clear category, headline, reader-focused dek, date and reading time; subject-relevant cover visual; comfortable reading column; practical callouts, sources and takeaway.
-- Use different visual treatments when the subject calls for it. Not every article needs a photograph or illustration.
+- Homepage: confident publication promise, strong featured lesson artwork and a curated, asymmetric collection of founder problems.
+- Library and briefings: colourful editorial cards, clear category labels, strong borders and useful previews; preserve search and filtering.
+- Articles: bold cover treatment, legible headline and reader promise, category/date/reading time, purposeful lead visual, readable body, practical callouts, sources and takeaway.
+- Each published lesson should have a subject-specific cover visual. Prefer an original illustration or diagram; use licensed/attributed photography where appropriate. If a bespoke visual is not ready, use a designed CSS illustration tied to the lesson topic—not an unrelated photo or empty placeholder.
+- Visual language should vary with the subject while retaining shared FK tokens and components.
 
 ## Components and behaviour
-Keep navigation, search, filters, submission forms, authentication, analytics, structured data, URLs, sharing and publishing workflows functional. Maintain keyboard access, readable contrast, responsive layouts and reduced-motion support.
+Keep navigation, search, filters, submission forms, authentication, analytics, structured data, URLs, sharing and publishing workflows functional. Maintain keyboard access, readable contrast, responsive layouts and reduced-motion support. Respect image licensing, descriptive alt text and captions/credits where required.
 
 ## Acceptance checks
-- No remnants of the old playful pastel course-platform styling.
-- Homepage feels distinctive, lively and easy to explore without resembling a SaaS landing page.
-- Editorial cards are asymmetric and visually varied; article pages remain focused and readable.
-- Visuals are relevant to the subject, properly attributed and accessible.
-- Search, filters, sharing, product submission and review workflows remain operational.
+- Clear Reference 01 character: bright, playful, graphic, thickly outlined and memorable.
+- No restrained sage/forest-green photography-led theme remains as the dominant visual language.
+- No childish clutter: the content and evidence remain the focus.
+- Homepage, library, briefings, product discovery/reviews and lesson pages share the same visual system.
+- Every lesson cover visual is relevant to its actual subject.
+- Search, filters, sharing, submission and review workflows remain operational.
 - Desktop and mobile layouts are inspected before merge; production is verified only after deployment and live-page inspection.
