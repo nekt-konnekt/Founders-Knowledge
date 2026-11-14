@@ -256,6 +256,7 @@ The Notion calendar's **A Busy Business Is Not Necessarily a Profitable Business
 
 Evidence guardrails:
 - IFRS Foundation IAS 7 paragraphs 18–20 support the adjustment of profit for inventory, receivables and payables when explaining operating cash flow.
+- ACCA's working-capital guidance supports the cash operating cycle formula and explains the trade-offs in inventory, receivables and payables; a shorter cycle is not always better if it harms supplier terms or causes stockouts.
 - World Bank's 2025 Nigeria Enterprise Survey indicator reports 8.4% of firms using bank loans to finance working capital. This is a formal-sector indicator for registered firms with at least five workers, not all informal microbusinesses or every source of working capital.
 - PwC's July 2024 report surveyed 557 MSME operators online in 2022; 40% of respondents named working capital as their loan purpose. Do not compare this directly with the World Bank indicator.
 - IFC's November 2022 Nigeria supply-chain assessment describes payment delays and a representative supply chain; its timing ranges are not universal contract terms.
