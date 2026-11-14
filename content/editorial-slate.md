@@ -1,6 +1,6 @@
 # Founders Knowledge — Weekly Editorial Slate
 
-**Week:** Saturday 2026-10-24 → Wednesday 2026-11-18 (rolling 7-day horizon, extended 2026-11-13) · **Drafted:** Fri 2026-10-23
+**Week:** Saturday 2026-10-24 → Saturday 2026-11-21 (rolling 7-day horizon, extended 2026-11-14) · **Drafted:** Fri 2026-10-23
 **Format per day (PIVOT 2026-10-30):** 1 Flagship lesson that passes the **Understand / Build / Do** gate · Briefings in **Signal → So What → Do Next** form — all angled at **early founders** (pre-seed/seed, small teams). **Teardowns are retired as a category** (company stories become worked examples inside lessons, or evidence only). **Practicals are flagship-eligible.**
 **Source tags:** (C) = confirmed by primary/official source or company statement · (R) = reported by reputable press, not independently verified · (D) = dataset figure — trackers differ, cite the tracker by name.
 **Briefing rule (converted 2026-10-30):** every brief must carry **Signal** (what happened, ~2 lines, dated, sourced) → **So What** (what it means for an early founder) → **Do Next** (one specific action, check, or watch-item). A signal that cannot fill So What and Do Next does not publish. Themes below are watch-candidates, not predicted news.
@@ -215,8 +215,8 @@
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
-| Flagship | **The 30-Minute Weekly Numbers Review** (flagship-eligible practical, promoted from Wed 28 Oct) | Five numbers, one page, same time every week: the meeting-with-yourself that catches cash, sales, and product problems while they are still cheap. Understand: why a weekly review catches what a monthly one misses. Build: the one-page, five-number review ritual. Do next: run the first review this Monday and put it in the calendar. | Evergreen. Deliberately complements the FX lesson's Monday check and the 13 Nov cash-sheet flagship without repeating either: the FX check is one line in the review, the cash sheet is the tool, this is the ritual. | Saturday evergreen, in the Saturday pattern. Pairs with the 7 Nov FX flagship (that lesson prices one cost; this is the review that catches all of them). |
-| Briefing | Morning-scan pick | — | **Watch:** (1) Digital Nigeria Builders' Festival outcomes (Abuja, 10–12 Nov); (2) NSIA–JICA fund manager appointment (RFP stage at 28 Oct — do not report one before it exists). **Fallback:** "How one deal can bend a statistic." | Briefs in Signal → So What → Do Next form only. |
+| Flagship | **The 30-Minute Weekly Numbers Review** (flagship-eligible practical, promoted from Wed 28 Oct) — ✅ **PUBLISHED 2026-11-14** ([live](https://founders-knowledge.vercel.app/lessons/weekly-numbers-review/)) — commit PENDING-SHA. | Five numbers, one page, same time every week: the meeting-with-yourself that catches cash, sales, and product problems while they are still cheap. Understand: why a weekly review catches what a monthly one misses. Build: the one-page, five-number review ritual. Do next: run the first review this Monday and put it in the calendar. | Evergreen. Deliberately complements the FX lesson's Monday check and the 13 Nov cash-sheet flagship without repeating either: the FX check is one line in the review, the cash sheet is the tool, this is the ritual. | Saturday evergreen, in the Saturday pattern. Pairs with the 7 Nov FX flagship (that lesson prices one cost; this is the review that catches all of them). |
+| Briefing | Morning-scan pick — ✅ **PUBLISHED 2026-11-14 (4 briefs)** — commit PENDING-SHA. | — | Published: (1) DBN $275m climate finance programme for MSMEs — money via partner banks; (2) Enza AI Africa Fund first close $21m of $60m target, first cheques 2027; (3) Google Africa Applied AI Lab picks 10 startups, demo day December in Accra; (4) AfDB $150m to Equity Bank Kenya for SME lending, ~9,000 loans by 2030. Held, not briefed: MARL demo-day outcomes (still no reporting found); Farmerlifeline $50k grant (thin founder action); CANEX Create-thon winners (event 6 Nov; CANEX $2bn already briefed 6 Nov); Lumepay $6m, Journify $12m, Yoco $100m (deal-list items); data localisation (no fresh development; flagship checklist lands 15 Nov). | Briefs in Signal → So What → Do Next form only. |
 
 ## Sun 2026-11-15
 
@@ -245,6 +245,28 @@
 |---|---|---|---|---|
 | Flagship | **The Hiring Scorecard: Assessing Delivery, Adaptability and Track Record** (flagship-eligible practical, carried from Thu 12 Nov — no desk run that day) | A one-page scorecard for early hires, built from the criteria larger companies actually assess against — delivery, adaptability, work quality, track record, service length — adapted to a team with no HR department. Understand: why a gut-feel hire fails at the first hard month. Build: a scorecard you can run without HR. Do next: score your next hire on the five criteria before the offer. | (R) Moniepoint assessment criteria as reported Oct 27–28 2026; evergreen method otherwise. No salary figures without a named, dated source. | Pairs with the 5 Nov org-shape flagship without repeating it (that lesson is org shape; this is the hiring instrument). Distinct from the Oct 27 hiring flagship (sequence) and the Nov 8 reference-call flagship (verification). |
 | Briefing | Morning-scan pick | — | **Watch:** (1) Magna report lands 18 Nov — read for sectors investors asked about; (2) Techstars Spring 2027 applications close 18 Nov; (3) Kenya VASP enforcement posture after the 4 Nov deadline. **Fallback:** "What 'data localisation' actually covers — and what it doesn't." | Briefs in Signal → So What → Do Next form only. |
+
+
+## Thu 2026-11-19
+
+| Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
+|---|---|---|---|---|
+| Flagship | **The Quiet Customer: How to Spot Churn Before the Cancellation** (new from the founder-problem backlog — operations) | Silence is the first churn signal, not the cancellation. Understand: why a quiet customer is a warning, not a lost cause. Build: a quiet-customer list with a call rule. Do next: call three quiet customers this week. | Evergreen. Method only — no external figures needed. Illustrative numbers must be labelled hypothetical per the standard. | Pairs with the 14 Nov numbers-review flagship (the quiet-customer number) without repeating it (that lesson is the review; this is the save). Pairs with the 8 Nov reference-call flagship (that lesson verifies people; this one saves customers). |
+| Briefing | Morning-scan pick | — | **Watch:** (1) iDICE Startup Summit outcomes (Lagos, 18 Nov); (2) Magna report (due 18 Nov) — read for sectors investors asked about. **Fallback:** "How one deal can bend a statistic." | Briefs in Signal → So What → Do Next form only. |
+
+## Fri 2026-11-20
+
+| Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
+|---|---|---|---|---|
+| Flagship | **What a Grant Really Costs: The Hidden Work Behind Free Money** (new from the founder-problem backlog — money) | A grant is a contract with reporting costs, not free money. Understand: what "free" actually obliges you to do. Build: a grant-cost sheet (hours, reports, restrictions). Do next: price the reporting hours before you apply. | (R) NiYA and Cascador ₦5m each, no shares (briefed 11 Nov); NIMASA free accelerator (briefed 13 Nov); Farmerlifeline $50k Innovate Africa Challenge grant (held 14 Nov) — evidence only, not the subject. Evergreen method otherwise. | Pairs with the 11 Nov accelerator-maths flagship (that lesson prices an offer; this one prices a grant). Never present a grant as cash in hand before the terms are read. |
+| Briefing | Morning-scan pick | — | **Watch:** (1) iDICE Summit Ilorin leg (23 Nov) — registration still open; (2) CBN stablecoin 30-day registration clock (runs to ~5 Dec). **Fallback:** "What 'data localisation' actually covers — and what it doesn't." | Briefs in Signal → So What → Do Next form only. |
+
+## Sat 2026-11-21
+
+| Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
+|---|---|---|---|---|
+| Flagship | **Your First Ten Customers Are a Research Project, Not a Sales Target** (new from the founder-problem backlog — product) | The first ten teach you what to build. Understand: why early customers are evidence, not revenue. Build: a ten-customer interview log. Do next: interview two customers this week with three questions. | Evergreen. Method only — no external figures needed. Illustrative examples must be labelled hypothetical per the standard. | Pairs with validate-the-idea without repeating it (that lesson validates before building; this one learns after launching). Saturday evergreen, in the Saturday pattern. |
+| Briefing | Morning-scan pick | — | **Watch:** (1) NSIA–JICA fund manager appointment (RFP stage at 28 Oct — do not report one before it exists); (2) Techstars Spring 2027 cohort news after the 18 Nov close. **Fallback:** "How one deal can bend a statistic." | Briefs in Signal → So What → Do Next form only. |
 
 ## Coverage check
 
