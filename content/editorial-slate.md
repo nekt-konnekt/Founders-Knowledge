@@ -1,9 +1,9 @@
 # Founders Knowledge — Weekly Editorial Slate
 
-**Week:** Saturday 2026-10-24 → Saturday 2026-11-21 (rolling 7-day horizon, extended 2026-11-14) · **Drafted:** Fri 2026-10-23
-**Format per day (PIVOT 2026-10-30):** 1 Flagship lesson that passes the **Understand / Build / Do** gate · Briefings in **Signal → So What → Do Next** form — all angled at **early founders** (pre-seed/seed, small teams). **Teardowns are retired as a category** (company stories become worked examples inside lessons, or evidence only). **Practicals are flagship-eligible.**
+**Week:** Saturday 2026-10-24 → Sunday 2026-11-22 (rolling 7-day horizon, extended 2026-11-15) · **Drafted:** Fri 2026-10-23
+**Format per day (LESSONS ONLY, 2026-11-14):** 1 Flagship lesson that passes the **Understand / Build / Do** gate, angled at **early founders** (pre-seed/seed, small teams). The briefings stream is STOPPED — no new briefs; the 53 live briefs stay as an archive. **Teardowns are retired as a category** (company stories become worked examples inside lessons, or evidence only). **Practicals are flagship-eligible.**
 **Source tags:** (C) = confirmed by primary/official source or company statement · (R) = reported by reputable press, not independently verified · (D) = dataset figure — trackers differ, cite the tracker by name.
-**Briefing rule (converted 2026-10-30):** every brief must carry **Signal** (what happened, ~2 lines, dated, sourced) → **So What** (what it means for an early founder) → **Do Next** (one specific action, check, or watch-item). A signal that cannot fill So What and Do Next does not publish. Themes below are watch-candidates, not predicted news.
+**Briefing rule (STOPPED 2026-11-14):** the briefings stream is retired. Do not add briefing rows; convert a briefing candidate into a lesson framing or drop it. The 53 live briefs stay as an archive.
 **Pivot rule (2026-10-30):** FK explains, it does not report. The morning scan no longer picks or displaces the flagship — it supplies evidence/pegs for the chosen lesson and signals for briefings. Displacement is allowed only for a genuinely urgent founder decision (e.g. a rule/deadline to act on within ~30 days), with the reason logged. Headlines name the founder's problem, decision, or consequence — never a company + event.
 
 ---
@@ -165,7 +165,7 @@
 5. **Briefing theme — Local cloud and data-centre capacity deals.** Any announced capacity/partnership moves ahead of Jan 1 2027 localisation; fallback explainer on Nigeria's sub-1% share of global data centres (NDPC remarks, Oct 12 — reported).
 6. **Practical — The Reference-Call Swap: Hiring Checks That Work in Informal Markets.** Structured back-channel references for markets where formal HR trails are thin. Pairs with Tue's flagship without repeating it.
 7. **Teardown — Jumia's $50m equity raise (2026).** A listed incumbent returning to equity markets while smaller rivals starve: what public-market access changes about competitive pressure on early commerce founders. (D: Big Deal deal lists.)
-8. **Flagship — Senegal's Quiet Year: What Happens When a Market Falls Off the Funding Map.** Senegal fell from $153m to ~$5m (Q1–Q3, Big Deal) — geographic concentration risk and the case for building revenue-first outside the Big Four. (D) — strong evergreen-leaning flagship if a weekday flagship falls through.
+8. **Flagship — Senegal's Quiet Year: What Happens When a Market Falls Off the Funding Map.** — ✅ **SCHEDULED Sun 2026-11-22** as “When Your Market Falls Off the Funding Map”. Senegal fell from $153m to ~$5m (Q1–Q3, Big Deal) — geographic concentration risk and the case for building revenue-first outside the Big Four. (D) — strong evergreen-leaning flagship if a weekday flagship falls through.
 9. **Flagship — The Liquidity Question: Share-Backed Loans and What Early Founders Owe Their Teams.** Flutterwave employees can now borrow against vested shares via a programme with Techdollar (US private credit), 6–12 month loans under half the share value at 0.8–1.5%/month, disbursed via Nuvion (C: TechCabal, Oct 22, 2026 — CEO statement quoted). Moniepoint and Arnergy let staff sell equity at a discount during 2025 raises; 181 verified VC-backed exits 2011–2026, ~6.2 years average hold (R: Stears/Ventures Platform via TechCabal). Angle: the "paper-wealth-but-no-cash" employee problem arrives long before any exit — how early founders handle employee liquidity (discounted secondaries, loan schemes, honest expectations at offer stage) is talent retention, not HR. Held from Sat 2026-10-24 scan — was the strongest challenger but not a funding story, so it did not clear the displacement bar. Fresh hook; publish while Q4.
 
 
@@ -222,29 +222,25 @@
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
-| Flagship | **The Data-Localisation Checklist: Where Does Your Startup's Data Actually Live?** (flagship-eligible practical, promoted from Fri 30 Oct) | Even pre-fintech, map it now: a one-afternoon audit of where customer and payment data sits (hosting, backups, analytics, support tools) before a partner, licence, or the Jan 1 2027 rules force the question. Understand: what the Jan 1 rule actually covers. Build: the one-afternoon data map. Do next: the audit checklist. | (C) CBN circular 15 Jun 2026 and the no-extension restatement (Punch, Oct 12); (C) National Digital Cloud Policy (Aug 2026) via NITDA; TechCabal's overlap analysis (Sep 28) as the map of the two regimes. | Timely: Jan 1 2027 deadline is seven weeks out; Dec 31 share-cap compliance the day before. Scope carefully: full localisation binds regulated payment firms; the checklist is for awareness and partner-readiness, not legal advice. |
-| Briefing | Morning-scan pick | — | **Watch:** (1) Digital Nigeria Builders' Festival outcomes (Abuja, 10–12 Nov); (2) NSIA–JICA fund manager appointment (RFP stage at 28 Oct — do not report one before it exists). **Fallback:** "What 'data localisation' actually covers — and what it doesn't." | Briefs in Signal → So What → Do Next form only. |
+| Flagship | **Where Does Your Startup's Data Actually Live?** (the data-localisation checklist; flagship-eligible practical, promoted from Fri 30 Oct) — ✅ **PUBLISHED 2026-11-15** ([live](https://founders-knowledge.vercel.app/lessons/data-localisation-checklist/)) — commit ae0972c5. | Even pre-fintech, map it now: a one-afternoon audit of where customer and payment data sits (hosting, backups, analytics, support tools) before a partner, licence, or the Jan 1 2027 rules force the question. Understand: what the Jan 1 rule actually covers. Build: the one-afternoon data map. Do next: the audit checklist. | (C) CBN circular 15 Jun 2026 and the no-extension restatement (Punch, Oct 12); (C) National Digital Cloud Policy (Aug 2026) via NITDA; TechCabal's overlap analysis (Sep 28) as the map of the two regimes. | Timely: Jan 1 2027 deadline is seven weeks out; Dec 31 share-cap compliance the day before. Scope carefully: full localisation binds regulated payment firms; the checklist is for awareness and partner-readiness, not legal advice. |
 
 ## Mon 2026-11-16
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
 | Flagship | **When Your Partner Gets Bought: What Changes When the Company Behind Your Rails Changes Hands** (converted from flex pool #1 — teardown retired; Nedbank/NCBA is the worked example, not the subject) | An acquisition buys people as much as platforms. Understand: your partnership is with people, not a logo. Build: a continuity checklist for partner deals. Do next: ask who stays after the deal closes — and get the answer in writing before you build on the partnership. | (R) Nedbank completed its 66% buy-in to Kenya's NCBA, 5 Nov 2026 (Stock Exchange News Service); LOOP chief executive reported leaving for Absa. Verify against bank statements before publishing any figure. | Pairs with the 10 Nov partner-dependency flagship without repeating it (that lesson is the test; this is the acquisition case). Do not report a sale that has not happened; the NCBA buy-in is complete, the LOOP move is reported. |
-| Briefing | Morning-scan pick | — | **Watch:** (1) Digital Nigeria Builders' Festival Deal Room outcomes (10–12 Nov); (2) Magna report due 18 Nov. **Fallback:** "What 'data localisation' actually covers — and what it doesn't." | Briefs in Signal → So What → Do Next form only. |
 
 ## Tue 2026-11-17
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
 | Flagship | **Build It or Rent It: The Real Cost of Writing Code You Have to Keep** (new from the founder-problem backlog — technology choices) | The real cost of building is maintenance, not the build week. Understand: build-vs-buy is a maintenance decision, not a speed decision. Build: a one-page build-vs-buy sheet priced in maintenance hours. Do next: price one real build-vs-buy choice on maintenance, not build time, before the next sprint. | Evergreen. Method only — no external figures needed. Illustrative numbers must be labelled hypothetical per the standard. | Not in the library: no existing lesson covers build-vs-buy. Pairs with the affordable-computing and hosting lessons without repeating them (those are about where code runs; this is about whether to write it). |
-| Briefing | Morning-scan pick | — | **Watch:** (1) Magna report lands 18 Nov — read for sectors investors asked about; (2) CBN stablecoin 30-day registration clock (runs to ~5 Dec). **Fallback:** "How one deal can bend a statistic." | Briefs in Signal → So What → Do Next form only. |
 
 ## Wed 2026-11-18
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
 | Flagship | **The Hiring Scorecard: Assessing Delivery, Adaptability and Track Record** (flagship-eligible practical, carried from Thu 12 Nov — no desk run that day) | A one-page scorecard for early hires, built from the criteria larger companies actually assess against — delivery, adaptability, work quality, track record, service length — adapted to a team with no HR department. Understand: why a gut-feel hire fails at the first hard month. Build: a scorecard you can run without HR. Do next: score your next hire on the five criteria before the offer. | (R) Moniepoint assessment criteria as reported Oct 27–28 2026; evergreen method otherwise. No salary figures without a named, dated source. | Pairs with the 5 Nov org-shape flagship without repeating it (that lesson is org shape; this is the hiring instrument). Distinct from the Oct 27 hiring flagship (sequence) and the Nov 8 reference-call flagship (verification). |
-| Briefing | Morning-scan pick | — | **Watch:** (1) Magna report lands 18 Nov — read for sectors investors asked about; (2) Techstars Spring 2027 applications close 18 Nov; (3) Kenya VASP enforcement posture after the 4 Nov deadline. **Fallback:** "What 'data localisation' actually covers — and what it doesn't." | Briefs in Signal → So What → Do Next form only. |
 
 
 ## Thu 2026-11-19
@@ -252,21 +248,24 @@
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
 | Flagship | **The Quiet Customer: How to Spot Churn Before the Cancellation** (new from the founder-problem backlog — operations) | Silence is the first churn signal, not the cancellation. Understand: why a quiet customer is a warning, not a lost cause. Build: a quiet-customer list with a call rule. Do next: call three quiet customers this week. | Evergreen. Method only — no external figures needed. Illustrative numbers must be labelled hypothetical per the standard. | Pairs with the 14 Nov numbers-review flagship (the quiet-customer number) without repeating it (that lesson is the review; this is the save). Pairs with the 8 Nov reference-call flagship (that lesson verifies people; this one saves customers). |
-| Briefing | Morning-scan pick | — | **Watch:** (1) iDICE Startup Summit outcomes (Lagos, 18 Nov); (2) Magna report (due 18 Nov) — read for sectors investors asked about. **Fallback:** "How one deal can bend a statistic." | Briefs in Signal → So What → Do Next form only. |
 
 ## Fri 2026-11-20
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
 | Flagship | **What a Grant Really Costs: The Hidden Work Behind Free Money** (new from the founder-problem backlog — money) | A grant is a contract with reporting costs, not free money. Understand: what "free" actually obliges you to do. Build: a grant-cost sheet (hours, reports, restrictions). Do next: price the reporting hours before you apply. | (R) NiYA and Cascador ₦5m each, no shares (briefed 11 Nov); NIMASA free accelerator (briefed 13 Nov); Farmerlifeline $50k Innovate Africa Challenge grant (held 14 Nov) — evidence only, not the subject. Evergreen method otherwise. | Pairs with the 11 Nov accelerator-maths flagship (that lesson prices an offer; this one prices a grant). Never present a grant as cash in hand before the terms are read. |
-| Briefing | Morning-scan pick | — | **Watch:** (1) iDICE Summit Ilorin leg (23 Nov) — registration still open; (2) CBN stablecoin 30-day registration clock (runs to ~5 Dec). **Fallback:** "What 'data localisation' actually covers — and what it doesn't." | Briefs in Signal → So What → Do Next form only. |
 
 ## Sat 2026-11-21
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
 | Flagship | **Your First Ten Customers Are a Research Project, Not a Sales Target** (new from the founder-problem backlog — product) | The first ten teach you what to build. Understand: why early customers are evidence, not revenue. Build: a ten-customer interview log. Do next: interview two customers this week with three questions. | Evergreen. Method only — no external figures needed. Illustrative examples must be labelled hypothetical per the standard. | Pairs with validate-the-idea without repeating it (that lesson validates before building; this one learns after launching). Saturday evergreen, in the Saturday pattern. |
-| Briefing | Morning-scan pick | — | **Watch:** (1) NSIA–JICA fund manager appointment (RFP stage at 28 Oct — do not report one before it exists); (2) Techstars Spring 2027 cohort news after the 18 Nov close. **Fallback:** "How one deal can bend a statistic." | Briefs in Signal → So What → Do Next form only. |
+
+## Sun 2026-11-22
+
+| Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
+|---|---|---|---|---|
+| Flagship | **When Your Market Falls Off the Funding Map** (new from flex pool #8 — Senegal funding collapse as the worked example, not the subject) | A whole market can fall off the funding map while the businesses in it stay sound. Understand: funding concentration is a market risk, not a verdict on your company. Build: a revenue-first plan for a market outside the hotspots. Do next: the 12-month test — can the business survive a year with zero outside money? Price it. | (D) Big Deal — Senegal $153m → ~$5m (Q1–Q3 2026); verify figures against the tracker before drafting. | Sunday evergreen, in the Saturday/Sunday pattern. Pairs with the 9 Nov revenue-first flagship without repeating it (that lesson is the plan; this is the market case). |
 
 ## Coverage check
 
