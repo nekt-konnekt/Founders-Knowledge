@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">One profitable sale can still create a cash shortfall</title>
+  <desc id="desc">A side-by-side comparison of a fictional Nigerian distributor's profit and cash. The profit view shows 500,000 naira in sales and 40,000 naira in simplified operating profit. The cash view shows 200,000 naira collected, 460,000 naira paid and a 260,000 naira cash shortfall while 300,000 naira remains receivable.</desc>
+  <rect width="1200" height="650" fill="#f4f8fc"/>
+  <text x="56" y="58" fill="#171717" font-family="Space Grotesk, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2">ONE DISTRIBUTOR. TWO FINANCIAL STORIES.</text>
+  <rect x="56" y="92" width="520" height="480" rx="16" fill="#ffffff" stroke="#b9c9d8" stroke-width="2"/>
+  <rect x="624" y="92" width="520" height="480" rx="16" fill="#ffffff" stroke="#b9c9d8" stroke-width="2"/>
+  <rect x="56" y="92" width="520" height="72" rx="16" fill="#eaf3fb"/>
+  <rect x="624" y="92" width="520" height="72" rx="16" fill="#fff0ed"/>
+  <text x="88" y="137" fill="#174f7c" font-family="Space Grotesk, Arial, sans-serif" font-size="22" font-weight="700">PROFIT VIEW</text>
+  <text x="656" y="137" fill="#8c3b34" font-family="Space Grotesk, Arial, sans-serif" font-size="22" font-weight="700">CASH VIEW · THIS PERIOD</text>
+  <g font-family="Space Grotesk, Arial, sans-serif" font-size="21" fill="#171717">
+    <text x="88" y="214">Net sales</text><text x="534" y="214" text-anchor="end" font-weight="700">₦500,000</text>
+    <text x="88" y="260">Less cost of goods sold</text><text x="534" y="260" text-anchor="end">−₦350,000</text>
+    <line x1="88" y1="279" x2="534" y2="279" stroke="#d3dee8" stroke-width="2"/>
+    <text x="88" y="318" font-weight="700">Gross profit · 30%</text><text x="534" y="318" text-anchor="end" font-weight="700">₦150,000</text>
+    <text x="88" y="364">Less variable selling costs</text><text x="534" y="364" text-anchor="end">−₦50,000</text>
+    <line x1="88" y1="383" x2="534" y2="383" stroke="#d3dee8" stroke-width="2"/>
+    <text x="88" y="422" font-weight="700">Contribution · 20%</text><text x="534" y="422" text-anchor="end" font-weight="700">₦100,000</text>
+    <text x="88" y="468">Less fixed operating costs</text><text x="534" y="468" text-anchor="end">−₦60,000</text>
+  </g>
+  <rect x="80" y="496" width="472" height="54" rx="9" fill="#e7f4eb"/>
+  <text x="100" y="531" fill="#17663d" font-family="Space Grotesk, Arial, sans-serif" font-size="21" font-weight="700">Operating profit</text>
+  <text x="530" y="531" text-anchor="end" fill="#17663d" font-family="Space Grotesk, Arial, sans-serif" font-size="26" font-weight="700">₦40,000</text>
+  <g font-family="Space Grotesk, Arial, sans-serif" font-size="21" fill="#171717">
+    <text x="656" y="214">Cash collected</text><text x="1102" y="214" text-anchor="end" font-weight="700">₦200,000</text>
+    <text x="656" y="260">Cash paid for inventory</text><text x="1102" y="260" text-anchor="end">−₦350,000</text>
+    <text x="656" y="306">Variable + fixed cash paid</text><text x="1102" y="306" text-anchor="end">−₦110,000</text>
+    <line x1="656" y1="326" x2="1102" y2="326" stroke="#d3dee8" stroke-width="2"/>
+  </g>
+  <rect x="648" y="350" width="472" height="78" rx="9" fill="#fde7e3"/>
+  <text x="672" y="382" fill="#9b342b" font-family="Space Grotesk, Arial, sans-serif" font-size="18" font-weight="700">Net cash movement</text>
+  <text x="1096" y="410" text-anchor="end" fill="#9b342b" font-family="Space Grotesk, Arial, sans-serif" font-size="30" font-weight="700">−₦260,000</text>
+  <text x="656" y="478" fill="#171717" font-family="Space Grotesk, Arial, sans-serif" font-size="18">Still owed by customers</text>
+  <text x="1102" y="478" text-anchor="end" fill="#171717" font-family="Space Grotesk, Arial, sans-serif" font-size="25" font-weight="700">₦300,000</text>
+  <text x="656" y="526" fill="#566575" font-family="Space Grotesk, Arial, sans-serif" font-size="15">The profit is earned. The cash is still in receivables.</text>
+  <text x="56" y="618" fill="#566575" font-family="Space Grotesk, Arial, sans-serif" font-size="15">Illustrative figures only · Excludes VAT, tax, finance costs and non-cash depreciation</text>
+</svg>

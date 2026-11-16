@@ -387,3 +387,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
  .library-tools{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Purposeful diagrams inside long-form lessons. */
+.lesson-diagram{margin:25px 0;border:1.5px solid var(--line-strong);border-radius:4px;overflow:hidden;background:#fff}
+.lesson-diagram img{display:block;width:100%;height:auto}
+.lesson-diagram figcaption{padding:10px 14px;border-top:1px solid var(--line);font-size:12px;line-height:1.5;color:var(--muted)}
