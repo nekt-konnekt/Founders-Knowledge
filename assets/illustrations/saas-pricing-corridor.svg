@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+<title id="title">The local SaaS price corridor</title>
+<desc id="desc">A four-step pricing framework: define the market and buyer, calculate the cost floor, estimate the customer-value ceiling, and test the price.</desc>
+<rect width="1200" height="660" fill="#fff8ef"/>
+<text x="64" y="82" fill="#241c2a" font-family="Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="4">THE LOCAL PRICE CORRIDOR</text>
+<text x="64" y="122" fill="#5b4e55" font-family="Arial,sans-serif" font-size="22">A defensible price sits between what it costs to serve and what the buyer can justify.</text>
+<rect x="64" y="178" width="245" height="330" rx="14" fill="#f4d96d" stroke="#241c2a" stroke-width="4"/>
+<text x="92" y="226" fill="#6c3aa3" font-family="Arial,sans-serif" font-size="18" font-weight="700">01 / DEFINE</text>
+<text x="92" y="286" fill="#241c2a" font-family="Arial,sans-serif" font-size="32" font-weight="700">Country</text>
+<text x="92" y="332" fill="#241c2a" font-family="Arial,sans-serif" font-size="32" font-weight="700">Buyer</text>
+<text x="92" y="378" fill="#241c2a" font-family="Arial,sans-serif" font-size="32" font-weight="700">Workflow</text>
+<text x="92" y="452" fill="#5b4e55" font-family="Arial,sans-serif" font-size="19">Who uses it?</text>
+<text x="92" y="480" fill="#5b4e55" font-family="Arial,sans-serif" font-size="19">Who pays?</text>
+<path d="M326 343 H370" stroke="#241c2a" stroke-width="5" stroke-linecap="round"/><path d="M358 329 L374 343 L358 357" fill="none" stroke="#241c2a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="390" y="178" width="220" height="330" rx="14" fill="#f3b8c5" stroke="#241c2a" stroke-width="4"/>
+<text x="416" y="226" fill="#6c3aa3" font-family="Arial,sans-serif" font-size="18" font-weight="700">02 / FLOOR</text>
+<text x="416" y="286" fill="#241c2a" font-family="Arial,sans-serif" font-size="29" font-weight="700">Cost to</text>
+<text x="416" y="324" fill="#241c2a" font-family="Arial,sans-serif" font-size="29" font-weight="700">serve</text>
+<text x="416" y="396" fill="#5b4e55" font-family="Arial,sans-serif" font-size="18">Cloud + support</text>
+<text x="416" y="425" fill="#5b4e55" font-family="Arial,sans-serif" font-size="18">Payments + FX</text>
+<text x="416" y="454" fill="#5b4e55" font-family="Arial,sans-serif" font-size="18">Onboarding</text>
+<path d="M628 343 H672" stroke="#241c2a" stroke-width="5" stroke-linecap="round"/><path d="M660 329 L676 343 L660 357" fill="none" stroke="#241c2a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="690" y="178" width="220" height="330" rx="14" fill="#d9c9ef" stroke="#241c2a" stroke-width="4"/>
+<text x="716" y="226" fill="#6c3aa3" font-family="Arial,sans-serif" font-size="18" font-weight="700">03 / CEILING</text>
+<text x="716" y="286" fill="#241c2a" font-family="Arial,sans-serif" font-size="29" font-weight="700">Customer</text>
+<text x="716" y="324" fill="#241c2a" font-family="Arial,sans-serif" font-size="29" font-weight="700">value</text>
+<text x="716" y="396" fill="#5b4e55" font-family="Arial,sans-serif" font-size="18">Time saved</text>
+<text x="716" y="425" fill="#5b4e55" font-family="Arial,sans-serif" font-size="18">Loss avoided</text>
+<text x="716" y="454" fill="#5b4e55" font-family="Arial,sans-serif" font-size="18">Revenue recovered</text>
+<path d="M928 343 H972" stroke="#241c2a" stroke-width="5" stroke-linecap="round"/><path d="M960 329 L976 343 L960 357" fill="none" stroke="#241c2a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="990" y="178" width="146" height="330" rx="14" fill="#b9dfc8" stroke="#241c2a" stroke-width="4"/>
+<text x="1014" y="226" fill="#6c3aa3" font-family="Arial,sans-serif" font-size="18" font-weight="700">04 / TEST</text>
+<text x="1014" y="292" fill="#241c2a" font-family="Arial,sans-serif" font-size="27" font-weight="700">Paid</text>
+<text x="1014" y="328" fill="#241c2a" font-family="Arial,sans-serif" font-size="27" font-weight="700">offer</text>
+<text x="1014" y="382" fill="#241c2a" font-family="Arial,sans-serif" font-size="27" font-weight="700">Then</text>
+<text x="1014" y="418" fill="#241c2a" font-family="Arial,sans-serif" font-size="27" font-weight="700">renew</text>
+<rect x="64" y="548" width="1072" height="66" rx="10" fill="#241c2a"/>
+<text x="600" y="590" text-anchor="middle" fill="#fff8ef" font-family="Arial,sans-serif" font-size="25" font-weight="700">If the floor is above the ceiling, change the offer—not the spreadsheet.</text>
+</svg>
