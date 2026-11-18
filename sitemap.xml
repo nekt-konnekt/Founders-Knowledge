@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://founders-knowledge.vercel.app/library/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -321,6 +321,24 @@
   <url>
     <loc>https://founders-knowledge.vercel.app/lessons/data-localisation-checklist/</loc>
     <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://founders-knowledge.vercel.app/lessons/partner-gets-bought/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://founders-knowledge.vercel.app/lessons/build-it-or-rent-it/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://founders-knowledge.vercel.app/lessons/hiring-scorecard/</loc>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

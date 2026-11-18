@@ -92,8 +92,9 @@ stylesheet, and the page shell below is the only shell.
 `#ffd9c4`, mint `#b9ecd2`), soft shadows and 1px `#a9c6de` borders — no purple,
 no hard offset shadows. In `site.css` the legacy token names are kept: `--purple`
 holds the sky-blue primary and `--yellow` holds the lime highlight. New OG
-artwork must use this palette (background `#e8f3ff`, ink `#12263a`, blue
-`#1d7fe0`, lime `#c8f04b`). It is copied from the
+artwork follows the shipped pattern (white background `#ffffff`, ink `#171717`,
+blue `#1d7fe0` mark and wordmark), as in the reference lesson's OG file
+(`assets/og/lessons/list-at-home-or-list-abroad.svg`). It is copied from the
 reference lesson (`lessons/list-at-home-or-list-abroad/`, 2026-10-22). Replace the
 `[BRACKETED]` placeholders with the lesson's own values; change nothing else in
 the shell. Editorial content (kicker text, title, dek, meta, cover art, sidebar
