@@ -1,6 +1,6 @@
 # Founders Knowledge — Weekly Editorial Slate
 
-**Week:** Saturday 2026-10-24 → Thursday 2026-11-26 (rolling 7-day horizon, extended 2026-11-20) · **Drafted:** Fri 2026-10-23
+**Week:** Saturday 2026-10-24 → Saturday 2026-11-28 (rolling 7-day horizon, extended 2026-11-21) · **Drafted:** Fri 2026-10-23
 **Format per day (LESSONS ONLY, 2026-11-14):** 1 Flagship lesson that passes the **Understand / Build / Do** gate, angled at **early founders** (pre-seed/seed, small teams). The briefings stream is STOPPED — no new briefs; the 53 live briefs stay as an archive. **Teardowns are retired as a category** (company stories become worked examples inside lessons, or evidence only). **Practicals are flagship-eligible.**
 **Source tags:** (C) = confirmed by primary/official source or company statement · (R) = reported by reputable press, not independently verified · (D) = dataset figure — trackers differ, cite the tracker by name.
 **Briefing rule (STOPPED 2026-11-14):** the briefings stream is retired. Do not add briefing rows; convert a briefing candidate into a lesson framing or drop it. The 53 live briefs stay as an archive.
@@ -259,7 +259,7 @@
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
-| Flagship | **Your First Ten Customers Are a Research Project, Not a Sales Target** (new from the founder-problem backlog — product) | The first ten teach you what to build. Understand: why early customers are evidence, not revenue. Build: a ten-customer interview log. Do next: interview two customers this week with three questions. | Evergreen. Method only — no external figures needed. Illustrative examples must be labelled hypothetical per the standard. | Pairs with validate-the-idea without repeating it (that lesson validates before building; this one learns after launching). Saturday evergreen, in the Saturday pattern. |
+| Flagship | **Your First Ten Customers Are a Research Project, Not a Sales Target** (new from the founder-problem backlog — product) — ✅ **PUBLISHED 2026-11-21** ([live](https://founders-knowledge.vercel.app/lessons/first-ten-customers-research/)) (commit 9f60aaf) | The first ten teach you what to build. Understand: why early customers are evidence, not revenue. Build: a ten-customer interview log. Do next: interview two customers this week with three questions. | Evergreen. Method only — no external figures needed. Illustrative examples must be labelled hypothetical per the standard. | Pairs with validate-the-idea without repeating it (that lesson validates before building; this one learns after launching). Saturday evergreen, in the Saturday pattern. |
 
 ## Sun 2026-11-22
 
@@ -295,3 +295,15 @@ Deliberately avoided repeating the existing library: idea validation and choosin
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
 |---|---|---|---|---|
 | Flagship | **The Renewal Conversation: How to Ask a Customer to Pay Again** (new from the founder-problem backlog — operations) | A renewal is a new sale, not an automatic payment. Understand: why a customer renews on value they can see, not on habit. Build: a renewal checklist — value shown before the date, a reminder sequence, the conversation. Do next: list every renewal due in the next 30 days and send the value note this week. | Evergreen. Method only — no external figures needed. Illustrative numbers must be labelled hypothetical per the standard. | Pairs with the 19 Nov quiet-customer flagship without repeating it (that lesson spots the customer going quiet; this one is the conversation before the renewal date). Never advise discounting as the default renewal move. |
+
+## Fri 2026-11-27
+
+| Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
+|---|---|---|---|---|
+| Flagship | **The Reference-Call Swap: Hiring Checks That Work in Informal Markets** (promoted from flex pool #6 — flagship-eligible practical) | In markets where formal HR trails are thin, a structured back-channel reference beats a polished CV. Understand: why a reference call is evidence, not a formality. Build: a five-question reference script and a note template. Do next: make one reference call before the next offer, not after. | Evergreen. Method only — no external figures needed. Illustrative examples must be labelled hypothetical per the standard. | Pairs with the 18 Nov hiring-scorecard flagship without repeating it (that lesson scores the candidate; this one checks what the candidate says about themselves). Never present a reference call as a background check — different tool, different limits. |
+
+## Sat 2026-11-28
+
+| Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
+|---|---|---|---|---|
+| Flagship | **The Second Product Temptation: When to Build the Next Thing and When to Fix the First** (new from the founder-problem backlog — product/decisions) | A second product feels like growth; usually it is a way to avoid fixing the first one. Understand: why founders reach for a new build when the current product stalls. Build: a fix-it-first test — three questions that decide whether the next thing earns its build. Do next: list the three biggest complaints about your current product before sketching anything new. | Evergreen. Method only — no external figures needed. Illustrative examples must be labelled hypothetical per the standard. | Pairs with the 21 Nov first-ten-customers flagship without repeating it (that lesson learns from the first ten; this one decides whether the learning earns a second build). Saturday evergreen, in the Saturday pattern. |
