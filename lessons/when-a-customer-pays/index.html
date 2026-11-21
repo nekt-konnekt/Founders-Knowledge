@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Separate order, transaction, settlement, refund and dispute states. Build a reliable payment lifecycle your finance, support and engineering teams can actually reconcile.">
+  <meta name="theme-color" content="#2e9bff">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+  <title>When a Customer Pays, Your Responsibility Has Just Started — Founders Knowledge</title>
+  <link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/when-a-customer-pays/">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"When a Customer Pays, Your Responsibility Has Just Started",
+    "description":"Separate order, transaction, settlement, refund and dispute states. Build a reliable payment lifecycle your finance, support and engineering teams can actually reconcile.",
+    "mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/when-a-customer-pays/",
+    "datePublished":"2026-11-23",
+    "dateModified":"2026-11-21",
+    "publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},
+    "isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},
+    "inLanguage":"en"
+  }
+  </script>
+  <meta property="og:site_name" content="Founders Knowledge">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="When a Customer Pays, Your Responsibility Has Just Started — Founders Knowledge">
+  <meta property="og:description" content="A reliable way to track orders, transactions, settlements, refunds and disputes—without confusing one status for another.">
+  <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/when-a-customer-pays/">
+  <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fwhen-a-customer-pays.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261121">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="When a Customer Pays, Your Responsibility Has Just Started">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="When a Customer Pays, Your Responsibility Has Just Started">
+  <meta name="twitter:description" content="A reliable way to track orders, transactions, settlements, refunds and disputes—without confusing one status for another.">
+  <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fwhen-a-customer-pays.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261121">
+  <meta name="twitter:image:alt" content="When a Customer Pays, Your Responsibility Has Just Started">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/analytics.js" defer></script>
+  <meta property="og:image:secure_url" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fwhen-a-customer-pays.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=20261121">
+</head>
+<body class="lesson-page">
+<a class="skip-link" href="#lesson-content">Skip to article</a>
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a>
+  <nav aria-label="Article navigation"><a href="/library/">Knowledge library</a><a href="/#approach">Our approach</a></nav>
+  <a class="nav-cta" href="/library/">All knowledge</a>
+</header>
+<main id="lesson-content">
+<section class="lesson-hero">
+  <a class="lesson-back" href="/library/">Back to the knowledge library</a>
+  <div class="lesson-cover">
+    <div class="lesson-cover-copy">
+      <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> PAYMENTS &amp; OPERATIONS <span class="lesson-separator">/</span> ENGINEERING PLAYBOOK</p>
+      <h1>When a customer pays, <span>your responsibility has just started.</span></h1>
+      <p class="lesson-dek">Checkout can say “success” while the order, settlement, refund and customer are all telling different stories. Build one reliable path from transaction to resolution.</p>
+      <div class="lesson-meta"><span>◷ 11 minute read</span><span>✳ Engineering &amp; operations guide</span><span>Scheduled 23 November 2026</span></div>
+    </div>
+    <div class="lesson-cover-art" aria-hidden="true">
+      <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
+      <div class="lesson-art-card art-current"><span class="art-label">TRANSACTION</span><strong>Success.<br>Cash not settled.</strong><div class="art-lines"><i></i><i></i><i></i></div></div>
+      <div class="lesson-art-card art-better"><span class="art-label">OPERATIONS</span><strong>Reconcile.<br>Resolve.<br>Communicate.</strong><span class="art-highlight"></span></div>
+      <span class="lesson-art-stamp">TRACE<br>ALL</span>
+    </div>
+  </div>
+  <div class="lesson-progress"><span class="progress-50"></span></div>
+  <div class="lesson-progress-caption"><span>PAYMENT LIFECYCLE</span><span>From checkout to settlement, refund or dispute closure</span></div>
+</section>
+<div class="lesson-layout">
+<aside class="lesson-sidebar" aria-label="On this page"><div class="lesson-sidebar-inner">
+  <p class="sidebar-label">IN THIS GUIDE</p>
+  <a href="#gap">01 <span>Checkout is not the finish line</span></a>
+  <a href="#records">02 <span>Keep four records separate</span></a>
+  <a href="#states">03 <span>States are not interchangeable</span></a>
+  <a href="#reconcile">04 <span>Reconcile the money</span></a>
+  <a href="#refunds">05 <span>Refunds and disputes</span></a>
+  <a href="#customers">06 <span>Tell customers what you know</span></a>
+  <a href="#system">07 <span>Build the operating system</span></a>
+  <a href="#checklist">08 <span>Run the daily checklist</span></a>
+  <div class="sidebar-note"><span>✳</span><p>A successful transaction is not the same thing as a settled balance or a completed customer obligation.</p></div>
+</div></aside>
+<article class="lesson-body">
+<div class="lesson-opening"><span class="opening-mark">“</span><p>Your payment provider can confirm a successful transaction. It cannot, by itself, prove that your order was fulfilled, your bank was credited, a refund reached the customer, or a dispute was handled.</p></div>
+
+<section id="gap" class="lesson-section">
+  <p class="section-number">01 — CHECKOUT IS NOT THE FINISH LINE</p>
+  <h2>A customer can pay successfully and still have a bad experience.</h2>
+  <p>Imagine a customer in Lagos pays ₦25,000 for a service. Their bank sends a debit alert. Your payment provider reports a successful transaction. Your order table still says <em>awaiting payment</em>. Finance cannot find the money in the bank yet. The customer asks support: “Have you received my payment?”</p>
+  <p>There are several different questions hiding inside that one message:</p>
+  <div class="lesson-two-up">
+    <div><span class="mini-check">01</span><strong>Did the customer pay?</strong><p>Was the transaction verified with the provider for the expected reference, amount and currency?</p></div>
+    <div><span class="mini-check">02</span><strong>Did the business fulfil?</strong><p>Was the product, service, booking, credit or access actually delivered?</p></div>
+    <div><span class="mini-check">03</span><strong>Did the business receive cash?</strong><p>Was the transaction included in a settlement and credited to the right destination?</p></div>
+  </div>
+  <p>A fourth question appears when something goes wrong: <strong>what does the business still owe the customer?</strong> That may be a refund, a corrected order, evidence for a dispute, or a clear explanation of an unresolved payment.</p>
+  <p>The mistake is to represent all of this with one field called <code>paid</code>. That field cannot tell support whether the customer was debited, finance whether the settlement arrived, or engineering what should happen next.</p>
+  <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Do not make the customer become your reconciliation system.</strong><p>“Send us a screenshot” can help support investigate, but it is not a substitute for checking the provider, matching the order and keeping an exception queue your team owns.</p></div></div>
+</section>
+
+<section id="records" class="lesson-section">
+  <p class="section-number">02 — KEEP FOUR RECORDS SEPARATE</p>
+  <h2>One purchase creates more than one business record.</h2>
+  <p>Start with four records that answer different questions. They can live in one database or several services; the important part is that they remain distinguishable and link to one another.</p>
+  <div class="lesson-question-card">
+    <strong>1. The order — what did we promise?</strong>
+    <p>Store your internal order ID, customer or account, items, agreed amount, currency, tax treatment, fulfilment rule and current order state. The order exists before the payment attempt and remains the business record even if the customer tries to pay more than once.</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>2. The transaction — what did the provider process?</strong>
+    <p>Store the provider name, provider reference, transaction ID, payment method, amount, currency, raw provider status, verified status and timestamps. One order can have several attempts. Never assume one order ID equals one provider transaction.</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>3. The settlement — what did the provider send to us?</strong>
+    <p>Store the settlement or payout ID, included transactions, currency, gross amount, fees, deductions, net amount, destination, expected date and actual status. One settlement can contain many transactions; a settlement is not a renamed transaction.</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>4. The refund or dispute — what happened after the original payment?</strong>
+    <p>Keep a separate refund record or dispute case with its own reference, amount, reason, status, evidence, deadline, owner and outcome. Do not erase or rewrite the original successful transaction when money is refunded or challenged.</p>
+  </div>
+  <figure class="lesson-question-card" style="padding:12px">
+    <img src="/assets/illustrations/payment-lifecycle-map.svg" alt="Payment lifecycle map showing an order linked to a transaction, a settlement batch, and separate refund and dispute paths" style="display:block;width:100%;height:auto;border-radius:12px">
+    <figcaption style="padding:10px 6px 2px;color:#52677b;font-size:13px">Keep the order, transaction and settlement linked, but do not collapse them into one status. Refunds and disputes are separate follow-on records.</figcaption>
+  </figure>
+</section>
+
+<section id="states" class="lesson-section">
+  <p class="section-number">03 — STATES ARE NOT INTERCHANGEABLE</p>
+  <h2>“Success” means different things at different points in the journey.</h2>
+  <p>Give each record its own state machine. Your application can map provider-specific values into a small internal vocabulary, but preserve the original provider status and payload reference so that support and finance can investigate what actually happened.</p>
+  <div class="lesson-question-card">
+    <strong>Order state</strong>
+    <p><code>awaiting_payment</code> → <code>paid</code> → <code>fulfilment_pending</code> → <code>fulfilled</code>. Other outcomes may include <code>cancelled</code>, <code>refund_pending</code>, <code>refunded</code> or <code>disputed</code>. A paid order can still be waiting for fulfilment.</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>Transaction state</strong>
+    <p>Your internal categories might be <code>pending</code>, <code>succeeded</code>, <code>failed</code>, <code>reversed</code> and <code>unknown</code>. Do not invent a universal provider status list. Paystack, for example, documents values including <code>abandoned</code>, <code>ongoing</code>, <code>pending</code>, <code>processing</code>, <code>queued</code>, <code>reversed</code> and <code>success</code>. Its verification guide also warns that the API response's <code>status</code> is not the transaction status; the transaction status is in <code>data.status</code>. The same guide says Paystack currently sends transaction webhook events only for successful transactions, so unresolved attempts still need a server-side verification or recheck path. [Paystack: verify payments](https://paystack.com/docs/payments/verify-payments/).</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>Settlement state</strong>
+    <p>Use separate states such as <code>expected</code>, <code>processing</code>, <code>settled</code>, <code>failed</code> and <code>flagged</code>, mapped to the provider's actual vocabulary. Paystack's Settlement API exposes settlement statuses such as success, processing, pending and failed. Flutterwave documents flagged settlements that are not released to the merchant. [Paystack Settlement API](https://paystack.com/docs/api/settlement/) · [Flutterwave settlements](https://developer.flutterwave.com/docs/payment-operations/settlements).</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>Refund state</strong>
+    <p>Track <code>requested</code>, <code>processing</code>, <code>needs_attention</code>, <code>processed</code> and <code>failed</code> where your provider supports them. Do not tell a customer that the money has reached their bank merely because your dashboard says a refund was processed.</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>Dispute state</strong>
+    <p>Track when a case was opened, when evidence is due, who owns the response, when it was submitted, and whether it was accepted, declined, reopened or closed. A dispute is a time-sensitive case, not just a negative transaction status.</p>
+  </div>
+  <p><strong>Why preserve the raw provider status?</strong> Because providers do not use the same words for the same point in a process. Flutterwave's refund documentation, for example, describes <code>completed</code> as initiated and pending disbursement, while channel-specific states such as <code>completed-bank-transfer</code> and <code>completed-momo</code> indicate a successful refund. [Flutterwave: refunds](https://developer.flutterwave.com/docs/payment-operations/refunds).</p>
+  <div class="lesson-callout callout-lilac"><span class="callout-icon">↔</span><div><strong>A browser success page is not a financial record.</strong><p>Use it to guide the customer back into the product. Make payment decisions from authenticated provider events and server-side verification, not from a query parameter or a message supplied by the browser.</p></div></div>
+</section>
+
+<section id="reconcile" class="lesson-section">
+  <p class="section-number">04 — RECONCILE THE MONEY</p>
+  <h2>Match the order, the provider transaction and the settlement batch.</h2>
+  <p>The minimum useful reconciliation chain has three identifiers:</p>
+  <ul>
+    <li><strong>Your order ID:</strong> the business obligation and what the customer bought.</li>
+    <li><strong>The provider reference or transaction ID:</strong> the payment attempt and verified transaction.</li>
+    <li><strong>The settlement ID:</strong> the payout batch in which the provider says the funds were included.</li>
+  </ul>
+  <p>Join them with amount and currency. Add transaction time, payment method, provider fee, deductions, settlement date and bank credit as supporting fields. Do not match by amount alone: many customers can pay the same price.</p>
+  <div class="lesson-question-card">
+    <strong>A fictional settlement example</strong>
+    <p>Three orders are paid in naira:</p>
+    <ul>
+      <li>Order A: ₦25,000</li>
+      <li>Order B: ₦40,000</li>
+      <li>Order C: ₦15,000</li>
+    </ul>
+    <p><strong>Gross verified transactions: ₦80,000.</strong> Suppose the provider's illustrative fees total ₦1,600. The expected net settlement is ₦78,400 before other adjustments.</p>
+    <p>The bank statement shows ₦77,900. Do not change the three transactions to “failed”. Open a ₦500 settlement variance, compare the provider's settlement detail with its fee and deduction lines, assign an owner and resolve the difference.</p>
+    <p><em>All amounts and fees in this example are invented for teaching. They are not a provider tariff, market benchmark or claim about actual settlement behaviour.</em></p>
+  </div>
+  <p>Settlement batching is why this distinction matters. Flutterwave says a single settlement can contain several transactions, with transactions in the same batch sharing a currency; multiple settlements can occur on the same day for different currencies. [Flutterwave: settlements](https://developer.flutterwave.com/docs/payment-operations/settlements).</p>
+  <p>Run reconciliation at a frequency that matches transaction volume and cash risk. A small shop may start with a daily provider export and bank statement. A higher-volume platform should automate matching and leave a human-readable queue for exceptions.</p>
+  <div class="lesson-question-card">
+    <strong>Put these exceptions in a queue</strong>
+    <ul>
+      <li>Provider says success, but no matching order exists.</li>
+      <li>Order says paid, but no verified successful transaction exists.</li>
+      <li>Amount or currency differs from the order.</li>
+      <li>One provider reference appears against more than one order.</li>
+      <li>Successful transactions are missing from an expected settlement.</li>
+      <li>Settlement is flagged, failed, short or credited to an unexpected destination.</li>
+      <li>Refund or dispute adjustments do not match the provider statement.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="refunds" class="lesson-section">
+  <p class="section-number">05 — REFUNDS AND DISPUTES</p>
+  <h2>A refund request is not the same as a refund received.</h2>
+  <p>Write a refund policy before the first difficult case. State who can approve a refund, what qualifies, whether partial refunds are possible, how the customer is updated, and how long the provider says the process may take. The exact rights and legal requirements depend on the product, market and applicable rules; a provider's dashboard status is not a substitute for legal advice.</p>
+  <p>A safe operational sequence is:</p>
+  <ol>
+    <li>Find the original order and verified transaction.</li>
+    <li>Check the policy, reason, amount and any previous refund.</li>
+    <li>Approve or reject the request and record who made the decision.</li>
+    <li>Submit the refund using the provider's supported process and store the refund reference.</li>
+    <li>Listen for the provider's refund event or check the refund endpoint until the state is resolved.</li>
+    <li>Update the customer with the actual provider state and the provider's stated time window.</li>
+    <li>Reconcile the refund against the original transaction and later settlement or account adjustment.</li>
+  </ol>
+  <p>Paystack's documentation says a refund marked <code>processed</code> may still take up to 10 business days for the customer to receive the funds. Flutterwave's published guidance gives different indicative windows by channel: 3–15 days for cards, 3–5 days for mobile money and up to 24 hours for bank-account refunds. These are provider- and method-specific statements, checked on 21 November 2026—not a universal promise. [Paystack refunds](https://paystack.com/docs/payments/refunds/) · [Flutterwave refunds](https://developer.flutterwave.com/docs/payment-operations/refunds).</p>
+  <p>Keep the original payment intact. A refund is a separate event with its own reference and amount. This gives finance a traceable history and prevents the original transaction from appearing as if it never happened.</p>
+  <h3>Disputes need an owner and a clock.</h3>
+  <p>When a chargeback or dispute arrives, preserve the order terms shown at purchase, invoice or receipt, delivery evidence, relevant customer messages, cancellation/refund policy and a concise event timeline. Use only the personal data needed to answer the case; do not collect or retain card secrets.</p>
+  <p>Provider deadlines can be much shorter than a founder expects. Paystack's support guidance, edited 16 September 2026, says its response window is 16 hours for Nigeria-based businesses and 48 hours for businesses in Ghana, South Africa and Kenya, counted on business days. It explains that the 72-hour CBN timeline referenced in its guidance is directed at banks, while the merchant receives a shorter operational deadline. Treat these as Paystack's current process—not a universal rule for every processor or a legal deadline for every merchant. Check the live dispute case and your provider's terms. [Paystack: resolving chargebacks](https://support.paystack.com/en/articles/2125698) · [weekends and public holidays](https://support.paystack.com/en/articles/2125378).</p>
+  <p>Put dispute notifications somewhere a responsible person checks every working day. A mailbox no one owns is not a dispute process.</p>
+</section>
+
+<section id="customers" class="lesson-section">
+  <p class="section-number">06 — TELL CUSTOMERS WHAT YOU KNOW</p>
+  <h2>Give a clear update without promising an outcome you cannot see.</h2>
+  <div class="lesson-question-card">
+    <strong>Payment is still pending</strong>
+    <p>“We have received your payment attempt and are checking its status with our payment provider. Please do not pay again while we confirm the result. We will update you by [time].”</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>Payment is verified, but fulfilment is delayed</strong>
+    <p>“Your payment is confirmed. Your order is still being prepared. We have assigned the issue to our team and will update you by [time]. You do not need to make another payment.”</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>Refund has been submitted but is not complete</strong>
+    <p>“We have submitted a refund of [amount] to the payment provider. Its current status is [provider status]. The provider's published processing window is [window for this method]. We will contact you if the status changes or more information is needed.”</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>A dispute has been opened</strong>
+    <p>“We have received a payment dispute relating to order [reference]. Our team is reviewing the order and delivery records. If we need more information from you, we will contact you through [support channel].”</p>
+  </div>
+  <p>Only fill in a time or status when your system can support it. If you cannot yet confirm a payment, say that. A precise, honest update is better than “payment successful” copied from a browser redirect.</p>
+</section>
+
+<section id="system" class="lesson-section">
+  <p class="section-number">07 — BUILD THE OPERATING SYSTEM</p>
+  <h2>Make the process reliable before transaction volume makes it expensive.</h2>
+  <p>You do not need a large payments platform to start. You do need clear records, safe event handling and an owner for unresolved money.</p>
+  <div class="lesson-question-card">
+    <strong>1. Verify from your server</strong>
+    <p>Check the provider reference, final transaction state, expected amount, currency and the order it belongs to. Flutterwave explicitly recommends checking reference, successful status, currency and amount before giving value. Paystack's verify guide explains its own transaction statuses and response fields. Implement the current instructions for the provider and payment method you use. [Flutterwave verification](https://developer.flutterwave.com/docs/transaction-verification) · [Paystack verification](https://paystack.com/docs/payments/verify-payments/).</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>2. Authenticate and safely process webhooks</strong>
+    <p>Verify the provider's signature or secret before trusting an event. Paystack's current webhook guide describes HMAC-SHA512 verification over the raw request body with its signing secret. Flutterwave documents a configured secret hash sent in the <code>verif-hash</code> header. These are different schemes; do not copy one provider's implementation into another integration. [Paystack webhooks](https://paystack.com/docs/v2/developer-tools/integration/webhooks) · [Flutterwave webhooks](https://developer.flutterwave.com/docs/webhooks).</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>3. Make event handling idempotent</strong>
+    <p>Store the provider event ID or a stable deduplication key. A repeated webhook must not create a second fulfilment, refund, credit or ledger posting. Acknowledge valid webhooks quickly, then queue slower work. Provider retry schedules differ. Paystack currently documents four live retries at three-minute intervals, then hourly retries for up to 72 hours. Flutterwave says retries must be enabled and then describes three retries at 30-minute intervals. These are provider-specific schedules, not a recovery guarantee; do not assume a provider will retry forever or that a webhook will report every transaction state. [Paystack webhook delivery](https://paystack.com/docs/v2/developer-tools/integration/webhooks) · [Flutterwave webhook retries](https://developer.flutterwave.com/docs/webhooks).</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>4. Keep an append-only history</strong>
+    <p>Record each verified payment, fee, settlement, refund, reversal and dispute adjustment as its own event or ledger entry. Correct mistakes with a reversing or correcting entry. Do not silently overwrite the original transaction or delete the evidence needed to explain the customer's account.</p>
+  </div>
+  <div class="lesson-question-card">
+    <strong>5. Give each exception an owner</strong>
+    <p>Engineering owns correct state transitions and safe retries. Finance or operations owns settlement matching and variances. Support owns clear customer updates. A named manager owns refund approval rules and dispute escalation. In a small team, one person may hold several roles, but every open case still needs one accountable owner and a due time.</p>
+  </div>
+  <p>For a first implementation, keep the records explicit: <code>orders</code>, <code>payment_attempts</code>, <code>provider_events</code>, <code>settlements</code>, <code>refunds</code>, <code>disputes</code> and <code>ledger_entries</code>. Link them with stable internal IDs and provider references. Store only the provider data you need, protect secrets, and restrict access to customer information.</p>
+</section>
+
+<section id="checklist" class="lesson-section">
+  <p class="section-number">08 — RUN THE DAILY CHECKLIST</p>
+  <h2>Close the loop every day, not only when a customer complains.</h2>
+  <p>Start with a short daily reconciliation. Increase frequency as volume, value or risk increases.</p>
+  <div class="lesson-question-card">
+    <strong>Daily payment operations</strong>
+    <ul>
+      <li>Find successful provider transactions with no matching order.</li>
+      <li>Find orders marked paid without a verified successful transaction.</li>
+      <li>Review pending or unknown transactions older than your operating threshold.</li>
+      <li>Match transactions to settlement batches by reference, amount and currency.</li>
+      <li>Investigate settlement variances, flagged batches and unexpected deductions.</li>
+      <li>Review refunds waiting for action, provider confirmation or customer receipt.</li>
+      <li>Review open disputes and the nearest evidence deadline.</li>
+      <li>Send customers the updates promised by your team.</li>
+      <li>Assign every unresolved item an owner, next action and due time.</li>
+    </ul>
+  </div>
+  <p>Track a small set of operating measures: unmatched successful transactions, paid orders not fulfilled, settlement variance and age, refunds by state and age, disputes approaching deadline, and payment-related support contacts. A payment success rate alone cannot show whether customers received what they paid for or whether the business received the expected cash.</p>
+  <div class="lesson-callout callout-yellow"><span class="callout-icon">✓</span><div><strong>Use the companion resources</strong><p><a href="/assets/resources/payment-reliability-checklist.csv" download><u>Download the Payment Reliability Checklist (CSV)</u></a> to assign controls and owners. Use the <a href="/assets/resources/payment-reconciliation-template.csv" download><u>Payment Reconciliation Template (CSV)</u></a> to connect an order, provider transaction and settlement without matching on amount alone.</p></div></div>
+</section>
+
+<div class="lesson-exercise">
+  <p class="section-number">YOUR NEXT STEP</p>
+  <h2>Trace one real purchase from order to bank statement.</h2>
+  <p>Choose a recent customer payment. Find its order ID, provider reference, verified transaction, fulfilment record and settlement batch. If it was refunded or disputed, trace that record too. Write down who owns the next action at every point. If you cannot complete the chain, that missing link is your first reliability improvement.</p>
+  <a class="button button-primary" href="/assets/resources/payment-reliability-checklist.csv" download>Get the payment checklist</a>
+</div>
+
+<section class="lesson-section" aria-label="Sources">
+  <p class="section-number">SOURCES &amp; REALITY CHECK</p>
+  <h2>Provider rules are examples, not universal payment law.</h2>
+  <p>This guide describes a general operating model. Status names, webhook authentication, retries, settlement batching, refund windows and chargeback deadlines differ by provider, country, payment method and account configuration. The Paystack and Flutterwave details below were checked on 21 November 2026. Recheck the live documentation before changing a production integration.</p>
+  <ul>
+    <li><a href="https://paystack.com/docs/payments/verify-payments/" target="_blank" rel="noopener noreferrer"><u>Paystack — Verify Payments</u></a></li>
+    <li><a href="https://paystack.com/docs/v2/developer-tools/integration/webhooks" target="_blank" rel="noopener noreferrer"><u>Paystack — Webhooks and signature verification</u></a></li>
+    <li><a href="https://paystack.com/docs/api/settlement/" target="_blank" rel="noopener noreferrer"><u>Paystack — Settlement API</u></a></li>
+    <li><a href="https://paystack.com/docs/payments/refunds/" target="_blank" rel="noopener noreferrer"><u>Paystack — Refund states and customer receipt</u></a></li>
+    <li><a href="https://support.paystack.com/en/articles/2125698" target="_blank" rel="noopener noreferrer"><u>Paystack Support — Chargeback response deadlines</u></a></li>
+    <li><a href="https://support.paystack.com/en/articles/2125378" target="_blank" rel="noopener noreferrer"><u>Paystack Support — Weekends and public holidays</u></a></li>
+    <li><a href="https://developer.flutterwave.com/docs/transaction-verification" target="_blank" rel="noopener noreferrer"><u>Flutterwave — Transaction Verification</u></a></li>
+    <li><a href="https://developer.flutterwave.com/docs/webhooks" target="_blank" rel="noopener noreferrer"><u>Flutterwave — Webhooks</u></a></li>
+    <li><a href="https://developer.flutterwave.com/docs/payment-operations/settlements" target="_blank" rel="noopener noreferrer"><u>Flutterwave — Settlements</u></a></li>
+    <li><a href="https://developer.flutterwave.com/docs/payment-operations/refunds" target="_blank" rel="noopener noreferrer"><u>Flutterwave — Refunds</u></a></li>
+  </ul>
+  <p>The worked orders, amounts, fees and settlement variance in this guide are fictional teaching examples. They are not actual merchant records, provider tariffs or market statistics. Paystack's chargeback windows are Paystack's stated operational deadlines for its merchants; they must not be generalised to every provider or treated as a universal CBN deadline.</p>
+  <p>This guide complements <a href="/lessons/connect-payments-to-paid-access/"><u>Connect Payments to Paid Access</u></a>, which focuses on verified payment-to-entitlement and exactly-once fulfilment, and <a href="/lessons/what-happens-when-your-payment-provider-fails/"><u>What Happens When Your Payment Provider Fails?</u></a>, which covers uncertain outcomes and recovery during provider incidents.</p>
+</section>
+<nav class="lesson-next" aria-label="Article navigation">
+  <a href="/library/" class="next-library"><span></span><span><small>WHEN YOU'RE READY</small><strong>Back to the knowledge library</strong></span></a>
+  <a href="/lessons/connect-payments-to-paid-access/" class="next-card"><span class="next-card-label">RELATED LESSON</span><strong>Connect Payments to Paid Access</strong><span class="next-arrow"></span></a>
+</nav>
+</article>
+</div>
+</main>
+<footer class="site-footer"><a class="brand" href="/" aria-label="Founders Knowledge home"><span class="brand-mark" aria-hidden="true">FK</span><span class="brand-name">Founders <b>Knowledge</b></span></a><p>Built by founders, for founders.</p><a class="back-top" href="#lesson-content">Back to top</a></footer>
+<script src="/assets/share.js" defer></script>
+</body>
+</html>

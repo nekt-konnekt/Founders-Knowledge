@@ -366,4 +366,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+  <url>\n    <loc>https://founders-knowledge.vercel.app/lessons/when-a-customer-pays/</loc>\n    <lastmod>2026-11-23</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n</urlset>
