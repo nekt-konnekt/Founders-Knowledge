@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">The payment lifecycle</title>
+<desc id="desc">An order links to a verified transaction, which joins a settlement batch. Refunds and disputes branch from the original transaction as separate records.</desc>
+<rect width="1200" height="650" rx="28" fill="#fffdf9"/>
+<text x="58" y="66" fill="#172b3f" font-family="Space Grotesk,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="2">ONE PURCHASE. FOUR RECORDS.</text>
+<text x="58" y="104" fill="#60758a" font-family="Space Grotesk,Arial,sans-serif" font-size="18">Link the records. Keep their states separate.</text>
+<g font-family="Space Grotesk,Arial,sans-serif">
+<rect x="58" y="160" width="245" height="138" rx="18" fill="#eaf4ff" stroke="#8cbde8" stroke-width="3"/>
+<text x="82" y="198" fill="#1767a8" font-size="15" font-weight="700" letter-spacing="1.5">01 / ORDER</text>
+<text x="82" y="238" fill="#172b3f" font-size="27" font-weight="700">What was</text><text x="82" y="271" fill="#172b3f" font-size="27" font-weight="700">promised?</text>
+<path d="M303 229H355" stroke="#1767a8" stroke-width="5" stroke-linecap="round"/><path d="M342 216L356 229L342 242" fill="none" stroke="#1767a8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="365" y="160" width="245" height="138" rx="18" fill="#fff2d4" stroke="#e4bd5c" stroke-width="3"/>
+<text x="389" y="198" fill="#95630b" font-size="15" font-weight="700" letter-spacing="1.5">02 / TRANSACTION</text>
+<text x="389" y="238" fill="#172b3f" font-size="27" font-weight="700">What did the</text><text x="389" y="271" fill="#172b3f" font-size="27" font-weight="700">provider process?</text>
+<path d="M610 229H662" stroke="#1767a8" stroke-width="5" stroke-linecap="round"/><path d="M649 216L663 229L649 242" fill="none" stroke="#1767a8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="672" y="160" width="245" height="138" rx="18" fill="#e5f6ec" stroke="#8bc9a4" stroke-width="3"/>
+<text x="696" y="198" fill="#28774a" font-size="15" font-weight="700" letter-spacing="1.5">03 / SETTLEMENT</text>
+<text x="696" y="238" fill="#172b3f" font-size="27" font-weight="700">What reached</text><text x="696" y="271" fill="#172b3f" font-size="27" font-weight="700">the business?</text>
+<path d="M917 229H969" stroke="#1767a8" stroke-width="5" stroke-linecap="round"/><path d="M956 216L970 229L956 242" fill="none" stroke="#1767a8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="979" y="160" width="163" height="138" rx="18" fill="#172b3f"/>
+<text x="1001" y="198" fill="#c8f04b" font-size="15" font-weight="700" letter-spacing="1.5">BANK</text>
+<text x="1001" y="238" fill="#fff" font-size="25" font-weight="700">Cash</text><text x="1001" y="270" fill="#fff" font-size="25" font-weight="700">received</text>
+<path d="M488 298V362H310V396" fill="none" stroke="#d28a36" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M488 362H890V396" fill="none" stroke="#c05a6c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="178" y="402" width="264" height="136" rx="18" fill="#ffe6e9" stroke="#e6a0ab" stroke-width="3"/>
+<text x="204" y="440" fill="#9a3e52" font-size="15" font-weight="700" letter-spacing="1.5">04A / REFUND</text>
+<text x="204" y="480" fill="#172b3f" font-size="26" font-weight="700">What must go</text><text x="204" y="512" fill="#172b3f" font-size="26" font-weight="700">back?</text>
+<rect x="758" y="402" width="264" height="136" rx="18" fill="#efe8ff" stroke="#b9a3e7" stroke-width="3"/>
+<text x="784" y="440" fill="#6848a5" font-size="15" font-weight="700" letter-spacing="1.5">04B / DISPUTE</text>
+<text x="784" y="480" fill="#172b3f" font-size="26" font-weight="700">What must be</text><text x="784" y="512" fill="#172b3f" font-size="26" font-weight="700">answered?</text>
+<text x="58" y="600" fill="#60758a" font-size="17">Use stable IDs to reconcile each step. A refund or dispute does not erase the original transaction.</text>
+</g>
+</svg>
