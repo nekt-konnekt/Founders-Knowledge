@@ -140,7 +140,7 @@
   </div>
   <div class="lesson-question-card">
     <strong>Transaction state</strong>
-    <p>Your internal categories might be <code>pending</code>, <code>succeeded</code>, <code>failed</code>, <code>reversed</code> and <code>unknown</code>. Do not invent a universal provider status list. Paystack, for example, documents values including <code>abandoned</code>, <code>ongoing</code>, <code>pending</code>, <code>processing</code>, <code>queued</code>, <code>reversed</code> and <code>success</code>. Its verification guide also warns that the API response's <code>status</code> is not the transaction status; the transaction status is in <code>data.status</code>. [Paystack: verify payments](https://paystack.com/docs/payments/verify-payments/).</p>
+    <p>Your internal categories might be <code>pending</code>, <code>succeeded</code>, <code>failed</code>, <code>reversed</code> and <code>unknown</code>. Do not invent a universal provider status list. Paystack, for example, documents values including <code>abandoned</code>, <code>ongoing</code>, <code>pending</code>, <code>processing</code>, <code>queued</code>, <code>reversed</code> and <code>success</code>. Its verification guide also warns that the API response's <code>status</code> is not the transaction status; the transaction status is in <code>data.status</code>. The same guide says Paystack currently sends transaction webhook events only for successful transactions, so unresolved attempts still need a server-side verification or recheck path. [Paystack: verify payments](https://paystack.com/docs/payments/verify-payments/).</p>
   </div>
   <div class="lesson-question-card">
     <strong>Settlement state</strong>
@@ -254,7 +254,7 @@
   </div>
   <div class="lesson-question-card">
     <strong>3. Make event handling idempotent</strong>
-    <p>Store the provider event ID or a stable deduplication key. A repeated webhook must not create a second fulfilment, refund, credit or ledger posting. Acknowledge valid webhooks quickly, then queue slower work. Provider retry schedules differ: Paystack documents its live retry schedule; Flutterwave says retries must be enabled and then describes three retries at 30-minute intervals. Do not assume the provider will retry forever.</p>
+    <p>Store the provider event ID or a stable deduplication key. A repeated webhook must not create a second fulfilment, refund, credit or ledger posting. Acknowledge valid webhooks quickly, then queue slower work. Provider retry schedules differ. Paystack currently documents four live retries at three-minute intervals, then hourly retries for up to 72 hours. Flutterwave says retries must be enabled and then describes three retries at 30-minute intervals. These are provider-specific schedules, not a recovery guarantee; do not assume a provider will retry forever or that a webhook will report every transaction state. [Paystack webhook delivery](https://paystack.com/docs/v2/developer-tools/integration/webhooks) · [Flutterwave webhook retries](https://developer.flutterwave.com/docs/webhooks).</p>
   </div>
   <div class="lesson-question-card">
     <strong>4. Keep an append-only history</strong>
