@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Design offline-first products that keep critical customer work available without a network. Learn local data, persistent queues, safe retries and conflict handling.">
+  <meta name="description" content="Design offline-first products and test them under slow, interrupted and absent networks with a practical customer-workflow matrix.">
   <meta name="theme-color" content="#2e9bff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="shortcut icon" href="/favicon.svg">
   <title>Your App Should Not Stop Working When the Network Does — Founders Knowledge</title>
   <link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/your-app-should-not-stop-working-when-the-network-does/">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"Your App Should Not Stop Working When the Network Does","description":"Design offline-first products that keep critical customer work available without a network. Learn local data, persistent queues, safe retries and conflict handling.","mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/your-app-should-not-stop-working-when-the-network-does/","publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},"datePublished":"2026-11-02","dateModified":"2026-11-02","inLanguage":"en"}
+  {"@context":"https://schema.org","@type":"Article","headline":"Your App Should Not Stop Working When the Network Does","description":"Design offline-first products that keep critical customer work available without a network. Learn local data, persistent queues, safe retries and conflict handling.","mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/your-app-should-not-stop-working-when-the-network-does/","publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},"datePublished":"2026-11-02","dateModified":"2026-11-23","inLanguage":"en"}
   </script>
   <meta property="og:site_name" content="Founders Knowledge">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Your App Should Not Stop Working When the Network Does">
-  <meta property="og:description" content="Design offline-first products so customers can keep working, even without an internet connection.">
+  <meta property="og:description" content="Design offline-first products and test the real failure paths: slow links, interrupted sync, restarts and conflicts.">
   <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/your-app-should-not-stop-working-when-the-network-does/">
   <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fyour-app-should-not-stop-working-when-the-network-does.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=6db2322def">
   <meta property="og:image:width" content="1200">
@@ -23,7 +23,7 @@
   <meta property="og:image:alt" content="Founders Knowledge: Your App Should Not Stop Working When the Network Does">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Your App Should Not Stop Working When the Network Does">
-  <meta name="twitter:description" content="Design offline-first products so customers can keep working, even without an internet connection.">
+  <meta name="twitter:description" content="Design offline-first products and test the real failure paths: slow links, interrupted sync, restarts and conflicts.">
   <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fyour-app-should-not-stop-working-when-the-network-does.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=6db2322def">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,8 +46,8 @@
         <div class="lesson-cover-copy">
           <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> LESSON <span class="lesson-separator">/</span> PRODUCT ENGINEERING</p>
           <h1>Your App Should Not Stop Working <span>When the Network Does</span></h1>
-          <p class="lesson-dek">Design offline-first products so customers can keep working, even when connectivity disappears. A practical guide to local data, synchronization and safe recovery.</p>
-          <div class="lesson-meta"><span>◷ 11 minute read</span><span>✳ Practical guide</span><span>Published 2 November 2026</span></div>
+          <p class="lesson-dek">Design offline-first products so customers can finish critical work, then prove the workflow survives slow links, interruptions, restarts and conflicting edits.</p>
+          <div class="lesson-meta"><span>◷ 14 minute read</span><span>✳ Practical guide</span><span>Published 2 November 2026 · Updated 23 November 2026</span></div>
         </div>
         <div class="lesson-cover-art" aria-hidden="true">
           <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
@@ -71,6 +71,7 @@
           <a href="#web">06 <span>Do not depend on one API</span></a>
           <a href="#interface">07 <span>Show honest status</span></a>
           <a href="#testing">08 <span>Test the failure paths</span></a>
+          <a href="#test-matrix">09 <span>Run the network test matrix</span></a>
           <div class="sidebar-note"><span>✳</span><p>Design around the customer's ability to finish the job—not around a perfect network.</p></div>
         </div>
       </aside>
@@ -193,6 +194,29 @@
             <div class="reality-check"><strong><span>!</span> Reality check</strong><p>Offline support increases responsibility for data stored on a device. Consider device access, local encryption where appropriate, sign-out behaviour, data retention and what happens when a device is lost. Offline access should not bypass your product's security model.</p></div>
           </div>
         </section>
+        <section id="test-matrix" class="lesson-section">
+          <p class="section-number">09 — RUN THE NETWORK TEST MATRIX</p>
+          <h2>Test the interruption, the customer action and the promise.</h2>
+          <p>“Online” and “offline” are not enough test conditions. A phone can show a connection while your API is unreachable. A request can start and then lose its connection. Upload speed can be much worse than download speed. The application can be backgrounded or killed while work is waiting to sync.</p>
+          <p>Use repeatable simulations first. The Android Emulator lets you set upload/download rates and latency ranges while the app is running. Its documented GPRS profile is 40 kbps up and 80 kbps down with 150–550 ms latency; EDGE is 118.4/236.8 kbps with 80–400 ms; UMTS is 128/1,920 kbps with 35–200 ms. Those are emulator presets, not measurements of a Nigerian carrier or a promise about what a customer will experience. Chrome DevTools can simulate Offline, slow or fast 3G/4G, and custom throttling profiles. Record the exact profile you used.</p>
+          <p>Then repeat the critical workflow on real devices and the networks your customers actually use. Record device model, OS version, SIM/operator, broad location type (for example, indoors or outdoors), date/time, connection type and app version. Do not record a customer's personal data in a test log.</p>
+          <table>
+            <thead><tr><th>Failure scenario</th><th>Setup and customer action</th><th>Pass condition</th><th>Evidence</th></tr></thead>
+            <tbody>
+              <tr><td>Slow or high-latency link</td><td>Use a documented emulator or DevTools profile. Open a critical list and save one record.</td><td>Previously stored data appears without waiting for the network. The save is durable locally and is not labelled server-confirmed until the server acknowledges it.</td><td>Screen recording, request timings, local record and sync state.</td></tr>
+              <tr><td>Connection drops during save or upload</td><td>Start a record save or attachment upload, then disable data before the request finishes.</td><td>The local work remains available. The outbox keeps the operation pending; retry does not create a second record. If upload resume is unsupported, the user can safely retry from the retained file.</td><td>Outbox row, upload state, request log and final server record count.</td></tr>
+              <tr><td>App is backgrounded or killed</td><td>Save while offline, background the app, force-stop it, then reopen.</td><td>Pending work survives process death. Sync resumes on a supported trigger; the interface does not pretend that background execution is guaranteed on every device.</td><td>Before/after local database snapshot, app lifecycle log and sync history.</td></tr>
+              <tr><td>Connected, but service is unreachable</td><td>Use a captive portal, block the API host or make DNS/API access fail while the device still reports a network connection.</td><td>The app treats the operation as unsynced, preserves local work and offers a clear next step. A network indicator alone never marks a record as synced.</td><td>Network log, API error, customer status and outbox state.</td></tr>
+              <tr><td>Session expires before sync</td><td>Save an allowed record offline, let the session expire, then reconnect.</td><td>The local record remains. Protected sync pauses for re-authentication; the app neither discards the record nor retries an invalid session forever.</td><td>Auth response, pending operation, re-auth flow and audit log.</td></tr>
+              <tr><td>Duplicate tap or timeout after server receipt</td><td>Cause a response timeout after the server has accepted an operation, then retry or tap Save again.</td><td>The same idempotency key produces one business effect. The interface resolves the original operation rather than creating a duplicate.</td><td>Client operation ID, provider/server reference and database count.</td></tr>
+              <tr><td>Two devices edit the same record</td><td>Change one record on two devices while both are offline; reconnect them in different orders.</td><td>The documented conflict rule is applied. Important changes are not silently overwritten; the audit trail identifies the edits and any human resolution.</td><td>Both local versions, server version, conflict event and resolution record.</td></tr>
+              <tr><td>Local storage is full or a write fails</td><td>Fill test storage or force the local database write to fail, then save a critical record.</td><td>The app does not say “saved” unless the local transaction committed. It explains the failure and offers a safe recovery path.</td><td>Storage/write error, UI state and proof that no false success was recorded.</td></tr>
+            </tbody>
+          </table>
+          <p>Download the <a href="/assets/resources/low-bandwidth-product-review-checklist.csv" download>Low-Bandwidth Product Review Checklist</a> to record the setup, customer action, expected local and server behaviour, evidence, owner and result for each run.</p>
+          <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Four release gates matter more than a green “offline” test.</strong><p>No work the product said was saved locally is lost. No retry creates a second business effect. No pending operation is presented as server-confirmed. Every blocked or conflicting operation has a visible owner and a safe next step.</p></div></div>
+          <p>A simulator proves that you can reproduce a condition. A real-device test tells you whether the customer can complete the job on the device, operator and location that matter. Keep both records; do not turn an emulator preset into a claim about an entire country.</p>
+        </section>
         <section class="lesson-section">
           <p class="section-number">WHAT TO BUILD FIRST</p>
           <h2>Start with one critical customer workflow.</h2>
@@ -205,6 +229,8 @@
           <p class="section-number">SOURCES AND FURTHER READING</p>
           <ul>
             <li><a href="https://developer.android.com/topic/architecture/data-layer/offline-first" target="_blank" rel="noopener noreferrer">Android Developers — Build an offline-first app</a></li>
+            <li><a href="https://developer.android.com/studio/run/emulator-console" target="_blank" rel="noopener noreferrer">Android Developers — Emulator network speed, latency and cellular-state controls</a></li>
+            <li><a href="https://developer.chrome.com/docs/devtools/network/reference" target="_blank" rel="noopener noreferrer">Chrome DevTools — Offline, throttling and custom network profiles</a></li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="noopener noreferrer">MDN — Service Worker API</a></li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noopener noreferrer">MDN — IndexedDB API</a></li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Background_Synchronization_API" target="_blank" rel="noopener noreferrer">MDN — Background Synchronization API and browser availability</a></li>
