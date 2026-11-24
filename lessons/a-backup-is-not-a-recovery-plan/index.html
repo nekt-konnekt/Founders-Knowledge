@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Backups alone cannot guarantee recovery. Learn how to protect your startup's data, set recovery targets, test restoration and resume operations safely.">
+  <meta name="description" content="A tested recovery runbook for restoring data, rebuilding the service, reconciling external records and safely resuming customer work.">
   <meta name="theme-color" content="#2e9bff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="shortcut icon" href="/favicon.svg">
   <title>A Backup Is Not a Recovery Plan — Founders Knowledge</title>
   <link rel="canonical" href="https://founders-knowledge.vercel.app/lessons/a-backup-is-not-a-recovery-plan/">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"A Backup Is Not a Recovery Plan","description":"Backups alone cannot guarantee recovery. Learn how to protect your startup's data, set recovery targets, test restoration and resume operations safely.","mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/a-backup-is-not-a-recovery-plan/","publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},"datePublished":"2026-10-29","dateModified":"2026-10-29","inLanguage":"en"}
+  {"@context":"https://schema.org","@type":"Article","headline":"A Backup Is Not a Recovery Plan","description":"A tested recovery runbook for restoring data, rebuilding the service, reconciling external records and safely resuming customer work.","mainEntityOfPage":"https://founders-knowledge.vercel.app/lessons/a-backup-is-not-a-recovery-plan/","publisher":{"@type":"Organization","name":"Founders Knowledge","url":"https://founders-knowledge.vercel.app/"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Founders Knowledge"},"datePublished":"2026-10-29","dateModified":"2026-11-24","inLanguage":"en"}
   </script>
   <meta property="og:site_name" content="Founders Knowledge">
   <meta property="og:type" content="article">
   <meta property="og:title" content="A Backup Is Not a Recovery Plan — Founders Knowledge">
-  <meta property="og:description" content="A backup is a copy of data. Recovery is a tested way to restore a working service.">
+  <meta property="og:description" content="Restore the database, rebuild the service, reconcile external records and prove the business can safely resume.">
   <meta property="og:url" content="https://founders-knowledge.vercel.app/lessons/a-backup-is-not-a-recovery-plan/">
   <meta property="og:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fa-backup-is-not-a-recovery-plan.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=650002372f">
   <meta property="og:image:secure_url" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fa-backup-is-not-a-recovery-plan.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=650002372f">
@@ -25,7 +25,7 @@
   <meta property="og:image:alt" content="Founders Knowledge: A Backup Is Not a Recovery Plan">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="A Backup Is Not a Recovery Plan — Founders Knowledge">
-  <meta name="twitter:description" content="A backup is a copy of data. Recovery is a tested way to restore a working service.">
+  <meta name="twitter:description" content="Restore the database, rebuild the service, reconcile external records and prove the business can safely resume.">
   <meta name="twitter:image" content="https://wsrv.nl/?url=https%3A%2F%2Ffounders-knowledge.vercel.app%2Fassets%2Fog%2Flessons%2Fa-backup-is-not-a-recovery-plan.svg&output=png&w=1200&h=630&fit=cover&maxage=1y&v=650002372f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,8 +47,8 @@
         <div class="lesson-cover-copy">
           <p class="lesson-kicker"><span class="lesson-kicker-dot"></span> FOUNDER OPERATIONS <span class="lesson-separator">/</span> INFRASTRUCTURE</p>
           <h1>A backup is not a recovery plan<span>.</span></h1>
-          <p class="lesson-dek">How to make sure your startup can recover when its data, database or infrastructure fails.</p>
-          <div class="lesson-meta"><span>◷ 10 minute read</span><span>✳ Practical founder guide</span><span>Published 29 October 2026</span></div>
+          <p class="lesson-dek">A practical runbook for restoring data, rebuilding the service, reconciling external records and deciding when customers can safely return.</p>
+          <div class="lesson-meta"><span>◷ 14 minute read</span><span>✳ Practical founder guide</span><span>Published 29 October 2026 · Updated 24 November 2026</span></div>
         </div>
         <div class="lesson-cover-art" aria-hidden="true">
           <div class="lesson-art-spark spark-one">✳</div><div class="lesson-art-spark spark-two">✦</div>
@@ -69,7 +69,8 @@
           <a href="#separation">04 <span>Separate your backups</span></a>
           <a href="#test">05 <span>Test restoration</span></a>
           <a href="#reconcile">06 <span>Reconcile the business</span></a>
-          <a href="#checklist">07 <span>Recovery checklist</span></a>
+          <a href="#runbook">07 <span>Run the recovery workflow</span></a>
+          <a href="#checklist">08 <span>Build your recovery plan</span></a>
           <div class="sidebar-note"><span>✳</span><p>A backup is useful only when you can restore what matters and prove the service works.</p></div>
         </div>
       </aside>
@@ -157,19 +158,53 @@
           <div class="lesson-callout callout-lilac"><span class="callout-icon">?</span><div><strong>Ask whether the recovered records match reality</strong><p>For transactional products, define how you will compare internal records with authoritative external records and resolve differences safely.</p></div></div>
           <p>For payment systems, that may mean reconciling orders with payment-provider transactions, verifying settlement records and checking whether webhooks or background jobs need to be replayed. The correct procedure depends on the provider and your architecture. Involve finance and operations—not only the developer restoring the database.</p>
         </section>
+
+        <section id="runbook" class="lesson-section">
+          <p class="section-number">07 — RUN THE RECOVERY WORKFLOW</p>
+          <h2>Restore the service in a controlled order. Do not just restore the database.</h2>
+          <p>A recovery drill should prove that the people, data, application and external systems can work together again. Run it in an isolated environment with synthetic accounts and test credentials. Never use production deletion or a live payment as a rehearsal.</p>
+          <div class="lesson-callout callout-yellow"><span class="callout-icon">!</span><div><strong>Protect the source before you restore</strong><p>Do not overwrite the only surviving copy. Preserve the current state, restore to a separate target, and keep customer-facing writes and external side effects under control until the recovered system passes its checks.</p></div></div>
+          <h3>Use this sequence in a drill or incident</h3>
+          <ol>
+            <li><strong>Declare the incident and contain it.</strong> Name an incident lead and technical lead. Record when the service first failed, when the team detected it, what customers cannot do, and which systems may be affected. Stop or queue risky writes where necessary. Pause workers, scheduled jobs and webhook consumers that could repeat an action while records are uncertain. Preserve logs and the affected system before making changes.</li>
+            <li><strong>Choose the recovery point.</strong> Identify the last known-good time before corruption, deletion or a bad change. Record the provider, project, branch, backup identifier, timestamp and timezone. Preserve a separate snapshot of the current state before restoring. The recovery point is not automatically the time of the last scheduled backup; establish which committed business events are present and which may be missing.</li>
+            <li><strong>Restore into an isolated target.</strong> Use a new branch, project or environment where possible. Restrict access to the people running the drill, use test credentials, and block outbound messages, live payment actions and production webhooks. Do not point customers or background workers at the restored system yet. If the provider cannot safely isolate external jobs, choose a different drill method or disable the relevant integration before starting.</li>
+            <li><strong>Rebuild the dependencies around the data.</strong> Restore or verify uploaded files and object storage; deploy the compatible application version; apply the required configuration and secrets; check identity and authentication settings; recreate permissions, domains and certificates; then verify queues, cron jobs, webhooks and integrations. Keep secrets out of the worksheet and source control. If credentials may have been exposed, rotate them and test the new credentials deliberately.</li>
+            <li><strong>Prove the recovered data is usable.</strong> Check that the expected schema and migrations are present, key tables can be queried, relationships and constraints behave, representative records are intact, and required files can be opened. Test roles and permissions, not just administrator access. Sign in with a synthetic customer account and complete the critical workflow. A successful restore command is not evidence that the application works.</li>
+            <li><strong>Reconcile what happened outside the database.</strong> Compare restored records with the systems that remained live: payment-provider transactions and settlements, refunds, deliveries, inventory movements, subscriptions, email or SMS actions, and partner systems. Use provider references and server-side verification where available. For example, Paystack's Verify Transaction API checks a transaction by reference; inspect the transaction status in the <code>data</code> object, not merely the API response status. Do not blindly replay old webhooks or jobs. Resolve exceptions with idempotency controls so a payment, refund, delivery or message is not applied twice.</li>
+            <li><strong>Measure the result against the targets.</strong> Record the time the incident began, the recovery point selected, the latest business event present after restore, the moment the critical customer workflow became usable, and the moment normal operations resumed. Calculate actual data loss and actual recovery time. Report the service-restoration time separately from the time required to reconcile all external records. If either target was missed, record it as missed; do not turn an estimate into a success claim.</li>
+            <li><strong>Make a return-to-service decision.</strong> The incident lead should confirm that the recovered database is the single source of truth, access controls work, files are available, critical workflows pass, payment and other external exceptions are understood, and queued jobs cannot create duplicates. Keep the old system read-only or otherwise fenced off before routing traffic to the recovered one. Re-enable workers and integrations in stages, monitor errors and reconciliation differences, and keep a clear rollback or containment decision.</li>
+            <li><strong>Tell customers what is true.</strong> Explain which actions are unavailable, whether a submitted action is saved or still being checked, and when the next update will arrive. Do not tell a customer that a payment failed, order disappeared or refund completed until the relevant system has been checked. Give support a named escalation owner and a list of unresolved cases.</li>
+            <li><strong>Close the drill with evidence.</strong> Save the timeline, restore point, validation results, measured RTO/RPO, unresolved gaps, owners and next actions. Rewrite the runbook where an instruction was missing or ambiguous. The next drill should test the gap you found, not merely repeat the easiest step.</li>
+          </ol>
+          <div class="lesson-question-card">
+            <p><strong>Actual recovery point</strong><br>Time of the last business event confirmed in the recovered system, compared with the last confirmed event before the incident. This is the data-loss interval you actually experienced—not the backup frequency printed on a plan.</p>
+            <p><strong>Actual recovery time</strong><br>Elapsed time from the agreed incident start to the point the defined critical customer workflow is usable again. Track full operational recovery separately if reconciliation or manual work continues afterwards.</p>
+          </div>
+          <h3>Provider features are not interchangeable</h3>
+          <p><strong>Supabase:</strong> its backup documentation, updated 12 November 2026, says database backups do not include Storage API objects and do not preserve custom-role passwords. Its restore-to-new-project guide, updated 23 November 2026 and labelled beta, lists Storage objects and settings, Edge Functions, Auth settings and API keys, Realtime settings and other integrations among items that require manual reconfiguration. The same guide warns that restored <code>pg_net</code> and <code>pg_cron</code> jobs can start running as soon as restoration completes. This is a reason to isolate outbound effects before a drill—not a universal description of every database provider. Read the <a href="https://supabase.com/docs/guides/platform/backups" target="_blank" rel="noopener noreferrer">Supabase backup guide</a> and <a href="https://supabase.com/docs/guides/platform/clone-project" target="_blank" rel="noopener noreferrer">restore-to-new-project guide</a>.</p>
+          <p><strong>Neon:</strong> its instant point-in-time restore is limited to root branches; child branches do not support that restore path, and the available history window depends on the plan. Confirm the branch type and recovery window before an incident. See <a href="https://neon.com/docs/guides/branch-restore" target="_blank" rel="noopener noreferrer">Neon's branch restore documentation</a>.</p>
+          <p><strong>Vercel:</strong> an application rollback is not a database restore. Vercel says rollback can leave configuration stale, does not roll back environment-variable changes, and restores cron definitions associated with the selected deployment. External databases and APIs continue to hold their own state. See <a href="https://vercel.com/docs/instant-rollback" target="_blank" rel="noopener noreferrer">Vercel's Instant Rollback guide</a>.</p>
+          <p><strong>Payments:</strong> after restoring an application database, compare internal orders with the provider's transaction records before fulfilment or retry. Paystack documents server-side transaction verification by reference and says its current transaction webhooks are sent only for successful transactions. Provider-specific behaviour can change; check the live account and current <a href="https://paystack.com/docs/payments/verify-payments/" target="_blank" rel="noopener noreferrer">Paystack verification documentation</a>.</p>
+          <p>AWS Well-Architected guidance recommends restoring backups to a new location and checking that data is accessible, intact and within the workload's RTO/RPO. It specifically warns against restoring a backup without querying or retrieving data to prove it is usable. See <a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_backing_up_data_periodic_recovery_testing_data.html" target="_blank" rel="noopener noreferrer">AWS REL09-BP04: periodic recovery testing</a> and <a href="https://docs.aws.amazon.com/wellarchitected/2024-06-27/framework/rel_planning_for_recovery_dr_tested.html" target="_blank" rel="noopener noreferrer">AWS REL13-BP03: test the recovery implementation</a>. These are engineering recommendations, not a universal legal requirement.</p>
+          <p><a href="/assets/resources/production-recovery-drill-worksheet.csv" download>Download the Production Recovery Drill Worksheet (CSV)</a>. It gives your team a place to record scenarios, recovery sources, dependencies, validation evidence, owners and measured targets. All rows start as “Not run”; completing the worksheet is not proof of a successful drill.</p>
+        </section>
         <div id="checklist" class="lesson-exercise">
-          <p class="section-number">PUT IT TO WORK</p>
+          <p class="section-number">08 — PUT IT TO WORK</p>
           <h2>Build a one-page recovery plan.</h2>
           <ol>
-            <li><strong>Critical services:</strong> list the systems your product needs to operate.</li>
-            <li><strong>Data protection:</strong> record what is backed up, where it is stored and how often.</li>
-            <li><strong>Recovery targets:</strong> decide how much data loss and downtime you can tolerate.</li>
-            <li><strong>Restoration steps:</strong> document the sequence for rebuilding the service.</li>
-            <li><strong>Validation:</strong> define the workflows and records that prove recovery succeeded.</li>
-            <li><strong>External dependencies:</strong> list payment providers, email, storage, DNS and integrations.</li>
-            <li><strong>Ownership:</strong> name who is responsible and who can act if the primary owner is unavailable.</li>
-            <li><strong>Test schedule:</strong> record the next restore drill and where its results will live.</li>
+            <li><strong>Critical workflows:</strong> identify the customer actions the business must restore first.</li>
+            <li><strong>Recovery sources:</strong> record database, file-storage, code and configuration backup coverage.</li>
+            <li><strong>Targets:</strong> set a business-approved RPO and RTO for each critical workflow.</li>
+            <li><strong>Isolated restore:</strong> document how to restore without overwriting the only surviving copy or triggering live side effects.</li>
+            <li><strong>Dependencies:</strong> include identity, secrets, permissions, domains, jobs, queues and external providers.</li>
+            <li><strong>Validation:</strong> write the exact records, files and customer workflows that must pass.</li>
+            <li><strong>Reconciliation:</strong> name the external systems that must be checked before normal operations resume.</li>
+            <li><strong>Customer communication:</strong> prepare a truthful status update and escalation route.</li>
+            <li><strong>Ownership:</strong> name the incident lead, technical owner, business approver and backup contact.</li>
+            <li><strong>Evidence:</strong> record actual recovery time, data-loss interval, gaps and the next drill date.</li>
           </ol>
+          <p>Use the <a href="/assets/resources/production-recovery-drill-worksheet.csv" download>Production Recovery Drill Worksheet (CSV)</a> to record each scenario and its result.</p>
           <div class="reality-check"><strong><span>!</span> Reality check</strong><p>A quarterly restoration drill may be a reasonable starting point for a small, low-risk application. Systems with faster-changing data or greater consequences of failure may need more frequent tests. Choose a schedule that fits your risk; this is not a universal standard.</p></div>
         </div>
         <div class="lesson-takeaway"><span class="takeaway-label">THE TAKEAWAY</span><p><em>A backup is not proof that your business can recover.</em> Know how much data you can afford to lose, understand what your provider protects, keep important copies outside the primary failure point, test restoration safely, and verify that the recovered system agrees with the real world.</p></div>
