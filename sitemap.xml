@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://founders-knowledge.vercel.app/library/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -224,7 +224,7 @@
   </url>
   <url>
     <loc>https://founders-knowledge.vercel.app/lessons/a-backup-is-not-a-recovery-plan/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -363,6 +363,36 @@
   <url>
     <loc>https://founders-knowledge.vercel.app/lessons/first-ten-customers-research/</loc>
     <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://founders-knowledge.vercel.app/lessons/when-your-market-falls-off-the-funding-map/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://founders-knowledge.vercel.app/lessons/listed-rival-raises-again/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://founders-knowledge.vercel.app/lessons/the-discount-question/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://founders-knowledge.vercel.app/lessons/support-inbox-product-roadmap/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://founders-knowledge.vercel.app/lessons/renewal-conversation-pay-again/</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

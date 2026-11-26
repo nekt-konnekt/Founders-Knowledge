@@ -78,6 +78,12 @@
 .callout-icon{flex-shrink:0;width:33px;height:33px;display:grid;place-items:center;background:white;border:1px solid var(--line-strong);border-radius:10px;color:var(--purple-deep);font-size:18px}
 .lesson-callout strong{display:block;font:600 16px var(--display);margin:2px 0 5px}
 .lesson-callout p{margin:0;font-size:13px;line-height:1.65}
+.lesson-evidence{margin:26px 0;padding:19px;background:var(--lavender);border:1px solid var(--line-strong);border-radius:14px;box-shadow:var(--shadow-small)}
+.evidence-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.evidence-head span{flex-shrink:0;width:33px;height:33px;display:grid;place-items:center;background:#fff;border:1px solid var(--line-strong);border-radius:10px;color:var(--purple-deep);font-size:18px}
+.evidence-head h2{font:600 16px var(--display);margin:0}
+.evidence-body p{margin:0 0 8px;font-size:13px;line-height:1.65}
+.evidence-body p:last-child{margin-bottom:0}
 .lesson-question-card{margin:25px 0;padding:23px;background:#fff;border:1px solid var(--line-strong);border-radius:15px;box-shadow:var(--shadow-small)}
 .question-card-title{margin:0 0 14px!important;font-size:9px!important;letter-spacing:.12em;font-weight:700;color:var(--purple-deep)}
 .lesson-question-card ul,.lesson-exercise ol{padding-left:22px;margin:0}
