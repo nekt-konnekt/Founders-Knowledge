@@ -14,6 +14,29 @@ def sha256(path: Path) -> str:
             digest.update(chunk)
     return digest.hexdigest()
 
+def apply_provider_event(connection: sqlite3.Connection, provider: dict) -> None:
+    """Apply one provider event atomically; replaying the same event is safe."""
+    connection.execute("BEGIN IMMEDIATE")
+    try:
+        connection.execute(
+          """INSERT INTO payments (provider_reference,order_id,amount_kobo,status,event_id)
+             VALUES (?,?,?,?,?) ON CONFLICT(provider_reference) DO NOTHING""",
+          (provider["provider_reference"],provider["order_id"],provider["amount_kobo"],provider["status"],provider["event_id"])
+        )
+        connection.execute(
+          "UPDATE orders SET status='paid',updated_at=? WHERE id=? AND status='pending'",
+          (provider["occurred_at"],provider["order_id"])
+        )
+        connection.execute(
+          """INSERT INTO outbox (event_id,order_id,event_type,processed) VALUES (?,?,?,0)
+             ON CONFLICT(event_id) DO NOTHING""",
+          (provider["event_id"],provider["order_id"],"order.paid")
+        )
+        connection.commit()
+    except Exception:
+        connection.rollback()
+        raise
+
 def run_drill() -> dict:
     with tempfile.TemporaryDirectory(prefix="fk-recovery-drill-") as tmp:
         root = Path(tmp)
@@ -75,29 +98,11 @@ def run_drill() -> dict:
         role = restored.execute("SELECT role FROM users WHERE id=?", ("USR-TEST-1",)).fetchone()
         assert role == ("customer",)
         assert sha256(recovered_receipt) == expected_hash
-        restored.execute("BEGIN IMMEDIATE")
-        restored.execute(
-          """INSERT INTO payments (provider_reference,order_id,amount_kobo,status,event_id)
-             VALUES (?,?,?,?,?) ON CONFLICT(provider_reference) DO NOTHING""",
-          (provider["provider_reference"],provider["order_id"],provider["amount_kobo"],provider["status"],provider["event_id"])
-        )
-        restored.execute(
-          "UPDATE orders SET status='paid',updated_at=? WHERE id=? AND status='pending'",
-          (provider["occurred_at"],provider["order_id"])
-        )
-        restored.execute(
-          """INSERT INTO outbox (event_id,order_id,event_type,processed) VALUES (?,?,?,0)
-             ON CONFLICT(event_id) DO NOTHING""",
-          (provider["event_id"],provider["order_id"],"order.paid")
-        )
-        restored.commit()
-        restored.execute("BEGIN IMMEDIATE")
-        restored.execute(
-          """INSERT INTO payments (provider_reference,order_id,amount_kobo,status,event_id)
-             VALUES (?,?,?,?,?) ON CONFLICT(provider_reference) DO NOTHING""",
-          (provider["provider_reference"],provider["order_id"],provider["amount_kobo"],provider["status"],provider["event_id"])
-        )
-        restored.commit()
+
+        # Reconcile once, then replay the entire event transaction.
+        apply_provider_event(restored, provider)
+        apply_provider_event(restored, provider)
+
         payment_count = restored.execute("SELECT COUNT(*) FROM payments WHERE provider_reference=?", (provider["provider_reference"],)).fetchone()[0]
         outbox_count = restored.execute("SELECT COUNT(*) FROM outbox WHERE event_id=?", (provider["event_id"],)).fetchone()[0]
         workflow = restored.execute(
@@ -114,7 +119,7 @@ def run_drill() -> dict:
           "checks":{
             "restore_to_separate_target":"PASS","database_integrity":integrity,
             "synthetic_customer_and_order":"PASS","separate_file_object_hash":"PASS",
-            "external_payment_reconciliation":"PASS","duplicate_event_idempotency":"PASS",
+            "external_payment_reconciliation":"PASS","full_event_replay_idempotency":"PASS",
             "critical_customer_workflow":"PASS","outbound_effects":"blocked; outbox remains queued"
           },
           "illustrative_recovery_point":{

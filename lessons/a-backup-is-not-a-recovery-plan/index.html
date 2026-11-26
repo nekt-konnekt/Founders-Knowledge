@@ -178,7 +178,8 @@
             <li><strong>Close the drill with evidence.</strong> Save the timeline, restore point, validation results, measured RTO/RPO, unresolved gaps, owners and next actions. Rewrite the runbook where an instruction was missing or ambiguous. The next drill should test the gap you found, not merely repeat the easiest step.</li>
           </ol>
           <div class="lesson-question-card">
-            <p><strong>Actual recovery point</strong><br>Time of the last business event confirmed in the recovered system, compared with the last confirmed event before the incident. This is the data-loss interval you actually experienced—not the backup frequency printed on a plan.</p>
+            <p><strong>Actual recovery point</strong><br>The newest point in time for which the recovered system contains a complete set of committed business events. Compare the full set of events before the incident with the restored records and authoritative external systems; a later confirmed event does not prove that earlier events are present.</p>
+            <p><strong>Actual data-loss gap</strong><br>List every committed event that is missing after recovery, including the oldest missing event and its time. If gaps remain, report them separately instead of using the latest recovered timestamp to claim zero data loss.</p>
             <p><strong>Actual recovery time</strong><br>Elapsed time from the agreed incident start to the point the defined critical customer workflow is usable again. Track full operational recovery separately if reconciliation or manual work continues afterwards.</p>
           </div>
           <h3>Provider features are not interchangeable</h3>
