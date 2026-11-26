@@ -110,23 +110,25 @@ def run_drill() -> dict:
              JOIN payments ON payments.order_id=orders.id JOIN users ON users.id=orders.customer_id
              WHERE orders.id=?""", ("ORD-100",)
         ).fetchone()
+        foreign_key_violations = restored.execute("PRAGMA foreign_key_check").fetchall()
         restored.close()
         assert payment_count == 1 and outbox_count == 1
         assert workflow == ("paid","success","customer")
+        assert not foreign_key_violations
         return {
           "result":"PASS",
           "scope":"synthetic local SQLite reference drill; not a production or provider restore",
           "checks":{
-            "restore_to_separate_target":"PASS","database_integrity":integrity,
+            "restore_to_separate_target":"PASS","database_integrity":integrity,"foreign_key_integrity":"PASS",
             "synthetic_customer_and_order":"PASS","separate_file_object_hash":"PASS",
-            "external_payment_reconciliation":"PASS","full_event_replay_idempotency":"PASS",
-            "critical_customer_workflow":"PASS","outbound_effects":"blocked; outbox remains queued"
+            "simulated_external_payment_reconciliation":"PASS","full_event_replay_idempotency":"PASS",
+            "synthetic_order_payment_state":"PASS","outbound_effects":"blocked; outbox remains queued"
           },
           "illustrative_recovery_point":{
             "backup_time":"2026-11-26T09:00:00Z","external_payment_time":provider["occurred_at"],
             "gap_minutes":3,"note":"synthetic data only; not a production RPO measurement"
           },
-          "local_restore_to_workflow_seconds":round(time.monotonic()-started,6),
+          "local_restore_to_state_check_seconds":round(time.monotonic()-started,6),
           "timing_note":"local harness timing only; not a service RTO"
         }
 
