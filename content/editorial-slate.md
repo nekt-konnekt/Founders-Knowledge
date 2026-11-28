@@ -315,6 +315,8 @@ Deliberately avoided repeating the existing library: idea validation and choosin
 |---|---|---|---|---|
 | Flagship | **The Co-founder Split: How to Divide Equity Before It Divides You** (new from the founder-problem backlog — founder decisions) | Equity splits feel generous at the start and bitter later. Understand: why a 50/50 split with no vesting breaks when one founder stops contributing. Build: a split sheet — roles, vesting over four years, and what happens if someone leaves. Do next: write down each founder's job and hours before you sign anything. | Evergreen. Method only — no external figures needed. Illustrative examples must be labelled hypothetical per the standard. | Verified absent from the library (no co-founder lesson). Pairs with the hiring-scorecard lesson without repeating it (that one assesses hires; this one splits ownership). Never present a split formula as legal advice — the lesson is a conversation guide, not a contract. |
 
+> **Notion calendar override — 28 November 2026:** The authoritative November Notion calendar assigns the interview-led Distribution Gap investigation to 30 November. This conflicts with the Co-founder Split candidate above. Preserve the explicit Notion due-date commitment; hold the Co-founder Split candidate for a later slot. This note records the reconciliation without deleting the existing slate entry.
+
 ## Tue 2026-12-01
 
 | Slot | Working title / topic | Angle for early founders | Source leads | Notes / displacement risk |
